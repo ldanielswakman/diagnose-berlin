@@ -11,18 +11,23 @@
 
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- <script src="js/scripts.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/scripts.js"></script>
 
   </head>
 
   <body>
+
   	<h1 style="text-align: center; padding: 2rem 0; opacity: 0.1;">Form Interaction Test</h1>
 
   	<form class="form">
-  		<section class="form--section" id="q1">
+
+  		<section class="form-section isActive" id="q1">
   			<div class="question">
   				<h5>Question 1</h5>
   				<h4>Which service are you interested in?</h4>
+  			</div>
+				<div class="answer">
 	  			<div class="field field--radio">
 
 	  				<div class="field--radio-item">
@@ -53,7 +58,63 @@
 	  			</div>
 	  		</div>
   		</section>
+
+  		<section class="form-section form-section--short" id="q2">
+  			<div class="question">
+  				<h5>Question 2</h5>
+  				<h4>Do you already have experience with performance diagnostics?</h4>
+  			</div>
+  			<div class="answer">
+	  			<div class="field field--radio">
+
+	  				<div class="field--radio-item">
+	  					<input type="radio" name="exp_1" id="exp_1_yes" value="yes">
+	  					<label for="exp_1_yes">Yes</label>
+	  				</div>
+
+					  <div class="field--radio-item">
+					  	<input type="radio" name="exp_1" id="exp_1_no" value="no">
+					  	<label for="exp_1_no">No</label>
+					  </div>
+
+	  			</div>
+	  		</div>
+  		</section>
+
+  		<section class="form-section" id="q3">
+  			<div class="question">
+  				<h5>Question 3</h5>
+  				<h4>What is your preferred appointment date/time?</h4>
+				<div class="answer">
+  				<div class="field-group">
+  					<div class="field">
+  						<label>Date (dd/mm/yyyy)</label>
+  						<input type="date" />
+  					</div>
+  					<div class="field">
+  						<label>Time</label>
+  						<select required>
+  							<!-- placeholder item -->
+				        <option value="" hidden>Select...</option>
+				        <!-- normal options -->
+  							<option value="8-10h">Between 8-10h</option>
+  							<option value="10-12h">Between 10-12h</option>
+  							<option value="12-14h">Between 12-14h</option>
+  							<option value="14-16h">Between 14-16h</option>
+  							<option value="16-18h">Between 16-18h</option>
+  						</select>
+  					</div>
+  				</div>
+	  		</div>
+	  		<div class="actions">
+	  			<button class="button button--primary">Send!</button>
+	  		</div>
+  		</section>
+
   	</form>
+
+  	<h2 style="text-align: center; padding: 2rem 0; opacity: 0.1;">more to come...</h2>
+
   </body>
 
 </html>
