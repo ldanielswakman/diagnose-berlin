@@ -1,0 +1,31 @@
+.form {
+	max-width: 720px;
+	margin: 0 auto;
+	padding-top: 3rem;
+
+	&--section {
+		margin: 0 0.75rem;
+		padding: 1rem;
+		border-radius: 0.75rem;
+		box-shadow: 0 0.5rem 2rem rgba($black, 0.1);
+
+		@include bigPhoneAndUp() {
+			padding: 1.5rem;
+		}
+	}
+
+	h5 {
+		margin-top: 0.5rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		opacity: 0.2;
+		letter-spacing: 0.05rem;
+	}
+	h4 {
+		margin: 0.5rem 0;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: $dark;
+	}
+}
+
