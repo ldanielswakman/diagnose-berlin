@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: HK Grotesk, Arial, sans-serif;
+  font-size: 100%;
+  color: #0F4C64;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* Selection */
+::-moz-selection {
+  background: #0F4C64;
+  color: #fff; }
+
+::selection {
+  background: #0F4C64;
+  color: #fff; }
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: flex;
+  padding: 0.375rem 1rem;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  color: #0F4C64;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer; }
+  .button--primary {
+    padding: 0.625rem 1.5rem;
+    background: #3D32E3;
+    color: #fff;
+    border-color: transparent;
+    line-height: 1.5rem;
+    font-size: 1.25rem; }
+    .button--primary:hover {
+      background: #261bc7;
+      box-shadow: 0 0.125rem 1rem rgba(61, 50, 227, 0.3); }
+    .button--primary:focus {
+      outline: none; }
+
+.field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: rgba(15, 76, 100, 0.3);
+  font-weight: 600; }
+.field input[type="date"],
+.field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: flex;
+  padding: 0.375rem 1rem;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  color: #0F4C64;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer; }
+  .field input[type="date"]:hover,
+  .field select:hover {
+    color: #3D32E3; }
+  .field input[type="date"]:focus,
+  .field select:focus {
+    outline: none; }
+  .field input[type="date"]:invalid,
+  .field select:invalid {
+    color: rgba(15, 76, 100, 0.3);
+    border-color: #0F4C64; }
+    .field input[type="date"]:invalid:hover,
+    .field select:invalid:hover {
+      color: #3D32E3;
+      border-color: currentColor; }
+.field select {
+  height: 2.5rem; }
+.field--radio {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem -0.5rem 0 -0.5rem; }
+  .field--radio input[type="radio"] {
+    position: absolute;
+    left: -9999px; }
+  .field--radio input[type="radio"]:checked + label {
+    background: #3D32E3;
+    border-color: transparent;
+    color: #fff; }
+  .field--radio label {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    padding: 0.375rem 1rem;
+    border: 0.125rem solid currentColor;
+    border-radius: 0.5rem;
+    line-height: 1.5rem;
+    color: #0F4C64;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1.5rem;
+    cursor: pointer; }
+    .field--radio label:hover {
+      color: #3D32E3;
+      background-color: rgba(61, 50, 227, 0.05); }
+  .field--radio-item {
+    flex: 0 0 calc(100% - 1rem);
+    margin: 0.5rem; }
+    @media screen and (min-width: 48em) {
+      .field--radio-item {
+        flex-basis: calc(50% - 1rem); } }
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem; }
+  .field-group .field {
+    margin-bottom: 1rem; }
+  @media screen and (min-width: 30em) {
+    .field-group {
+      flex-direction: row; }
+      .field-group .field + .field {
+        margin-left: 1rem; } }
+
+.form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 3rem; }
+  .form-section {
+    margin: 0 0.75rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: #F3F5F7; }
+    @media screen and (min-width: 30em) {
+      .form-section {
+        padding: 1.5rem; } }
+    .form-section.isActive {
+      background: #fff;
+      box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.1); }
+    .form-section:not(.isActive) .question, .form-section:not(.isActive) .answer {
+      opacity: 0.2; }
+    .form-section .actions {
+      display: flex;
+      justify-content: flex-end; }
+  .form-section + .form-section {
+    margin-top: 3rem; }
+  .form-section--short {
+    display: flex;
+    flex-direction: column; }
+    @media screen and (min-width: 30em) {
+      .form-section--short {
+        flex-direction: row; } }
+    .form-section--short .answer {
+      min-width: 12rem; }
+      .form-section--short .answer label {
+        justify-content: center; }
+  .form h5 {
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.3;
+    letter-spacing: 0.05rem; }
+  .form h4 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1C2E35; }
