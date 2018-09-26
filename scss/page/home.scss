@@ -1,0 +1,23 @@
+.page--home {
+	#intro {
+	 	background-color: #F5F8F9;
+	 	background-image: url('../images/mockup-home-1.jpg');
+	 	background-size: 180%;
+	 	background-position: 80% 0;
+	 	background-repeat: no-repeat;
+	 	min-height: 50vh;
+
+	 	@include tabletAndUp() {
+		 	background-size: cover;
+		 	background-position: top left;
+	 		min-height: 40vw;
+	 	}
+	}
+	#intro-post .box {
+		margin-top: -4rem;
+
+		@include tabletAndUp() {
+			margin-top: -8rem;
+		}
+	}
+}

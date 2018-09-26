@@ -1,0 +1,172 @@
+// Nav bar
+nav {
+	position: relative;
+	display: flex;
+	padding: 0 1.125rem;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid rgba($dark, 0.2);
+	
+	@include tabletAndUp() {
+		padding: 0 2rem;
+	}
+
+	.logo {
+		display: flex;
+
+		.logo__monogram,
+		.logo__wordmark {
+			height: 3rem;
+		}
+		.logo__wordmark {
+			display: none;
+
+			@include tabletAndUp() {
+				display: inherit;
+			}
+		}
+	}
+}
+
+// Main Menu
+.menu {
+	display: flex;
+	font-size: 1.125rem;
+
+	.show-sm {
+		display: none;
+
+		@include tabletAndUp() {
+			display: inherit;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 2.25rem 0.75rem;
+
+		&:hover {
+			color: $highlight;
+		}
+
+		@include tabletAndUp() {
+			padding: 2.25rem 1.5rem;
+		}
+	}
+	.hasSubmenu {
+		text-align: center;
+
+		&:hover:after {
+			content: "";
+			position: absolute;
+			bottom: -0.375rem;
+			margin-left: -0.375rem;
+			width: 0.75rem;
+			height: 0.75rem;
+			background: white;
+			border-top: 1px solid rgba($dark, 0.2);
+			border-left: 1px solid rgba($dark, 0.2);
+			transform: rotate(45deg);
+		}
+		&:hover .submenu {
+			display: flex;
+		}
+		& > a:after {
+			content: "";
+			position: relative;
+			top: -0.125rem;
+			display: inline-block;
+			width: 0.5rem;
+			height: 0.5rem;
+			margin-left: 0.75rem;
+			border-bottom: 2px solid rgba($diagnoseBlue, 0.5);
+			border-right: 2px solid rgba($diagnoseBlue, 0.5);
+			transform: rotate(45deg);
+			// transform-origin: 25% center;
+			transition: all 0.3s ease;
+		}
+		&:hover > a:after {
+			transform: rotate(225deg) translateY(-0.125rem);
+			border-color: $highlight;
+		}
+	}
+}
+
+// Submenu
+.submenu {
+	position: absolute;
+	top: calc(100% + 1px);
+	left: 0;
+	z-index: 2;
+
+	display: flex;
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	padding: 0.5rem 0;
+
+	background: $white;
+	box-shadow: 0 0.25rem 1rem rgba($dark, 0.05);
+
+	a {
+		padding: 1.25rem 0.75rem;
+
+		@include tabletAndUp() {
+			padding: 2.25rem 1.5rem;
+		}	
+	}
+
+	@include tabletAndUp() {
+		padding: 0;
+		flex-direction: row;
+	}
+}
+
+// Menu toggle
+a.menu-toggle {
+  position: relative;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1.5rem;
+  margin-left: 0.75rem;
+  padding: 0;
+
+  @include tabletAndUp() {
+  	display: none;
+  }
+
+  span {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    border-top: 2px solid $diagnoseBlue;
+    transition: all 0.3s ease;
+    transform-origin: 15% 15%;
+  }
+  span:first-child {
+    top: 25%;
+    width: 65%;
+  }
+  span:last-child {
+    top: 75%;
+    width: 85%;
+  }
+
+	&:hover {
+	  span:nth-child(2) { opacity: 0; }
+	  span:first-child {
+	    width: 100%;
+	    // border-top-color: $white;
+	    transform: rotate(45deg);
+	  }
+	  span:last-child {
+	    width: 100%;
+	    // border-top-color: $white;
+	    transform: rotate(-45deg);
+	  }
+	}
+}

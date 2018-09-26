@@ -1,0 +1,14 @@
+blockquote {
+
+	&.blockquote--big p {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		font-weight: bold;
+		color: $dark;
+
+		@include tabletAndUp() {
+			font-size: 3rem;
+			line-height: 3.5rem;
+		}
+	}
+}

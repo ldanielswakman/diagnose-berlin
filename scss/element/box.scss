@@ -1,0 +1,12 @@
+.box {
+	position: relative;
+	z-index: 10;
+	display: block;
+	padding: 1.5rem;
+	background: $white;
+	box-shadow: 0 0.5rem 2rem rgba($dark, 0.1);
+
+	@include tabletAndUp() {
+		padding: 3rem;
+	}
+}
