@@ -7,6 +7,15 @@
 	box-shadow: 0 0.5rem 2rem rgba($dark, 0.1);
 
 	@include tabletAndUp() {
-		padding: 3rem;
+		padding: 2.5rem 5rem;
+	}
+}
+
+.content,
+.row > .content {
+	padding: 1.5rem;
+
+	@include tabletAndUp() {
+		padding: 2.5rem 5rem;
 	}
 }

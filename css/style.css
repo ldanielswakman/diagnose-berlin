@@ -860,6 +860,15 @@ a {
   .row--nopadding > [class*="col-"] {
     padding: 0; }
 
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem; }
+
+blockquote p {
+  color: #0F4C64;
+  font-size: 1.5rem;
+  line-height: 2rem; }
+
 blockquote.blockquote--big p {
   font-size: 2rem;
   line-height: 2.25rem;
@@ -906,7 +915,15 @@ blockquote.blockquote--big p {
   box-shadow: 0 0.5rem 2rem rgba(28, 46, 53, 0.1); }
   @media screen and (min-width: 48em) {
     .box {
-      padding: 3rem; } }
+      padding: 2.5rem 5rem; } }
+
+.content,
+.row > .content {
+  padding: 1.5rem; }
+  @media screen and (min-width: 48em) {
+    .content,
+    .row > .content {
+      padding: 2.5rem 5rem; } }
 
 .field label {
   display: block;
@@ -1002,7 +1019,7 @@ blockquote.blockquote--big p {
     margin: 0 0.75rem;
     padding: 1rem;
     border-radius: 0.75rem;
-    background: #F3F5F7; }
+    background: #F3F8F9; }
     @media screen and (min-width: 30em) {
       .form-section {
         padding: 1.5rem; } }
@@ -1047,7 +1064,7 @@ nav {
   border-bottom: 1px solid rgba(28, 46, 53, 0.2); }
   @media screen and (min-width: 48em) {
     nav {
-      padding: 0 2rem; } }
+      padding: 0 2rem 0 5rem; } }
   nav .logo {
     display: flex; }
     nav .logo .logo__monogram,
@@ -1182,3 +1199,17 @@ a.menu-toggle {
   @media screen and (min-width: 48em) {
     .page--home #intro-post .box {
       margin-top: -8rem; } }
+
+.page--home #services_preview {
+  background: #F3F8F9;
+  padding: 0.5rem 0; }
+  @media screen and (min-width: 48em) {
+    .page--home #services_preview {
+      padding: 3rem 0; } }
+  .page--home #services_preview .row {
+    padding: 0.5rem; }
+    @media screen and (min-width: 48em) {
+      .page--home #services_preview .row {
+        padding: 1rem; } }
+    .page--home #services_preview .row [class*="col-"] {
+      padding: 1rem; }

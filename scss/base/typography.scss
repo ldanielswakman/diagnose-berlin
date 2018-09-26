@@ -1,5 +1,18 @@
+// Paragraph
+p {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+// Blockquote
 blockquote {
 
+	p {
+		color: $diagnoseBlue;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+	
 	&.blockquote--big p {
 		font-size: 2rem;
 		line-height: 2.25rem;
