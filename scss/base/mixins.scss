@@ -1,0 +1,40 @@
+// Mixins
+
+// Media queries
+@mixin phoneAndUp() {
+  @media screen and (min-width: 21em) {
+    @content;
+  }
+}
+@mixin bigPhoneAndUp() {
+  @media screen and (min-width: 30em) {
+    @content;
+  }
+}
+@mixin tabletAndUp() {
+  @media screen and (min-width: 48em) {
+    @content;
+  }
+}
+@mixin desktopAndUp() {
+  @media screen and (min-width: 64em) {
+    @content;
+  }
+}
+
+@mixin clickableElem() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: flex;
+  padding: 0.375rem 1rem;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.5rem;
+
+  line-height: 1.5rem;
+  color: $diagnoseBlue;
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}

@@ -1,0 +1,92 @@
+.field {
+
+	// 'Regular' input fields, different types
+	label {
+		display: block;
+		margin-bottom: 0.25rem;
+		color: rgba($diagnoseBlue, 0.3);
+		font-weight: 600;
+	}
+	input[type="date"],
+	select {
+		@include clickableElem();
+
+		&:hover {
+			color: $highlight;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:invalid {
+      color: rgba($diagnoseBlue, 0.3);
+      border-color: $diagnoseBlue;
+
+      &:hover {
+	      color: $highlight;
+	      border-color: currentColor;
+      }
+    }
+	}
+
+	// Select specific
+	select {
+		height: 2.5rem;
+	}
+
+	// Radio
+	&--radio {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 1rem -0.5rem 0 -0.5rem;
+
+		input[type="radio"] {
+			position: absolute;
+			left: -9999px;
+		}
+		input[type="radio"]:checked + label {
+			background: $highlight;
+			border-color: transparent;
+			color: $white;
+		}
+		label {
+			@include clickableElem();
+			line-height: 1.5rem;
+
+			cursor: pointer;
+
+			&:hover {
+				color: $highlight;
+				background-color: rgba($highlight, 0.05);
+			}
+		}
+
+		&-item {
+			flex: 0 0 calc(100% - 1rem);
+
+			@include tabletAndUp() {
+				flex-basis: calc(50% - 1rem);
+			}
+	    margin: 0.5rem;
+		}
+	}
+}
+
+// Field group
+.field-group {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2rem;
+
+	.field {
+		margin-bottom: 1rem;
+	}
+
+	@include bigPhoneAndUp() {
+		flex-direction: row;
+
+		// Margin for adjacent fields
+		.field + .field {
+			margin-left: 1rem;
+		}
+	}
+}
