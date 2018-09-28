@@ -40,6 +40,45 @@
 			[class*="col-"] {
 				padding: 1rem;
 			}
+
+			// Vertical boxes shift
+			@include tabletAndUp() {
+				& > *:nth-child(1) { margin-top: 4.5rem; }
+				& > *:nth-child(2) { margin-top: 1.5rem; }
+				& > *:nth-child(3) { margin-top: -1.5rem; }
+				& > *:nth-child(4) { margin-top: -4.5rem; }
+			}
+
+			// Box hover effect
+			.box {
+				transition: all 0.2s ease;
+			}
+			&:hover .box {
+				opacity: 0.75;
+				transform: scale(0.99);
+
+				&:hover {
+					opacity: 1;
+					transform: scale(1.01);
+				}
+			}
 		}
+	}
+
+	#knowledge_preview {
+		margin-top: 8rem;
+		background: $greylightest;
+
+		.box {
+			margin-top: -5rem;
+		} 
+	}
+
+	#call_to_action {
+		margin-top: 4rem;
+
+		@include tabletAndUp() {
+			margin-top: 8rem;
+		} 
 	}
 }

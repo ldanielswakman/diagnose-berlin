@@ -829,13 +829,22 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.c-highlight {
+  color: #F88379 !important; }
+
+.c-blue {
+  color: #005E83 !important; }
+
+.c-dark {
+  color: #1C2E35 !important; }
+
 html, body {
   width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: #fff;
-  font-family: "F37 Ginger";
+  font-family: "F37 Ginger", 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 100%;
   color: #1C2E35;
   -webkit-font-smoothing: antialiased;
@@ -851,6 +860,10 @@ html, body {
   background: #005E83;
   color: #fff; }
 
+figure img {
+  display: block;
+  max-width: 100%; }
+
 a {
   text-decoration: none;
   color: #005E83; }
@@ -863,39 +876,52 @@ a {
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
-  font-weight: 400;
-  src: local("F37 Ginger"), url("../fonts/F37Ginger-Regular.woff2") format("woff2"), url("../fonts/F37Ginger-Regular.woff") format("woff"); }
+  font-weight: normal;
+  src: url("../fonts/F37Ginger-Regular.woff2") format("woff2"), url("../fonts/F37Ginger-Regular.woff") format("woff"); }
 
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
-  font-weight: 700;
-  src: local("F37 Ginger"), url("../fonts/F37Ginger-Bold.woff2") format("woff2"), url("../fonts/F37Ginger-Bold.woff") format("woff"); }
+  font-weight: bold;
+  src: url("../fonts/F37Ginger-Bold.woff2") format("woff2"), url("../fonts/F37Ginger-Bold.woff") format("woff"); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #005E83; }
 
 p {
   font-size: 1.125rem;
   line-height: 1.75rem; }
 
-blockquote p {
-  color: #005E83;
-  font-size: 1.5rem;
-  line-height: 2rem; }
-
-blockquote.blockquote--big p {
-  font-size: 2rem;
-  line-height: 2.25rem;
-  font-weight: bold;
-  color: #1C2E35; }
-  @media screen and (min-width: 48em) {
-    blockquote.blockquote--big p {
-      font-size: 3rem;
-      line-height: 3.5rem; } }
+blockquote {
+  color: #005E83; }
+  blockquote p {
+    font-size: 1.5rem;
+    line-height: 2rem; }
+  blockquote.blockquote--big p {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: bold; }
+    @media screen and (min-width: 48em) {
+      blockquote.blockquote--big p {
+        font-size: 2rem;
+        line-height: 2.5rem; } }
+  blockquote.blockquote--huge {
+    color: #1C2E35; }
+    blockquote.blockquote--huge p {
+      font-size: 2rem;
+      line-height: 2.25rem;
+      font-weight: bold; }
+      @media screen and (min-width: 48em) {
+        blockquote.blockquote--huge p {
+          font-size: 3rem;
+          line-height: 3.5rem; } }
 
 .button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: flex;
+  display: inline-flex;
   padding: 0.375rem 1rem;
   border: 0.125rem solid currentColor;
   border-radius: 1.25rem;
@@ -905,18 +931,31 @@ blockquote.blockquote--big p {
   font-weight: 600;
   cursor: pointer; }
   .button--primary {
-    padding: 0.625rem 1.5rem;
-    border-radius: 2rem;
     background: #F88379;
     color: #fff;
-    border-color: transparent;
-    line-height: 1.5rem;
-    font-size: 1.25rem; }
+    border-color: transparent; }
     .button--primary:hover {
       background: #f55649;
       box-shadow: 0 0.125rem 1rem rgba(248, 131, 121, 0.3); }
     .button--primary:focus {
       outline: none; }
+  .button--primary.button--outline {
+    background: transparent;
+    border-width: 1px;
+    font-weight: normal;
+    border-color: currentColor;
+    color: #F88379; }
+    .button--primary.button--outline:hover {
+      background-color: rgba(248, 131, 121, 0.1);
+      color: #F88379; }
+    .button--primary.button--outline:active {
+      background: #F88379;
+      color: #fff; }
+  .button--large {
+    padding: 0.625rem 1.5rem;
+    border-radius: 2rem;
+    line-height: 1.5rem;
+    font-size: 1.25rem; }
 
 .box {
   position: relative;
@@ -928,6 +967,15 @@ blockquote.blockquote--big p {
   @media screen and (min-width: 48em) {
     .box {
       padding: 2.5rem 5rem; } }
+  .box--service {
+    padding: 0;
+    color: inherit; }
+    .box--service .box__content {
+      padding: 1.5rem; }
+      .box--service .box__content p {
+        margin: 1rem 0;
+        font-size: 1rem;
+        line-height: 1.25rem; }
 
 .content,
 .row > .content {
@@ -948,7 +996,7 @@ blockquote.blockquote--big p {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: flex;
+  display: inline-flex;
   padding: 0.375rem 1rem;
   border: 0.125rem solid currentColor;
   border-radius: 1.25rem;
@@ -990,7 +1038,7 @@ blockquote.blockquote--big p {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    display: flex;
+    display: inline-flex;
     padding: 0.375rem 1rem;
     border: 0.125rem solid currentColor;
     border-radius: 1.25rem;
@@ -1022,6 +1070,19 @@ blockquote.blockquote--big p {
       flex-direction: row; }
       .field-group .field + .field {
         margin-left: 1rem; } }
+
+footer {
+  background: #00415a;
+  padding: 3rem 1.5rem;
+  color: #fff;
+  line-height: 2rem; }
+  footer a {
+    color: #fff; }
+  footer .subtle {
+    opacity: 0.5; }
+  @media screen and (min-width: 48em) {
+    footer {
+      padding: 5rem; } }
 
 .form {
   max-width: 720px;
@@ -1225,3 +1286,32 @@ a.menu-toggle {
         padding: 1rem; } }
     .page--home #services_preview .row [class*="col-"] {
       padding: 1rem; }
+    @media screen and (min-width: 48em) {
+      .page--home #services_preview .row > *:nth-child(1) {
+        margin-top: 4.5rem; }
+      .page--home #services_preview .row > *:nth-child(2) {
+        margin-top: 1.5rem; }
+      .page--home #services_preview .row > *:nth-child(3) {
+        margin-top: -1.5rem; }
+      .page--home #services_preview .row > *:nth-child(4) {
+        margin-top: -4.5rem; } }
+    .page--home #services_preview .row .box {
+      transition: all 0.2s ease; }
+    .page--home #services_preview .row:hover .box {
+      opacity: 0.75;
+      transform: scale(0.99); }
+      .page--home #services_preview .row:hover .box:hover {
+        opacity: 1;
+        transform: scale(1.01); }
+
+.page--home #knowledge_preview {
+  margin-top: 8rem;
+  background: #F3F8F9; }
+  .page--home #knowledge_preview .box {
+    margin-top: -5rem; }
+
+.page--home #call_to_action {
+  margin-top: 4rem; }
+  @media screen and (min-width: 48em) {
+    .page--home #call_to_action {
+      margin-top: 8rem; } }

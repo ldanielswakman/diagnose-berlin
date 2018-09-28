@@ -5,7 +5,7 @@ html, body {
   padding: 0;
   background-color: $white;
 
-  font-family: "F37 Ginger";
+  font-family: "F37 Ginger", 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 100%; // 16px = 100%
   color: $dark;
 
@@ -23,6 +23,11 @@ html, body {
 ::selection {
   background: $diagnoseBlue;
   color: $white;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
 }
 
 a {

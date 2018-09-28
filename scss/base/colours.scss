@@ -1,8 +1,19 @@
 // Colours
 $highlight: #F88379;
-$diagnoseBlue: #005E83; // 0F4C64;
+$diagnoseBlue: #005E83;
+$mildBlue: #0F4C64;
 
 $white: #fff;
 $greylightest: #F3F8F9;
 $dark: #1C2E35;
 $black: #000;
+
+.c-highlight {
+	color: $highlight !important;
+}
+.c-blue {
+	color: $diagnoseBlue !important;
+}
+.c-dark {
+	color: $dark !important;
+}

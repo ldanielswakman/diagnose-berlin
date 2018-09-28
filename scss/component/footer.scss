@@ -1,0 +1,18 @@
+footer {
+	background: darken($diagnoseBlue, 8%);
+	padding: 3rem 1.5rem;
+	color: $white;
+	line-height: 2rem;
+
+	a {
+		color: $white;
+	}
+
+	.subtle {
+		opacity: 0.5;
+	}
+
+	@include tabletAndUp() {
+		padding: 5rem;
+	}
+}

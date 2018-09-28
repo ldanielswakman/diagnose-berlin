@@ -2,18 +2,22 @@
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
-  font-weight: 400;
-  src: local('F37 Ginger'),
-  		 url('../fonts/F37Ginger-Regular.woff2') format('woff2'),
+  font-weight: normal;
+  src: url('../fonts/F37Ginger-Regular.woff2') format('woff2'),
   		 url('../fonts/F37Ginger-Regular.woff') format('woff');
 }
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
-  font-weight: 700;
-  src: local('F37 Ginger'),
-  		 url('../fonts/F37Ginger-Bold.woff2') format('woff2'),
+  font-weight: bold;
+  src: url('../fonts/F37Ginger-Bold.woff2') format('woff2'),
   		 url('../fonts/F37Ginger-Bold.woff') format('woff');
+}
+
+// Headline
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	color: $diagnoseBlue;
 }
 
 // Paragraph
@@ -24,22 +28,36 @@ p {
 
 // Blockquote
 blockquote {
+	color: $diagnoseBlue;
 
 	p {
-		color: $diagnoseBlue;
 		font-size: 1.5rem;
 		line-height: 2rem;
 	}
 	
 	&.blockquote--big p {
-		font-size: 2rem;
-		line-height: 2.25rem;
+		font-size: 1.5rem;
+		line-height: 1.75rem;
 		font-weight: bold;
-		color: $dark;
 
 		@include tabletAndUp() {
-			font-size: 3rem;
-			line-height: 3.5rem;
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+	}
+	
+	&.blockquote--huge {
+		color: $dark;
+		
+		p {
+			font-size: 2rem;
+			line-height: 2.25rem;
+			font-weight: bold;
+
+			@include tabletAndUp() {
+				font-size: 3rem;
+				line-height: 3.5rem;
+			}
 		}
 	}
 }

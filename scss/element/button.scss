@@ -2,13 +2,9 @@
 	@include clickableElem();
 
 	&--primary {
-		padding: 0.625rem 1.5rem;
-		border-radius: 2rem;
 		background: $highlight;
 		color: $white;
 		border-color: transparent;
-		line-height: 1.5rem;
-		font-size: 1.25rem;
 
 		&:hover {
 			background: darken($highlight, 10%);
@@ -17,5 +13,27 @@
 		&:focus {
 			outline: none;
 		}
+	}
+	&--primary.button--outline {
+		background: transparent;
+		border-width: 1px;
+		font-weight: normal;
+		border-color: currentColor;
+		color: $highlight;
+
+		&:hover {
+			background-color: rgba($highlight, 0.1);
+			color: $highlight;
+		}
+		&:active {
+			background: $highlight;
+			color: $white;
+		}
+	}
+	&--large {
+		padding: 0.625rem 1.5rem;
+		border-radius: 2rem;
+		line-height: 1.5rem;
+		font-size: 1.25rem;
 	}
 }

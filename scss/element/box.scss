@@ -9,6 +9,21 @@
 	@include tabletAndUp() {
 		padding: 2.5rem 5rem;
 	}
+
+	&--service {
+		padding: 0;
+		color: inherit;
+
+		.box__content {
+			padding: 1.5rem;
+
+			p {
+				margin: 1rem 0;
+				font-size: 1rem;
+				line-height: 1.25rem;
+			}
+		}
+	}
 }
 
 .content,
