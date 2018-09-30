@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="35px" viewBox="0 0 28 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-trainplan-small</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02-Service-Overview-(Desktop)" transform="translate(-384.000000, -129.000000)" stroke="#005E83" stroke-width="1.5">
+            <g id="Group-8-Copy" transform="translate(80.000000, 129.000000)">
+                <g id="icon-trainplan-small" transform="translate(305.000000, 1.000000)">
+                    <ellipse id="Oval" cx="13" cy="19.2173913" rx="13" ry="13.2173913"></ellipse>
+                    <path d="M12.5789481,28.4782622 C7.29702985,28.4782622 3,24.1093763 3,18.7391304 C3,13.3688845 7.29702985,9 12.5789481,9 C17.8608663,9 22.1578941,13.3688858 22.1578941,18.7391304 C22.1578941,24.109375 17.8608649,28.4782622 12.5789481,28.4782622 Z" id="Shape"></path>
+                    <path d="M13,11 L13,17.2822399" id="Shape"></path>
+                    <ellipse id="Oval" cx="12.3684211" cy="18.3913043" rx="1.36842105" ry="1.39130435"></ellipse>
+                    <rect id="Rectangle-path" x="10" y="0" width="5.47368421" height="2.7826087"></rect>
+                    <path d="M11,3 L11,5.7826087" id="Shape"></path>
+                    <path d="M14,3 L14,5.7826087" id="Shape"></path>
+                    <polyline id="Shape" points="20 7.13128529 22.0962326 5 24.1593305 7.09759917 22.0631005 9.22888445"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

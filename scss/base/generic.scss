@@ -33,6 +33,10 @@ figure img {
 a {
   text-decoration: none;
   color: $diagnoseBlue;
+
+  &.c-highlight:hover {
+    color: darken($highlight, 20%) !important;
+  }
 }
 
 .row--nopadding {

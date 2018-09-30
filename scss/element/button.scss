@@ -1,6 +1,11 @@
 .button {
 	@include clickableElem();
 
+	&:focus {
+		outline: none;
+		box-shadow: 0 0.125rem 0.75rem rgba($dark, 0.25);
+	}
+
 	&--primary {
 		background: $highlight;
 		color: $white;
@@ -9,9 +14,6 @@
 		&:hover {
 			background: darken($highlight, 10%);
 			box-shadow: 0 0.125rem 1rem rgba($highlight, 0.3);
-		}
-		&:focus {
-			outline: none;
 		}
 	}
 	&--primary.button--outline {
@@ -30,10 +32,28 @@
 			color: $white;
 		}
 	}
+	&--grey {
+		background: $greylight;
+		border-color: transparent;
+	}
+
+	// Sizes
 	&--large {
 		padding: 0.625rem 1.5rem;
 		border-radius: 2rem;
 		line-height: 1.5rem;
 		font-size: 1.25rem;
+	}
+	&--circle {
+		width: 2rem;
+		height: 2rem;
+		padding: 0.5rem;
+		justify-content: center;
+
+		&.button--small {
+			width: 1.5rem;
+			height: 1.5rem;
+			padding: 0.25rem;
+		}
 	}
 }

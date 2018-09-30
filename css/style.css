@@ -867,6 +867,8 @@ figure img {
 a {
   text-decoration: none;
   color: #005E83; }
+  a.c-highlight:hover {
+    color: #f32918 !important; }
 
 .row--nopadding {
   margin: 0; }
@@ -888,6 +890,12 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: #005E83; }
+
+h4 {
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  opacity: 0.3; }
 
 p {
   font-size: 1.125rem;
@@ -925,11 +933,15 @@ blockquote {
   padding: 0.375rem 1rem;
   border: 0.125rem solid currentColor;
   border-radius: 1.25rem;
+  background: none;
   line-height: 1.5rem;
   color: #005E83;
   font: inherit;
   font-weight: 600;
   cursor: pointer; }
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0.125rem 0.75rem rgba(28, 46, 53, 0.25); }
   .button--primary {
     background: #F88379;
     color: #fff;
@@ -937,8 +949,6 @@ blockquote {
     .button--primary:hover {
       background: #f55649;
       box-shadow: 0 0.125rem 1rem rgba(248, 131, 121, 0.3); }
-    .button--primary:focus {
-      outline: none; }
   .button--primary.button--outline {
     background: transparent;
     border-width: 1px;
@@ -951,11 +961,23 @@ blockquote {
     .button--primary.button--outline:active {
       background: #F88379;
       color: #fff; }
+  .button--grey {
+    background: #CFDBE0;
+    border-color: transparent; }
   .button--large {
     padding: 0.625rem 1.5rem;
     border-radius: 2rem;
     line-height: 1.5rem;
     font-size: 1.25rem; }
+  .button--circle {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    justify-content: center; }
+    .button--circle.button--small {
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 0.25rem; }
 
 .box {
   position: relative;
@@ -963,7 +985,7 @@ blockquote {
   display: block;
   padding: 1.5rem;
   background: #fff;
-  box-shadow: 0 0.5rem 2rem rgba(28, 46, 53, 0.1); }
+  box-shadow: 0 0.375rem 2rem rgba(28, 46, 53, 0.15); }
   @media screen and (min-width: 48em) {
     .box {
       padding: 2.5rem 5rem; } }
@@ -976,6 +998,25 @@ blockquote {
         margin: 1rem 0;
         font-size: 1rem;
         line-height: 1.25rem; }
+  .box--package {
+    margin-bottom: 2rem;
+    padding: 2rem; }
+    .box--package .box__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem; }
+    .box--package .box__header {
+      margin: 0 -2rem 1rem;
+      padding: 0 2rem 1.5rem;
+      border-bottom: 1px solid rgba(28, 46, 53, 0.15); }
+    .box--package p {
+      font-size: 1rem;
+      line-height: 1.5rem; }
+    .box--package .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #F88379; }
 
 .content,
 .row > .content {
@@ -1000,6 +1041,7 @@ blockquote {
   padding: 0.375rem 1rem;
   border: 0.125rem solid currentColor;
   border-radius: 1.25rem;
+  background: none;
   line-height: 1.5rem;
   color: #005E83;
   font: inherit;
@@ -1042,6 +1084,7 @@ blockquote {
     padding: 0.375rem 1rem;
     border: 0.125rem solid currentColor;
     border-radius: 1.25rem;
+    background: none;
     line-height: 1.5rem;
     color: #005E83;
     font: inherit;
@@ -1214,6 +1257,9 @@ nav {
     @media screen and (min-width: 48em) {
       .submenu a {
         padding: 2.25rem 1.5rem; } }
+    .submenu a img {
+      max-height: 1.25rem;
+      margin-right: 0.75rem; }
   @media screen and (min-width: 48em) {
     .submenu {
       padding: 0;
@@ -1253,6 +1299,55 @@ a.menu-toggle {
   a.menu-toggle:hover span:last-child {
     width: 100%;
     transform: rotate(-45deg); }
+
+table {
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+  overflow: auto;
+  font-size: 0.875rem; }
+  @media screen and (min-width: 48em) {
+    table {
+      display: table;
+      font-size: inherit; } }
+  table tr {
+    border-bottom: 1px solid rgba(28, 46, 53, 0.15); }
+  table td {
+    padding: 0.5rem; }
+    @media screen and (min-width: 48em) {
+      table td {
+        padding: 0.5rem 1rem; } }
+  table.table--comparison .show-sm {
+    display: none; }
+  table.table--comparison td:not(.title) {
+    text-align: center;
+    color: #F88379;
+    font-weight: bold; }
+  table.table--comparison td.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: inherit; }
+    table.table--comparison td.title .button {
+      margin-left: 0.75rem; }
+  @media screen and (max-width: 48em) {
+    table.table--comparison .show-sm {
+      display: block; }
+    table.table--comparison tr {
+      display: flex;
+      flex-wrap: wrap;
+      border: none;
+      margin-bottom: 0.5rem; }
+    table.table--comparison td {
+      padding: 0.25rem 0.5rem;
+      flex-basis: 33.33333%; }
+      table.table--comparison td:not(.title) {
+        background: rgba(28, 46, 53, 0.05); }
+      table.table--comparison td.title {
+        flex-basis: 100%;
+        justify-content: center;
+        align-items: flex-end;
+        color: rgba(28, 46, 53, 0.25); } }
 
 .page--home #intro {
   background-color: #F5F8F9;
@@ -1315,3 +1410,42 @@ a.menu-toggle {
   @media screen and (min-width: 48em) {
     .page--home #call_to_action {
       margin-top: 8rem; } }
+
+.page--services #intro {
+  min-height: 12rem; }
+
+.page--services .hasSubmenu a:after {
+  display: none; }
+
+.page--services .hasSubmenu:after {
+  display: block; }
+
+.page--services .submenu {
+  display: flex; }
+
+.page--service-detail #intro {
+  min-height: 90vh;
+  background-color: #F5F8F9;
+  background-image: url("../images/mockup-service-detail-1.jpg");
+  background-size: 140%;
+  background-position: 100% bottom;
+  background-repeat: no-repeat; }
+  @media screen and (min-width: 48em) {
+    .page--service-detail #intro {
+      min-height: 40vw;
+      background-size: cover;
+      background-position: bottom center; } }
+  .page--service-detail #intro h1 {
+    margin-bottom: 2rem; }
+    .page--service-detail #intro h1 img {
+      width: 3rem;
+      vertical-align: middle;
+      margin-right: 0.5rem; }
+
+.page--service-detail #packages {
+  margin-top: -9rem; }
+
+@media screen and (max-width: 48em) {
+  .page--service-detail #comparison {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }

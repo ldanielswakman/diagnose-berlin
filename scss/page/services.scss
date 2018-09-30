@@ -1,0 +1,16 @@
+.page--services {
+
+	#intro {
+		min-height: 12rem;
+	}
+
+	.hasSubmenu a:after {
+		display: none;
+	}
+	.hasSubmenu:after {
+		display: block;
+	}
+	.submenu {
+		display: flex;
+	}
+}
