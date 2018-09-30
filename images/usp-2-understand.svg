@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="164px" viewBox="0 0 164 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>usp-2-understand</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="50" cy="50" r="50"></circle>
+        <filter x="-53.5%" y="-45.5%" width="207.0%" height="207.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0588235294   0 0 0 0 0.298039216   0 0 0 0 0.392156863  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04-How-We-Work-(Desktop)" transform="translate(-427.000000, -580.000000)">
+            <g id="Group-2-Copy" transform="translate(0.000000, 550.000000)">
+                <g id="usp-2-understand" transform="translate(459.000000, 54.000000)">
+                    <g id="Oval-Copy-11" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="noun_Compass_987010" transform="translate(27.000000, 27.000000)" stroke="#F88379" stroke-width="2">
+                        <g id="Group">
+                            <circle id="Oval" cx="23" cy="23" r="23"></circle>
+                            <path d="M22.999815,41.9999084 C12.5229645,41.9999084 3.999815,33.476757 3.999815,22.9999084 C3.999815,12.5230598 12.5229645,3.9999084 22.999815,3.9999084 C33.4766655,3.9999084 41.9998131,12.5230588 41.9998131,22.9999084 C41.9998131,33.476758 33.4766655,41.9999084 22.999815,41.9999084 Z" id="Shape"></path>
+                            <polygon id="Shape" points="32.1924477 13.8075199 20.1716728 20.1715221 13.8076706 32.1922951 25.8284435 25.8282948"></polygon>
+                            <circle id="Oval" cx="23.1424274" cy="23.1424274" r="2.1424282"></circle>
+                            <path d="M23,7 L23,10" id="Shape"></path>
+                            <path d="M23,35.9998169 L23,38.9998169" id="Shape"></path>
+                            <path d="M38.9999084,22.9999084 L35.9999084,22.9999084" id="Shape"></path>
+                            <path d="M10.0000916,22.9999084 L7.0000916,22.9999084" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

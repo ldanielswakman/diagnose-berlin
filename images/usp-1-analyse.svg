@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="164px" viewBox="0 0 164 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>usp-1-analyse</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="50" cy="50" r="50"></circle>
+        <filter x="-53.5%" y="-45.5%" width="207.0%" height="207.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0588235294   0 0 0 0 0.298039216   0 0 0 0 0.392156863  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04-How-We-Work-(Desktop)" transform="translate(-48.000000, -637.000000)">
+            <g id="Group-2-Copy" transform="translate(0.000000, 550.000000)">
+                <g id="usp-1-analyse" transform="translate(80.000000, 111.000000)">
+                    <g id="Oval-Copy-10" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="noun_marketing_987074" transform="translate(34.000000, 27.000000)" stroke="#F88379" stroke-width="2">
+                        <g id="Group">
+                            <path d="M7.8190918,4 L2,4 C0.8953857,4 0,4.8955078 0,6 L0,44 C0,45.1047363 0.8953857,46 2,46 L30,46 C31.1044922,46 32,45.1047363 32,44 L32,6 C32,4.8955078 31.1044922,4 30,4 L24.1595459,4" id="Shape"></path>
+                            <path d="M23,2 L18.8514404,2 C18.4355468,2 18.0294189,1.7624512 17.8979492,1.3679199 C17.6334229,0.5731201 16.8835449,0 16,0 C15.116333,0 14.3664551,0.5731201 14.1019287,1.3679199 C13.9705811,1.7624512 13.5644531,2 13.1485596,2 L9,2 C8.4477539,2 8,2.4477539 8,3 L8,6 L24,6 L24,3 C24,2.4477539 23.5522461,2 23,2 Z" id="Shape"></path>
+                            <circle id="Oval" cx="22.9999428" cy="16.0000916" r="3"></circle>
+                            <circle id="Oval" cx="7.9999409" cy="13.0000916" r="3"></circle>
+                            <circle id="Oval" cx="11.9999409" cy="39.0000916" r="3"></circle>
+                            <path d="M8.9999409,24.0001507 L2.9999704,30.0001221" id="Shape"></path>
+                            <path d="M8.9999409,30.0001221 L2.9999704,24.0001507" id="Shape"></path>
+                            <path d="M27.9999275,34.0001068 L21.9999561,40.0000763" id="Shape"></path>
+                            <path d="M27.9999275,40.0000763 L21.9999561,34.0001068" id="Shape"></path>
+                            <path d="M11.9999409,36.0000916 L11.9999409,33.0000916 C11.9999409,31.3432389 13.3430863,30.0000916 14.9999409,30.0000916 L21.9999409,30.0000916 C23.6567955,30.0000916 24.9999428,28.6569462 24.9999428,27.0000916 L24.9999428,24.0000916" id="Shape"></path>
+                            <polyline id="Shape" points="21.9999409 26.0000916 24.9999428 23.0000916 27.9999428 26.0000916"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

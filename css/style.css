@@ -1349,7 +1349,7 @@ table {
         align-items: flex-end;
         color: rgba(28, 46, 53, 0.25); } }
 
-.page--home #intro {
+.page--home #hero {
   background-color: #F5F8F9;
   background-image: url("../images/mockup-home-1.jpg");
   background-size: 180%;
@@ -1357,16 +1357,19 @@ table {
   background-repeat: no-repeat;
   min-height: 50vh; }
   @media screen and (min-width: 48em) {
-    .page--home #intro {
+    .page--home #hero {
       background-size: cover;
       background-position: top left;
-      min-height: 40vw; } }
+      min-height: 45vw; } }
 
-.page--home #intro-post .box {
+.page--home #hero-post .box {
   margin-top: -4rem; }
   @media screen and (min-width: 48em) {
-    .page--home #intro-post .box {
-      margin-top: -8rem; } }
+    .page--home #hero-post .box {
+      margin-top: -16rem; } }
+
+.page--home #intro {
+  padding: 6rem 0; }
 
 .page--home #services_preview {
   background: #F3F8F9;
@@ -1449,3 +1452,25 @@ table {
   .page--service-detail #comparison {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
+
+.page--how-we-work #intro {
+  min-height: 90vh;
+  background-color: #F5F8F9;
+  background-image: url("../images/mockup-how-we-work-1.jpg");
+  background-size: 140%;
+  background-position: 100% bottom;
+  background-repeat: no-repeat; }
+  @media screen and (min-width: 48em) {
+    .page--how-we-work #intro {
+      min-height: 40vw;
+      background-size: cover;
+      background-position: bottom center; } }
+
+.page--how-we-work #usps .row > [class*="col-"] {
+  padding-right: 6rem; }
+
+.page--how-we-work #usps .row > [class*="col-"]:nth-child(1) {
+  margin-top: 6rem; }
+
+.page--how-we-work #usps .row > [class*="col-"]:nth-child(3) {
+  margin-top: -6rem; }
