@@ -881,6 +881,49 @@ a {
 .align-center {
   text-align: center; }
 
+.load-fadein {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1); }
+
+.load-movein-btm {
+  position: relative;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1); }
+
+.load-movein-top {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1); }
+
+.load-delay-03s {
+  transition-delay: 0.3s; }
+
+.load-delay-05s {
+  transition-delay: 0.5s; }
+
+.load-delay-07s {
+  transition-delay: 0.7s; }
+
+.load-delay-1s {
+  transition-delay: 1s; }
+
+.load-delay-15s {
+  transition-delay: 1.5s; }
+
+.load-delay-2s {
+  transition-delay: 2s; }
+
+.load-delay-3s {
+  transition-delay: 3s; }
+
+body.isLoaded .load-fadein,
+body.isLoaded .load-movein-btm,
+body.isLoaded .load-movein-top {
+  opacity: 1;
+  transform: translateY(0); }
+
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
@@ -1226,18 +1269,9 @@ footer {
     .form-section--short .answer {
       min-width: 12rem; }
       .form-section--short .answer label {
+        display: flex;
+        width: 100%;
         justify-content: center; }
-  .form h5 {
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    opacity: 0.3;
-    letter-spacing: 0.05rem; }
-  .form h4 {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1C2E35; }
 
 nav {
   position: relative;
@@ -1654,7 +1688,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 50vh;
+  min-height: 60vh;
   background-size: cover;
   background-position: center;
   color: #fff; }
