@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	$('body').addClass('isLoaded');
+
 	$('.form-section .field--radio label').click(function() {
 
 		$parent = $(this).closest('.form-section');
@@ -13,9 +15,5 @@ $(document).ready(function() {
 
 		}
 	});
-
-	if($('.partners-grid')) {
-		console.log('found!');
-	}
-
+	
 });
