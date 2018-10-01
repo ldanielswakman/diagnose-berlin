@@ -56,7 +56,7 @@ nav {
 	}
 	li.isActive > a {
 		font-weight: bold;
-		border-bottom-color: $diagnoseBlue;
+		border-bottom-color: currentColor;
 	}
 	.hasSubmenu {
 		text-align: center;

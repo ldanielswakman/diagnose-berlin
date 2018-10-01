@@ -1,0 +1,59 @@
+.page.knowledge-base {
+
+	.categories {
+		display: flex;
+		overflow: auto;
+
+		li h4 {
+			display: flex;
+			padding: 0.5rem;
+		}
+		li.title {
+			margin-right: 1rem;
+			padding-right: 1rem;
+			border-right: 1px solid rgba($dark, 0.15);
+
+			h4 {
+				font-weight: normal;
+			}
+		}
+		li a:hover h4 {
+			color: $highlight;
+			opacity: 1;
+		}
+		li a.isActive h4 {
+			color: $diagnoseBlue;
+			opacity: 1;
+		}
+	}
+
+	#articles {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+
+	.post-preview {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+
+		&__figure {
+			width: 10rem;
+		}
+		&__text {
+			padding: 1rem;
+			line-height: 1.25rem;
+		}
+		.categories {
+			a {
+				margin-right: 1rem;
+
+				&:hover h4 {
+					color: $highlight;
+					opacity: 1;
+				}
+			}
+			h4 { font-size: 0.875rem; }
+		}
+	}
+}

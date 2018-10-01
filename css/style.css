@@ -1045,6 +1045,46 @@ blockquote {
     width: 10rem;
     height: 10rem;
     padding: 1.5rem; } }
+  .box--featured {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff; }
+    .box--featured:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 94, 131, 0.1);
+      background-blend-mode: lighten; }
+    .box--featured:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: calc(100% - 6rem);
+      background: -moz-linear-gradient(top, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+      background: -webkit-linear-gradient(top, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+      background: linear-gradient(to bottom, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 ); }
+    .box--featured .box__content {
+      position: relative;
+      z-index: 3;
+      padding: 1.5rem;
+      padding-top: 8rem; }
+      .box--featured .box__content h3 {
+        color: #fff; }
+      .box--featured .box__content p {
+        margin: 1rem 0;
+        font-size: 1rem;
+        line-height: 1.25rem; }
 
 .content,
 .row > .content {
@@ -1239,7 +1279,7 @@ nav {
         padding: 2.25rem 1.5rem; } }
   .menu li.isActive > a {
     font-weight: bold;
-    border-bottom-color: #005E83; }
+    border-bottom-color: currentColor; }
   .menu .hasSubmenu {
     text-align: center; }
     .menu .hasSubmenu:hover:after {
@@ -1568,3 +1608,89 @@ table {
     opacity: 0.75; }
     .page.team .partners-grid:hover .box:hover {
       opacity: 1; }
+
+.page.knowledge-base .categories {
+  display: flex;
+  overflow: auto; }
+  .page.knowledge-base .categories li h4 {
+    display: flex;
+    padding: 0.5rem; }
+  .page.knowledge-base .categories li.title {
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid rgba(28, 46, 53, 0.15); }
+    .page.knowledge-base .categories li.title h4 {
+      font-weight: normal; }
+  .page.knowledge-base .categories li a:hover h4 {
+    color: #F88379;
+    opacity: 1; }
+  .page.knowledge-base .categories li a.isActive h4 {
+    color: #005E83;
+    opacity: 1; }
+
+.page.knowledge-base #articles {
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
+
+.page.knowledge-base .post-preview {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem; }
+  .page.knowledge-base .post-preview__figure {
+    width: 10rem; }
+  .page.knowledge-base .post-preview__text {
+    padding: 1rem;
+    line-height: 1.25rem; }
+  .page.knowledge-base .post-preview .categories a {
+    margin-right: 1rem; }
+    .page.knowledge-base .post-preview .categories a:hover h4 {
+      color: #F88379;
+      opacity: 1; }
+  .page.knowledge-base .post-preview .categories h4 {
+    font-size: 0.875rem; }
+
+.page.knowledge-base #hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff; }
+  .page.knowledge-base #hero:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 94, 131, 0.1);
+    background-blend-mode: lighten; }
+  .page.knowledge-base #hero:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: calc(100% - 6rem);
+    background: -moz-linear-gradient(top, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+    background: linear-gradient(to bottom, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 ); }
+  .page.knowledge-base #hero > * {
+    position: relative;
+    z-index: 3; }
+  .page.knowledge-base #hero h1, .page.knowledge-base #hero h2, .page.knowledge-base #hero h3, .page.knowledge-base #hero h4 {
+    color: inherit; }
+  .page.knowledge-base #hero h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem; }
+  .page.knowledge-base #hero h2 {
+    font-weight: normal;
+    opacity: 0.7; }
+
+.page.knowledge-base #article p, .page.knowledge-base #article ul, .page.knowledge-base #article ol, .page.knowledge-base #article h1, .page.knowledge-base #article h2, .page.knowledge-base #article h3, .page.knowledge-base #article blockquote {
+  margin-bottom: 2rem; }

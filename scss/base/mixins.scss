@@ -46,23 +46,12 @@
 }
 
 
-
-@mixin scrollShadows($bgcolor: $white, $shadowcolor: rgba($dark, 0.1)) {
-  background-image: 
-  
-    /* Shadows */ 
-    linear-gradient(to right, white, white),
-    linear-gradient(to right, white, white),
-
-    /* Shadow covers */ 
-    linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
-    linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));   
-
-  background-position: left center, right center, left center, right center;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
-  
-  /* Opera doesn't support this in the shorthand */
-  background-attachment: local, local, scroll, scroll;
+// Vertical gradient
+// Permalink - use to edit and share this gradient:
+// http://colorzilla.com/gradient-editor/303029+0,f1f1f4+50,f1f1f4+100
+@mixin vertical-gradient($start: $dark, $end: $white) {
+  background: -moz-linear-gradient(top, $start 0%, $end 100%); // FF3.6-15
+  background: -webkit-linear-gradient(top, $start 0%, $end 100%); // Chrome10-25,Safari5.1-6
+  background: linear-gradient(to bottom, $start 0%, $end 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 ); // IE6-9
 }
