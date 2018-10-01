@@ -11,6 +11,8 @@
 		display: block;
 	}
 	.submenu {
-		display: flex;
+		max-height: 6rem;
+		opacity: 1;
+		pointer-events: all;
 	}
 }

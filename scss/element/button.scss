@@ -50,6 +50,12 @@
 		padding: 0.5rem;
 		justify-content: center;
 
+		&.button--large {
+			width: 3.5rem;
+			height: 3.5rem;
+			padding: 0.75rem;
+			text-align: center;
+		}
 		&.button--small {
 			width: 1.5rem;
 			height: 1.5rem;
