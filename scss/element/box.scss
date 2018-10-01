@@ -50,6 +50,21 @@
 			color: $highlight;
 		}
 	}
+	&--circle {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 8rem;
+		height: 8rem;
+		padding: 1.5rem;
+		border-radius: 50%;
+
+		@tabletAndUp() {
+			width: 10rem;
+			height: 10rem;
+			padding: 1.5rem;
+		}
+	}
 }
 
 .content,

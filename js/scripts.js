@@ -14,4 +14,8 @@ $(document).ready(function() {
 		}
 	});
 
+	if($('.partners-grid')) {
+		console.log('found!');
+	}
+
 });

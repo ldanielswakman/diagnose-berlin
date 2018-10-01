@@ -1,0 +1,53 @@
+.page--team {
+
+	#team {
+		padding-bottom: 5rem;
+	}
+
+	.partners-grid {
+		padding-bottom: 5rem;
+
+		& > [class*="col-"] {
+			.box {
+				position: relative;
+				margin: 1.5rem 0;
+			}
+
+			// Network layout
+			&:nth-child(1) .box { transform: translate(-0.5rem,-2rem); }
+			&:nth-child(2) .box { transform: translate(0,0); }
+			&:nth-child(3) .box { transform: translate(-1rem,-3rem); }
+			&:nth-child(4) .box { transform: translate(-0.5rem,1rem); }
+			&:nth-child(5) { } // Spacer
+			&:nth-child(6) .box { transform: translate(0,-3rem); }
+			&:nth-child(7) .box { transform: translate(-1rem,2rem); }
+			&:nth-child(8) .box { transform: translate(0,-2rem); }
+
+			@include tabletAndUp() {
+				&:nth-child(1) .box { transform: translate(-1rem,2rem); }
+				&:nth-child(2) .box { transform: translate(0,-3rem); }
+				&:nth-child(3) .box { transform: translate(3rem,-1rem); }
+				&:nth-child(4) .box { transform: translate(0,8rem); }
+				&:nth-child(5) { } // Spacer
+				&:nth-child(6) .box { transform: translate(0,3rem); }
+				&:nth-child(7) .box { transform: translate(2rem,-2rem); }
+				&:nth-child(8) .box { transform: translate(-2rem,6rem); }
+			}
+		}
+		.box {
+			transition: all 0.2s ease;
+		}
+		&:hover .box {
+			opacity: 0.75;
+			// transform: scale(0.99);
+
+			&:hover {
+				opacity: 1;
+				// transform: scale(1.01);
+			}
+			&:active {
+				// transform: scale(1.05);
+			}
+		}
+	}
+}

@@ -43,7 +43,8 @@ nav {
 
 	a {
 		display: block;
-		padding: 2.25rem 0.75rem;
+		padding: 2.25rem 0.75rem 2.125rem;
+		border-bottom: 0.125rem solid transparent;
 
 		&:hover {
 			color: $highlight;
@@ -52,6 +53,10 @@ nav {
 		@include tabletAndUp() {
 			padding: 2.25rem 1.5rem;
 		}
+	}
+	li.isActive > a {
+		font-weight: bold;
+		border-bottom-color: $diagnoseBlue;
 	}
 	.hasSubmenu {
 		text-align: center;
