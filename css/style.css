@@ -882,7 +882,7 @@ a {
   text-align: center; }
 
 .load-fadein {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.6s cubic-bezier(0, 0, 0.2, 1); }
 
 .load-movein-btm {

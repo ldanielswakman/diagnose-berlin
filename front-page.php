@@ -16,78 +16,90 @@ get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<section id="hero-post">
+	<div class="row row--nopadding">
+		<div class="col-xs-10 col-sm-6 col-md-7 col-lg-4">
+			<div class="box load-movein-btm load-delay-07s">
+            	<blockquote class="blockquote--huge">
+					<?php the_field('home_headline'); ?>
+	            </blockquote>
+				<a href="<?php the_field('first_cta_link'); ?>" class="button button--circle button--large button--primary"><img src="<?php get_stylesheet_directory_uri(); ?>/images/arrow-down.svg" alt="" /></a>
+			</div>
+        </div>
+	</div>
+</section>
 
-		<h1 class="page-title"><?php the_title(); ?></h1>
-		<div class="card left-align">
-			<?php the_field('first_cta_box'); ?>
-			<div class="mainCTA orange"><a href="<?php the_field('first_cta_link'); ?>"><?php the_field('first_cta_text'); ?></a></div>
+<section id="intro">
+  	<div class="row row--nopadding">
+		<div class="col-xs-12 col-sm-5 content">
+			<blockquote><?php the_field('second_home_headline'); ?></blockquote>
 		</div>
-
-		<div class="whitebkg section">
-            <?php the_content(); ?>
+        <div class="col-xs-12 col-sm-7 col-md-6 content">
+            <?php the_field('first_home_blurb'); ?>
 		</div>
+	</div>
+</section>
 	
-		<div class="gradientbkg section">
-			<div class="section-text left-align">
-				<?php the_field('services_section_intro'); ?>
-			</div>
-			<div id="services-carousel">
-				<?php the_field('services_carousel'); ?>
-			</div>
-			<div class="section-text center-align">
-				<?php the_field('services_section_cta_text_before_button'); ?><a class="secondaryCTA blue" href="<?php the_field('services_cta_link'); ?>"><?php the_field('services_cta_text'); ?></a><?php the_field('services_cta_text_after_button'); ?>
+<section id="services_preview">
+	<div class="content">
+		<?php the_field('services_section_intro'); ?>
+	</div>
+	<div class="row row--nopadding">
+    	<div class="col-xs-12 col-sm-6 col-md-3">
+			<?php the_field('services_carousel'); ?>
+		</div>
+	</div>
+</section>
+
+<section id="knowledge_preview">
+	<div class="row row--nopadding">
+		<div class="col-xs-12 col-sm-6 last-sm">
+			<div class="box" style="">
+				<blockquote class="blockquote--big">
+					<?php the_field('knowledgebase_section_headline'); ?>
+				</blockquote>
+					<?php the_field('knowledgebase_section_text'); ?>
+					<a href="<?php the_field('knowledgebase_cta_link'); ?>" class="button button--primary button--outline button--large">
+						<?php the_field('knowledgebase_cta_text'); ?>
+					</a>
 			</div>
 		</div>
-		
-		<div class="graybkg section">
-			<div class="card right-align">
-				<div class="section-text">
-					<?php the_field('services_section_intro'); ?>
+        <div class="col-xs-12 col-sm-6">
+			<a href="#">
+				<div id="kb-categories">
+					<?php $categories =  get_categories();
+						echo '<ul>';
+						foreach  ($categories as $category) {
+						  echo '<li>'. $category->cat_name .'</li>';
+						}
+						echo '</ul>';
+					?>
 				</div>
-				<div class="secondaryCTA orange">
-					<a href="<?php the_field('knowledgebase_cta_link'); ?>"><?php the_field('knowledgebase_cta_text'); ?></a>
+				<div id="kb-posts">
+					<?php 
+					   // the query
+					   $the_query = new WP_Query( array(
+						  'posts_per_page' => 3,
+					   )); 
+					?>
+
+					<?php if ( $the_query->have_posts() ) : ?>
+					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+						<?php the_title(); ?>
+						<?php the_excerpt(); ?>
+
+					  <?php endwhile; ?>
+					  <?php wp_reset_postdata(); ?>
+
+					<?php else : ?>
+					  <p><?php __('No Articles'); ?></p>
+					<?php endif; ?>
 				</div>
-			</div>
-			<div id="knowledgebase">
-				<a href="#">
-					<div id="kb-categories">
-						<?php $categories =  get_categories();
-							echo '<ul>';
-							foreach  ($categories as $category) {
-							  echo '<li>'. $category->cat_name .'</li>';
-							}
-							echo '</ul>';
-						?>
-					</div>
-					<div id="kb-posts">
-						<?php 
-						   // the query
-						   $the_query = new WP_Query( array(
-							  'posts_per_page' => 3,
-						   )); 
-						?>
-
-						<?php if ( $the_query->have_posts() ) : ?>
-						  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-							<?php the_title(); ?>
-							<?php the_excerpt(); ?>
-
-						  <?php endwhile; ?>
-						  <?php wp_reset_postdata(); ?>
-
-						<?php else : ?>
-						  <p><?php __('No Articles'); ?></p>
-						<?php endif; ?>
-					</div>
-				</a>
-			</div>
+			</a>
 		</div>
-
-	</main><!-- #main -->
-</div><!-- #primary -->
+	</div>
+</section>
 
 <?php endwhile; ?>
 <?php else : ?>

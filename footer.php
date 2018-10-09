@@ -14,45 +14,46 @@
 
 ?>
 
-			<div id="footerCTA">
-				<?php 
-					if ( 'off' == get_field('use_footer_cta')) {
-						//do nothing
-					} elseif ('on' == get_field('use_footer_cta')) { ?>
-						<div class="left-align">
-								<?php get_field('footer_cta_text'); ?>
-								<a class="secondaryCTA blue" href="<?php get_field('footer_cta_link'); ?>"><?php get_field('footer_cta_button_text'); ?></a>
-							</div>
-								<div class="right-align"><?php get_field('footer_cta_image'); ?>
-							</div>
-				<?php }	?>
-			</div>
-		</div><!-- #content -->
+<section id="call_to_action" class="content">
+	<div class="row row--nopadding">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2 last-sm">
+			<?php 
+				if ( 'off' == get_field('use_footer_cta')) {
+					//do nothing
+				} elseif ('on' == get_field('use_footer_cta')) { ?>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
-				<?php
-				get_template_part( 'template-parts/footer/footer', 'widgets' );
+					<figure>
+						<?php echo get_field('footer_cta_image'); ?>
+					</figure>
 
-				if ( has_nav_menu( 'social' ) ) : ?>
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
-								'depth'          => 1,
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
-							) );
-						?>
-					</nav><!-- .social-navigation -->
-				<?php endif;
+			        <div class="col-xs-12 col-sm-5 col-sm-offset-1">
 
-				get_template_part( 'template-parts/footer/site', 'info' );
-				?>
-			</div><!-- .wrap -->
-		</footer><!-- #colophon -->
-	</div><!-- .site-content-contain -->
+						<?php echo get_field('footer_cta_text'); ?>
+
+						<a class="button button--dark button--outline button--large" href="<?php echo get_field('footer_cta_link'); ?>">
+							<?php echo get_field('footer_cta_button_text'); ?>
+						</a>
+					</div>
+			<?php }	?>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="row">
+		<div class="col-xs-12" style="text-align: center; margin-bottom: 2rem;">
+			<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/logo-monogram.svg" alt="" style="height: 3rem;" />
+        </div>
+		
+		<?php
+		get_template_part( 'template-parts/footer/footer', 'widgets' );
+		?>
+		<div class="site-info">
+			<p id="footer-info">&copy;<?php echo date('Y'); ?> Diagnose Berlin</p>
+			<p id="footer-credits">Website by <a href="ldaniel.eu" target="_blank">ldaniel.eu</a></p>
+		</div><!-- .site-info -->
+	</div><!-- .row -->
+</footer>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
