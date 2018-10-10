@@ -38,8 +38,8 @@ get_header(); ?>
             <?php the_field('first_home_blurb'); ?>
 		</div>
 	</div>
-</section>
-	
+<!--</section>
+-->	
 <section id="services_preview">
 	<div class="content">
 		<?php the_field('services_section_intro'); ?>
