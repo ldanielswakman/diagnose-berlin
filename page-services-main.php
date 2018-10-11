@@ -5,8 +5,6 @@
 
 get_header(); ?>
 
-<!--<section id="perfdiag" class="load-movein-btm">
--->	<div class="row row--nopadding">
 		<?php
 			while ( have_posts() ) : the_post();
 		
@@ -17,7 +15,9 @@ get_header(); ?>
 				while ( have_rows('individual_service') ) : the_row(); ?>
 
 					<!-- // display a sub field value -->
-			<div class="col-xs-12 col-sm-6 last-sm">
+<section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="load-movein-btm">
+	<div class="row row--nopadding">
+		<div class="col-xs-12 col-sm-6 last-sm">
 				<figure>
 					<img src="<?php the_sub_field('service_image'); ?>">
 				</figure>
@@ -36,6 +36,8 @@ get_header(); ?>
 					<a href="<?php the_sub_field('service_cta_#2_link'); ?>" class="c-highlight"><?php the_sub_field('service_cta_#2_text'); ?></a>
 				</div>
 			</div>
+		</div>
+	</section>
 		<?php endwhile;
 
 		else :
@@ -45,7 +47,5 @@ get_header(); ?>
 		endif;
 		endwhile; // End of the loop.
 		?>
-	</div>
-<!--</section>
--->
+
 <?php get_footer();

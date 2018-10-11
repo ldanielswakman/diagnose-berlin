@@ -67,7 +67,7 @@ get_header(); ?>
 
 <section id="partners" class="content">
 	<h4 class="content align-center">OUR PARTNERS</h4>
-
+		<div class="row row--nopadding partners-grid align-center">
 		<?php
 		
 			// check if the repeater field has rows of data
@@ -78,16 +78,14 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-					<div class="row row--nopadding partners-grid align-center">
 						<div class="col-xs-6 col-sm-3">
-							<a href="<?php the_sub_field('partner_link'); ?>" target="_blank">
+							<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="box box--circle">
 								<figure>
 									<img src="<?php the_sub_field('partner_logo'); ?>" />
 								</figure>
 								<p><?php the_sub_field('partner_description'); ?></p>
 							</a>
 						</div>
-					</div>
 
 		<?php endwhile;
 
@@ -97,11 +95,12 @@ get_header(); ?>
 
 		endif;
 		?>
+		</div>
 </section>
 
 <section id="partners" class="bg-greylightest content">
 	<h4 class="content align-center">FRIENDS & FAMILY</h4>
-
+		<div class="row row--nopadding partners-grid align-center">
 		<?php
 		
 			// check if the repeater field has rows of data
@@ -112,15 +111,13 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-					<div class="row row--nopadding partners-grid align-center">
 						<div class="col-xs-6 col-sm-3">
-							<a href="<?php the_sub_field('friends_and_family_link'); ?>" target="_blank">
+							<a href="<?php the_sub_field('friends_and_family_link'); ?>" target="_blank" class="box box--circle">
 								<figure>
 									<img src="<?php the_sub_field('friends_and_family_logo'); ?>" />
 								</figure>
 							</a>
 						</div>
-					</div>
 
 		<?php endwhile;
 
@@ -130,6 +127,8 @@ get_header(); ?>
 
 		endif;
 		?>
+	</div>
+
 </section>
 
 				

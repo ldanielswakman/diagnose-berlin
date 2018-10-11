@@ -14,30 +14,30 @@
 
 ?>
 
-<section id="call_to_action" class="content">
-	<div class="row row--nopadding">
-		<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2 last-sm">
 			<?php 
 				if ( 'off' == get_field('use_footer_cta')) {
 					//do nothing
 				} elseif ('on' == get_field('use_footer_cta')) { ?>
 
-					<figure>
-						<?php echo get_field('footer_cta_image'); ?>
-					</figure>
+				<section id="call_to_action" class="content">
+					<div class="row row--nopadding">
+						<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2 last-sm">
+							<figure>
+								<?php echo get_field('footer_cta_image'); ?>
+							</figure>
+						</div>
 
-			        <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+						<div class="col-xs-12 col-sm-5 col-sm-offset-1">
 
-						<?php echo get_field('footer_cta_text'); ?>
+							<?php echo get_field('footer_cta_text'); ?>
 
-						<a class="button button--dark button--outline button--large" href="<?php echo get_field('footer_cta_link'); ?>">
-							<?php echo get_field('footer_cta_button_text'); ?>
-						</a>
+							<a class="button button--dark button--outline button--large" href="<?php echo get_field('footer_cta_link'); ?>">
+								<?php echo get_field('footer_cta_button_text'); ?>
+							</a>
+						</div>
 					</div>
+				</section>
 			<?php }	?>
-		</div>
-	</div>
-</section>
 
 <footer>
 	<div class="row">
