@@ -38,7 +38,8 @@ p {
 }
 
 // Blockquote
-blockquote {
+blockquote,
+blockquote p {
 	color: $diagnoseBlue;
 
 	p {
@@ -46,6 +47,7 @@ blockquote {
 		line-height: 2rem;
 	}
 	
+	&.blockquote--big,
 	&.blockquote--big p {
 		font-size: 1.5rem;
 		line-height: 1.75rem;
@@ -57,18 +59,16 @@ blockquote {
 		}
 	}
 	
-	&.blockquote--huge {
+	&.blockquote--huge,
+	&.blockquote--huge p {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		font-weight: bold;
 		color: $dark;
-		
-		p {
-			font-size: 2rem;
-			line-height: 2.25rem;
-			font-weight: bold;
 
-			@include tabletAndUp() {
-				font-size: 3rem;
-				line-height: 3.5rem;
-			}
+		@include tabletAndUp() {
+			font-size: 3rem;
+			line-height: 3.5rem;
 		}
 	}
 }
