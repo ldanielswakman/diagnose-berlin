@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	$('body').addClass('isLoaded');
 
+	// Form advance interaction (mockup only, since form is implemented via WP Plugin)
 	$('.form-section .field--radio label').click(function() {
 
 		$parent = $(this).closest('.form-section');
@@ -14,6 +15,11 @@ $(document).ready(function() {
 			}, 500);
 
 		}
+	});
+
+	// Nav toggle
+	$('.menu-toggle').click(function() {
+		$(this).closest('nav').toggleClass('isActive');
 	});
 	
 });

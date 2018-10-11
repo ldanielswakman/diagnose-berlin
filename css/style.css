@@ -882,7 +882,7 @@ a {
   text-align: center; }
 
 .load-fadein {
-  opacity: 1;
+  opacity: 0;
   transition: all 0.6s cubic-bezier(0, 0, 0.2, 1); }
 
 .load-movein-btm {
@@ -1304,8 +1304,8 @@ nav {
         display: inherit; } }
   .menu a {
     display: block;
-    padding: 2.25rem 0.75rem 2.125rem;
-    border-bottom: 0.125rem solid transparent; }
+    padding: 2.125rem 0.675rem 2.125rem;
+    border: 0.125rem solid transparent; }
     .menu a:hover {
       color: #F88379; }
     @media screen and (min-width: 48em) {
@@ -1313,7 +1313,11 @@ nav {
         padding: 2.25rem 1.5rem; } }
   .menu li.isActive > a {
     font-weight: bold;
-    border-bottom-color: currentColor; }
+    border-left-color: currentColor; }
+    @media screen and (min-width: 48em) {
+      .menu li.isActive > a {
+        border-left-color: transparent;
+        border-bottom-color: currentColor; } }
   .menu .hasSubmenu {
     text-align: center; }
     .menu .hasSubmenu:hover:after {
@@ -1379,12 +1383,14 @@ nav {
       flex-direction: row; } }
 
 a.menu-toggle {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   display: block;
   width: 2.5rem;
   height: 2.5rem;
   margin-top: 1.5rem;
-  margin-left: 0.75rem;
+  margin-right: 0.75rem;
   padding: 0; }
   @media screen and (min-width: 48em) {
     a.menu-toggle {
@@ -1404,14 +1410,42 @@ a.menu-toggle {
   a.menu-toggle span:last-child {
     top: 75%;
     width: 85%; }
-  a.menu-toggle:hover span:nth-child(2) {
-    opacity: 0; }
-  a.menu-toggle:hover span:first-child {
-    width: 100%;
-    transform: rotate(45deg); }
-  a.menu-toggle:hover span:last-child {
-    width: 100%;
-    transform: rotate(-45deg); }
+
+@media screen and (max-width: 48em) {
+  nav.isActive {
+    background: #F3F8F9;
+    height: 5.675rem; }
+    nav.isActive .menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 11;
+      background: #fff;
+      box-shadow: 0 0.25rem 1rem rgba(28, 46, 53, 0.1);
+      flex-direction: column; }
+    nav.isActive .menu .show-sm {
+      display: block; }
+    nav.isActive .submenu {
+      position: relative;
+      max-height: 100vh;
+      opacity: 1;
+      pointer-events: all;
+      transition: all 0.2s ease;
+      box-shadow: none; }
+    nav.isActive a {
+      padding-top: 1rem;
+      padding-bottom: 1rem; }
+    nav.isActive a.menu-toggle {
+      top: -5.675rem; }
+      nav.isActive a.menu-toggle span:nth-child(2) {
+        opacity: 0; }
+      nav.isActive a.menu-toggle span:first-child {
+        width: 100%;
+        transform: rotate(45deg); }
+      nav.isActive a.menu-toggle span:last-child {
+        width: 100%;
+        transform: rotate(-45deg); } }
 
 table {
   display: block;
