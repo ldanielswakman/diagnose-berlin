@@ -16,6 +16,16 @@
 			box-shadow: 0 0.125rem 1rem rgba($highlight, 0.3);
 		}
 	}
+	&--blue {
+		background: $diagnoseBlue;
+		color: $white;
+		border-color: transparent;
+
+		&:hover {
+			background: darken($diagnoseBlue, 10%);
+			box-shadow: 0 0.125rem 1rem rgba($diagnoseBlue, 0.3);
+		}
+	}
 	&--primary.button--outline {
 		background: transparent;
 		border-width: 1px;
@@ -43,6 +53,7 @@
 		border-radius: 2rem;
 		line-height: 1.5rem;
 		font-size: 1.25rem;
+		font-weight: normal;
 	}
 	&--circle {
 		width: 2rem;
@@ -61,5 +72,43 @@
 			height: 1.5rem;
 			padding: 0.25rem;
 		}
+	}
+	&.button--arrowright:after {
+		content: "";
+		position: relative;
+		top: 0;
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		margin-left: 0.75rem;
+		border-bottom: 2px solid rgba($diagnoseBlue, 0.5);
+		border-right: 2px solid rgba($diagnoseBlue, 0.5);
+		transform: rotate(45deg);
+		// transform-origin: 25% center;
+		transition: all 0.3s ease;
+	}
+}
+
+
+// Button group
+.button--toggle-group {
+	display: flex;
+	margin-top: 2rem;
+
+	& > .button--outline:last-child {
+		margin-left: -2.5rem;
+		padding-left: 3rem;
+	}
+	& > .button--outline:first-child {
+		margin-right: -2.5rem;
+		padding-right: 3rem;
+	}
+
+	.button--outline {
+		background: $greylightest;
+	}
+	.button--blue {
+		position: relative;
+		z-index: 2;
 	}
 }

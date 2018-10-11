@@ -3,6 +3,7 @@
 
 	#intro {
 	 	min-height: 90vh;
+	 	padding-bottom: 7rem;
 	 	background-color: #F5F8F9;
 	 	background-image: url('../images/mockup-service-detail-1.jpg');
 	 	background-size: 140%;
@@ -25,13 +26,28 @@
 	 		}
 	 	}
 	}
-	#packages {
+	.section--packages {
 		margin-top: -9rem;
+
+		&.isHidden {
+			display: none;
+		}
 	}
-	#comparison {
-		@include tabletAndDown() {
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
+	.comparison {
+		max-height: 100vh;
+		opacity: 1;
+		overflow: hidden;
+		transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+
+		// @include tabletAndDown() {
+		// 	padding-left: 1.5rem;
+		// 	padding-right: 1.5rem;
+		// }
+
+		&.isHidden {
+			opacity: 0.5;
+			max-height: 0;
+			padding-bottom: 0;
 		}
 	}
 }

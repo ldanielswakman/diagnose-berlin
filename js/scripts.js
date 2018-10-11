@@ -23,3 +23,28 @@ $(document).ready(function() {
 	});
 	
 });
+
+function toggleComparison($btn) {
+	if($btn.length > 0) {
+		$section = $btn.closest('section');
+		$section.find('.comparison').toggleClass('isHidden');
+	} else {
+		console.log('no button found...');
+	}
+}
+
+function togglePackages($btn, $target) {
+	if($btn.length > 0 && $target.length > 0) {
+		// Change buttons
+		$btn.addClass('button--blue').removeClass('button--outline');
+		$btn.closest('.button--toggle-group').find('.button').not($btn).addClass('button--outline').removeClass('button--blue');
+		// Show/hide package sections
+		$('.section--packages').addClass('isHidden');
+		$('#'+$target).removeClass('isHidden');
+		console.log('#'+$target);
+		// Hide comparison tables
+		$('.comparison').addClass('isHidden');
+	} else {
+		console.log('no button or target found...');
+	}
+}

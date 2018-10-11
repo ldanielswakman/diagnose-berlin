@@ -1001,6 +1001,13 @@ blockquote {
     .button--primary:hover {
       background: #f55649;
       box-shadow: 0 0.125rem 1rem rgba(248, 131, 121, 0.3); }
+  .button--blue {
+    background: #005E83;
+    color: #fff;
+    border-color: transparent; }
+    .button--blue:hover {
+      background: #003950;
+      box-shadow: 0 0.125rem 1rem rgba(0, 94, 131, 0.3); }
   .button--primary.button--outline {
     background: transparent;
     border-width: 1px;
@@ -1020,7 +1027,8 @@ blockquote {
     padding: 0.625rem 1.5rem;
     border-radius: 2rem;
     line-height: 1.5rem;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    font-weight: normal; }
   .button--circle {
     width: 2rem;
     height: 2rem;
@@ -1035,6 +1043,33 @@ blockquote {
       width: 1.5rem;
       height: 1.5rem;
       padding: 0.25rem; }
+  .button.button--arrowright:after {
+    content: "";
+    position: relative;
+    top: 0;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.75rem;
+    border-bottom: 2px solid rgba(0, 94, 131, 0.5);
+    border-right: 2px solid rgba(0, 94, 131, 0.5);
+    transform: rotate(45deg);
+    transition: all 0.3s ease; }
+
+.button--toggle-group {
+  display: flex;
+  margin-top: 2rem; }
+  .button--toggle-group > .button--outline:last-child {
+    margin-left: -2.5rem;
+    padding-left: 3rem; }
+  .button--toggle-group > .button--outline:first-child {
+    margin-right: -2.5rem;
+    padding-right: 3rem; }
+  .button--toggle-group .button--outline {
+    background: #F3F8F9; }
+  .button--toggle-group .button--blue {
+    position: relative;
+    z-index: 2; }
 
 .box {
   position: relative;
@@ -1587,6 +1622,7 @@ table {
 .page-template-page-services-single-three #intro,
 .page-template-page-services-single-six #intro {
   min-height: 90vh;
+  padding-bottom: 7rem;
   background-color: #F5F8F9;
   background-image: url("../images/mockup-service-detail-1.jpg");
   background-size: 140%;
@@ -1607,15 +1643,24 @@ table {
       vertical-align: middle;
       margin-right: 0.5rem; }
 
-.page-template-page-services-single-three #packages,
-.page-template-page-services-single-six #packages {
+.page-template-page-services-single-three .section--packages,
+.page-template-page-services-single-six .section--packages {
   margin-top: -9rem; }
+  .page-template-page-services-single-three .section--packages.isHidden,
+  .page-template-page-services-single-six .section--packages.isHidden {
+    display: none; }
 
-@media screen and (max-width: 48em) {
-  .page-template-page-services-single-three #comparison,
-  .page-template-page-services-single-six #comparison {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem; } }
+.page-template-page-services-single-three .comparison,
+.page-template-page-services-single-six .comparison {
+  max-height: 100vh;
+  opacity: 1;
+  overflow: hidden;
+  transition: all 1s cubic-bezier(0, 0, 0.2, 1); }
+  .page-template-page-services-single-three .comparison.isHidden,
+  .page-template-page-services-single-six .comparison.isHidden {
+    opacity: 0.5;
+    max-height: 0;
+    padding-bottom: 0; }
 
 .page-template-page-how-we-work #intro {
   min-height: 90vh;

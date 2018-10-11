@@ -16,7 +16,7 @@
 
   </head>
 
-  <body class="page service-detail">
+  <body class="page-template-page-services-single-three">
 
   	<section id="nav">
 
@@ -49,7 +49,7 @@
 
     <section id="intro" class="load-fadein">
 
-      <div class="col-xs-12 col-sm-6 col-md-5 content">
+      <div class="col-xs-12 col-sm-6 col-md-6 content">
         <h1 class="c-highlight">
           <img src="../images/icon-perfdiag.svg" alt="" />
           Leistungsdiagnostik
@@ -60,11 +60,20 @@
         <br/>
         <br/>
         <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+
+        <div class="button--toggle-group">
+          <button class="button button--blue button--large isActive" onclick="togglePackages($(this), 'packages1')">
+            Für&nbsp;<strong>Ausdauersportler</strong>
+          </button>
+          <button class="button button--outline button--large" onclick="togglePackages($(this), 'packages2')">
+            Für&nbsp;<strong>Sprinter</strong>
+          </button>
+        </div>
       </div>
 
     </section>
 
-    <section id="packages1" class="content load-movein-btm load-delay-1s">
+    <section id="packages1" class="section--packages content load-movein-btm load-delay-1s">
       <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-4">
@@ -110,106 +119,106 @@
         </div>
 
         <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
-          <button class="button button--outline">Vergleichen</button>
+          <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
         </div>
 
       </div>
+
+      <div class="comparison isHidden">
+        <table class="table--comparison">
+          <thead>
+            <td class="title"></td>
+            <td>
+              <h4>PAKET A</h4>
+              <h3>Rahmen<span class="show-sm"></span>trainings<span class="show-sm"></span>plan</h3>
+            </td>
+            <td>
+              <h4>PAKET B</h4>
+              <h3>Trainings<span class="show-sm"></span>plan Monatlich</h3>
+            </td>
+            <td>
+              <h4>PAKET C</h4>
+              <h3>Komplettes 24/7 Coaching</h3>
+            </td>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="title">
+                Title
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Herzfrequenzmesssystem
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Radergometer
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Ruderergometer
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                TalentDiagnoseSystem (TDS)
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Laktatmessgerät
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Spiroergometriegeräte
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section id="comparison1" class="content">
-      <table class="table--comparison">
-        <thead>
-          <td class="title"></td>
-          <td>
-            <h4>PAKET A</h4>
-            <h3>Rahmen<span class="show-sm"></span>trainings<span class="show-sm"></span>plan</h3>
-          </td>
-          <td>
-            <h4>PAKET B</h4>
-            <h3>Trainings<span class="show-sm"></span>plan Monatlich</h3>
-          </td>
-          <td>
-            <h4>PAKET C</h4>
-            <h3>Komplettes 24/7 Coaching</h3>
-          </td>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="title">
-              Title
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Herzfrequenzmesssystem
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Radergometer
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Ruderergometer
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              TalentDiagnoseSystem (TDS)
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Laktatmessgerät
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Spiroergometriegeräte
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
 
-
-    <section id="packages2" class="content load-movein-btm load-delay-1s">
+    <section id="packages2" class="section--packages content load-movein-btm load-delay-1s isHidden">
       <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="box box--package">
             <div class="box__header">
               <h4>PAKET A</h4>
-              <h2>Rahmentrainingsplan</h2>
+              <h2>Sprinterplan</h2>
             </div>
             <p>Auch hier orientieren wir uns an den Gegebenheiten eines jeden Einzelnen und planen Training und Ernährung manchmal sehr genau, manchmal aber auch mit mehr Spielraum.</p>
             <div class="box__footer">
@@ -223,7 +232,7 @@
           <div class="box box--package">
             <div class="box__header">
               <h4>PAKET B</h4>
-              <h2>Trainingsplan Monatlich</h2>
+              <h2>Sprintersplan Monatlich</h2>
             </div>
             <p>Auch hier orientieren wir uns an den Gegebenheiten eines jeden Einzelnen und planen Training und Ernährung manchmal sehr genau, manchmal aber auch mit mehr Spielraum.</p>
             <div class="box__footer">
@@ -237,7 +246,7 @@
           <div class="box box--package">
             <div class="box__header">
               <h4>PAKET C</h4>
-              <h2>Komplettes 24/7 Coaching</h2>
+              <h2>Sprinter 24/7 Coaching</h2>
             </div>
             <p>Auch hier orientieren wir uns an den Gegebenheiten eines jeden Einzelnen und planen Training und Ernährung manchmal sehr genau, manchmal aber auch mit mehr Spielraum.</p>
             <div class="box__footer">
@@ -248,95 +257,95 @@
         </div>
 
         <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
-          <button class="button button--outline">Vergleichen</button>
+          <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
         </div>
 
       </div>
-    </section>
 
-    <section id="comparison2" class="content">
-      <table class="table--comparison">
-        <thead>
-          <td class="title"></td>
-          <td>
-            <h4>PAKET A</h4>
-            <h3>Rahmen<span class="show-sm"></span>trainings<span class="show-sm"></span>plan</h3>
-          </td>
-          <td>
-            <h4>PAKET B</h4>
-            <h3>Trainings<span class="show-sm"></span>plan Monatlich</h3>
-          </td>
-          <td>
-            <h4>PAKET C</h4>
-            <h3>Komplettes 24/7 Coaching</h3>
-          </td>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="title">
-              Title
-              <button class="button button--small button--circle button--grey">i</button>
+      <div class="comparison isHidden">
+        <table class="table--comparison">
+          <thead>
+            <td class="title"></td>
+            <td>
+              <h4>PAKET A</h4>
+              <h3>Sprinterplan<span class="show-sm"></span>trainings<span class="show-sm"></span>plan</h3>
             </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Herzfrequenzmesssystem
-              <button class="button button--small button--circle button--grey">i</button>
+            <td>
+              <h4>PAKET B</h4>
+              <h3>Sprinter<span class="show-sm"></span>plan Monatlich</h3>
             </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Radergometer
-              <button class="button button--small button--circle button--grey">i</button>
+            <td>
+              <h4>PAKET C</h4>
+              <h3>Sprinter 24/7 Coaching</h3>
             </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Ruderergometer
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              TalentDiagnoseSystem (TDS)
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Laktatmessgerät
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-          <tr>
-            <td class="title">
-              Spiroergometriegeräte
-              <button class="button button--small button--circle button--grey">i</button>
-            </td>
-            <td>—</td>
-            <td>+</td>
-            <td>++</td>
-          </tr>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="title">
+                Title
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Herzfrequenzmesssystem
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Radergometer
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Ruderergometer
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                TalentDiagnoseSystem (TDS)
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Laktatmessgerät
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+            <tr>
+              <td class="title">
+                Spiroergometriegeräte
+                <button class="button button--small button--circle button--grey">i</button>
+              </td>
+              <td>—</td>
+              <td>+</td>
+              <td>++</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section id="call_to_action" class="content">
