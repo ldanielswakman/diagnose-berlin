@@ -41,42 +41,67 @@
 
 	#services_preview {
 		background: $greylightest;
-		padding: 0.5rem 0;
 
 		@include tabletAndUp() {
 			padding: 3rem 0;
 		}
 
-		.row {
-			padding: 0.5rem;
+		.rpc-box {
+			@include boxBasicStyle();
+			padding: 0 !important;
+			color: inherit;
+			transition: all 0.2s ease;
+
+			.car-caption {
+				padding: 1.5rem;
+
+				p {
+					margin: 1rem 0;
+					font-size: 1rem;
+					line-height: 1.25rem;
+				}
+				a.button {
+					border-bottom: 1px solid $highlight;
+				}
+			}
+		}
+		.slick-list:hover .rpc-box {
+			opacity: 0.75;
+			transform: scale(0.99);
+
+			&:hover {
+				opacity: 1;
+				transform: scale(1.01);
+			}
+		}
+
+		// .slick-list {
+		// 	padding: 0.5rem 1rem 6rem;
+		// }
+		// .slick-slide {
+		// 	margin: 0 0.5rem;
+		// }
+
+		.slick-list {
+			padding: 2rem 0.5rem;
 
 			@include tabletAndUp() {
-				padding: 1rem;
+				padding: 4rem 0.5rem;
 			}
-			[class*="col-"] {
-				padding: 1rem;
+			.slick-slide {
+				padding: 0.5rem;
 			}
 
 			// Vertical boxes shift
 			@include tabletAndUp() {
-				& > *:nth-child(1) { margin-top: 4.5rem; }
-				& > *:nth-child(2) { margin-top: 1.5rem; }
-				& > *:nth-child(3) { margin-top: -1.5rem; }
-				& > *:nth-child(4) { margin-top: -4.5rem; }
+				& > .slick-track > *:nth-child(1) { margin-top: 3.75rem; }
+				& > .slick-track > *:nth-child(2) { margin-top: 1.25rem; }
+				& > .slick-track > *:nth-child(3) { margin-top: -1.25rem; }
+				& > .slick-track > *:nth-child(4) { margin-top: -3.75rem; }
 			}
 
 			// Box hover effect
-			.box {
-				transition: all 0.2s ease;
-			}
-			&:hover .box {
-				opacity: 0.75;
-				transform: scale(0.99);
-
-				&:hover {
-					opacity: 1;
-					transform: scale(1.01);
-				}
+			.rpc-box {
 			}
 		}
 	}
