@@ -1570,21 +1570,22 @@ table {
     .page.home #call_to_action {
       margin-top: 8rem; } }
 
-.page.services #intro {
+.page-template-page-services-main #intro {
   min-height: 12rem; }
 
-.page.services .hasSubmenu a:after {
+.page-template-page-services-main .hasSubmenu a:after {
   display: none; }
 
-.page.services .hasSubmenu:after {
+.page-template-page-services-main .hasSubmenu:after {
   display: block; }
 
-.page.services .submenu {
+.page-template-page-services-main .submenu {
   max-height: 6rem;
   opacity: 1;
   pointer-events: all; }
 
-.page.service-detail #intro {
+.page-template-page-services-single-three #intro,
+.page-template-page-services-single-six #intro {
   min-height: 90vh;
   background-color: #F5F8F9;
   background-image: url("../images/mockup-service-detail-1.jpg");
@@ -1592,26 +1593,31 @@ table {
   background-position: 100% bottom;
   background-repeat: no-repeat; }
   @media screen and (min-width: 48em) {
-    .page.service-detail #intro {
+    .page-template-page-services-single-three #intro,
+    .page-template-page-services-single-six #intro {
       min-height: 40vw;
       background-size: cover;
       background-position: bottom center; } }
-  .page.service-detail #intro h1 {
+  .page-template-page-services-single-three #intro h1,
+  .page-template-page-services-single-six #intro h1 {
     margin-bottom: 2rem; }
-    .page.service-detail #intro h1 img {
+    .page-template-page-services-single-three #intro h1 img,
+    .page-template-page-services-single-six #intro h1 img {
       width: 3rem;
       vertical-align: middle;
       margin-right: 0.5rem; }
 
-.page.service-detail #packages {
+.page-template-page-services-single-three #packages,
+.page-template-page-services-single-six #packages {
   margin-top: -9rem; }
 
 @media screen and (max-width: 48em) {
-  .page.service-detail #comparison {
+  .page-template-page-services-single-three #comparison,
+  .page-template-page-services-single-six #comparison {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
-.page.how-we-work #intro {
+.page-template-page-how-we-work #intro {
   min-height: 90vh;
   background-color: #F5F8F9;
   background-image: url("../images/mockup-how-we-work-1.jpg");
@@ -1619,62 +1625,62 @@ table {
   background-position: 100% bottom;
   background-repeat: no-repeat; }
   @media screen and (min-width: 48em) {
-    .page.how-we-work #intro {
+    .page-template-page-how-we-work #intro {
       min-height: 40vw;
       background-size: cover;
       background-position: bottom center; } }
 
-.page.how-we-work #usps .row > [class*="col-"] {
+.page-template-page-how-we-work #usps .row > [class*="col-"] {
   padding-right: 6rem; }
 
-.page.how-we-work #usps .row > [class*="col-"]:nth-child(1) {
+.page-template-page-how-we-work #usps .row > [class*="col-"]:nth-child(1) {
   margin-top: 6rem; }
 
-.page.how-we-work #usps .row > [class*="col-"]:nth-child(3) {
+.page-template-page-how-we-work #usps .row > [class*="col-"]:nth-child(3) {
   margin-top: -6rem; }
 
-.page.team #team {
+.page-template-page-team #team {
   padding-bottom: 5rem; }
 
-.page.team .partners-grid {
+.page-template-page-team .partners-grid {
   padding-bottom: 5rem; }
-  .page.team .partners-grid > [class*="col-"] .box {
+  .page-template-page-team .partners-grid > [class*="col-"] .box {
     position: relative;
     margin: 1.5rem 0; }
-  .page.team .partners-grid > [class*="col-"]:nth-child(1) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(1) .box {
     transform: translate(-0.5rem, -2rem); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(2) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(2) .box {
     transform: translate(0, 0); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(3) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(3) .box {
     transform: translate(-1rem, -3rem); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(4) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(4) .box {
     transform: translate(-0.5rem, 1rem); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(6) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(6) .box {
     transform: translate(0, -3rem); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(7) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(7) .box {
     transform: translate(-1rem, 2rem); }
-  .page.team .partners-grid > [class*="col-"]:nth-child(8) .box {
+  .page-template-page-team .partners-grid > [class*="col-"]:nth-child(8) .box {
     transform: translate(0, -2rem); }
   @media screen and (min-width: 48em) {
-    .page.team .partners-grid > [class*="col-"]:nth-child(1) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(1) .box {
       transform: translate(-1rem, 2rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(2) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(2) .box {
       transform: translate(0, -3rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(3) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(3) .box {
       transform: translate(3rem, -1rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(4) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(4) .box {
       transform: translate(0, 8rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(6) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(6) .box {
       transform: translate(0, 3rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(7) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(7) .box {
       transform: translate(2rem, -2rem); }
-    .page.team .partners-grid > [class*="col-"]:nth-child(8) .box {
+    .page-template-page-team .partners-grid > [class*="col-"]:nth-child(8) .box {
       transform: translate(-2rem, 6rem); } }
-  .page.team .partners-grid .box {
+  .page-template-page-team .partners-grid .box {
     transition: all 0.2s ease; }
-  .page.team .partners-grid:hover .box {
+  .page-template-page-team .partners-grid:hover .box {
     opacity: 0.75; }
-    .page.team .partners-grid:hover .box:hover {
+    .page-template-page-team .partners-grid:hover .box:hover {
       opacity: 1; }
 
 .page.knowledge-base .categories {
