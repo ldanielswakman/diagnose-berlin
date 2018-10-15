@@ -1,6 +1,6 @@
 <?php
 /**
- *  * Template Name: Single Service Page - Three Package
+ *  * Template Name: Single Service Page
  */
 
 get_header(); ?>
