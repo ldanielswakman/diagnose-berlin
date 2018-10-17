@@ -54,35 +54,52 @@ a {
 
 
 // Load animations
-.load-fadein {
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
-}
-.load-movein-btm {
-  position: relative;
-  opacity: 0;
-  transform: translateY(2rem);
-  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
-}
-.load-movein-top {
-  position: relative;
-  opacity: 0;
-  transform: translateY(-2rem);
-  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
-}
-.load-delay-03s { transition-delay: 0.3s; }
-.load-delay-05s { transition-delay: 0.5s; }
-.load-delay-07s { transition-delay: 0.7s; }
-.load-delay-1s { transition-delay: 1s; }
-.load-delay-15s { transition-delay: 1.5s; }
-.load-delay-2s { transition-delay: 2s; }
-.load-delay-3s { transition-delay: 3s; }
+// .load-fadein {
+//   opacity: 0;
+//   transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+// }
+// .load-movein-btm {
+//   position: relative;
+//   opacity: 0;
+//   transform: translateY(2rem);
+//   transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+// }
+// .load-movein-top {
+//   position: relative;
+//   opacity: 0;
+//   transform: translateY(-2rem);
+//   transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+// }
+// .load-delay-03s { transition-delay: 0.3s; }
+// .load-delay-05s { transition-delay: 0.5s; }
+// .load-delay-07s { transition-delay: 0.7s; }
+// .load-delay-1s { transition-delay: 1s; }
+// .load-delay-15s { transition-delay: 1.5s; }
+// .load-delay-2s { transition-delay: 2s; }
+// .load-delay-3s { transition-delay: 3s; }
 
-body.isLoaded {
-  .load-fadein,
-  .load-movein-btm,
-  .load-movein-top {
-    opacity: 1;
-    transform: translateY(0);
-  }
+// body.isLoaded {
+//   .load-fadein,
+//   .load-movein-btm,
+//   .load-movein-top {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+
+
+
+// Wordpress screen-reader-text styling
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }

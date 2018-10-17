@@ -1,6 +1,6 @@
 .page.home {
 
-	#hero {
+	#hero, .section--hero {
 	 	background-color: #F5F8F9;
 	 	background-image: url('../images/mockup-home-1.jpg');
 	 	background-size: 180%;
@@ -15,7 +15,7 @@
 	 	}
 	}
 
-	#hero-post .box {
+	#hero-post, .section--hero-post .box {
 		margin-top: -4rem;
 
 		@include tabletAndUp() {
@@ -35,17 +35,18 @@
 		}
 	}
 
-	#intro {
+	#intro, .section--intro {
 		padding: 6rem 0;
 	}
 
-	#services_preview {
+	#services_preview, .section--services_preview {
 		background: $greylightest;
 
 		@include tabletAndUp() {
 			padding: 3rem 0;
 		}
 
+		// Box hover effect
 		.rpc-box {
 			@include boxBasicStyle();
 			padding: 0 !important;
@@ -75,13 +76,6 @@
 			}
 		}
 
-		// .slick-list {
-		// 	padding: 0.5rem 1rem 6rem;
-		// }
-		// .slick-slide {
-		// 	margin: 0 0.5rem;
-		// }
-
 		.slick-list {
 			padding: 2rem 0.5rem;
 
@@ -99,14 +93,10 @@
 				& > .slick-track > *:nth-child(3) { margin-top: -1.25rem; }
 				& > .slick-track > *:nth-child(4) { margin-top: -3.75rem; }
 			}
-
-			// Box hover effect
-			.rpc-box {
-			}
 		}
 	}
 
-	#knowledge_preview {
+	#knowledge_preview, .section--knowledge_preview {
 		margin-top: 8rem;
 		background: $greylightest;
 
@@ -115,7 +105,7 @@
 		} 
 	}
 
-	#call_to_action {
+	#call_to_action, .section--call_to_action {
 		margin-top: 4rem;
 
 		@include tabletAndUp() {

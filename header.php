@@ -38,16 +38,18 @@
 			</a>
 
 			<?php if ( has_nav_menu( 'top' ) ) : ?>
-				<div class="menu load-fadein load-delay-15s" id="menu">
-					<?php wp_nav_menu( array(
-						'theme_location' => 'top',
-						'menu_id'        => 'top-menu',
-					) ); ?>
-					
-					<button class="menu-toggle"></button>
-	
-				</div><!-- .menu -->
+				<?php wp_nav_menu( array(
+					'theme_location' => 'top',
+					'menu_id'        => 'top-menu',
+				) ); ?>
+				
+				<button class="menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 			<?php endif; ?>
+			
 		</nav>
 
 	</section><!-- #hero -->
