@@ -1349,6 +1349,8 @@ nav {
     @media screen and (min-width: 48em) {
       .menu .show-sm {
         display: inherit; } }
+  .menu > li {
+    display: flex; }
   .menu a {
     display: flex;
     justify-content: center;

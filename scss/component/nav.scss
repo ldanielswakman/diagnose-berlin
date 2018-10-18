@@ -43,6 +43,8 @@ nav {
 		}
 	}
 
+	& > li { display: flex; }
+
 	a {
 		display: flex;
 		justify-content: center;
