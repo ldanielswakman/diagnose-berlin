@@ -1136,6 +1136,28 @@ blockquote p {
         margin: 1rem 0;
         font-size: 1rem;
         line-height: 1.25rem; }
+  .box--info-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0.5rem;
+    min-width: 20rem;
+    padding: 1.5rem; }
+    .box--info-tooltip:before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: calc(50% - 0.5rem);
+      border: 0.5rem solid transparent;
+      border-bottom-color: #fff; }
+      @media screen and (min-width: 48em) {
+        .box--info-tooltip:before {
+          left: 0.75rem; } }
+    .box--info-tooltip h3 {
+      margin-bottom: 0.5rem; }
+    .box--info-tooltip p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #3C5863; }
 
 .content,
 .row > .content {
@@ -1523,7 +1545,6 @@ table {
   display: block;
   width: 100%;
   max-width: 100vw;
-  overflow: auto;
   font-size: 0.875rem; }
   @media screen and (min-width: 48em) {
     table {
@@ -1543,12 +1564,21 @@ table {
     color: #F88379;
     font-weight: bold; }
   table.table--comparison td.title {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: inherit; }
     table.table--comparison td.title .button {
       margin-left: 0.75rem; }
+    table.table--comparison td.title.isActive .button {
+      background: #005E83;
+      color: #fff; }
+    table.table--comparison td.title .box--info-tooltip {
+      display: none; }
+    table.table--comparison td.title.isActive .box--info-tooltip {
+      display: block;
+      cursor: pointer; }
   @media screen and (max-width: 48em) {
     table.table--comparison .show-sm {
       display: block; }
@@ -1709,13 +1739,13 @@ table {
 .page-template-page-services-single-three .comparison {
   max-height: 100vh;
   opacity: 1;
-  overflow: hidden;
   transition: all 1s cubic-bezier(0, 0, 0.2, 1); }
   .page-template-page-services-single .comparison.isHidden,
   .page-template-page-services-single-three .comparison.isHidden {
     opacity: 0.5;
     max-height: 0;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    overflow: hidden; }
 
 .page-template-page-how-we-work #intro {
   min-height: 90vh;
@@ -1865,6 +1895,9 @@ table {
   .page.knowledge-base #hero h2 {
     font-weight: normal;
     opacity: 0.7; }
+
+.page.knowledge-base #article p {
+  color: #3C5863; }
 
 .page.knowledge-base #article p, .page.knowledge-base #article ul, .page.knowledge-base #article ol, .page.knowledge-base #article h1, .page.knowledge-base #article h2, .page.knowledge-base #article h3, .page.knowledge-base #article blockquote {
   margin-bottom: 2rem; }

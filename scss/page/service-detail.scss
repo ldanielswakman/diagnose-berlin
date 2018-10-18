@@ -36,18 +36,13 @@
 	.comparison {
 		max-height: 100vh;
 		opacity: 1;
-		overflow: hidden;
 		transition: all 1s cubic-bezier(0, 0, 0.2, 1);
-
-		// @include tabletAndDown() {
-		// 	padding-left: 1.5rem;
-		// 	padding-right: 1.5rem;
-		// }
 
 		&.isHidden {
 			opacity: 0.5;
 			max-height: 0;
 			padding-bottom: 0;
+			overflow: hidden;
 		}
 	}
 }

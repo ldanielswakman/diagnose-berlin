@@ -24,6 +24,9 @@ $(document).ready(function() {
 	
 });
 
+
+
+
 function toggleComparison($btn) {
 	if($btn.length > 0) {
 		$section = $btn.closest('section');
@@ -32,6 +35,8 @@ function toggleComparison($btn) {
 		console.log('no button found...');
 	}
 }
+
+
 
 function togglePackages($btn, $target) {
 	if($btn.length > 0 && $target.length > 0) {
@@ -46,5 +51,17 @@ function togglePackages($btn, $target) {
 		$('.comparison').addClass('isHidden');
 	} else {
 		console.log('no button or target found...');
+	}
+}
+
+
+
+function toggleTooltip($btn) {
+	if($btn.length > 0) {
+		$table = $btn.closest('table');
+		$table.find('.title').not($btn.closest('.title')).removeClass('isActive');
+		$btn.closest('.title').toggleClass('isActive');
+	} else {
+		console.log('no button found...');
 	}
 }
