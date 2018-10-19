@@ -24,13 +24,18 @@
 
 		.button--circle {
 			position: relative;
-			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			float: right;
 			margin-right: 2rem;
 
 			@include tabletAndUp() {
-				margin-top: 0.75rem;
-				margin-right: -2rem;
+				margin-top: -2.5rem;
+				margin-right: -3rem;
+			}
+			img {
+				max-height: 1.5rem;
 			}
 		}
 	}

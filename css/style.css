@@ -1591,13 +1591,17 @@ table {
       margin-top: -12rem; } }
   .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     margin-right: 2rem; }
     @media screen and (min-width: 48em) {
       .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
-        margin-top: 0.75rem;
-        margin-right: -2rem; } }
+        margin-top: -2.5rem;
+        margin-right: -3rem; } }
+    .page.home #hero-post .button--circle img, .page.home .section--hero-post .box .button--circle img {
+      max-height: 1.5rem; }
 
 .page.home #intro, .page.home .section--intro {
   padding: 6rem 0; }
