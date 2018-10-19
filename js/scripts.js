@@ -46,7 +46,6 @@ function togglePackages($btn, $target) {
 		// Show/hide package sections
 		$('.section--packages').addClass('isHidden');
 		$('#'+$target).removeClass('isHidden');
-		console.log('#'+$target);
 		// Hide comparison tables
 		$('.comparison').addClass('isHidden');
 	} else {
