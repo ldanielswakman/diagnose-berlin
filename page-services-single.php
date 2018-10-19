@@ -9,6 +9,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<? $table_id = 1;
+
+				$table = tablepress_get_table([
+				'id' => $table_id,
+				'use_datatables' => false,
+				'print_name' => false,
+				'alternating_row_colors' => false,
+				'first_column_th' => true,
+			]); ?>
+
+			<? echo parseTablePressTable($table) ?>
+
 			<?php
 			while ( have_posts() ) : the_post();
 
