@@ -1,50 +1,13 @@
-.menu .pll-parent-menu-item {
-	display: flex;
-	align-items: center;
+// Lang switcher
+.lang-item {
+	a {
+		opacity: 0.6;
 
-	& > a { display: none; }
-
-	.sub-menu {
-		// overrides
-		position: relative;
-		top: 0;
-		max-height: 100%;
-		opacity: 1;
-		pointer-events: all;
-		background: transparent;
-		box-shadow: none;
-		font-size: 1rem;
-		flex-direction: row;
-
-		.lang-item {
-
-			a { opacity: 0.4; }
-			&.current-lang a { opacity: 0.8; }
-			&:hover a { opacity: 1; }
-		}
-
-		@include tabletAndUp() {
-			flex-direction: column;
-
-			a {
-				padding-top: 1rem;
-				padding-bottom: 1rem;
-			}
-			& > li:first-child a {
-				padding-bottom: 0;
-			}
-			& > li:last-child a {
-				padding-top: 0;	
-			}
+		&:hover {
+			opacity: 1;
 		}
 	}
-}
-
-@include tabletAndDown() {
-	.menu .pll-parent-menu-item {
-		display: none;
-	}
-	nav.isActive .menu .pll-parent-menu-item {
-		display: flex;
+	&.no-translation a {
+		text-decoration: line-through;
 	}
 }
