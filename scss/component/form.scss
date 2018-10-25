@@ -1,9 +1,13 @@
-.form {
+// TO DO: Clean up legacy naming (gform etc)
+
+.form,
+.gform_body {
 	max-width: 720px;
 	margin: 0 auto;
 	padding-top: 3rem;
 
-	&-section {
+	&-section,
+	.gform_page {
 		margin: 0 0.75rem;
 		padding: 1rem;
 		border-radius: 0.75rem;

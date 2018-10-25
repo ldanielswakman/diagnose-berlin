@@ -15,7 +15,7 @@ get_header(); ?>
 				while ( have_rows('individual_service') ) : the_row(); ?>
 
 					<!-- // display a sub field value -->
-<section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="load-movein-btm">
+<section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="section--service load-movein-btm">
 	<div class="row row--nopadding">
 		<div class="col-xs-12 col-sm-6 last-sm">
 				<figure>

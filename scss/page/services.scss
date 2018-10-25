@@ -1,7 +1,15 @@
 .page-template-page-services-main {
 
+	.site section:nth-child(odd) .last-sm {
+		order: inherit;
+	}
+
 	#intro {
 		min-height: 12rem;
+	}
+
+	.section--service {
+		margin-bottom: 6rem;
 	}
 
 	.hasSubmenu a:after {

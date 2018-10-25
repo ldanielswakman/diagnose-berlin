@@ -1,3 +1,5 @@
+// TO DO: Clean up legacy naming (gform etc)
+
 .field {
 
 	// 'Regular' input fields, different types
@@ -34,7 +36,8 @@
 	}
 
 	// Radio
-	&--radio {
+	&--radio, 
+	.gfield_radio {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 1rem -0.5rem 0 -0.5rem;
