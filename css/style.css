@@ -1170,14 +1170,15 @@ blockquote p {
     .row > .content {
       padding: 2.5rem 5rem; } }
 
-.field label {
+.field label, .gfield label {
   display: block;
   margin-bottom: 0.25rem;
   color: rgba(0, 94, 131, 0.3);
   font-weight: 600; }
 
 .field input[type="date"],
-.field select {
+.field select, .gfield input[type="date"],
+.gfield select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1192,39 +1193,45 @@ blockquote p {
   font-weight: 600;
   cursor: pointer; }
   .field input[type="date"]:hover,
-  .field select:hover {
+  .field select:hover, .gfield input[type="date"]:hover,
+  .gfield select:hover {
     color: #F88379; }
   .field input[type="date"]:focus,
-  .field select:focus {
+  .field select:focus, .gfield input[type="date"]:focus,
+  .gfield select:focus {
     outline: none; }
   .field input[type="date"]:invalid,
-  .field select:invalid {
+  .field select:invalid, .gfield input[type="date"]:invalid,
+  .gfield select:invalid {
     color: rgba(0, 94, 131, 0.3);
     border-color: #005E83; }
     .field input[type="date"]:invalid:hover,
-    .field select:invalid:hover {
+    .field select:invalid:hover, .gfield input[type="date"]:invalid:hover,
+    .gfield select:invalid:hover {
       color: #F88379;
       border-color: currentColor; }
 
-.field select {
+.field select, .gfield select {
   height: 2.5rem; }
 
-.field--radio,
-.field .gfield_radio {
+.field--radio {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.gfield_radio, .gfield_checkbox li {
   margin: 1rem -0.5rem 0 -0.5rem; }
-  .field--radio input[type="radio"],
-  .field .gfield_radio input[type="radio"] {
+  .gfield_radio input[type="radio"],
+  .gfield_radio input[type="checkbox"], .gfield_checkbox li input[type="radio"],
+  .gfield_checkbox li input[type="checkbox"] {
     position: absolute;
     left: -9999px; }
-  .field--radio input[type="radio"]:checked + label,
-  .field .gfield_radio input[type="radio"]:checked + label {
+  .gfield_radio input[type="radio"]:checked + label,
+  .gfield_radio input[type="checkbox"]:checked + label, .gfield_checkbox li input[type="radio"]:checked + label,
+  .gfield_checkbox li input[type="checkbox"]:checked + label {
     background: #F88379;
     border-color: transparent;
     color: #fff; }
-  .field--radio label,
-  .field .gfield_radio label {
+  .gfield_radio label, .gfield_checkbox li label {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1238,20 +1245,35 @@ blockquote p {
     font: inherit;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
     line-height: 1.5rem;
     cursor: pointer; }
-    .field--radio label:hover,
-    .field .gfield_radio label:hover {
+    .gfield_radio label:hover, .gfield_checkbox li label:hover {
       color: #F88379;
       background-color: rgba(248, 131, 121, 0.05); }
-  .field--radio-item,
-  .field .gfield_radio-item {
-    flex: 0 0 calc(100% - 1rem);
-    margin: 0.5rem; }
-    @media screen and (min-width: 48em) {
-      .field--radio-item,
-      .field .gfield_radio-item {
-        flex-basis: calc(50% - 1rem); } }
+  .gfield_radio input[type="checkbox"] + label:before, .gfield_checkbox li input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
+    margin: 0.25rem 0.5rem 0 -0.25rem;
+    border-radius: 0.5rem;
+    background: #CFDBE0; }
+  .gfield_radio input[type="checkbox"]:checked + label:before, .gfield_checkbox li input[type="checkbox"]:checked + label:before {
+    background: #fff; }
+
+@media screen and (min-width: 48em) {
+  ul.gfield_radio, .gfield_checkbox {
+    display: flex;
+    flex-wrap: wrap; } }
+
+ul.gfield_radio li, .gfield_checkbox li {
+  flex: 0 0 calc(100% - 1rem);
+  margin: 0.5rem; }
+  @media screen and (min-width: 48em) {
+    ul.gfield_radio li, .gfield_checkbox li {
+      flex-basis: calc(50% - 1rem); } }
 
 .field-group {
   display: flex;
@@ -1278,6 +1300,9 @@ footer {
     footer {
       padding: 5rem; } }
 
+.gform_wrapper .gf_page_steps {
+  display: none; }
+
 .form,
 .gform_body {
   max-width: 720px;
@@ -1287,7 +1312,6 @@ footer {
   .form .gform_page,
   .gform_body-section,
   .gform_body .gform_page {
-    margin: 0 0.75rem;
     padding: 1rem;
     border-radius: 0.75rem;
     background: #F3F8F9; }

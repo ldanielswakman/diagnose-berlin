@@ -1,5 +1,9 @@
 // TO DO: Clean up legacy naming (gform etc)
 
+.gform_wrapper .gf_page_steps {
+	display: none;
+}
+
 .form,
 .gform_body {
 	max-width: 720px;
@@ -8,7 +12,7 @@
 
 	&-section,
 	.gform_page {
-		margin: 0 0.75rem;
+		// margin: 0 0.75rem;
 		padding: 1rem;
 		border-radius: 0.75rem;
 		background: $greylightest;

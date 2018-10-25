@@ -2,21 +2,6 @@ $(document).ready(function() {
 
 	$('body').addClass('isLoaded');
 
-	// Form advance interaction (mockup only, since form is implemented via WP Plugin)
-	$('.form-section .field--radio label').click(function() {
-
-		$parent = $(this).closest('.form-section');
-
-		if($parent.hasClass('isActive')) {
-
-			setTimeout(function() {
-				$parent.removeClass('isActive');
-				$parent.next('.form-section').addClass('isActive');
-			}, 500);
-
-		}
-	});
-
 	// Nav toggle
 	$('.menu-toggle').click(function() {
 		$(this).closest('nav').toggleClass('isActive');
@@ -63,4 +48,49 @@ function toggleTooltip($btn) {
 	} else {
 		console.log('no button found...');
 	}
+}
+
+
+// WP Gravoty Form Interaction addition
+$(document).ready(function() {
+	if($('.gform_wrapper').length > 0) {
+		checkFGActive();
+	}
+	// setInterval(function() { checkFGActive() }, 500);
+
+	$('.gform_wrapper').click(function() {
+		checkFGActive();
+	});
+});
+
+function checkFGActive() {
+	$('.gform_wrapper').each(function() {
+
+		// This is the form
+		$form = $(this);
+
+		// Set first page to be active automatically
+		// $form.find('.gform_page').first().addClass('isActive');
+
+		// Remove pre-existing classes
+		$form.find('.gform_body').find('.gform_page').removeClass('isActive isPending');
+
+		// Loop over steps to find active pages
+		$form.find('.gf_page_steps').find('.gf_step').each(function(i) {
+
+			// index to child number
+			childNumber = i+1;
+
+			// Set active class if found
+			if($(this).hasClass('gf_step_active')) {
+				$form.find('.gform_body').find('.gform_page:nth-child(' + childNumber + ')').addClass('isActive');
+				console.log('active: ' + childNumber);
+			}
+			// Set pending class if found
+			if($(this).hasClass('gf_step_pending')) {
+				$form.find('.gform_body').find('.gform_page:nth-child(' + childNumber + ')').addClass('isPending');
+				console.log('pending: ' + childNumber);
+			}
+		});
+	});
 }
