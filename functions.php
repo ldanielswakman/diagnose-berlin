@@ -97,20 +97,10 @@ add_action('wp_footer', 'inline_popup_enabler');
 // Prefill first form question based on page
 
 
-add_filter( 'gform_field_value', 'populate_fields', 2 );
-function populate_fields( $value, $field, $name ) {
- $pagename = get_query_var('pagename');  
-    if ( !$pagename && $id > 0 ) {  
-        // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
-        $post = $wp_query->get_queried_object();  
-        $pagename = $post->post_name;  
-    }
-    
-    $values = array(
-        'field_one'   => 'value one',
-        'field_two'   => 'value two',
-        'field_three' => 'value three',
-    );
- 
-    return isset( $values[ $name ] ) ? $values[ $name ] : $value;
+$pagename = get_query_var('pagename');  
+if ( !$pagename && $id > 0 ) {  
+    // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
+    $post = $wp_query->get_queried_object();  
+    $pagename = $post->post_name;  
 }
+

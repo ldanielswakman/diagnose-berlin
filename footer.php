@@ -36,6 +36,16 @@
 							</a>
                             <div id="test-popup" class="form">
                                 <?php echo get_field('footer_form'); ?>
+                                <?php 
+                                  if ($pagename === 'training-planning') {
+                                      //get the field
+                                    $field = GFFormsModel::get_field( $form, 1 );
+                                      echo 'percy';
+                                  }  
+                                 elseif ($pagename != 'training-planning') {
+                                     //do nothing
+                                 }
+                                ?>
                             </div>
 						</div>
 					</div>
