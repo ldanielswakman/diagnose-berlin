@@ -34,19 +34,6 @@
 							<a class="button button--dark button--outline button--large test-popup-link" href="#test-popup">
 								<?php echo get_field('footer_cta_button_text'); ?>
 							</a>
-                            <div id="test-popup" class="form">
-                                <?php echo get_field('footer_form'); ?>
-                                <?php 
-                                  if ($pagename === 'training-planning') {
-                                      //get the field
-                                    $field = GFFormsModel::get_field( $form, 1 );
-                                      echo 'percy';
-                                  }  
-                                 elseif ($pagename != 'training-planning') {
-                                     //do nothing
-                                 }
-                                ?>
-                            </div>
 							<div id="test-popup" class="form">
 								<?php echo get_field('footer_form'); ?>
 							</div>

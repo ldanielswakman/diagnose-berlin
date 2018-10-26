@@ -79,7 +79,8 @@ function parseTablePressTable($table) {
 // Lightbox for Gravity Forms
 
 function inline_popup_enabler(){
-?>
+     ?>
+
 <script>
 (function($){
     $(window).load(function() {
@@ -94,13 +95,76 @@ function inline_popup_enabler(){
 }
 add_action('wp_footer', 'inline_popup_enabler');
 
-// Prefill first form question based on page
+// Auto-select service radio button based on current service page
+
+//add_filter( 'gform_field_value_service', 'preselect_current_service' );
+// 
+//function preselect_current_service( $value ) {
+//    // Create pagename from post name
+//    $pagename = get_query_var('pagename');  
+//    if ( !$pagename && $id > 0 ) {  
+//        // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
+//        $post = $wp_query->get_queried_object();  
+//        $pagename = $post->post_name;  
+//    }
+//    $f_id = 1;
+//    $field_id = 2;
+//    $form = RGFormsModel::get_form_meta($f_id);
+//    $field = GFFormsModel::get_field( $form, $field_id );
+//    $value = GFFormsModel::get_field_value($field, $field_values);
+//    
+//    //if ($field_value === $pagename) {
+//        return $pagename;
+//    //}
+////  elseif ($field_value != $pagename) {
+//      //do nothing
+//  }
+////}
 
 
-$pagename = get_query_var('pagename');  
-if ( !$pagename && $id > 0 ) {  
-    // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
-    $post = $wp_query->get_queried_object();  
-    $pagename = $post->post_name;  
-}
 
+add_filter( 'gform_pre_render_1', 'my_populate_checkbox' );
+
+function my_populate_checkbox( $form ) {
+
+    $pagename = get_query_var('pagename');  
+    if ( !$pagename && $id > 0 ) {  
+        // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
+        $post = $wp_query->get_queried_object();  
+        $pagename = $post->post_name;  
+    }
+   /**
+   * Loop through form fields
+   *
+   * Note we are using the `$field` array as a direct reference using `&`. 
+   * This means that changing its value will within the loop will 
+   * change the corresponding `$form` array item
+   */
+  foreach( $form['fields'] as &$field ) {
+    
+    # Make sure to change `1` to the ID of the checkbox field that you want to pre-populate
+    if( 2 === $field->id ) {
+      
+      /**
+       * Loop through the choices for this checkbox
+       *
+       * Note again that we are passing `$choice` by reference in order to change the 
+       * corresponding array item within the `$field` array
+       */
+      foreach( $field->choices as &$choice ) {
+        
+        /**
+         * If this choice has a value of 'red' or 'blue', then make sure the checkbox is pre-checked
+         * by setting the `isSelected` parameter to `true`
+         */
+        
+        if( $pagename === $choice['value'] ) {
+          $choice['isSelected'] = true;
+        }
+      } # end foreach: $field->choices
+    } # end if: $field->id equals 2
+  } # end foreach: $form['fields']
+  
+  # return the altered `$form` array to Gravity Forms
+  return $form;
+} # end: my_populate_checkbox
