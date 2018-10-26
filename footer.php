@@ -47,6 +47,9 @@
                                  }
                                 ?>
                             </div>
+							<div id="test-popup" class="form">
+								<?php echo get_field('footer_form'); ?>
+							</div>
 						</div>
 					</div>
 				</section>
