@@ -5,19 +5,19 @@
 
 get_header(); ?>
 
-		<?php
-			while ( have_posts() ) : the_post();
-		
-			// check if the repeater field has rows of data
-			if( have_rows('individual_service') ):
+<?php
+    while ( have_posts() ) : the_post();
 
-				// loop through the rows of data
-				while ( have_rows('individual_service') ) : the_row(); ?>
+    // check if the repeater field has rows of data
+    if( have_rows('individual_service') ):
+
+        // loop through the rows of data
+        while ( have_rows('individual_service') ) : the_row(); ?>
 
 					<!-- // display a sub field value -->
-<section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="load-movein-btm">
-	<div class="row row--nopadding">
-		<div class="col-xs-12 col-sm-6 last-sm">
+    <section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="load-movein-btm">
+        <div class="row row--nopadding">
+            <div class="col-xs-12 col-sm-6 last-sm">
 				<figure>
 					<img src="<?php the_sub_field('service_image'); ?>">
 				</figure>
@@ -38,14 +38,14 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
-		<?php endwhile;
+<?php endwhile;
 
-		else :
+else :
 
-			// no rows found
+    // no rows found
 
-		endif;
-		endwhile; // End of the loop.
-		?>
+endif;
+endwhile; // End of the loop.
+?>
 
 <?php get_footer();

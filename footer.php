@@ -31,9 +31,12 @@
 
 							<?php echo get_field('footer_cta_text'); ?>
 
-							<a class="button button--dark button--outline button--large" href="<?php echo get_field('footer_cta_link'); ?>">
+							<a class="button button--dark button--outline button--large test-popup-link" href="#test-popup">
 								<?php echo get_field('footer_cta_button_text'); ?>
 							</a>
+                            <div id="test-popup" class="form">
+                                <?php echo get_field('footer_form'); ?>
+                            </div>
 						</div>
 					</div>
 				</section>

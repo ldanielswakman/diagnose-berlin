@@ -20,7 +20,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/scripts.js"></script>
-	
+<?php gravity_form_enqueue_scripts( 1, true ); ?>	
 
 <?php wp_head(); ?>
 </head>
