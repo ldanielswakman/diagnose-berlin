@@ -14,7 +14,6 @@
 	.gform_page {
 		// margin: 0 0.75rem;
 		padding: 1rem;
-		border-radius: 0.75rem;
 		background: $greylightest;
 
 		@include bigPhoneAndUp() {
@@ -62,17 +61,9 @@
 		}
 	}
 
-	// h5 {
-	// 	margin-top: 0.5rem;
-	// 	text-transform: uppercase;
-	// 	font-weight: 700;
-	// 	opacity: 0.3;
-	// 	letter-spacing: 0.05rem;
-	// }
-	// h4 {
-	// 	margin: 0.5rem 0;
-	// 	font-size: 1.25rem;
-	// 	font-weight: 600;
-	// 	color: $dark;
-	// }
+	.gform_page_footer {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 3rem;
+	}
 }

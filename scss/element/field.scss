@@ -2,6 +2,8 @@
 
 .field, .gfield {
 
+	margin-bottom: 1rem;
+
 	// 'Regular' input fields, different types
 	label {
 		display: block;
@@ -30,9 +32,90 @@
     }
 	}
 
-	// Select specific
-	select {
-		height: 2.5rem;
+	// Select input
+	.ginput_container_select {
+		position: relative;
+		display: inline-block;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0.75rem;
+			right: 1.25rem;
+			width: 0.5rem;
+			height: 0.5rem;
+			transform: rotate(45deg);
+			border-bottom: 2px solid $diagnoseBlue;
+			border-right: 2px solid $diagnoseBlue;
+			opacity: 0.5;
+		}
+		select {
+			height: 2.5rem;
+		}
+	}
+
+	// Slider (noUi)
+	.slider-display {
+		margin-top: 2rem;
+
+		&.noUi-target {
+			background: none;
+			border: none;
+			box-shadow: none;
+		}
+		.noUi-base {
+			position: relative;
+			background: transparent;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 7px;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background: $diagnoseBlue;
+			}
+		}
+		.noUi-handle {
+			width: 2rem;
+			height: 2rem;
+			border-radius: 1rem;
+			border: none;
+			background: $diagnoseBlue;
+			box-shadow: none;
+	    cursor: move; /* fallback if grab cursor is unsupported */
+	    cursor: grab;
+	    cursor: -moz-grab;
+	    cursor: -webkit-grab;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+			&:hover {
+				background: darken($diagnoseBlue, 10%);
+			}
+			&.noUi-active {
+				background: $highlight;
+		    cursor: grabbing;
+		    cursor: -moz-grabbing;
+		    cursor: -webkit-grabbing;
+		    transform: scale(1.05);
+			}
+		}
+		.noUi-tooltip {
+			bottom: 110%;
+			padding: 0;
+			border: none;
+			background: none;
+			color: $diagnoseBlue;
+		}
+		.min-val-relation,
+		.max-val-relation {
+			font-size: 0.875rem;
+			color: $diagnoseBlue;
+		}
 	}
 }
 
@@ -42,6 +125,7 @@
 	flex-wrap: wrap;
 }
 .gfield_radio, .gfield_checkbox li {
+	position: relative;
 	margin: 1rem -0.5rem 0 -0.5rem;
 
 	input[type="radio"],
@@ -82,6 +166,18 @@
 	input[type="checkbox"]:checked + label:before {
 		background: $white;
 	}
+	input[type="checkbox"]:checked + label:after {
+		content: "";
+		position: absolute;
+		top: 0.95rem;
+		left: 1.05rem;
+		display: block;
+		width: 0.6rem;
+		height: 0.3rem;
+		border-left: 2px solid $highlight;
+		border-bottom: 2px solid $highlight;
+		transform: rotate(-45deg);
+	}
 }
 ul.gfield_radio, .gfield_checkbox {
 	@include tabletAndUp() {
@@ -107,10 +203,6 @@ ul.gfield_radio, .gfield_checkbox {
 	display: flex;
 	flex-direction: column;
 	margin-top: 2rem;
-
-	.field {
-		margin-bottom: 1rem;
-	}
 
 	@include bigPhoneAndUp() {
 		flex-direction: row;

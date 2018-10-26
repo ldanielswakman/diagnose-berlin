@@ -1148,55 +1148,120 @@ blockquote p {
     .row > .content {
       padding: 2.5rem 5rem; } }
 
-.field label, .gfield label {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: rgba(0, 94, 131, 0.3);
-  font-weight: 600; }
-
-.field input[type="date"],
-.field select, .gfield input[type="date"],
-.gfield select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-flex;
-  padding: 0.375rem 1rem;
-  border: 0.125rem solid currentColor;
-  border-radius: 1.25rem;
-  background: none;
-  line-height: 1.5rem;
-  color: #005E83;
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer; }
-  .field input[type="date"]:hover,
-  .field select:hover, .gfield input[type="date"]:hover,
-  .gfield select:hover {
-    color: #F88379; }
-  .field input[type="date"]:focus,
-  .field select:focus, .gfield input[type="date"]:focus,
-  .gfield select:focus {
-    outline: none; }
-  .field input[type="date"]:invalid,
-  .field select:invalid, .gfield input[type="date"]:invalid,
-  .gfield select:invalid {
+.field, .gfield {
+  margin-bottom: 1rem; }
+  .field label, .gfield label {
+    display: block;
+    margin-bottom: 0.25rem;
     color: rgba(0, 94, 131, 0.3);
-    border-color: #005E83; }
-    .field input[type="date"]:invalid:hover,
-    .field select:invalid:hover, .gfield input[type="date"]:invalid:hover,
-    .gfield select:invalid:hover {
-      color: #F88379;
-      border-color: currentColor; }
-
-.field select, .gfield select {
-  height: 2.5rem; }
+    font-weight: 600; }
+  .field input[type="date"],
+  .field select, .gfield input[type="date"],
+  .gfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    padding: 0.375rem 1rem;
+    border: 0.125rem solid currentColor;
+    border-radius: 1.25rem;
+    background: none;
+    line-height: 1.5rem;
+    color: #005E83;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer; }
+    .field input[type="date"]:hover,
+    .field select:hover, .gfield input[type="date"]:hover,
+    .gfield select:hover {
+      color: #F88379; }
+    .field input[type="date"]:focus,
+    .field select:focus, .gfield input[type="date"]:focus,
+    .gfield select:focus {
+      outline: none; }
+    .field input[type="date"]:invalid,
+    .field select:invalid, .gfield input[type="date"]:invalid,
+    .gfield select:invalid {
+      color: rgba(0, 94, 131, 0.3);
+      border-color: #005E83; }
+      .field input[type="date"]:invalid:hover,
+      .field select:invalid:hover, .gfield input[type="date"]:invalid:hover,
+      .gfield select:invalid:hover {
+        color: #F88379;
+        border-color: currentColor; }
+  .field .ginput_container_select, .gfield .ginput_container_select {
+    position: relative;
+    display: inline-block; }
+    .field .ginput_container_select:after, .gfield .ginput_container_select:after {
+      content: "";
+      position: absolute;
+      top: 0.75rem;
+      right: 1.25rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      transform: rotate(45deg);
+      border-bottom: 2px solid #005E83;
+      border-right: 2px solid #005E83;
+      opacity: 0.5; }
+    .field .ginput_container_select select, .gfield .ginput_container_select select {
+      height: 2.5rem; }
+  .field .slider-display, .gfield .slider-display {
+    margin-top: 2rem; }
+    .field .slider-display.noUi-target, .gfield .slider-display.noUi-target {
+      background: none;
+      border: none;
+      box-shadow: none; }
+    .field .slider-display .noUi-base, .gfield .slider-display .noUi-base {
+      position: relative;
+      background: transparent; }
+      .field .slider-display .noUi-base:before, .gfield .slider-display .noUi-base:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: #005E83; }
+    .field .slider-display .noUi-handle, .gfield .slider-display .noUi-handle {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      border: none;
+      background: #005E83;
+      box-shadow: none;
+      cursor: move;
+      /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab; }
+      .field .slider-display .noUi-handle:before, .field .slider-display .noUi-handle:after, .gfield .slider-display .noUi-handle:before, .gfield .slider-display .noUi-handle:after {
+        display: none; }
+      .field .slider-display .noUi-handle:hover, .gfield .slider-display .noUi-handle:hover {
+        background: #003950; }
+      .field .slider-display .noUi-handle.noUi-active, .gfield .slider-display .noUi-handle.noUi-active {
+        background: #F88379;
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1.05); }
+    .field .slider-display .noUi-tooltip, .gfield .slider-display .noUi-tooltip {
+      bottom: 110%;
+      padding: 0;
+      border: none;
+      background: none;
+      color: #005E83; }
+    .field .slider-display .min-val-relation,
+    .field .slider-display .max-val-relation, .gfield .slider-display .min-val-relation,
+    .gfield .slider-display .max-val-relation {
+      font-size: 0.875rem;
+      color: #005E83; }
 
 .field--radio {
   display: flex;
   flex-wrap: wrap; }
 
 .gfield_radio, .gfield_checkbox li {
+  position: relative;
   margin: 1rem -0.5rem 0 -0.5rem; }
   .gfield_radio input[type="radio"],
   .gfield_radio input[type="checkbox"], .gfield_checkbox li input[type="radio"],
@@ -1240,6 +1305,17 @@ blockquote p {
     background: #CFDBE0; }
   .gfield_radio input[type="checkbox"]:checked + label:before, .gfield_checkbox li input[type="checkbox"]:checked + label:before {
     background: #fff; }
+  .gfield_radio input[type="checkbox"]:checked + label:after, .gfield_checkbox li input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    top: 0.95rem;
+    left: 1.05rem;
+    display: block;
+    width: 0.6rem;
+    height: 0.3rem;
+    border-left: 2px solid #F88379;
+    border-bottom: 2px solid #F88379;
+    transform: rotate(-45deg); }
 
 @media screen and (min-width: 48em) {
   ul.gfield_radio, .gfield_checkbox {
@@ -1257,8 +1333,6 @@ ul.gfield_radio li, .gfield_checkbox li {
   display: flex;
   flex-direction: column;
   margin-top: 2rem; }
-  .field-group .field {
-    margin-bottom: 1rem; }
   @media screen and (min-width: 30em) {
     .field-group {
       flex-direction: row; }
@@ -1267,16 +1341,34 @@ ul.gfield_radio li, .gfield_checkbox li {
 
 footer {
   background: #00415a;
-  padding: 3rem 1.5rem;
   color: #fff;
   line-height: 2rem; }
   footer a {
     color: #fff; }
   footer .subtle {
     opacity: 0.5; }
-  @media screen and (min-width: 48em) {
-    footer {
-      padding: 5rem; } }
+  footer .menu {
+    display: block;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3; }
+    footer .menu a {
+      padding: 0.25rem 0; }
+    footer .menu .separator {
+      break-after: always;
+      opacity: 0;
+      pointer-events: none; }
+  footer .site-info {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: #003246;
+    font-size: 0.875rem; }
+    footer .site-info p {
+      color: rgba(255, 255, 255, 0.5); }
+    footer .site-info a {
+      color: rgba(255, 255, 255, 0.8); }
+      footer .site-info a:hover {
+        color: #fff; }
 
 .gform_wrapper .gf_page_steps {
   display: none; }
@@ -1291,7 +1383,6 @@ footer {
   .gform_body-section,
   .gform_body .gform_page {
     padding: 1rem;
-    border-radius: 0.75rem;
     background: #F3F8F9; }
     @media screen and (min-width: 30em) {
       .form-section,
@@ -1341,6 +1432,11 @@ footer {
         display: flex;
         width: 100%;
         justify-content: center; }
+  .form .gform_page_footer,
+  .gform_body .gform_page_footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem; }
 
 .lang-item a {
   opacity: 0.6; }
