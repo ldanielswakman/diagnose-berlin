@@ -1,8 +1,12 @@
 footer {
 	background: darken($diagnoseBlue, 8%);
-	padding: 3rem 1.5rem;
+	// padding: 3rem 1.5rem;
 	color: $white;
 	line-height: 2rem;
+
+	@include tabletAndUp() {
+		// padding: 5rem;
+	}
 
 	a {
 		color: $white;
@@ -12,7 +16,36 @@ footer {
 		opacity: 0.5;
 	}
 
-	@include tabletAndUp() {
-		padding: 5rem;
+	.menu {
+		display: block;
+	  -webkit-column-count: 3;
+	  -moz-column-count: 3;
+	  column-count: 3;
+
+	  a {
+	  	padding: 0.25rem 0;
+	  }
+
+	  .separator {
+	  	break-after: always;
+	  	opacity: 0;
+	  	pointer-events: none;
+	  }
+	}
+
+	.site-info {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		background: darken($diagnoseBlue, 12%);
+		font-size: 0.875rem;
+
+		p {
+			color: rgba($white, 0.5);
+		}
+		a {
+			color: rgba($white, 0.8);
+
+			&:hover { color: $white; }
+		}
 	}
 }
