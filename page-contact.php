@@ -19,6 +19,8 @@ get_header(); ?>
 		</div>
 	</div>
 
+</section>
+
 <section class="content">
 
 	<div class="row row--nopadding">
