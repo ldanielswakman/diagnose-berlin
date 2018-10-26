@@ -16,7 +16,7 @@
 
   </head>
 
-  <body class="page-template-page-services-single-three">
+  <body class="page-template-page-services-single">
 
   	<section id="nav">
 
@@ -26,22 +26,27 @@
           <img src="../images/logo-wordmark.svg" alt="Diagnose Berlin" class="logo__wordmark" />
         </a>
 
-        <ul class="menu" id="top-menu">
-          <li class="hasSubmenu">
-            <a href="02-services.html">Services</a>
+        <ul class="menu load-fadein load-delay-15s" id="top-menu">
+          <li class="menu-item-has-children isActive">
+            <a href="02-services.html">
+              Services
+              <svg class="icon icon-angle-down" aria-hidden="true" role="img" viewBox="0 0 21 32"><path class="path1" d="M19.196 13.143q0 0.232-0.179 0.411l-8.321 8.321q-0.179 0.179-0.411 0.179t-0.411-0.179l-8.321-8.321q-0.179-0.179-0.179-0.411t0.179-0.411l0.893-0.893q0.179-0.179 0.411-0.179t0.411 0.179l7.018 7.018 7.018-7.018q0.179-0.179 0.411-0.179t0.411 0.179l0.893 0.893q0.179 0.179 0.179 0.411z"></path></svg>
+            </a>
             <ul class="sub-menu" id="services_menu">
-              <li class="isActive"><a href="03-service-detail.html"><img src="../images/icon-perfdiag-small.svg" alt="" />Leistungsdiagnostik</a></li>
-              <li><a href="03-service-detail.html"><img src="../images/icon-trainplan-small.svg" alt="" />Trainingsplanung</a></li>
-              <li><a href="03-service-detail.html"><img src="../images/icon-bikefit-small.svg" alt="" />Bikefitting</a></li>
-              <li><a href="03-service-detail.html"><img src="../images/icon-nutrcoach-small.svg" alt="" />Ernährungsberatung</a></li>
+              <li><a href="03-service-detail.html"><img src="../images/icon-measure-small.svg" alt="" />Leistungsdiagnostik</a></li>
+              <li><a href="03-service-detail.html"><img src="../images/icon-stopwatch-small.svg" alt="" />Trainingsplanung</a></li>
+              <li><a href="03-service-detail.html"><img src="../images/icon-bike-small.svg" alt="" />Bikefitting</a></li>
+              <li><a href="03-service-detail.html"><img src="../images/icon-apple-small.svg" alt="" />Ernährungsberatung</a></li>
             </ul>
           </li>
           <li class="show-sm"><a href="04-how-we-work.html">How we work</a></li>
           <li class="show-sm"><a href="05-team.html">Team</a></li>
           <li class="show-sm"><a href="06-knowledge-base.html">Knowledge</a></li>
           <li><a href="08-contact.html">Contact</a></li>
-          <li><a href="#" class="menu-toggle"><span></span><span></span><span></span></a></li>
+          <li class="lang-item"><a href="#pll_switcher">Deutsch</a></li>
         </ul>
+
+        <a href="#" class="menu-toggle"><span></span><span></span><span></span></a>
 
       </nav>
 
@@ -145,7 +150,11 @@
             <tr>
               <td class="title">
                 Title
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Title</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -154,7 +163,11 @@
             <tr>
               <td class="title">
                 Herzfrequenzmesssystem
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Herzfrequenzmesssystem</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -163,7 +176,11 @@
             <tr>
               <td class="title">
                 Radergometer
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Radergometer</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -172,7 +189,11 @@
             <tr>
               <td class="title">
                 Ruderergometer
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Ruderergometer</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -181,7 +202,11 @@
             <tr>
               <td class="title">
                 TalentDiagnoseSystem (TDS)
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>TalentDiagnoseSystem (TDS)</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -190,7 +215,11 @@
             <tr>
               <td class="title">
                 Laktatmessgerät
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Laktatmessgerät</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -199,7 +228,11 @@
             <tr>
               <td class="title">
                 Spiroergometriegeräte
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Spiroergometriegeräte</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -283,7 +316,11 @@
             <tr>
               <td class="title">
                 Title
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Title></h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -292,7 +329,11 @@
             <tr>
               <td class="title">
                 Herzfrequenzmesssystem
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Herzfrequenzmesssystem</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -301,7 +342,11 @@
             <tr>
               <td class="title">
                 Radergometer
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Radergometer</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -310,7 +355,11 @@
             <tr>
               <td class="title">
                 Ruderergometer
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Ruderergometer</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -319,7 +368,11 @@
             <tr>
               <td class="title">
                 TalentDiagnoseSystem (TDS)
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>TalentDiagnoseSystem (TDS)</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -328,7 +381,11 @@
             <tr>
               <td class="title">
                 Laktatmessgerät
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Laktatmessgerät</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>
@@ -337,7 +394,11 @@
             <tr>
               <td class="title">
                 Spiroergometriegeräte
-                <button class="button button--small button--circle button--grey">i</button>
+                <button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>
+                <div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+                  <h3>Spiroergometriegeräte</h3>
+                  <p>Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich. Wir liefern die Erkenntnisse die du brauchst, um dein Training zu optimieren. Anwendbar und verständlich.</p>
+                </div>
               </td>
               <td>—</td>
               <td>+</td>

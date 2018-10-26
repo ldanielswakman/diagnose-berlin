@@ -23,7 +23,7 @@ get_header(); ?>
             	<blockquote class="blockquote--huge">
 					<?php the_field('home_headline'); ?>
 	            </blockquote>
-				<a href="<?php the_field('first_cta_link'); ?>" class="button button--circle button--large button--primary"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-down.svg" alt="" /></a>
+				<a href="<?php the_field('first_cta_link'); ?>" class="button button--circle button--large button--primary button--outline"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-down.svg" alt="" /></a>
 			</div>
         </div>
 	</div>
