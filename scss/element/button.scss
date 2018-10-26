@@ -45,6 +45,11 @@
 	&--grey {
 		background: $greylight;
 		border-color: transparent;
+
+		&:hover {
+			background: darken($greylight, 10%);
+			box-shadow: 0 0.25rem 1rem rgba($diagnoseBlue, 0.3);
+		}
 	}
 
 	// Sizes

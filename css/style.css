@@ -1005,6 +1005,9 @@ blockquote p {
   .button--grey {
     background: #CFDBE0;
     border-color: transparent; }
+    .button--grey:hover {
+      background: #b0c4cc;
+      box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
   .button--large {
     padding: 0.625rem 1.5rem;
     border-radius: 2rem;
@@ -1145,14 +1148,15 @@ blockquote p {
     .row > .content {
       padding: 2.5rem 5rem; } }
 
-.field label {
+.field label, .gfield label {
   display: block;
   margin-bottom: 0.25rem;
   color: rgba(0, 94, 131, 0.3);
   font-weight: 600; }
 
 .field input[type="date"],
-.field select {
+.field select, .gfield input[type="date"],
+.gfield select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1167,35 +1171,45 @@ blockquote p {
   font-weight: 600;
   cursor: pointer; }
   .field input[type="date"]:hover,
-  .field select:hover {
+  .field select:hover, .gfield input[type="date"]:hover,
+  .gfield select:hover {
     color: #F88379; }
   .field input[type="date"]:focus,
-  .field select:focus {
+  .field select:focus, .gfield input[type="date"]:focus,
+  .gfield select:focus {
     outline: none; }
   .field input[type="date"]:invalid,
-  .field select:invalid {
+  .field select:invalid, .gfield input[type="date"]:invalid,
+  .gfield select:invalid {
     color: rgba(0, 94, 131, 0.3);
     border-color: #005E83; }
     .field input[type="date"]:invalid:hover,
-    .field select:invalid:hover {
+    .field select:invalid:hover, .gfield input[type="date"]:invalid:hover,
+    .gfield select:invalid:hover {
       color: #F88379;
       border-color: currentColor; }
 
-.field select {
+.field select, .gfield select {
   height: 2.5rem; }
 
 .field--radio {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.gfield_radio, .gfield_checkbox li {
   margin: 1rem -0.5rem 0 -0.5rem; }
-  .field--radio input[type="radio"] {
+  .gfield_radio input[type="radio"],
+  .gfield_radio input[type="checkbox"], .gfield_checkbox li input[type="radio"],
+  .gfield_checkbox li input[type="checkbox"] {
     position: absolute;
     left: -9999px; }
-  .field--radio input[type="radio"]:checked + label {
+  .gfield_radio input[type="radio"]:checked + label,
+  .gfield_radio input[type="checkbox"]:checked + label, .gfield_checkbox li input[type="radio"]:checked + label,
+  .gfield_checkbox li input[type="checkbox"]:checked + label {
     background: #F88379;
     border-color: transparent;
     color: #fff; }
-  .field--radio label {
+  .gfield_radio label, .gfield_checkbox li label {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1209,17 +1223,35 @@ blockquote p {
     font: inherit;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
     line-height: 1.5rem;
     cursor: pointer; }
-    .field--radio label:hover {
+    .gfield_radio label:hover, .gfield_checkbox li label:hover {
       color: #F88379;
       background-color: rgba(248, 131, 121, 0.05); }
-  .field--radio-item {
-    flex: 0 0 calc(100% - 1rem);
-    margin: 0.5rem; }
-    @media screen and (min-width: 48em) {
-      .field--radio-item {
-        flex-basis: calc(50% - 1rem); } }
+  .gfield_radio input[type="checkbox"] + label:before, .gfield_checkbox li input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
+    margin: 0.25rem 0.5rem 0 -0.25rem;
+    border-radius: 0.5rem;
+    background: #CFDBE0; }
+  .gfield_radio input[type="checkbox"]:checked + label:before, .gfield_checkbox li input[type="checkbox"]:checked + label:before {
+    background: #fff; }
+
+@media screen and (min-width: 48em) {
+  ul.gfield_radio, .gfield_checkbox {
+    display: flex;
+    flex-wrap: wrap; } }
+
+ul.gfield_radio li, .gfield_checkbox li {
+  flex: 0 0 calc(100% - 1rem);
+  margin: 0.5rem; }
+  @media screen and (min-width: 48em) {
+    ul.gfield_radio li, .gfield_checkbox li {
+      flex-basis: calc(50% - 1rem); } }
 
 .field-group {
   display: flex;
@@ -1246,40 +1278,77 @@ footer {
     footer {
       padding: 5rem; } }
 
-.form {
+.gform_wrapper .gf_page_steps {
+  display: none; }
+
+.form,
+.gform_body {
   max-width: 720px;
   margin: 0 auto;
   padding-top: 3rem; }
-  .form-section {
-    margin: 0 0.75rem;
+  .form-section,
+  .form .gform_page,
+  .gform_body-section,
+  .gform_body .gform_page {
     padding: 1rem;
     border-radius: 0.75rem;
     background: #F3F8F9; }
     @media screen and (min-width: 30em) {
-      .form-section {
+      .form-section,
+      .form .gform_page,
+      .gform_body-section,
+      .gform_body .gform_page {
         padding: 1.5rem; } }
-    .form-section.isActive {
+    .form-section.isActive,
+    .form .gform_page.isActive,
+    .gform_body-section.isActive,
+    .gform_body .gform_page.isActive {
       background: #fff;
       box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.1); }
-    .form-section:not(.isActive) .question, .form-section:not(.isActive) .answer {
+    .form-section:not(.isActive) .question, .form-section:not(.isActive) .answer,
+    .form .gform_page:not(.isActive) .question,
+    .form .gform_page:not(.isActive) .answer,
+    .gform_body-section:not(.isActive) .question,
+    .gform_body-section:not(.isActive) .answer,
+    .gform_body .gform_page:not(.isActive) .question,
+    .gform_body .gform_page:not(.isActive) .answer {
       opacity: 0.2; }
-    .form-section .actions {
+    .form-section .actions,
+    .form .gform_page .actions,
+    .gform_body-section .actions,
+    .gform_body .gform_page .actions {
       display: flex;
       justify-content: flex-end; }
-  .form-section + .form-section {
+  .form-section + .form-section,
+  .gform_body-section + .form-section, .form-section +
+  .gform_body-section,
+  .gform_body-section +
+  .gform_body-section {
     margin-top: 3rem; }
-  .form-section--short {
+  .form-section--short,
+  .gform_body-section--short {
     display: flex;
     flex-direction: column; }
     @media screen and (min-width: 30em) {
-      .form-section--short {
+      .form-section--short,
+      .gform_body-section--short {
         flex-direction: row; } }
-    .form-section--short .answer {
+    .form-section--short .answer,
+    .gform_body-section--short .answer {
       min-width: 12rem; }
-      .form-section--short .answer label {
+      .form-section--short .answer label,
+      .gform_body-section--short .answer label {
         display: flex;
         width: 100%;
         justify-content: center; }
+
+.lang-item a {
+  opacity: 0.6; }
+  .lang-item a:hover {
+    opacity: 1; }
+
+.lang-item.no-translation a {
+  text-decoration: line-through; }
 
 nav {
   position: relative;
@@ -1290,7 +1359,7 @@ nav {
   border-bottom: 1px solid rgba(28, 46, 53, 0.2); }
   @media screen and (min-width: 48em) {
     nav {
-      padding: 0 2rem 0 5rem; } }
+      padding: 0 3.5rem 0 5rem; } }
   nav .logo {
     display: flex;
     margin-right: auto; }
@@ -1311,6 +1380,8 @@ nav {
     @media screen and (min-width: 48em) {
       .menu .show-sm {
         display: inherit; } }
+  .menu > li {
+    display: flex; }
   .menu a {
     display: flex;
     justify-content: center;
@@ -1329,12 +1400,12 @@ nav {
       .menu li.isActive > a {
         border-left-color: transparent;
         border-bottom-color: currentColor; } }
-  .menu .hasSubmenu {
+  .menu .menu-item-has-children {
     text-align: center; }
-    .menu .hasSubmenu > a > svg {
+    .menu .menu-item-has-children > a > svg {
       display: none; }
     @media screen and (min-width: 48em) {
-      .menu .hasSubmenu > a > svg {
+      .menu .menu-item-has-children > a > svg {
         display: inherit;
         width: 1.5rem;
         height: 1.5rem;
@@ -1342,12 +1413,12 @@ nav {
         position: relative;
         transition: all 0.3s ease;
         opacity: 0.5; }
-      .menu .hasSubmenu:hover .sub-menu {
+      .menu .menu-item-has-children:hover .sub-menu {
         max-height: 6rem;
         opacity: 1;
         pointer-events: all;
         transition: all 0.2s ease; }
-      .menu .hasSubmenu:hover > a > svg {
+      .menu .menu-item-has-children:hover > a > svg {
         transform: rotate(180deg) translateY(-0.125rem);
         opacity: 1; } }
 
@@ -1466,7 +1537,7 @@ nav.isActive .menu-toggle span:last-child {
         padding: 0.75rem 1rem;
         justify-content: flex-start; }
       nav.isActive .menu .show-sm {
-        display: block; }
+        display: flex; }
     nav.isActive .sub-menu {
       position: relative;
       top: 0;
@@ -1548,13 +1619,17 @@ table {
       margin-top: -12rem; } }
   .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     margin-right: 2rem; }
     @media screen and (min-width: 48em) {
       .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
-        margin-top: 0.75rem;
-        margin-right: -2rem; } }
+        margin-top: -2.5rem;
+        margin-right: -3rem; } }
+    .page.home #hero-post .button--circle img, .page.home .section--hero-post .box .button--circle img {
+      max-height: 1.5rem; }
 
 .page.home #intro, .page.home .section--intro {
   padding: 6rem 0; }
@@ -1669,6 +1744,9 @@ table {
     max-height: 0;
     padding-bottom: 0; }
 
+.page-template-page-services-single #call_to_action {
+  background: #F3F8F9; }
+
 .page-template-page-how-we-work #intro {
   min-height: 90vh;
   background-color: #F5F8F9;
@@ -1735,44 +1813,57 @@ table {
     .page-template-page-team .partners-grid:hover .box:hover {
       opacity: 1; }
 
-.page.knowledge-base .categories {
+.page.knowledge-base .categories,
+.page-template-index-php .categories {
   display: flex;
   overflow: auto; }
-  .page.knowledge-base .categories li h4 {
+  .page.knowledge-base .categories li h4,
+  .page-template-index-php .categories li h4 {
     display: flex;
     padding: 0.5rem; }
-  .page.knowledge-base .categories li.title {
+  .page.knowledge-base .categories li.title,
+  .page-template-index-php .categories li.title {
     margin-right: 1rem;
     padding-right: 1rem;
     border-right: 1px solid rgba(28, 46, 53, 0.15); }
-    .page.knowledge-base .categories li.title h4 {
+    .page.knowledge-base .categories li.title h4,
+    .page-template-index-php .categories li.title h4 {
       font-weight: normal; }
-  .page.knowledge-base .categories li a:hover h4 {
+  .page.knowledge-base .categories li a:hover h4,
+  .page-template-index-php .categories li a:hover h4 {
     color: #F88379;
     opacity: 1; }
-  .page.knowledge-base .categories li a.isActive h4 {
+  .page.knowledge-base .categories li a.isActive h4,
+  .page-template-index-php .categories li a.isActive h4 {
     color: #005E83;
     opacity: 1; }
 
-.page.knowledge-base #articles {
+.page.knowledge-base #articles,
+.page-template-index-php #articles {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 
-.page.knowledge-base .post-preview {
+.page.knowledge-base .post-preview,
+.page-template-index-php .post-preview {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem; }
-  .page.knowledge-base .post-preview__figure {
+  .page.knowledge-base .post-preview__figure,
+  .page-template-index-php .post-preview__figure {
     width: 10rem; }
-  .page.knowledge-base .post-preview__text {
+  .page.knowledge-base .post-preview__text,
+  .page-template-index-php .post-preview__text {
     padding: 1rem;
     line-height: 1.25rem; }
-  .page.knowledge-base .post-preview .categories a {
+  .page.knowledge-base .post-preview .categories a,
+  .page-template-index-php .post-preview .categories a {
     margin-right: 1rem; }
-    .page.knowledge-base .post-preview .categories a:hover h4 {
+    .page.knowledge-base .post-preview .categories a:hover h4,
+    .page-template-index-php .post-preview .categories a:hover h4 {
       color: #F88379;
       opacity: 1; }
-  .page.knowledge-base .post-preview .categories h4 {
+  .page.knowledge-base .post-preview .categories h4,
+  .page-template-index-php .post-preview .categories h4 {
     font-size: 0.875rem; }
 
 .page.knowledge-base #hero {
