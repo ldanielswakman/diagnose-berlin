@@ -1,0 +1,13 @@
+// Lang switcher
+.lang-item {
+	a {
+		opacity: 0.6;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&.no-translation a {
+		text-decoration: line-through;
+	}
+}

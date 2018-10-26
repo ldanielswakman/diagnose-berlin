@@ -1,17 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="25px" height="31px" viewBox="0 0 25 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>arrow-down</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-        <g id="01-Home-(Desktop)" transform="translate(-378.000000, -642.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="3">
-            <g id="Group-2-Copy-6" transform="translate(360.000000, 627.000000)">
-                <g id="arrow-down" transform="translate(20.000000, 16.000000)">
-                    <polyline id="Rectangle-2" transform="translate(10.382500, 17.882500) rotate(-315.000000) translate(-10.382500, -17.882500) " points="17.4413238 10.9653579 17.4413238 24.7996426 3.32367674 24.7996426"></polyline>
-                    <path d="M10.3970588,0.733290909 L10.3970588,25.468154" id="Line"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 24" style="enable-background:new 0 0 20 24;" xml:space="preserve">
+<style type="text/css">
+    .st0{fill:none;stroke:#F88379;stroke-width:2.3554;stroke-linecap:square;}
+    .st1{fill:none;stroke:#F88379;stroke-width:2.3002;stroke-linecap:square;}
+</style>
+<polyline class="st0" points="17.8,14.5 10.1,22.2 2.2,14.3 "/>
+<path class="st1" d="M10,1.8v18.5"/>
 </svg>

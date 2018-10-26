@@ -1005,6 +1005,9 @@ blockquote p {
   .button--grey {
     background: #CFDBE0;
     border-color: transparent; }
+    .button--grey:hover {
+      background: #b0c4cc;
+      box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
   .button--large {
     padding: 0.625rem 1.5rem;
     border-radius: 2rem;
@@ -1339,6 +1342,14 @@ footer {
         width: 100%;
         justify-content: center; }
 
+.lang-item a {
+  opacity: 0.6; }
+  .lang-item a:hover {
+    opacity: 1; }
+
+.lang-item.no-translation a {
+  text-decoration: line-through; }
+
 nav {
   position: relative;
   display: flex;
@@ -1348,7 +1359,7 @@ nav {
   border-bottom: 1px solid rgba(28, 46, 53, 0.2); }
   @media screen and (min-width: 48em) {
     nav {
-      padding: 0 2rem 0 5rem; } }
+      padding: 0 3.5rem 0 5rem; } }
   nav .logo {
     display: flex;
     margin-right: auto; }
@@ -1369,6 +1380,8 @@ nav {
     @media screen and (min-width: 48em) {
       .menu .show-sm {
         display: inherit; } }
+  .menu > li {
+    display: flex; }
   .menu a {
     display: flex;
     justify-content: center;
@@ -1387,12 +1400,12 @@ nav {
       .menu li.isActive > a {
         border-left-color: transparent;
         border-bottom-color: currentColor; } }
-  .menu .hasSubmenu {
+  .menu .menu-item-has-children {
     text-align: center; }
-    .menu .hasSubmenu > a > svg {
+    .menu .menu-item-has-children > a > svg {
       display: none; }
     @media screen and (min-width: 48em) {
-      .menu .hasSubmenu > a > svg {
+      .menu .menu-item-has-children > a > svg {
         display: inherit;
         width: 1.5rem;
         height: 1.5rem;
@@ -1400,12 +1413,12 @@ nav {
         position: relative;
         transition: all 0.3s ease;
         opacity: 0.5; }
-      .menu .hasSubmenu:hover .sub-menu {
+      .menu .menu-item-has-children:hover .sub-menu {
         max-height: 6rem;
         opacity: 1;
         pointer-events: all;
         transition: all 0.2s ease; }
-      .menu .hasSubmenu:hover > a > svg {
+      .menu .menu-item-has-children:hover > a > svg {
         transform: rotate(180deg) translateY(-0.125rem);
         opacity: 1; } }
 
@@ -1524,7 +1537,7 @@ nav.isActive .menu-toggle span:last-child {
         padding: 0.75rem 1rem;
         justify-content: flex-start; }
       nav.isActive .menu .show-sm {
-        display: block; }
+        display: flex; }
     nav.isActive .sub-menu {
       position: relative;
       top: 0;
@@ -1606,13 +1619,17 @@ table {
       margin-top: -12rem; } }
   .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     margin-right: 2rem; }
     @media screen and (min-width: 48em) {
       .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
-        margin-top: 0.75rem;
-        margin-right: -2rem; } }
+        margin-top: -2.5rem;
+        margin-right: -3rem; } }
+    .page.home #hero-post .button--circle img, .page.home .section--hero-post .box .button--circle img {
+      max-height: 1.5rem; }
 
 .page.home #intro, .page.home .section--intro {
   padding: 6rem 0; }
@@ -1727,6 +1744,9 @@ table {
     max-height: 0;
     padding-bottom: 0; }
 
+.page-template-page-services-single #call_to_action {
+  background: #F3F8F9; }
+
 .page-template-page-how-we-work #intro {
   min-height: 90vh;
   background-color: #F5F8F9;
@@ -1793,44 +1813,57 @@ table {
     .page-template-page-team .partners-grid:hover .box:hover {
       opacity: 1; }
 
-.page.knowledge-base .categories {
+.page.knowledge-base .categories,
+.page-template-index-php .categories {
   display: flex;
   overflow: auto; }
-  .page.knowledge-base .categories li h4 {
+  .page.knowledge-base .categories li h4,
+  .page-template-index-php .categories li h4 {
     display: flex;
     padding: 0.5rem; }
-  .page.knowledge-base .categories li.title {
+  .page.knowledge-base .categories li.title,
+  .page-template-index-php .categories li.title {
     margin-right: 1rem;
     padding-right: 1rem;
     border-right: 1px solid rgba(28, 46, 53, 0.15); }
-    .page.knowledge-base .categories li.title h4 {
+    .page.knowledge-base .categories li.title h4,
+    .page-template-index-php .categories li.title h4 {
       font-weight: normal; }
-  .page.knowledge-base .categories li a:hover h4 {
+  .page.knowledge-base .categories li a:hover h4,
+  .page-template-index-php .categories li a:hover h4 {
     color: #F88379;
     opacity: 1; }
-  .page.knowledge-base .categories li a.isActive h4 {
+  .page.knowledge-base .categories li a.isActive h4,
+  .page-template-index-php .categories li a.isActive h4 {
     color: #005E83;
     opacity: 1; }
 
-.page.knowledge-base #articles {
+.page.knowledge-base #articles,
+.page-template-index-php #articles {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 
-.page.knowledge-base .post-preview {
+.page.knowledge-base .post-preview,
+.page-template-index-php .post-preview {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem; }
-  .page.knowledge-base .post-preview__figure {
+  .page.knowledge-base .post-preview__figure,
+  .page-template-index-php .post-preview__figure {
     width: 10rem; }
-  .page.knowledge-base .post-preview__text {
+  .page.knowledge-base .post-preview__text,
+  .page-template-index-php .post-preview__text {
     padding: 1rem;
     line-height: 1.25rem; }
-  .page.knowledge-base .post-preview .categories a {
+  .page.knowledge-base .post-preview .categories a,
+  .page-template-index-php .post-preview .categories a {
     margin-right: 1rem; }
-    .page.knowledge-base .post-preview .categories a:hover h4 {
+    .page.knowledge-base .post-preview .categories a:hover h4,
+    .page-template-index-php .post-preview .categories a:hover h4 {
       color: #F88379;
       opacity: 1; }
-  .page.knowledge-base .post-preview .categories h4 {
+  .page.knowledge-base .post-preview .categories h4,
+  .page-template-index-php .post-preview .categories h4 {
     font-size: 0.875rem; }
 
 .page.knowledge-base #hero {
