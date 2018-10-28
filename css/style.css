@@ -1348,12 +1348,16 @@ footer {
   footer .subtle {
     opacity: 0.5; }
   footer .menu {
-    display: block;
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3; }
+    display: block; }
+    @media screen and (min-width: 48em) {
+      footer .menu {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3; } }
     footer .menu a {
-      padding: 0.25rem 0; }
+      padding: 0.25rem 0;
+      line-height: 1.25rem;
+      justify-content: flex-start; }
     footer .menu .separator {
       break-after: always;
       opacity: 0;
@@ -1438,13 +1442,20 @@ footer {
     justify-content: flex-end;
     margin-top: 3rem; }
 
-.lang-item a {
-  opacity: 0.6; }
-  .lang-item a:hover {
-    opacity: 1; }
+.menu > .lang-item {
+  display: none; }
+  @media screen and (min-width: 48em) {
+    .menu > .lang-item {
+      display: flex; } }
+  .menu > .lang-item a {
+    opacity: 0.6; }
+    .menu > .lang-item a:hover {
+      opacity: 1; }
+  .menu > .lang-item.no-translation a {
+    text-decoration: line-through; }
 
-.lang-item.no-translation a {
-  text-decoration: line-through; }
+nav.isActive .menu > .lang-item {
+  display: flex; }
 
 nav {
   position: relative;
@@ -1476,8 +1487,9 @@ nav {
     @media screen and (min-width: 48em) {
       .menu .show-sm {
         display: inherit; } }
-  .menu > li {
-    display: flex; }
+  @media screen and (min-width: 48em) {
+    .menu > li {
+      display: flex; } }
   .menu a {
     display: flex;
     justify-content: center;
@@ -1513,14 +1525,14 @@ nav {
         max-height: 6rem;
         opacity: 1;
         pointer-events: all;
-        transition: all 0.2s ease; }
+        transition: all 0.2s ease 0.1s; }
       .menu .menu-item-has-children:hover > a > svg {
         transform: rotate(180deg) translateY(-0.125rem);
         opacity: 1; } }
 
 .sub-menu {
   position: absolute;
-  top: 5.675rem;
+  top: calc(6.25rem + 1px);
   left: 0;
   z-index: 12;
   display: flex;
@@ -1532,9 +1544,10 @@ nav {
   background: #fff;
   box-shadow: 0 0.25rem 1rem rgba(28, 46, 53, 0.05);
   overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.7s ease; }
+  opacity: 0; }
+  @media screen and (min-width: 48em) {
+    .sub-menu {
+      transition: all 0.7s ease 1s; } }
   @media screen and (min-width: 48em) {
     .sub-menu {
       padding: 0;
@@ -1556,11 +1569,19 @@ nav {
     width: 3rem;
     height: 2.5rem;
     margin-right: 0.5rem;
+    margin-left: -0.5rem;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5; }
+    opacity: 0.5;
+    transform: scale(0.75); }
+    @media screen and (min-width: 48em) {
+      .sub-menu li[class*="icon-"] a:before {
+        margin-left: 0;
+        transform: scale(1); } }
   .sub-menu .icon-measure a:before {
     background-image: url("../images/icon-measure-small.svg"); }
+  .sub-menu .icon-analyse a:before {
+    background-image: url("../images/icon-analyse-small.svg"); }
   .sub-menu .icon-stopwatch a:before {
     background-image: url("../images/icon-stopwatch-small.svg"); }
   .sub-menu .icon-bike a:before {
@@ -1623,17 +1644,26 @@ nav.isActive .menu-toggle span:last-child {
       position: absolute;
       top: 100%;
       left: 0;
-      width: 100%;
       z-index: 11;
+      flex-direction: column;
+      width: 100%;
+      padding: 0.5rem 0;
       background: #fff;
       box-shadow: 0 0.25rem 1rem rgba(28, 46, 53, 0.1);
-      flex-direction: column;
       transition: all 0.2s ease; }
       nav.isActive .menu a {
         padding: 0.75rem 1rem;
         justify-content: flex-start; }
       nav.isActive .menu .show-sm {
         display: flex; }
+      nav.isActive .menu:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 10000vh;
+        background: rgba(28, 46, 53, 0.5); }
     nav.isActive .sub-menu {
       position: relative;
       top: 0;

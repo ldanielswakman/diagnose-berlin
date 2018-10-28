@@ -1,5 +1,10 @@
 // Lang switcher
-.lang-item {
+.menu > .lang-item {
+	display: none;
+
+	@include tabletAndUp() {
+		display: flex;
+	}
 	a {
 		opacity: 0.6;
 
@@ -10,4 +15,7 @@
 	&.no-translation a {
 		text-decoration: line-through;
 	}
+}
+nav.isActive .menu > .lang-item {
+	display: flex;
 }

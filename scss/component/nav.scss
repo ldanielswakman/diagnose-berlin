@@ -43,7 +43,9 @@ nav {
 		}
 	}
 
-	& > li { display: flex; }
+	@include tabletAndUp() {
+		& > li { display: flex; }
+	}
 
 	a {
 		display: flex;
@@ -91,7 +93,7 @@ nav {
 					max-height: 6rem;
 					opacity: 1;
 					pointer-events: all;
-					transition: all 0.2s ease;
+					transition: all 0.2s ease 0.1s;
 				}
 				& > a > svg {
 					transform: rotate(180deg) translateY(-0.125rem);
@@ -106,10 +108,9 @@ nav {
 // Submenu
 .sub-menu {
 	position: absolute;
-	top: 5.675rem;
+	top: calc(6.25rem + 1px);
 	left: 0;
 	z-index: 12;
-
 
 	display: flex;
 	flex-direction: column;
@@ -121,15 +122,11 @@ nav {
 	background: $white;
 	box-shadow: 0 0.25rem 1rem rgba($dark, 0.05);
 	overflow: hidden;
-
 	opacity: 0;
-	pointer-events: none;
-	transition: all 0.7s ease;
 
-	// max-height: 6rem;
-	// opacity: 1;
-	// pointer-events: all;
-	// transition: all 0.2s ease;
+	@include tabletAndUp() {
+		transition: all 0.7s ease 1s;
+	}
 
 	@include tabletAndUp() {
 		padding: 0;
@@ -152,18 +149,29 @@ nav {
 		}
 	}
 
+	// Icons
 	& li[class*="icon-"] a:before {
 		content: "";
 		display: inline-block;
 		width: 3rem;
 		height: 2.5rem;
 		margin-right: 0.5rem;
+		margin-left: -0.5rem;
 		background-position: center;
 		background-repeat: no-repeat;
 		opacity: 0.5;
+		transform: scale(0.75);
+
+		@include tabletAndUp() {
+			margin-left: 0;
+			transform: scale(1);
+		}
 	}
 	.icon-measure a:before {
 		background-image: url('../images/icon-measure-small.svg');
+	}
+	.icon-analyse a:before {
+		background-image: url('../images/icon-analyse-small.svg');
 	}
 	.icon-stopwatch a:before {
 		background-image: url('../images/icon-stopwatch-small.svg');
@@ -245,11 +253,14 @@ nav.isActive {
 			position: absolute;
 			top: 100%;
 			left: 0;
-			width: 100%;
 			z-index: 11;
+
+			flex-direction: column;
+			width: 100%;
+			padding: 0.5rem 0;
+
 			background: $white;
 			box-shadow: 0 0.25rem 1rem rgba($dark, 0.1);
-			flex-direction: column;
 			transition: all 0.2s ease;
 
 			a {
@@ -258,6 +269,16 @@ nav.isActive {
 			}
 			.show-sm {
 				display: flex;
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 10000vh;
+				background: rgba($dark, 0.5);
 			}
 		}
 		.sub-menu {

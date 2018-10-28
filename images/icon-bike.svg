@@ -1,21 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="64px" height="46px" viewBox="0 0 64 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-bikefit</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="02-Service-Overview-(Desktop)" transform="translate(-438.000000, -1436.000000)" stroke="#F88379" stroke-width="2.25">
-            <g id="Group-4-Copy" transform="translate(321.000000, 1438.000000)">
-                <g id="icon-bikefit" transform="translate(119.000000, 0.000000)">
-                    <ellipse id="Oval" cx="11.5" cy="30" rx="11.5" ry="12"></ellipse>
-                    <ellipse id="Oval" cx="48.5" cy="30" rx="11.5" ry="12"></ellipse>
-                    <path d="M49,32 L45,0" id="Shape"></path>
-                    <polyline id="Shape" points="12 30 15.9606935 12 46 12"></polyline>
-                    <path d="M10,6 L19,6" id="Shape"></path>
-                    <path d="M40,0 L50.181823,0 C52.2905446,0 54,1.7908592 54,3.99999613 L54,4.00000373 C54,6.2091408 52.2905446,8 50.181823,8" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 46" style="enable-background:new 0 0 64 46;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#F88379;stroke-width:2.25;}
+</style>
+<title>icon-bikefit</title>
+<desc>Created with Sketch.</desc>
+<circle class="st0" cx="47" cy="34" r="8"/>
+<circle class="st0" cx="17" cy="34" r="8"/>
+<path class="st0" d="M46,16h-5.3L39,13.8c0-1-0.4-1.9-1.2-2.6c-1.6-1.6-4.1-1.6-5.7,0l-7,7c-1.5,1.5-1.5,3.9-0.2,5.4l0.3,0.3
+	c0.4,0.4,0.8,0.7,1.3,0.8l4,2.5l-2.4,7.1c-0.4,1,0.2,2.2,1.2,2.5h0c1,0.4,2.2-0.2,2.5-1.2l3.4-10.1l-3.8-2.4l5.4-5.4l1.7,2.3H46
+	c1.1,0,2-0.9,2-2S47.1,16,46,16z"/>
+<circle class="st0" cx="44" cy="6" r="4"/>
+<line class="st0" x1="56" y1="44" x2="12" y2="44"/>
+<line class="st0" x1="8" y1="44" x2="10" y2="44"/>
 </svg>

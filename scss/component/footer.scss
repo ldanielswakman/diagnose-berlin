@@ -1,12 +1,7 @@
 footer {
 	background: darken($diagnoseBlue, 8%);
-	// padding: 3rem 1.5rem;
 	color: $white;
 	line-height: 2rem;
-
-	@include tabletAndUp() {
-		// padding: 5rem;
-	}
 
 	a {
 		color: $white;
@@ -18,12 +13,17 @@ footer {
 
 	.menu {
 		display: block;
-	  -webkit-column-count: 3;
-	  -moz-column-count: 3;
-	  column-count: 3;
+
+		@include tabletAndUp() {
+		  -webkit-column-count: 3;
+		  -moz-column-count: 3;
+		  column-count: 3;
+		}
 
 	  a {
 	  	padding: 0.25rem 0;
+	  	line-height: 1.25rem;
+	  	justify-content: flex-start;
 	  }
 
 	  .separator {

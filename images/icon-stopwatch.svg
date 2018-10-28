@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="43px" height="52px" viewBox="0 0 43 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-trainplan</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="02-Service-Overview-(Desktop)" transform="translate(-198.000000, -835.000000)" stroke="#F88379" stroke-width="2.25">
-            <g id="Group-4" transform="translate(120.000000, 837.000000)">
-                <g id="icon-trainplan" transform="translate(80.000000, 0.000000)">
-                    <ellipse id="Oval" cx="19.5" cy="28.173913" rx="19.5" ry="19.826087"></ellipse>
-                    <path d="M19.4998101,42.7827281 C11.5769328,42.7827281 5.13138805,36.2293993 5.13138805,28.1740304 C5.13138805,20.1186616 11.5769328,13.5653348 19.4998101,13.5653348 C27.4226874,13.5653348 33.8682292,20.1186635 33.8682292,28.1740304 C33.8682292,36.2293973 27.4226854,42.7827281 19.4998101,42.7827281 Z" id="Shape"></path>
-                    <path d="M19.4998101,16.6956522 L19.4998101,26.119012" id="Shape"></path>
-                    <ellipse id="Oval" cx="19.5" cy="28.173913" rx="2.05263158" ry="2.08695652"></ellipse>
-                    <rect id="Rectangle-path" x="15.3947368" y="0" width="8.21052632" height="4.17391304"></rect>
-                    <path d="M17.4473684,4.17391304 L17.4473684,8.34782609" id="Shape"></path>
-                    <path d="M21.5526316,4.17391304 L21.5526316,8.34782609" id="Shape"></path>
-                    <polyline id="Shape" points="29.6820569 10.4853118 32.8264058 7.28838386 35.9210526 10.4347826 32.7767077 13.6317105"></polyline>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 43 52" style="enable-background:new 0 0 43 52;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#F88379;stroke-width:2.25;}
+</style>
+<title>icon-trainplan</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<circle class="st0" cx="21.5" cy="30.2" r="19.8"/>
+	<path class="st0" d="M21.5,44.8c-8.1,0-14.6-6.6-14.6-14.6s6.6-14.6,14.6-14.6s14.6,6.6,14.6,14.6S29.6,44.8,21.5,44.8z"/>
+	<line class="st0" x1="21.5" y1="18.7" x2="21.5" y2="28.1"/>
+	<circle class="st0" cx="21.5" cy="30.2" r="2.1"/>
+	<rect x="17.3" y="2" class="st0" width="8.3" height="4.2"/>
+	<line class="st0" x1="19.4" y1="6.2" x2="19.4" y2="10.3"/>
+	<line class="st0" x1="23.6" y1="6.2" x2="23.6" y2="10.3"/>
+	<polyline class="st0" points="31.9,12.5 35,9.3 38.2,12.4 35,15.6 	"/>
+</g>
 </svg>

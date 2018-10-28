@@ -73,7 +73,7 @@ function checkFGActive() {
 		// $form.find('.gform_page').first().addClass('isActive');
 
 		// Remove pre-existing classes
-		$form.find('.gform_body').find('.gform_page').removeClass('isActive isPending');
+		$form.find('.gform_body').find('.gform_page').removeClass('isCompleted isActive isPending');
 
 		// Loop over steps to find active pages
 		$form.find('.gf_page_steps').find('.gf_step').each(function(i) {
@@ -81,15 +81,20 @@ function checkFGActive() {
 			// index to child number
 			childNumber = i+1;
 
+			// Set completed class if found
+			if($(this).hasClass('gf_step_completed')) {
+				$form.find('.gform_body').find('.gform_page:nth-child(' + childNumber + ')').addClass('isCompleted');
+				// console.log('active: ' + childNumber);
+			}
 			// Set active class if found
 			if($(this).hasClass('gf_step_active')) {
 				$form.find('.gform_body').find('.gform_page:nth-child(' + childNumber + ')').addClass('isActive');
-				console.log('active: ' + childNumber);
+				// console.log('active: ' + childNumber);
 			}
 			// Set pending class if found
 			if($(this).hasClass('gf_step_pending')) {
 				$form.find('.gform_body').find('.gform_page:nth-child(' + childNumber + ')').addClass('isPending');
-				console.log('pending: ' + childNumber);
+				// console.log('pending: ' + childNumber);
 			}
 		});
 	});
