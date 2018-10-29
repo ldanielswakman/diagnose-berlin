@@ -3,11 +3,14 @@
 	#hero, .section--hero {
 	 	background-color: #F5F8F9;
 	 	background-image: url('../images/mockup-home-1.jpg');
-	 	background-size: 180%;
+	 	background-size: 200%;
 	 	background-position: 80% 0;
 	 	background-repeat: no-repeat;
 	 	min-height: 50vh;
 
+	 	@include bigPhoneAndUp() {
+	 		background-size: 180%;
+	 	}
 	 	@include tabletAndUp() {
 		 	background-size: cover;
 		 	background-position: top left;
@@ -27,10 +30,10 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			float: right;
-			margin-right: 2rem;
+			margin-left: auto;
 
 			@include tabletAndUp() {
+				// float: right;
 				margin-top: -2.5rem;
 				margin-right: -3rem;
 			}
@@ -41,7 +44,7 @@
 	}
 
 	#intro, .section--intro {
-		padding: 6rem 0;
+		padding: 3rem 0;
 	}
 
 	#services_preview, .section--services_preview {
