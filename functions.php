@@ -95,33 +95,6 @@ function inline_popup_enabler(){
 }
 add_action('wp_footer', 'inline_popup_enabler');
 
-// Auto-select service radio button based on current service page
-
-//add_filter( 'gform_field_value_service', 'preselect_current_service' );
-// 
-//function preselect_current_service( $value ) {
-//    // Create pagename from post name
-//    $pagename = get_query_var('pagename');  
-//    if ( !$pagename && $id > 0 ) {  
-//        // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
-//        $post = $wp_query->get_queried_object();  
-//        $pagename = $post->post_name;  
-//    }
-//    $f_id = 1;
-//    $field_id = 2;
-//    $form = RGFormsModel::get_form_meta($f_id);
-//    $field = GFFormsModel::get_field( $form, $field_id );
-//    $value = GFFormsModel::get_field_value($field, $field_values);
-//    
-//    //if ($field_value === $pagename) {
-//        return $pagename;
-//    //}
-////  elseif ($field_value != $pagename) {
-//      //do nothing
-//  }
-////}
-
-
 
 add_filter( 'gform_pre_render_1', 'my_populate_checkbox' );
 

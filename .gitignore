@@ -19,3 +19,8 @@ wp-content/plugins/hello.php
 
 /node_modules/
 _notes/dwsync.xml
+scss/component/footer.css
+scss/component/form.css
+scss/component/lang-switcher.css
+scss/component/nav.css
+scss/element/field.css
