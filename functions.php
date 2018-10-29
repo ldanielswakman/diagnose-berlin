@@ -35,7 +35,9 @@ function parseTablePressTable($table) {
 	$html .= "<table class='table--comparison'>";
 	
 	$rows = $tableNode->getElementsByTagName('tr');
-	foreach ($rows as $row) :
+	foreach ($rows as $rowkey => $row) :
+
+    if($rowkey == 0) { $html .= '<thead>'; }
 
 		$html .= "<tr>";
 		$cells = $row->childNodes;
@@ -46,28 +48,44 @@ function parseTablePressTable($table) {
 				$title = $cell->nodeValue;
 			} else if($key == 1) {
 
-				$descr = $cell->nodeValue;
+        // Title cell
 
-				// $html .= title cell
-				$html .= '<td class="title">';
-					// Title
-					$html .= $title;
-					// Button
-					$html .= '<button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>';
-					// Info box
-					$html .= '<div class="box box--info-tooltip" onclick="toggleTooltip($(this))">';
-						$html .= '<h3>' . $title . '</h3>';
-						$html .= '<p>' . $descr . '</p>';
-					$html .= '</div>';
+        if($rowkey == 0) {
+          $html .= '<td class="title"></td>';
+        } else {
+  				$descr = $cell->nodeValue;
 
-				$html .= '</td>';
+  				// $html .= title cell
+  				$html .= '<td class="title">';
+  					// Title
+  					$html .= htmlspecialchars($title);
+  					// Button
+  					$html .= '<button onclick="toggleTooltip($(this))" class="button button--small button--circle button--grey">i</button>';
+  					// Info box
+  					$html .= '<div class="box box--info-tooltip" onclick="toggleTooltip($(this))">';
+  						$html .= '<h3>' . $title . '</h3>';
+  						$html .= '<p>' . $descr . '</p>';
+  					$html .= '</div>';
+
+  				$html .= '</td>';
+        }
 
 			} else {
-		  	$html .= "<td>" . $cell->nodeValue . "</td>";
+
+        // Other cells
+
+        if($rowkey == 0) {
+		  	  $html .= "<td><h3>" . $cell->nodeValue . "</h3></td>";
+        } else {
+          $html .= "<td>" . $cell->nodeValue . "</td>";
+        }
+
 			}
 		endforeach;
 
 		$html .= "</tr>";
+
+    if($rowkey == 0) { $html .= '</thead>'; }
 
 	endforeach;
 	$html .= "</table>";

@@ -107,14 +107,24 @@
 
 		.box {
 			margin-top: -5rem;
-		} 
+		}
+		.post-preview__figure {
+			min-width: 6rem;
+			width: 6rem;
+		}
 	}
 
 	#call_to_action, .section--call_to_action {
-		margin-top: 4rem;
+		padding-top: 3rem;
+		padding-bottom: 1rem;
 
 		@include tabletAndUp() {
-			margin-top: 8rem;
-		} 
+			padding-top: 6rem;
+			padding-bottom: 3rem;
+		}
+
+		figure {
+			margin-bottom: 1rem;
+		}
 	}
 }

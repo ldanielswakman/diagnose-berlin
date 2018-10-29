@@ -2,7 +2,7 @@ table {
 	display: block;
 	width: 100%;
 	max-width: 100vw;
-	overflow: auto;
+	// overflow: auto;
 	font-size: 0.875rem;
 
 	@include tabletAndUp() {
@@ -32,6 +32,7 @@ table {
 				font-weight: bold;
 			}
 			&.title {
+				position: relative;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -39,6 +40,17 @@ table {
 
 				.button {
 					margin-left: 0.75rem;
+				}
+				&.isActive .button {
+					background: $diagnoseBlue;
+					color: $white;
+				}
+				.box--info-tooltip {
+					display: none;
+				}
+				&.isActive .box--info-tooltip {
+					display: block;
+					cursor: pointer;
 				}
 			}
 		}

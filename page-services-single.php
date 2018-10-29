@@ -66,20 +66,8 @@ get_header(); ?>
 
     </div>
 
-    <div class="comparison isHidden">
-        <?php $table_id = get_field('group_1_table');
+    <?php $table_no = 1; include(locate_template('partials/service-comparison-table.php')); ?>
 
-            $table = tablepress_get_table([
-            'id' => $table_id,
-            'use_datatables' => false,
-            'print_name' => false,
-            'alternating_row_colors' => false,
-            'first_column_th' => true,
-        ]); ?>
-
-        <?php echo parseTablePressTable($table) ?>
-
-    </div>
 </section>
 <section id="packages2" class="section--packages content load-movein-btm load-delay-1s isHidden">
     <div class="row">
@@ -117,20 +105,13 @@ get_header(); ?>
 
     </div>
 
-    <?php if(get_field('package_groups') == 'two'): ?>
-        <div class="comparison isHidden">
-            <?php $table_id = get_field('group_2_table');
-                $table = tablepress_get_table([
-                'id' => $table_id,
-                'use_datatables' => false,
-                'print_name' => false,
-                'alternating_row_colors' => false,
-                'first_column_th' => true,
-            ]); ?>
+    <?php
+    if(get_field('package_groups') == 'two'):
+        $table_no = 2;
+        include(locate_template('partials/service-comparison-table.php'));
+    endif;
+    ?>
 
-            <?php echo parseTablePressTable($table) ?>
-    <?php endif; ?>
-    </div>
     </div>
 </section>
 <?php

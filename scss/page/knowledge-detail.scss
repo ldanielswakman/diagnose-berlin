@@ -52,6 +52,9 @@
 	}
 
 	#article {
+		p {
+			color: $greydark;
+		}
 		p, ul, ol, h1, h2, h3, blockquote {
 			margin-bottom: 2rem;
 		}
