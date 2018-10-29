@@ -2,14 +2,6 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.2
  */
 
 ?>
@@ -23,7 +15,7 @@
 					<div class="row row--nopadding">
 						<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-1 col-md-offset-2 col-lg-3 col-lg-offset-2 last-sm">
 							<figure>
-								<?php echo get_field('footer_cta_image'); ?>
+								<img src="<?php echo get_field('footer_cta_image'); ?>" />
 							</figure>
 						</div>
 
@@ -43,6 +35,7 @@
 					</div>
 				</section>
 			<?php }	?>
+
 
 <footer>
 
