@@ -44,24 +44,24 @@
 
 <footer>
 
-	<div class="row content">
+	<div class="content">
 
-		<div class="col-xs-12" style="text-align: center; margin-bottom: 2rem;">
+		<div style="text-align: center; margin-bottom: 2rem;">
 			<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/logo-monogram.svg" alt="" style="height: 3rem;" />
     </div>
 
-    <div class="col-xs-12">
-			<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
-		</div>
+		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 
-	</div><!-- .row -->
+	</div><!-- .content -->
 
-	<div class="site-info row content">
-		<div class="col-xs-12 col-sm-7">
-			<p id="footer-info">&copy;<?php echo date('Y'); ?> Diagnose Berlin</p>
-		</div>
-		<div class="col-xs-12 col-sm-5">
-			<p id="footer-credits"><a href="ldaniel.eu" target="_blank">Website by ldaniel.eu</a></p>
+	<div class="site-info content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-7">
+				<p id="footer-info">&copy;<?php echo date('Y'); ?> Diagnose Berlin</p>
+			</div>
+			<div class="col-xs-12 col-sm-5">
+				<p id="footer-credits"><a href="ldaniel.eu" target="_blank">Website by ldaniel.eu</a></p>
+			</div>
 		</div>
 	</div><!-- .site-info -->
 
