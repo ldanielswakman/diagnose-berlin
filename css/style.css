@@ -1763,10 +1763,13 @@ table {
 .page.home #hero, .page.home .section--hero {
   background-color: #F5F8F9;
   background-image: url("../images/mockup-home-1.jpg");
-  background-size: 180%;
+  background-size: 200%;
   background-position: 80% 0;
   background-repeat: no-repeat;
   min-height: 50vh; }
+  @media screen and (min-width: 30em) {
+    .page.home #hero, .page.home .section--hero {
+      background-size: 180%; } }
   @media screen and (min-width: 48em) {
     .page.home #hero, .page.home .section--hero {
       background-size: cover;
@@ -1783,8 +1786,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    float: right;
-    margin-right: 2rem; }
+    margin-left: auto; }
     @media screen and (min-width: 48em) {
       .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
         margin-top: -2.5rem;
@@ -1793,7 +1795,7 @@ table {
       max-height: 1.5rem; }
 
 .page.home #intro, .page.home .section--intro {
-  padding: 6rem 0; }
+  padding: 3rem 0; }
 
 .page.home #services_preview, .page.home .section--services_preview {
   background: #F3F8F9; }
@@ -1865,6 +1867,21 @@ table {
 
 .page-template-page-services-main #intro {
   min-height: 12rem; }
+
+.page-template-page-services-main .section--service {
+  padding: 6rem 0; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-services-main .section--service:nth-child(odd) .image {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1; }
+      .page-template-page-services-main .section--service:nth-child(odd) .image figure {
+        width: calc(100% + 5rem);
+        margin-right: 0;
+        margin-left: -5rem; } }
+  .page-template-page-services-main .section--service .image figure {
+    width: calc(100% + 5rem);
+    margin-right: -5rem; }
 
 .page-template-page-services-main .hasSubmenu a:after {
   display: none; }

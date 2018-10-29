@@ -4,6 +4,29 @@
 		min-height: 12rem;
 	}
 
+	.section--service {
+		padding: 6rem 0;
+
+		// alternate image/box alignment
+		@include tabletAndUp() {
+			&:nth-child(odd) {
+				.image {
+					-webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1;
+
+					figure {
+						width: calc(100% + 5rem);
+						margin-right: 0;
+						margin-left: -5rem;
+					}
+				}
+			}
+		}
+		.image figure {
+			width: calc(100% + 5rem);
+			margin-right: -5rem;
+		}
+	}
+
 	.hasSubmenu a:after {
 		display: none;
 	}

@@ -16,9 +16,10 @@ get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+
 <section id="hero-post">
 	<div class="row row--nopadding">
-		<div class="col-xs-10 col-sm-6 col-md-7 col-lg-4">
+		<div class="col-xs-10 col-sm-6 col-md-7 col-lg-5">
 			<div class="box load-movein-btm load-delay-07s">
             	<blockquote class="blockquote--huge">
 					<?php the_field('home_headline'); ?>
@@ -29,17 +30,18 @@ get_header(); ?>
 	</div>
 </section>
 
+
 <section id="intro">
-  	<div class="row row--nopadding">
-		<div class="col-xs-12 col-sm-5 content">
+  <div class="row row--nopadding">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content">
 			<blockquote><p><?php the_field('second_home_headline'); ?></p></blockquote>
-		</div>
-        <div class="col-xs-12 col-sm-7 col-md-6 content">
-            <?php the_field('first_home_blurb'); ?>
+			<br/>
+			<?php the_field('first_home_blurb'); ?>
 		</div>
 	</div>
-<!--</section>
--->	
+</section>
+
+
 <section id="services_preview">
 	<div class="content">
 		<?php the_field('services_section_intro'); ?>
@@ -64,7 +66,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-    <div class="col-xs-12 col-sm-6 content">
+    <a href="<?php the_field('knowledgebase_cta_link'); ?>" class="col-xs-12 col-sm-6 content">
 
 			<? $the_query = new WP_Query(['posts_per_page' => 3]); ?>
 
@@ -90,7 +92,7 @@ get_header(); ?>
 			  <p><?php __('No Articles'); ?></p>
 			<?php endif; ?>
 
-    </div>
+    </a>
 
 	</div>
 </section>

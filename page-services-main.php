@@ -17,16 +17,18 @@ get_header(); ?>
 					<!-- // display a sub field value -->
 <section id="<?php echo strtolower(get_sub_field('service_name')); ?>" class="section--service load-movein-btm">
 	<div class="row row--nopadding">
-		<div class="col-xs-12 col-sm-6 last-sm">
+		<div class="col-xs-12 col-sm-6 image">
 				<figure>
 					<img src="<?php the_sub_field('service_image'); ?>">
 				</figure>
 			</div>
-			<div class="col-xs-12 col-sm-6" style="margin-right: -5rem;">
-				<h2 class="c-highlight">
-					<img src="<?php the_sub_field('service_icon'); ?>">
-					<?php the_sub_field('service_name'); ?>
-				</h2>
+			<div class="col-xs-12 col-sm-6 text">
+				<div class="title content">
+					<h2 class="c-highlight">
+						<img src="<?php the_sub_field('service_icon'); ?>">
+						<?php the_sub_field('service_name'); ?>
+					</h2>
+				</div>
           		<div class="box">
 					<blockquote class="blockquote--big">
 						<p><?php the_sub_field('service_title'); ?></p>
