@@ -24,3 +24,7 @@ scss/component/form.css
 scss/component/lang-switcher.css
 scss/component/nav.css
 scss/element/field.css
+scss/base/colours.css
+scss/component/table.css
+scss/element/box.css
+scss/element/button.css
