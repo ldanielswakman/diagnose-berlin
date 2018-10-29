@@ -1870,6 +1870,16 @@ table {
 
 .page-template-page-services-main .section--service {
   padding: 6rem 0; }
+  .page-template-page-services-main .section--service .title h2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .page-template-page-services-main .section--service .title h2 img {
+      max-width: 2rem;
+      margin-right: 1rem; }
+  .page-template-page-services-main .section--service .image figure {
+    width: calc(100% + 5rem);
+    margin-right: -5rem; }
   @media screen and (min-width: 48em) {
     .page-template-page-services-main .section--service:nth-child(odd) .image {
       -webkit-box-ordinal-group: 2;
@@ -1879,9 +1889,6 @@ table {
         width: calc(100% + 5rem);
         margin-right: 0;
         margin-left: -5rem; } }
-  .page-template-page-services-main .section--service .image figure {
-    width: calc(100% + 5rem);
-    margin-right: -5rem; }
 
 .page-template-page-services-main .hasSubmenu a:after {
   display: none; }
