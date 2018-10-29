@@ -49,41 +49,49 @@ get_header(); ?>
 
 <section id="knowledge_preview">
 	<div class="row row--nopadding">
+
 		<div class="col-xs-12 col-sm-6 last-sm">
-			<div class="box" style="">
+			<div class="box">
 				<blockquote class="blockquote--big">
 					<p><?php the_field('knowledgebase_section_headline'); ?></p>
 				</blockquote>
-					<?php the_field('knowledgebase_section_text'); ?>
-					<a href="<?php the_field('knowledgebase_cta_link'); ?>" class="button button--primary button--outline button--large">
-						<?php the_field('knowledgebase_cta_text'); ?>
-					</a>
+				<br/>
+				<?php the_field('knowledgebase_section_text'); ?>
+				<br/>
+				<a href="<?php the_field('knowledgebase_cta_link'); ?>" class="button button--primary button--outline button--large">
+					<?php the_field('knowledgebase_cta_text'); ?>
+				</a>
 			</div>
 		</div>
-        <div class="col-xs-12 col-sm-6">
-			<a href="#">
-				<div id="kb-posts">
-					<?php 
-					   // the query
-					   $the_query = new WP_Query( array(
-						  'posts_per_page' => 3,
-					   )); 
-					?>
 
-					<?php if ( $the_query->have_posts() ) : ?>
-					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						
-						<?php the_title(); ?>
+    <div class="col-xs-12 col-sm-6 content">
 
-					  <?php endwhile; ?>
-					  <?php wp_reset_postdata(); ?>
+			<? $the_query = new WP_Query(['posts_per_page' => 3]); ?>
 
-					<?php else : ?>
-					  <p><?php __('No Articles'); ?></p>
-					<?php endif; ?>
-				</div>
-			</a>
-		</div>
+			<?php if ( $the_query->have_posts() ) : ?>
+			  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				
+					<div class="post-preview">
+
+						<figure class="post-preview__figure">
+							<img src="https://picsum.photos/458/352" alt="" />	
+						</figure>
+
+						<div class="post-preview__text">
+							<h3><?php the_title(); ?></h3>
+						</div>
+
+					</div>
+
+			  <?php endwhile; ?>
+			  <?php wp_reset_postdata(); ?>
+
+			<?php else : ?>
+			  <p><?php __('No Articles'); ?></p>
+			<?php endif; ?>
+
+    </div>
+
 	</div>
 </section>
 

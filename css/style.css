@@ -829,7 +829,7 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.c-highlight {
+.c-highlight, .c-highlight p {
   color: #F88379 !important; }
 
 .c-blue {
@@ -1009,11 +1009,15 @@ blockquote p {
       background: #b0c4cc;
       box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
   .button--large {
-    padding: 0.625rem 1.5rem;
+    padding: 0.625rem 1rem;
     border-radius: 2rem;
     line-height: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: normal; }
+    @media screen and (min-width: 48em) {
+      .button--large {
+        padding: 0.625rem 1.5rem;
+        font-size: 1.25rem; } }
   .button--circle {
     width: 2rem;
     height: 2rem;
@@ -1845,12 +1849,19 @@ table {
   background: #F3F8F9; }
   .page.home #knowledge_preview .box, .page.home .section--knowledge_preview .box {
     margin-top: -5rem; }
+  .page.home #knowledge_preview .post-preview__figure, .page.home .section--knowledge_preview .post-preview__figure {
+    min-width: 6rem;
+    width: 6rem; }
 
 .page.home #call_to_action, .page.home .section--call_to_action {
-  margin-top: 4rem; }
+  padding-top: 3rem;
+  padding-bottom: 1rem; }
   @media screen and (min-width: 48em) {
     .page.home #call_to_action, .page.home .section--call_to_action {
-      margin-top: 8rem; } }
+      padding-top: 6rem;
+      padding-bottom: 3rem; } }
+  .page.home #call_to_action figure, .page.home .section--call_to_action figure {
+    margin-bottom: 1rem; }
 
 .page-template-page-services-main #intro {
   min-height: 12rem; }
@@ -2000,27 +2011,22 @@ table {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 
-.page.knowledge-base .post-preview,
-.page-template-index-php .post-preview {
+.post-preview {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem; }
-  .page.knowledge-base .post-preview__figure,
-  .page-template-index-php .post-preview__figure {
-    width: 10rem; }
-  .page.knowledge-base .post-preview__text,
-  .page-template-index-php .post-preview__text {
+  .post-preview__figure {
+    width: 10rem;
+    min-width: 10rem; }
+  .post-preview__text {
     padding: 1rem;
     line-height: 1.25rem; }
-  .page.knowledge-base .post-preview .categories a,
-  .page-template-index-php .post-preview .categories a {
+  .post-preview .categories a {
     margin-right: 1rem; }
-    .page.knowledge-base .post-preview .categories a:hover h4,
-    .page-template-index-php .post-preview .categories a:hover h4 {
+    .post-preview .categories a:hover h4 {
       color: #F88379;
       opacity: 1; }
-  .page.knowledge-base .post-preview .categories h4,
-  .page-template-index-php .post-preview .categories h4 {
+  .post-preview .categories h4 {
     font-size: 0.875rem; }
 
 .page.knowledge-base #hero {

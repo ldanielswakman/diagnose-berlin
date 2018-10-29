@@ -21,15 +21,17 @@
 
 				<section id="call_to_action" class="content">
 					<div class="row row--nopadding">
-						<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2 last-sm">
+						<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-1 col-md-offset-2 col-lg-3 col-lg-offset-2 last-sm">
 							<figure>
 								<?php echo get_field('footer_cta_image'); ?>
 							</figure>
 						</div>
 
-						<div class="col-xs-12 col-sm-5 col-sm-offset-1">
+						<div class="col-xs-12 col-sm-7 col-md-6">
 
 							<?php echo get_field('footer_cta_text'); ?>
+
+							<br/>
 
 							<a class="button button--dark button--outline button--large test-popup-link" href="#test-popup">
 								<?php echo get_field('footer_cta_button_text'); ?>

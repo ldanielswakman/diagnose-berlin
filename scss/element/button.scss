@@ -54,11 +54,16 @@
 
 	// Sizes
 	&--large {
-		padding: 0.625rem 1.5rem;
+		padding: 0.625rem 1rem;
 		border-radius: 2rem;
 		line-height: 1.5rem;
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 		font-weight: normal;
+
+		@include tabletAndUp() {
+			padding: 0.625rem 1.5rem;
+			font-size: 1.25rem;
+		}
 	}
 	&--circle {
 		width: 2rem;
