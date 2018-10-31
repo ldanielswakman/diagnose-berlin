@@ -7,6 +7,22 @@
 	.section--service {
 		padding: 6rem 0;
 
+		.title h2 {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			img {
+				max-width: 2rem;
+				margin-right: 1rem;
+			}
+		}
+
+		.image figure {
+			width: calc(100% + 5rem);
+			margin-right: -5rem;
+		}
+
 		// alternate image/box alignment
 		@include tabletAndUp() {
 			&:nth-child(odd) {
@@ -20,10 +36,6 @@
 					}
 				}
 			}
-		}
-		.image figure {
-			width: calc(100% + 5rem);
-			margin-right: -5rem;
 		}
 	}
 
