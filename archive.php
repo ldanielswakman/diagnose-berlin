@@ -24,6 +24,11 @@ get_header(); ?>
         'exclude'    => array( 239, 241 )
     ) ); ?> 
 </section>
+<?php
+if ( have_posts() ) : ?>
+    <?php
+    /* Start the Loop */
+    while ( have_posts() ) : the_post(); ?>
 
 <section id="articles" class="bg-greylightest content load-movein-btm load-delay-05s">
     <div class="row row--nopadding">
@@ -38,5 +43,12 @@ get_header(); ?>
         </a>
     </div>
 </section>
+<?php endwhile;
+
+		else :
+
+			get_template_part( 'template-parts/post/content', 'none' );
+
+		endif; ?>
 
 <?php get_footer();
