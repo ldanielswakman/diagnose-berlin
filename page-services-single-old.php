@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php //while ( have_posts() ) : the_post(); ?>
 
 <section id="intro" class="load-fadein">
     <div class="col-xs-12 col-sm-6 col-md-6 content">
@@ -60,7 +60,6 @@ get_header(); ?>
 
     <?php endif; ?>
 
-    <?php if( get_field('group_1_table') ): ?>
         <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
             <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
         </div>
@@ -68,7 +67,6 @@ get_header(); ?>
     </div>
 
     <?php $table_no = 1; include(locate_template('partials/service-comparison-table.php')); ?>
-    <?php endif; ?>
 
 </section>
 <section id="packages2" class="section--packages content load-movein-btm load-delay-1s isHidden">
@@ -101,8 +99,6 @@ get_header(); ?>
 
     <?php endif; ?>
 
-    <?php if( get_field('group_2_table') ): ?>
-
         <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
             <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
         </div>
@@ -115,7 +111,7 @@ get_header(); ?>
         include(locate_template('partials/service-comparison-table.php'));
     endif;
     ?>
-    <?php endif; ?>
+
     </div>
 </section>
 <?php
@@ -155,5 +151,5 @@ endif;
 ?>
 
 
-<?php endwhile; // end of the loop. ?>
+<?php //endwhile; // end of the loop. ?>
 <?php get_footer();

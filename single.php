@@ -12,32 +12,69 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+<?php
+/* Start the Loop */
+while ( have_posts() ) : the_post(); ?>
+    <section id="hero" class="load-fadein" style="background-image: url('<?php 
+                        if ( has_post_thumbnail() ) {
+                            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+                        }
+                        echo $large_image_url[0];?>');">
+      <div class="row row--nopadding">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content align-center">
+            <?php the_title( '<h1>', '</h1>' ); ?>
+        </div>
+      </div>
+    </section>
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
+    <section id="meta" class="bg-greylightest content load-movein-btm load-delay-05s">
+      <div class="row row--nopadding">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <p>Written on <strong><?php the_date(); ?></strong></p> by <strong><?php the_author(); ?></strong>
+            <object class="categories"><?php
+                $categories = get_the_category();
+                $separator = ' ';
+                $output = '';
+                if ( ! empty( $categories ) ) {
+                    foreach( $categories as $category ) {
+                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                    }
+                    echo trim( $output, $separator );
+                    
+                } 
+                
+                ?></object>
+            <?php echo do_shortcode('<div class="reading-time"><span class="span-reading-time">Reading Time: [rt_reading_time] minutes</span></div>');?>
+        </div>
+      </div>
+    </section>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+    <section id="article" class="content load-movein-btm load-delay-1s">
+      <div class="row row--nopadding">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
-				the_post_navigation( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-				) );
+		<?php
+		/* translators: %s: Name of current post */
+		the_content( sprintf(
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+			get_the_title()
+		) );
 
-			endwhile; // End of the loop.
-			?>
+		wp_link_pages( array(
+			'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+			'after'       => '</div>',
+			'link_before' => '<span class="page-number">',
+			'link_after'  => '</span>',
+		) );
+		?>
+        </div>
+    </div>
+</section>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+
+<?php endwhile; // End of the loop.
+?>
+
 
 <?php get_footer();

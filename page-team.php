@@ -24,7 +24,7 @@ get_header(); ?>
 						<div class="row row--nopadding">
 							<div class="col-xs-3 col-sm-4 col-md-12">
 								<figure>
-									<img src="<?php the_sub_field('member_headshot'); ?>"/>
+									<img src="<?php the_sub_field('member_headshot'); ?>" />
 								</figure>
 							</div>
   							<div class="col-xs-8 col-xs-offset-1 col-sm-8 col-md-12">
@@ -45,6 +45,7 @@ get_header(); ?>
 	</div>
 </section>
 
+<?php while (have_posts()) : the_post(); ?>
 <section id="about" class="load-movein-btm" style="margin-top: -5rem;">
 	<div class="row row--nopadding">
 		<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
@@ -52,18 +53,18 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-xs-12 col-sm-4">
 						<blockquote class="blockquote--big">
-							<p><?php get_field('middle_headline'); ?></p>
+							<p><?php the_field('middle_headline'); ?></p>
 						</blockquote>
 					</div>
 					<div class="col-xs-12 col-sm-8">
-						<?php get_field('middle_description'); ?>
+						<?php the_field('middle_description'); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
+<?php endwhile; ?>
 
 <section id="partners" class="content">
 	<h4 class="content align-center">OUR PARTNERS</h4>
