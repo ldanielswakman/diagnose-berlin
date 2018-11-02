@@ -48,10 +48,16 @@
 	}
 
 	#services_preview, .section--services_preview {
+		$fold: 20rem;
+		margin-bottom: $fold + 6rem;
 		background: $greylightest;
 
 		@include tabletAndUp() {
 			padding: 3rem 0;
+		}
+
+		.wcp-carousel-main-wrap {
+			margin-bottom: -$fold;
 		}
 
 		// Box hover effect

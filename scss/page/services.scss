@@ -5,7 +5,11 @@
 	}
 
 	.section--service {
-		padding: 6rem 0;
+		padding: 3rem 0;
+
+		@include tabletAndUp() {
+			padding: 6rem 0;
+		}
 
 		.title h2 {
 			display: flex;
@@ -18,13 +22,18 @@
 			}
 		}
 
-		.image figure {
-			width: calc(100% + 5rem);
-			margin-right: -5rem;
+		.box .button {
+			margin-right: 1rem;
 		}
 
 		// alternate image/box alignment
 		@include tabletAndUp() {
+			
+			.image figure {
+				width: calc(100% + 5rem);
+				margin-right: -5rem;
+			}
+
 			&:nth-child(odd) {
 				.image {
 					-webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1;
@@ -36,18 +45,22 @@
 					}
 				}
 			}
+			&:nth-child(even) {
+				.text h2 {
+					margin-left: 2.5rem;
+				}
+			}
 		}
 	}
 
-	.hasSubmenu a:after {
+	.current-menu-item > a svg {
 		display: none;
 	}
-	.hasSubmenu:after {
-		display: block;
-	}
-	.submenu {
+	.sub-menu {
 		max-height: 6rem;
 		opacity: 1;
 		pointer-events: all;
+		transition: all 0.2s ease 0.1s;
+		box-shadow: none;
 	}
 }
