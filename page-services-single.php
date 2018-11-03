@@ -127,14 +127,14 @@ if( have_rows('other_services') ):
     while ( have_rows('other_services') ) : the_row(); ?>
 
     <!-- // display a sub field value -->
-    <section id="" class="content load-movein-btm load-delay-1s">
-        <div class="row row--nopadding">
-            <div class="col-xs-12 col-sm-6 last-sm">
+    <section class="section--service load-movein-btm load-delay-1s">
+        <div class="row row--nopadding" style="align-items: center;">
+            <div class="col-xs-12 col-sm-6 image">
 				<figure>
 					<img src="<?php the_sub_field('service_image'); ?>">
 				</figure>
 			</div>
-			<div class="col-xs-12 col-sm-6" style="margin-right: -5rem;">
+			<div class="col-xs-12 col-sm-6 text">
           		<div class="box">
 					<blockquote class="blockquote--big">
 						<p><?php the_sub_field('service_title'); ?></p>

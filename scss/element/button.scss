@@ -54,11 +54,16 @@
 
 	// Sizes
 	&--large {
-		padding: 0.625rem 1rem;
+		padding: 0.5rem 0.75rem;
 		border-radius: 2rem;
 		line-height: 1.5rem;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		font-weight: normal;
+
+		@include bigPhoneAndUp() {
+			padding: 0.625rem 1rem;
+			font-size: 1.125rem;
+		}
 
 		@include tabletAndUp() {
 			padding: 0.625rem 1.5rem;
@@ -103,15 +108,20 @@
 // Button group
 .button--toggle-group {
 	display: flex;
+	flex-direction: column;
 	margin-top: 2rem;
 
-	& > .button--outline:last-child {
-		margin-left: -2.5rem;
-		padding-left: 3rem;
-	}
-	& > .button--outline:first-child {
-		margin-right: -2.5rem;
-		padding-right: 3rem;
+	@include bigPhoneAndUp() {
+		flex-direction: row;
+
+		& > .button--outline:last-child {
+			margin-left: -2.5rem;
+			padding-left: 3rem;
+		}
+		& > .button--outline:first-child {
+			margin-right: -2.5rem;
+			padding-right: 3rem;
+		}	
 	}
 
 	.button--outline {

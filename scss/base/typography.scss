@@ -28,8 +28,13 @@ h4 {
 
 // Paragraph
 p {
-	font-size: 1.125rem;
-	line-height: 1.75rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	
+	@include tabletAndUp() {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+	}
 
 	&.small {
 		font-size: 1rem;

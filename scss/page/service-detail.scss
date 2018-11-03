@@ -1,8 +1,9 @@
 .page-template-page-services-single {
 
 	.section--intro {
-	 	min-height: 90vh;
-	 	padding-bottom: 7rem;
+ 		display: flex;
+ 		align-items: center;
+	 	padding-bottom: 10rem;
 	 	background-color: #F5F8F9;
 	 	background-size: 140%;
 	 	background-position: 100% bottom;
@@ -10,6 +11,7 @@
 
 	 	@include tabletAndUp() {
 	 		min-height: 40vw;
+	 		padding-bottom: 7rem;
 		 	background-size: cover;
 		 	background-position: bottom center;
 	 	}
@@ -17,13 +19,20 @@
 	 	// Background Service 1
 	 	&#training-planning,
 	 	&#trainingsplanung {
-		 	background-image: url('../images/service-perfdiag.jpg');
+		 	background-image: url('../images/service-trainplan.jpg');
+		 	background-color: #e9dfd7;
+
+		 	@include tabletAndDown() {
+			 	background-position: right bottom;
+			 	padding-bottom: 16rem;
+			}
 	 	}
 
 	 	// Background Service 2
 	 	&#performance-diagnostics,
 	 	&#leistungsdiagnostik {
-		 	background-image: url('../images/service-trainplan.jpg');
+	 		background-color: $white;
+		 	background-image: url('../images/service-perfdiag.jpg');
 	 	}
 
 	 	// Background Service 3
@@ -36,20 +45,36 @@
 	 	&#nutrition-coaching,
 	 	&#ernaehrungsberatung {
 		 	background-image: url('../images/service-nutrcoach.jpg');
+		 	background-position: right bottom;
+	    background-color: white;
+
+	    @include tabletAndUp() {
+				background-position: right top;
+			}
 	 	}
 
 	 	h1 {
 	 		margin-bottom: 2rem;
 
 	 		img {
-	 			width: 3rem;
+	 			max-width: 2rem;
+	 			max-height: 2rem;
 	 			vertical-align: middle;
 	 			margin-right: 0.5rem;
+
+	 			@include tabletAndUp() {
+		 			max-width: 3rem;
+		 			max-height: 3rem;
+		 		}
 	 		}
 	 	}
 	}
 	.section--packages {
-		margin-top: -9rem;
+		margin-top: -3rem;
+
+		@include tabletAndUp() {
+			margin-top: -9rem;
+		}
 
 		&.isHidden {
 			display: none;

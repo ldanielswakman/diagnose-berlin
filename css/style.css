@@ -916,8 +916,12 @@ h4 {
   opacity: 0.3; }
 
 p {
-  font-size: 1.125rem;
-  line-height: 1.75rem; }
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  @media screen and (min-width: 48em) {
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem; } }
   p.small {
     font-size: 1rem;
     line-height: 1.5rem; }
@@ -1009,11 +1013,15 @@ blockquote p {
       background: #b0c4cc;
       box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
   .button--large {
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 2rem;
     line-height: 1.5rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: normal; }
+    @media screen and (min-width: 30em) {
+      .button--large {
+        padding: 0.625rem 1rem;
+        font-size: 1.125rem; } }
     @media screen and (min-width: 48em) {
       .button--large {
         padding: 0.625rem 1.5rem;
@@ -1047,13 +1055,17 @@ blockquote p {
 
 .button--toggle-group {
   display: flex;
+  flex-direction: column;
   margin-top: 2rem; }
-  .button--toggle-group > .button--outline:last-child {
-    margin-left: -2.5rem;
-    padding-left: 3rem; }
-  .button--toggle-group > .button--outline:first-child {
-    margin-right: -2.5rem;
-    padding-right: 3rem; }
+  @media screen and (min-width: 30em) {
+    .button--toggle-group {
+      flex-direction: row; }
+      .button--toggle-group > .button--outline:last-child {
+        margin-left: -2.5rem;
+        padding-left: 3rem; }
+      .button--toggle-group > .button--outline:first-child {
+        margin-right: -2.5rem;
+        padding-right: 3rem; } }
   .button--toggle-group .button--outline {
     background: #F3F8F9; }
   .button--toggle-group .button--blue {
@@ -1168,7 +1180,11 @@ blockquote p {
 
 .content,
 .row > .content {
-  padding: 1.5rem; }
+  padding: 1rem; }
+  @media screen and (min-width: 30em) {
+    .content,
+    .row > .content {
+      padding: 1.5rem; } }
   @media screen and (min-width: 48em) {
     .content,
     .row > .content {
@@ -1879,48 +1895,57 @@ table {
 .page-template-page-services-main #intro {
   min-height: 12rem; }
 
-.page-template-page-services-main .section--service {
-  padding: 3rem 0; }
-  @media screen and (min-width: 48em) {
-    .page-template-page-services-main .section--service {
-      padding: 6rem 0; } }
-  .page-template-page-services-main .section--service .title h2 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; }
-    .page-template-page-services-main .section--service .title h2 img {
-      max-width: 2rem;
-      margin-right: 1rem; }
-  .page-template-page-services-main .section--service .box .button {
+.page-template-page-services-main .section--service .title h2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .page-template-page-services-main .section--service .title h2 img {
+    max-width: 2rem;
     margin-right: 1rem; }
-  @media screen and (min-width: 48em) {
-    .page-template-page-services-main .section--service .image figure {
-      width: calc(100% + 5rem);
-      margin-right: -5rem; }
-    .page-template-page-services-main .section--service:nth-child(odd) .image {
-      -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-      order: 1; }
-      .page-template-page-services-main .section--service:nth-child(odd) .image figure {
-        width: calc(100% + 5rem);
-        margin-right: 0;
-        margin-left: -5rem; }
-    .page-template-page-services-main .section--service:nth-child(even) .text h2 {
-      margin-left: 2.5rem; } }
+
+.page-template-page-services-main .section--service .box .button {
+  margin-right: 1rem; }
 
 .page-template-page-services-main .current-menu-item > a svg {
   display: none; }
 
 .page-template-page-services-main .sub-menu {
-  max-height: 6rem;
+  display: none;
   opacity: 1;
   pointer-events: all;
   transition: all 0.2s ease 0.1s;
   box-shadow: none; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-services-main .sub-menu {
+      display: flex;
+      max-height: 6rem; } }
+
+.page-template-page-services-main nav.isActive .sub-menu {
+  display: flex; }
+
+.section--service {
+  padding: 3rem 0; }
+  @media screen and (min-width: 48em) {
+    .section--service {
+      padding: 6rem 0; }
+      .section--service .image figure {
+        width: calc(100% + 5rem);
+        margin-right: -5rem; }
+      .section--service:nth-child(odd) .image {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1; }
+        .section--service:nth-child(odd) .image figure {
+          width: calc(100% + 5rem);
+          margin-right: 0;
+          margin-left: -5rem; }
+      .section--service:nth-child(even) .text h2 {
+        margin-left: 2.5rem; } }
 
 .page-template-page-services-single .section--intro {
-  min-height: 90vh;
-  padding-bottom: 7rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10rem;
   background-color: #F5F8F9;
   background-size: 140%;
   background-position: 100% bottom;
@@ -1928,25 +1953,45 @@ table {
   @media screen and (min-width: 48em) {
     .page-template-page-services-single .section--intro {
       min-height: 40vw;
+      padding-bottom: 7rem;
       background-size: cover;
       background-position: bottom center; } }
   .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung {
-    background-image: url("../images/service-perfdiag.jpg"); }
+    background-image: url("../images/service-trainplan.jpg");
+    background-color: #e9dfd7; }
+    @media screen and (max-width: 48em) {
+      .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung {
+        background-position: right bottom;
+        padding-bottom: 16rem; } }
   .page-template-page-services-single .section--intro#performance-diagnostics, .page-template-page-services-single .section--intro#leistungsdiagnostik {
-    background-image: url("../images/service-trainplan.jpg"); }
+    background-color: #fff;
+    background-image: url("../images/service-perfdiag.jpg"); }
   .page-template-page-services-single .section--intro#bikefitting, .page-template-page-services-single .section--intro#bikefit {
     background-image: url("../images/service-bikefit.jpg"); }
   .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#ernaehrungsberatung {
-    background-image: url("../images/service-nutrcoach.jpg"); }
+    background-image: url("../images/service-nutrcoach.jpg");
+    background-position: right bottom;
+    background-color: white; }
+    @media screen and (min-width: 48em) {
+      .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#ernaehrungsberatung {
+        background-position: right top; } }
   .page-template-page-services-single .section--intro h1 {
     margin-bottom: 2rem; }
     .page-template-page-services-single .section--intro h1 img {
-      width: 3rem;
+      max-width: 2rem;
+      max-height: 2rem;
       vertical-align: middle;
       margin-right: 0.5rem; }
+      @media screen and (min-width: 48em) {
+        .page-template-page-services-single .section--intro h1 img {
+          max-width: 3rem;
+          max-height: 3rem; } }
 
 .page-template-page-services-single .section--packages {
-  margin-top: -9rem; }
+  margin-top: -3rem; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-services-single .section--packages {
+      margin-top: -9rem; } }
   .page-template-page-services-single .section--packages.isHidden {
     display: none; }
 

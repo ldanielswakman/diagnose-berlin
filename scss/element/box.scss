@@ -119,8 +119,11 @@
 
 .content,
 .row > .content {
-	padding: 1.5rem;
+	padding: 1rem;
 
+	@include bigPhoneAndUp() {
+		padding: 1.5rem;	
+	}
 	@include tabletAndUp() {
 		padding: 2.5rem 5rem;
 	}
