@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section id="intro" class="load-fadein">
+<section id="<?= $post->post_name ?>" class="section--intro load-fadein">
     <div class="col-xs-12 col-sm-6 col-md-6 content">
         <h1 class="c-highlight">
             <img src="<?php the_field('service_icon'); ?>" />
