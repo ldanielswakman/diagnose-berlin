@@ -1,25 +1,110 @@
 .page-template-page-how-we-work {
-
 	#intro {
-	 	min-height: 90vh;
-	 	background-color: #F5F8F9;
+		padding-bottom: 16rem;
+	 	background-color: $greylightest;
 	 	background-image: url('../images/mockup-how-we-work-1.jpg');
 	 	background-size: 140%;
 	 	background-position: 100% bottom;
 	 	background-repeat: no-repeat;
 
+	 	@include bigPhoneAndUp() {
+			padding-bottom: 20rem;
+		}
 	 	@include tabletAndUp() {
-	 		min-height: 40vw;
+			display: flex;
+			align-items: center;
+	 		min-height: 35vw;
 		 	background-size: cover;
 		 	background-position: bottom center;
 	 	}
 	}
 
 	#usps {
-		.row > [class*="col-"] {
-			padding-right: 6rem;
+		padding-bottom: 3rem;
+
+		@include tabletAndUp() {
+			padding-bottom: 6rem;
 		}
-		.row > [class*="col-"]:nth-child(1) { margin-top: 6rem; }
-		.row > [class*="col-"]:nth-child(3) { margin-top: -6rem; }
+
+		.usp {
+			position: relative;
+			margin-top: 1rem;
+
+			// Stripes
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				top: 2.5rem;
+				z-index: 4;
+				width: calc(40vw - 5rem);
+				border-bottom: 0.25rem solid $highlight;
+				transform: rotate(-18deg);
+				transform-origin: top left;
+
+				@media screen and (min-width: 52em) {
+					transform: rotate(-16deg);
+				}
+				@media screen and (min-width: 60em) {
+					transform: rotate(-14deg);
+				}
+				@media screen and (min-width: 68em) {
+					transform: rotate(-12deg);
+				}
+				@media screen and (min-width: 76em) {
+					transform: rotate(-10.5deg);
+				}
+			}
+			&:before {
+				left: 2rem;
+			}
+			// Dashed stripes
+			&:after {
+				width: 32vw;
+				right: calc(100% - 2rem);
+				border-bottom-style: dashed;
+				transform-origin: top right;
+			}
+			&--2:after, &--3:before { display: none; }
+			&--3:after { right: auto; left: 2rem; transform-origin: bottom left; }
+			@include tabletAndDown() {
+				&:before, &:after { display: none; }
+			}
+
+			img {
+				position: relative;
+				z-index: 5;
+				max-width: 8rem;
+				margin-left: -1.5rem;
+				margin-top: -0.5rem;
+				float: left;
+			}
+
+			@include tabletAndUp() {
+				flex-direction: column;
+				padding-right: 6rem;
+
+				&--1 { margin-top: 5rem; }
+				&--2 { margin-top: 0; }
+				&--3 { margin-top: -5rem; }
+
+				img {
+					float: none;
+					margin-top: -1.5rem;
+				}
+			}
+		}
+	}
+
+	.section--service {
+		padding-top: 0;
+
+		@include tabletAndUp() {
+			padding-bottom: 9rem;
+		}
+	}
+
+	#call_to_action {
+		background: $greylightest;
 	}
 }

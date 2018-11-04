@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="164px" height="164px" viewBox="0 0 164 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>uso-3-improve</title>
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>usp-3-improve</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <circle id="path-1" cx="50" cy="50" r="50"></circle>
@@ -14,17 +14,21 @@
     <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="04-How-We-Work-(Desktop)" transform="translate(-806.000000, -526.000000)">
             <g id="Group-2-Copy" transform="translate(0.000000, 550.000000)">
-                <g id="uso-3-improve" transform="translate(838.000000, 0.000000)">
+                <g id="usp-3-improve" transform="translate(838.000000, 0.000000)">
                     <g id="Oval-Copy-12" fill-rule="nonzero">
                         <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                         <use fill="#FFFFFF" xlink:href="#path-1"></use>
                     </g>
-                    <g id="noun_Award_986938" transform="translate(37.000000, 27.000000)" stroke="#F88379" stroke-width="2">
+                    <g id="noun_Award_986938" transform="translate(27.000000, 25.000000)" stroke="#F88379" stroke-width="2">
                         <g id="Group">
-                            <polygon id="Shape" points="13 27.1723309 14.4465256 31.624279 19.1275787 31.624279 15.3405266 34.3757324 16.7870522 38.8276787 13 36.0762253 9.2129478 38.8276787 10.6594734 34.3757324 6.8724213 31.624279 11.5534744 31.624279"></polygon>
-                            <circle id="Oval" cx="13" cy="33.0000038" r="13"></circle>
-                            <polyline id="Shape" points="12.2275982 20.0389977 7.0000591 -4.3e-06 1.0000582 -4.3e-06 6.650938 21.6616783"></polyline>
-                            <polyline id="Shape" points="19.3491783 21.6616783 25.0000572 -4.3e-06 19.0000572 -4.3e-06 13.772398 20.0389977"></polyline>
+                            <rect id="Rectangle" x="0" y="38.0000038" width="15" height="8"></rect>
+                            <rect id="Rectangle" x="15" y="27.0000038" width="16" height="19"></rect>
+                            <rect id="Rectangle" x="31" y="33.0000038" width="15" height="13"></rect>
+                            <path d="M18.0000591,-4.3e-06 L18.0000591,9.9999957 C18.0000591,12.7614093 20.2385845,14.9999967 23.0000591,14.9999967 C25.7614116,14.9999967 28.0000591,12.7614093 28.0000591,9.9999957 L28.0000591,-4.3e-06 L18.0000591,-4.3e-06 Z" id="Path"></path>
+                            <path d="M28.0000591,2.0000043 L32,2.0000043 C32,2.0000043 32,10.344666 28.0000591,9.9999952" id="Path"></path>
+                            <path d="M17.9999714,2.0000043 L14.0000286,2.0000043 C14.0000286,2.0000043 14.0000286,10.344666 17.9999714,9.9999952" id="Path"></path>
+                            <path d="M23.0000591,14.9999962 L23.0000591,23.0000038" id="Path"></path>
+                            <path d="M17.9999714,23.0000038 L28.0000591,23.0000038" id="Path"></path>
                         </g>
                     </g>
                 </g>

@@ -1083,6 +1083,12 @@ blockquote p {
   @media screen and (min-width: 48em) {
     .box {
       padding: 2.5rem 5rem; } }
+  .box h3, .box p {
+    margin-bottom: 1rem; }
+  @media screen and (min-width: 48em) {
+    .box h3 {
+      font-weight: bold;
+      font-size: 1.5rem; } }
   .box--package {
     margin-bottom: 2rem;
     padding: 2rem; }
@@ -1629,6 +1635,9 @@ nav {
     border: 0.125rem solid transparent; }
     .menu a:hover {
       color: #F88379; }
+    @media screen and (min-width: 30em) {
+      .menu a {
+        padding: 2.25rem 0.5rem; } }
     @media screen and (min-width: 48em) {
       .menu a {
         padding: 2.25rem 1rem; } }
@@ -1817,6 +1826,27 @@ nav.isActive .menu-toggle span:last-child {
   width: auto;
   max-width: 400px;
   margin: 20px auto; }
+
+.section--service {
+  padding: 3rem 0; }
+  @media screen and (min-width: 48em) {
+    .section--service {
+      padding: 6rem 0; }
+      .section--service .image figure {
+        width: calc(100% + 5rem);
+        margin-right: -5rem; }
+        .section--service .image figure img {
+          width: 100%; }
+      .section--service:nth-child(odd) .image {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1; }
+        .section--service:nth-child(odd) .image figure {
+          width: calc(100% + 5rem);
+          margin-right: 0;
+          margin-left: -5rem; }
+      .section--service:nth-child(even) .text h2 {
+        margin-left: 2.5rem; } }
 
 table {
   display: block;
@@ -2014,25 +2044,6 @@ table {
 .page-template-page-services-main nav.isActive .sub-menu {
   display: flex; }
 
-.section--service {
-  padding: 3rem 0; }
-  @media screen and (min-width: 48em) {
-    .section--service {
-      padding: 6rem 0; }
-      .section--service .image figure {
-        width: calc(100% + 5rem);
-        margin-right: -5rem; }
-      .section--service:nth-child(odd) .image {
-        -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-        order: 1; }
-        .section--service:nth-child(odd) .image figure {
-          width: calc(100% + 5rem);
-          margin-right: 0;
-          margin-left: -5rem; }
-      .section--service:nth-child(even) .text h2 {
-        margin-left: 2.5rem; } }
-
 .page-template-page-services-single .section--intro {
   display: flex;
   align-items: center;
@@ -2101,26 +2112,97 @@ table {
   background: #F3F8F9; }
 
 .page-template-page-how-we-work #intro {
-  min-height: 90vh;
-  background-color: #F5F8F9;
+  padding-bottom: 16rem;
+  background-color: #F3F8F9;
   background-image: url("../images/mockup-how-we-work-1.jpg");
   background-size: 140%;
   background-position: 100% bottom;
   background-repeat: no-repeat; }
+  @media screen and (min-width: 30em) {
+    .page-template-page-how-we-work #intro {
+      padding-bottom: 20rem; } }
   @media screen and (min-width: 48em) {
     .page-template-page-how-we-work #intro {
-      min-height: 40vw;
+      display: flex;
+      align-items: center;
+      min-height: 35vw;
       background-size: cover;
       background-position: bottom center; } }
 
-.page-template-page-how-we-work #usps .row > [class*="col-"] {
-  padding-right: 6rem; }
+.page-template-page-how-we-work #usps {
+  padding-bottom: 3rem; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-how-we-work #usps {
+      padding-bottom: 6rem; } }
+  .page-template-page-how-we-work #usps .usp {
+    position: relative;
+    margin-top: 1rem; }
+    .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+      content: "";
+      position: absolute;
+      top: 2.5rem;
+      z-index: 4;
+      width: calc(40vw - 5rem);
+      border-bottom: 0.25rem solid #F88379;
+      transform: rotate(-18deg);
+      transform-origin: top left; }
+      @media screen and (min-width: 52em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          transform: rotate(-16deg); } }
+      @media screen and (min-width: 60em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          transform: rotate(-14deg); } }
+      @media screen and (min-width: 68em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          transform: rotate(-12deg); } }
+      @media screen and (min-width: 76em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          transform: rotate(-10.5deg); } }
+    .page-template-page-how-we-work #usps .usp:before {
+      left: 2rem; }
+    .page-template-page-how-we-work #usps .usp:after {
+      width: 32vw;
+      right: calc(100% - 2rem);
+      border-bottom-style: dashed;
+      transform-origin: top right; }
+    .page-template-page-how-we-work #usps .usp--2:after, .page-template-page-how-we-work #usps .usp--3:before {
+      display: none; }
+    .page-template-page-how-we-work #usps .usp--3:after {
+      right: auto;
+      left: 2rem;
+      transform-origin: bottom left; }
+    @media screen and (max-width: 48em) {
+      .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+        display: none; } }
+    .page-template-page-how-we-work #usps .usp img {
+      position: relative;
+      z-index: 5;
+      max-width: 8rem;
+      margin-left: -1.5rem;
+      margin-top: -0.5rem;
+      float: left; }
+    @media screen and (min-width: 48em) {
+      .page-template-page-how-we-work #usps .usp {
+        flex-direction: column;
+        padding-right: 6rem; }
+        .page-template-page-how-we-work #usps .usp--1 {
+          margin-top: 5rem; }
+        .page-template-page-how-we-work #usps .usp--2 {
+          margin-top: 0; }
+        .page-template-page-how-we-work #usps .usp--3 {
+          margin-top: -5rem; }
+        .page-template-page-how-we-work #usps .usp img {
+          float: none;
+          margin-top: -1.5rem; } }
 
-.page-template-page-how-we-work #usps .row > [class*="col-"]:nth-child(1) {
-  margin-top: 6rem; }
+.page-template-page-how-we-work .section--service {
+  padding-top: 0; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-how-we-work .section--service {
+      padding-bottom: 9rem; } }
 
-.page-template-page-how-we-work #usps .row > [class*="col-"]:nth-child(3) {
-  margin-top: -6rem; }
+.page-template-page-how-we-work #call_to_action {
+  background: #F3F8F9; }
 
 .page-template-page-team #team {
   padding-bottom: 5rem; }

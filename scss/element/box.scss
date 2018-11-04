@@ -1,6 +1,13 @@
 .box {
 	@include boxBasicStyle();
 
+	h3, p {
+		margin-bottom: 1rem;
+	}
+	@include tabletAndUp() {
+		h3 { font-weight: bold; font-size: 1.5rem; }
+	}
+
 	&--package {
 		margin-bottom: 2rem;
 		padding: 2rem;

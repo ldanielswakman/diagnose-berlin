@@ -40,37 +40,3 @@
 		display: flex;
 	}
 }
-
-
-// alternate image/box alignment
-// NB used on both service overview and service detail
-.section--service {
-	padding: 3rem 0;
-
-	@include tabletAndUp() {
-		
-		padding: 6rem 0;
-
-		.image figure {
-			width: calc(100% + 5rem);
-			margin-right: -5rem;
-		}
-
-		&:nth-child(odd) {
-			.image {
-				-webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1;
-
-				figure {
-					width: calc(100% + 5rem);
-					margin-right: 0;
-					margin-left: -5rem;
-				}
-			}
-		}
-		&:nth-child(even) {
-			.text h2 {
-				margin-left: 2.5rem;
-			}
-		}
-	}
-}
