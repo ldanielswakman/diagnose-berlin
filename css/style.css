@@ -1200,6 +1200,25 @@ blockquote p {
     .row > .content {
       padding: 2.5rem 5rem; } }
 
+.categories a {
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  opacity: 0.3; }
+  @media screen and (min-width: 48em) {
+    .categories a {
+      margin-right: 1rem;
+      font-size: 0.875rem; } }
+  .categories a:hover {
+    color: #F88379;
+    opacity: 1; }
+
+.categories .current-cat a {
+  color: #005E83;
+  opacity: 1; }
+
 .field, .gfield {
   margin-bottom: 1rem; }
   .field label, .gfield label {
@@ -1401,7 +1420,11 @@ ul.gfield_radio li, .gfield_checkbox li {
     position: relative;
     width: 5rem;
     height: 5rem;
+    min-width: 5rem;
     background-color: #fff; }
+    @media screen and (max-width: 48em) {
+      .post-preview__figure {
+        order: 2; } }
     @media screen and (min-width: 30em) {
       .post-preview__figure {
         width: 10rem;
@@ -1427,11 +1450,11 @@ ul.gfield_radio li, .gfield_checkbox li {
   .post-preview:hover .post-preview__figure:before {
     opacity: 1; }
   .post-preview__text {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
     line-height: 1.25rem; }
     @media screen and (min-width: 48em) {
       .post-preview__text {
-        padding-right: 2rem; } }
+        padding: 1rem 2rem 1rem 1rem; } }
   .post-preview h3 {
     color: currentColor; }
   .post-preview p {
@@ -1445,22 +1468,6 @@ ul.gfield_radio li, .gfield_checkbox li {
   .post-preview .categories {
     display: block;
     margin-top: 0.5rem; }
-    .post-preview .categories a {
-      margin-right: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      font-size: 0.75rem;
-      font-weight: bold;
-      opacity: 0.3; }
-      @media screen and (min-width: 48em) {
-        .post-preview .categories a {
-          margin-right: 1rem;
-          font-size: 0.875rem; } }
-      .post-preview .categories a:hover {
-        color: #F88379;
-        opacity: 1; }
-    .post-preview .categories h4 {
-      font-size: 0.875rem; }
 
 footer {
   background: #00415a;
@@ -2178,48 +2185,38 @@ table {
   .page-template-index-php .categories ul,
   .archive.category .categories ul {
     display: flex; }
-  .page.knowledge-base .categories li,
-  .page-template-index-php .categories li,
-  .archive.category .categories li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem; }
-    .page.knowledge-base .categories li a:hover,
-    .page-template-index-php .categories li a:hover,
-    .archive.category .categories li a:hover {
-      color: #F88379;
-      opacity: 1; }
-    .page.knowledge-base .categories li.current-cat a,
-    .page-template-index-php .categories li.current-cat a,
-    .archive.category .categories li.current-cat a {
-      color: #005E83;
-      opacity: 1; }
   .page.knowledge-base .categories ul li a,
   .page-template-index-php .categories ul li a,
   .archive.category .categories ul li a {
-    padding: 1rem 0.5rem;
-    opacity: 0.3;
-    font-weight: bold; }
+    padding: 1rem 0.5rem; }
     @media screen and (min-width: 48em) {
       .page.knowledge-base .categories ul li a,
       .page-template-index-php .categories ul li a,
       .archive.category .categories ul li a {
         padding: 0.5rem 0.75rem; } }
+  .page.knowledge-base .categories > li.categories,
+  .page-template-index-php .categories > li.categories,
+  .archive.category .categories > li.categories {
+    list-style: none;
+    display: flex;
+    align-items: center; }
   .page.knowledge-base .categories .title,
   .page-template-index-php .categories .title,
   .archive.category .categories .title {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
     margin-right: 0.5rem;
     padding-right: 0.5rem;
     border-right: 1px solid rgba(28, 46, 53, 0.15);
-    color: rgba(0, 94, 131, 0.3); }
+    color: rgba(0, 94, 131, 0.3);
+    font-size: 0.75rem; }
     @media screen and (min-width: 48em) {
       .page.knowledge-base .categories .title,
       .page-template-index-php .categories .title,
       .archive.category .categories .title {
         margin-right: 1rem;
-        padding-right: 1rem; } }
+        padding-right: 1rem;
+        font-size: 0.875rem; } }
 
 .page.knowledge-base #featured,
 .page-template-index-php #featured,
@@ -2232,8 +2229,8 @@ table {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 
-.page.knowledge-base #post_hero,
-.single-post #post_hero {
+.page.knowledge-base .section--hero,
+.single-post .section--hero {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2242,8 +2239,8 @@ table {
   background-size: cover;
   background-position: center;
   color: #fff; }
-  .page.knowledge-base #post_hero:before,
-  .single-post #post_hero:before {
+  .page.knowledge-base .section--hero:before,
+  .single-post .section--hero:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2253,8 +2250,8 @@ table {
     height: 100%;
     background: rgba(0, 94, 131, 0.1);
     background-blend-mode: lighten; }
-  .page.knowledge-base #post_hero:after,
-  .single-post #post_hero:after {
+  .page.knowledge-base .section--hero:after,
+  .single-post .section--hero:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2266,64 +2263,82 @@ table {
     background: -webkit-linear-gradient(top, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
     background: linear-gradient(to bottom, rgba(0, 94, 131, 0) 0%, #1c2e35 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 ); }
-  .page.knowledge-base #post_hero > *,
-  .single-post #post_hero > * {
+  .page.knowledge-base .section--hero > *,
+  .single-post .section--hero > * {
     position: relative;
     z-index: 3; }
-  .page.knowledge-base #post_hero h1, .page.knowledge-base #post_hero h2, .page.knowledge-base #post_hero h3, .page.knowledge-base #post_hero h4,
-  .single-post #post_hero h1,
-  .single-post #post_hero h2,
-  .single-post #post_hero h3,
-  .single-post #post_hero h4 {
+  .page.knowledge-base .section--hero h1, .page.knowledge-base .section--hero h2, .page.knowledge-base .section--hero h3, .page.knowledge-base .section--hero h4,
+  .single-post .section--hero h1,
+  .single-post .section--hero h2,
+  .single-post .section--hero h3,
+  .single-post .section--hero h4 {
     color: inherit; }
-  .page.knowledge-base #post_hero h1,
-  .single-post #post_hero h1 {
+  .page.knowledge-base .section--hero h1,
+  .single-post .section--hero h1 {
     margin-bottom: 1rem;
     font-size: 2rem; }
-  .page.knowledge-base #post_hero h2,
-  .single-post #post_hero h2 {
+  .page.knowledge-base .section--hero h2,
+  .single-post .section--hero h2 {
     font-weight: normal;
     opacity: 0.7; }
 
-.page.knowledge-base #article p, .page.knowledge-base #article ul, .page.knowledge-base #article ol,
-.single-post #article p,
-.single-post #article ul,
-.single-post #article ol {
+.page.knowledge-base .section--meta .meta,
+.single-post .section--meta .meta {
+  display: flex;
+  justify-content: space-between;
+  color: #005E83; }
+  @media screen and (max-width: 48em) {
+    .page.knowledge-base .section--meta .meta,
+    .single-post .section--meta .meta {
+      flex-wrap: wrap; }
+      .page.knowledge-base .section--meta .meta .meta__categories,
+      .single-post .section--meta .meta .meta__categories {
+        margin-top: 0.5rem;
+        flex-basis: 100%; } }
+
+.page.knowledge-base .section--article p, .page.knowledge-base .section--article ul, .page.knowledge-base .section--article ol,
+.single-post .section--article p,
+.single-post .section--article ul,
+.single-post .section--article ol {
   color: #3C5863; }
 
-.page.knowledge-base #article p, .page.knowledge-base #article ul, .page.knowledge-base #article ol, .page.knowledge-base #article h1, .page.knowledge-base #article h2, .page.knowledge-base #article h3, .page.knowledge-base #article blockquote,
-.single-post #article p,
-.single-post #article ul,
-.single-post #article ol,
-.single-post #article h1,
-.single-post #article h2,
-.single-post #article h3,
-.single-post #article blockquote {
+.page.knowledge-base .section--article p, .page.knowledge-base .section--article ul, .page.knowledge-base .section--article ol, .page.knowledge-base .section--article h1, .page.knowledge-base .section--article h2, .page.knowledge-base .section--article h3, .page.knowledge-base .section--article blockquote,
+.single-post .section--article p,
+.single-post .section--article ul,
+.single-post .section--article ol,
+.single-post .section--article h1,
+.single-post .section--article h2,
+.single-post .section--article h3,
+.single-post .section--article blockquote {
   margin-bottom: 2rem; }
 
-.page.knowledge-base #article figcaption,
-.single-post #article figcaption {
+.page.knowledge-base .section--article figcaption,
+.single-post .section--article figcaption {
   opacity: 0.4;
   font-size: 0.875rem;
   line-height: 1.25rem; }
 
-.page.knowledge-base #article ul, .page.knowledge-base #article ol,
-.single-post #article ul,
-.single-post #article ol {
+.page.knowledge-base .section--article ul, .page.knowledge-base .section--article ol,
+.single-post .section--article ul,
+.single-post .section--article ol {
   margin-left: 1rem;
   font-size: 1rem;
   line-height: 1.5rem; }
   @media screen and (min-width: 48em) {
-    .page.knowledge-base #article ul, .page.knowledge-base #article ol,
-    .single-post #article ul,
-    .single-post #article ol {
+    .page.knowledge-base .section--article ul, .page.knowledge-base .section--article ol,
+    .single-post .section--article ul,
+    .single-post .section--article ol {
       font-size: 1.125rem;
       line-height: 1.75rem; } }
-  .page.knowledge-base #article ul li:before, .page.knowledge-base #article ol li:before,
-  .single-post #article ul li:before,
-  .single-post #article ol li:before {
+  .page.knowledge-base .section--article ul li:before, .page.knowledge-base .section--article ol li:before,
+  .single-post .section--article ul li:before,
+  .single-post .section--article ol li:before {
     content: "•";
     color: #005E83;
     display: inline-block;
     width: 1em;
     margin-left: -1em; }
+
+.page.knowledge-base .section--article img,
+.single-post .section--article img {
+  max-width: 100%; }

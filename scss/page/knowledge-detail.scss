@@ -1,7 +1,7 @@
 .page.knowledge-base,
 .single-post {
 
-	#post_hero {
+	.section--hero {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -52,7 +52,22 @@
 		}
 	}
 
-	#article {
+	.section--meta .meta {
+		display: flex;
+		justify-content: space-between;
+		color: $diagnoseBlue;
+
+		@include tabletAndDown() {
+			flex-wrap: wrap;
+			
+			.meta__categories {
+				margin-top: 0.5rem;
+				flex-basis: 100%;
+			}
+		}
+	}
+
+	.section--article {
 		p, ul, ol {
 			color: $greydark;
 		}
@@ -81,6 +96,9 @@
 				width: 1em;
 				margin-left: -1em;
 			}
+		}
+		img {
+			max-width: 100%;
 		}
 	}
 }

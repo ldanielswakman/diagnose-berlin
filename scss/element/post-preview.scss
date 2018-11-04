@@ -12,7 +12,12 @@
 		position: relative;
 		width: 5rem;
 		height: 5rem;
+		min-width: 5rem;
 		background-color: $white;
+
+		@include tabletAndDown() {
+			order: 2;
+		}
 
 		@include bigPhoneAndUp() {
 			width: 10rem;
@@ -48,11 +53,11 @@
 
 	// Text box
 	&__text {
-		padding: 1rem;
+		padding: 1rem 1rem 1rem 0;
 		line-height: 1.25rem;
 
 		@include tabletAndUp() {
-			padding-right: 2rem;
+			padding: 1rem 2rem 1rem 1rem;
 		}
 	}
 	h3 { color: currentColor; }
@@ -71,25 +76,5 @@
 	.categories {
 		display: block;
 		margin-top: 0.5rem;
-
-		a {
-			margin-right: 0.5rem;
-			text-transform: uppercase;
-			letter-spacing: 0.1rem;
-			font-size: 0.75rem;
-			font-weight: bold;
-			opacity: 0.3;
-
-			@include tabletAndUp() {
-				margin-right: 1rem;
-				font-size: 0.875rem;
-			}
-
-			&:hover {
-				color: $highlight;
-				opacity: 1;
-			}
-		}
-		h4 { font-size: 0.875rem; }
 	}
 }

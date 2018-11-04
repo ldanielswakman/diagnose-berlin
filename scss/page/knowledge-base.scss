@@ -16,40 +16,31 @@
 		ul {
 			display: flex;
 		}
-		li {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			text-transform: uppercase;
-			letter-spacing: 0.1rem;
-
-			a:hover {
-				color: $highlight;
-				opacity: 1;
-			}
-			&.current-cat a {
-				color: $diagnoseBlue;
-				opacity: 1;
-			}
-		}
 		ul li a {
 			padding: 1rem 0.5rem;
-			opacity: 0.3;
-			font-weight: bold;
 
 			@include tabletAndUp() {
 				padding: 0.5rem 0.75rem;
 			}
 		}
+		& > li.categories {
+			list-style: none;
+			display: flex;
+			align-items: center;
+		}
 		.title {
+			text-transform: uppercase;
+			letter-spacing: 0.1rem;
 			margin-right: 0.5rem;
 			padding-right: 0.5rem;
 			border-right: 1px solid rgba($dark, 0.15);
 			color: rgba($diagnoseBlue, 0.3);
+			font-size: 0.75rem;
 
 			@include tabletAndUp() {
 				margin-right: 1rem;
 				padding-right: 1rem;
+				font-size: 0.875rem;
 			}
 		}
 	}

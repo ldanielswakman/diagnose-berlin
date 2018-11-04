@@ -1,0 +1,24 @@
+.categories {
+	a {
+		margin-right: 0.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		font-size: 0.75rem;
+		font-weight: bold;
+		opacity: 0.3;
+
+		@include tabletAndUp() {
+			margin-right: 1rem;
+			font-size: 0.875rem;
+		}
+
+		&:hover {
+			color: $highlight;
+			opacity: 1;
+		}
+	}
+	.current-cat a {
+		color: $diagnoseBlue;
+		opacity: 1;
+	}
+}

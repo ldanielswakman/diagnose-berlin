@@ -21,7 +21,7 @@ while ( have_posts() ) : the_post(); ?>
     // Featured image
     $featured_img_url = (has_post_thumbnail()) ? wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0] : ''; 
     ?>
-    <section id="post_hero" class="load-fadein" style="background-image: url('<?= $featured_img_url ?>');">
+    <section id="hero" class="section--hero load-fadein" style="background-image: url('<?= $featured_img_url ?>');">
       <div class="row row--nopadding">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content align-center">
             <?php the_title( '<h1>', '</h1>' ); ?>
@@ -29,29 +29,40 @@ while ( have_posts() ) : the_post(); ?>
       </div>
     </section>
 
-    <section id="meta" class="bg-greylightest content load-movein-btm load-delay-05s">
+    <section id="meta" class="section--meta bg-greylightest content load-movein-btm load-delay-05s">
       <div class="row row--nopadding">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-            <p>Written on <strong><?php the_date(); ?></strong></p> by <strong><?php the_author(); ?></strong>
-            <object class="categories"><?php
-                $categories = get_the_category();
-                $separator = ' ';
-                $output = '';
-                if ( ! empty( $categories ) ) {
-                    foreach( $categories as $category ) {
-                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+        <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 meta">
+
+            <div class="meta__date">
+                <?php the_date(); ?>
+            </div>
+
+            <div class="meta__reading-time">
+                <?= do_shortcode('<strong>[rt_reading_time]</strong> min read'); ?>
+            </div>
+
+            <div class="meta__categories">
+                <object class="categories">
+                    <?php
+                    $categories = get_the_category();
+                    $separator = ' ';
+                    $output = '';
+                    if ( ! empty( $categories ) ) {
+                        foreach( $categories as $category ) {
+                            $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                        }
+                        echo trim( $output, $separator );
+                        
                     }
-                    echo trim( $output, $separator );
-                    
-                } 
+                    ?>
+                </object>
+            </div>
                 
-                ?></object>
-            <?php echo do_shortcode('<div class="reading-time"><span class="span-reading-time">Reading Time: [rt_reading_time] minutes</span></div>');?>
         </div>
       </div>
     </section>
 
-    <section id="article" class="content load-movein-btm load-delay-1s">
+    <section id="article" class="section--article content load-movein-btm load-delay-1s">
       <div class="row row--nopadding">
         <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
