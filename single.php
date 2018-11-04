@@ -16,11 +16,12 @@ get_header(); ?>
 <?php
 /* Start the Loop */
 while ( have_posts() ) : the_post(); ?>
-    <section id="hero" class="load-fadein" style="background-image: url('<?php 
-                        if ( has_post_thumbnail() ) {
-                            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-                        }
-                        echo $large_image_url[0];?>');">
+
+    <?php
+    // Featured image
+    $featured_img_url = (has_post_thumbnail()) ? wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0] : ''; 
+    ?>
+    <section id="post_hero" class="load-fadein" style="background-image: url('<?= $featured_img_url ?>');">
       <div class="row row--nopadding">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content align-center">
             <?php the_title( '<h1>', '</h1>' ); ?>
@@ -52,7 +53,7 @@ while ( have_posts() ) : the_post(); ?>
 
     <section id="article" class="content load-movein-btm load-delay-1s">
       <div class="row row--nopadding">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
 		<?php
 		/* translators: %s: Name of current post */

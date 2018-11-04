@@ -1,6 +1,7 @@
-.page.knowledge-base {
+.page.knowledge-base,
+.single-post {
 
-	#hero {
+	#post_hero {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -52,11 +53,34 @@
 	}
 
 	#article {
-		p {
+		p, ul, ol {
 			color: $greydark;
 		}
 		p, ul, ol, h1, h2, h3, blockquote {
 			margin-bottom: 2rem;
+		}
+		figcaption {
+			opacity: 0.4;
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+		ul, ol {
+			margin-left: 1rem;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			
+			@include tabletAndUp() {
+				font-size: 1.125rem;
+				line-height: 1.75rem;
+			}
+
+			li:before {
+				content: "•";
+				color: $diagnoseBlue;
+				display: inline-block;
+				width: 1em;
+				margin-left: -1em;
+			}
 		}
 	}
 }
