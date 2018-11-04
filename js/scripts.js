@@ -6,6 +6,18 @@ $(document).ready(function() {
 	$('.menu-toggle').click(function() {
 		$(this).closest('nav').toggleClass('isActive');
 	});
+
+	// Contact Form toggle
+	$('a[href="#contact-form"]').click(function() {
+		$('#contact-form').addClass('isActive');
+	});
+	// Contact Form toggle
+	$('.popup').click(function(e) {
+    if(e.target != this) return; // only continue if the target itself has been clicked
+
+    // this section only processes if the .nav > li itself is clicked.
+    $('#contact-form').removeClass('isActive');
+	});
 	
 });
 

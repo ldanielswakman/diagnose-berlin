@@ -1007,6 +1007,18 @@ blockquote p {
     .button--primary.button--outline:active {
       background: #F88379;
       color: #fff; }
+  .button--outline {
+    background: transparent;
+    border-width: 2px;
+    border-color: currentColor;
+    color: currentColor; }
+    .button--outline:hover {
+      background-color: rgba(248, 131, 121, 0.1);
+      color: #F88379; }
+    .button--outline:active {
+      background: #F88379;
+      border-color: transparent;
+      color: #fff; }
   .button--grey {
     background: #CFDBE0;
     border-color: transparent; }
@@ -1227,6 +1239,36 @@ blockquote p {
 
 .field, .gfield {
   margin-bottom: 1rem; }
+  .field input[type="text"], .field textarea, .gfield input[type="text"], .gfield textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    padding: 0.375rem 1rem;
+    border: 0.125rem solid currentColor;
+    border-radius: 1.25rem;
+    background: none;
+    line-height: 1.5rem;
+    color: #005E83;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: inherit;
+    font-size: 1rem !important;
+    line-height: 1.25rem;
+    background: #F3F8F9 !important;
+    border-color: #CFDBE0; }
+    .field input[type="text"]:hover, .field textarea:hover, .gfield input[type="text"]:hover, .gfield textarea:hover {
+      background: #fff !important; }
+    .field input[type="text"]:focus, .field textarea:focus, .gfield input[type="text"]:focus, .gfield textarea:focus {
+      outline: none;
+      border-color: #F88379;
+      background: #fff !important; }
+  .field textarea, .gfield textarea {
+    padding-top: 0.5rem; }
   .field label, .gfield label {
     display: block;
     margin-bottom: 0.25rem;
@@ -1502,14 +1544,17 @@ footer {
   footer .site-info {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background: #003246;
-    font-size: 0.875rem; }
+    background: #003246; }
     footer .site-info p {
-      color: rgba(255, 255, 255, 0.5); }
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem; }
     footer .site-info a {
-      color: rgba(255, 255, 255, 0.8); }
+      color: rgba(255, 255, 255, 0.5); }
       footer .site-info a:hover {
         color: #fff; }
+
+.gform_wrapper {
+  margin: 0; }
 
 .gform_wrapper .gf_page_steps {
   display: none; }
@@ -1819,13 +1864,36 @@ nav.isActive .menu-toggle span:last-child {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem; } }
 
-.white-popup {
-  position: relative;
-  background: #fff;
-  padding: 20px;
-  width: auto;
-  max-width: 400px;
-  margin: 20px auto; }
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  background: rgba(0, 94, 131, 0.4);
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none; }
+  @media screen and (min-width: 48em) {
+    .popup {
+      justify-content: center;
+      align-items: center; } }
+  .popup .form {
+    flex: 1;
+    transform: translateY(2rem);
+    transition: all 0.2s ease; }
+  .popup.isActive {
+    opacity: 1;
+    pointer-events: all; }
+    .popup.isActive .form {
+      transform: translateY(0); }
+  .popup .gform_page.isActive {
+    box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.25); }
 
 .section--service {
   padding: 3rem 0; }

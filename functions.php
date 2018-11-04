@@ -94,25 +94,6 @@ function parseTablePressTable($table) {
 
 }
 
-// Lightbox for Gravity Forms
-
-function inline_popup_enabler(){
-     ?>
-
-<script>
-(function($){
-    $(window).load(function() {
-      $('.test-popup-link').magnificPopup({
-        type:'inline',
-        midClick: true 
-      });
-    });
-})(jQuery);
-</script>
-<?php
-}
-add_action('wp_footer', 'inline_popup_enabler');
-
 
 add_filter( 'gform_pre_render_1', 'my_populate_checkbox' );
 

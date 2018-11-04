@@ -25,11 +25,13 @@
 
 							<br/>
 
-							<a class="button button--dark button--outline button--large test-popup-link" href="#test-popup">
+							<a class="button button--outline button--large" href="#contact-form">
 								<?php echo get_field('footer_cta_button_text'); ?>
 							</a>
-							<div id="test-popup" class="form class white-popup mfp-hide">
-								<?php echo get_field('footer_form'); ?>
+							<div class="popup" id="contact-form">
+								<div class="form">
+									<?php echo get_field('footer_form'); ?>
+								</div>
 							</div>
 						</div>
 					</div>

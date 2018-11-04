@@ -38,13 +38,13 @@ footer {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		background: darken($diagnoseBlue, 12%);
-		font-size: 0.875rem;
 
 		p {
-			color: rgba($white, 0.5);
+			color: rgba($white, 0.8);
+			font-size: 1rem;
 		}
 		a {
-			color: rgba($white, 0.8);
+			color: rgba($white, 0.5);
 
 			&:hover { color: $white; }
 		}

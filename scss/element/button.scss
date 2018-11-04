@@ -42,6 +42,23 @@
 			color: $white;
 		}
 	}
+	&--outline {
+		background: transparent;
+		border-width: 2px;
+		// font-weight: normal;
+		border-color: currentColor;
+		color: currentColor;
+
+		&:hover {
+			background-color: rgba($highlight, 0.1);
+			color: $highlight;
+		}
+		&:active {
+			background: $highlight;
+			border-color: transparent;
+			color: $white;
+		}
+	}
 	&--grey {
 		background: $greylight;
 		border-color: transparent;

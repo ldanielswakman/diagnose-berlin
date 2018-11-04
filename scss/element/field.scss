@@ -1,8 +1,33 @@
 // TO DO: Clean up legacy naming (gform etc)
 
 .field, .gfield {
-
 	margin-bottom: 1rem;
+
+
+	// .ginput_container_textarea textarea {}
+	input[type="text"], textarea {
+		@include clickableElem();
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		font: inherit;
+		font-size: 1rem !important; // Overrides needed because of Gravity Forms
+		line-height: 1.25rem;
+		background: $greylightest !important; // Overrides needed because of Gravity Forms
+		border-color: $greylight;
+
+		&:hover {
+			background: $white !important;
+		}
+		&:focus {
+			outline: none;
+			border-color: $highlight;
+			background: $white !important;
+		}
+	}
+	textarea {
+		padding-top: 0.5rem;
+	}
 
 	// 'Regular' input fields, different types
 	label {
