@@ -33,7 +33,7 @@ get_header(); ?>
 
 <section id="intro">
   <div class="row row--nopadding">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content">
+		<div class="col-xs-12 col-lg-8 col-lg-offset-2 content">
 			<blockquote><p><?php the_field('second_home_headline'); ?></p></blockquote>
 			<br/>
 			<?php the_field('first_home_blurb'); ?>
