@@ -1,63 +1,65 @@
 .page.knowledge-base,
-.page-template-index-php {
+.page-template-index-php,
+.archive.category {
 
 	.categories {
-		display: flex;
 		overflow: auto;
+		font-size: 0.75rem;
 
-		li h4 {
-			display: flex;
-			padding: 0.5rem;
+		@include phoneAndUp() {
+			font-size: 0.875rem;
 		}
-		li.title {
-			margin-right: 1rem;
-			padding-right: 1rem;
-			border-right: 1px solid rgba($dark, 0.15);
+		@include tabletAndUp() {
+			font-size: 1rem;
+		}
 
-			h4 {
-				font-weight: normal;
+		ul {
+			display: flex;
+		}
+		li {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			letter-spacing: 0.1rem;
+
+			a:hover {
+				color: $highlight;
+				opacity: 1;
+			}
+			&.current-cat a {
+				color: $diagnoseBlue;
+				opacity: 1;
 			}
 		}
-		li a:hover h4 {
-			color: $highlight;
-			opacity: 1;
+		ul li a {
+			padding: 1rem 0.5rem;
+			opacity: 0.3;
+			font-weight: bold;
+
+			@include tabletAndUp() {
+				padding: 0.5rem 0.75rem;
+			}
 		}
-		li a.isActive h4 {
-			color: $diagnoseBlue;
-			opacity: 1;
+		.title {
+			margin-right: 0.5rem;
+			padding-right: 0.5rem;
+			border-right: 1px solid rgba($dark, 0.15);
+			color: rgba($diagnoseBlue, 0.3);
+
+			@include tabletAndUp() {
+				margin-right: 1rem;
+				padding-right: 1rem;
+			}
 		}
+	}
+
+	#featured {
+		padding-top: 0;
 	}
 
 	#articles {
 		padding-top: 5rem;
 		padding-bottom: 5rem;
-	}
-}
-
-
-// In knowledge base page styling, but also used on homepage
-.post-preview {
-	display: flex;
-	align-items: center;
-	margin-bottom: 1.5rem;
-
-	&__figure {
-		width: 10rem;
-		min-width: 10rem;
-	}
-	&__text {
-		padding: 1rem;
-		line-height: 1.25rem;
-	}
-	.categories {
-		a {
-			margin-right: 1rem;
-
-			&:hover h4 {
-				color: $highlight;
-				opacity: 1;
-			}
-		}
-		h4 { font-size: 0.875rem; }
 	}
 }

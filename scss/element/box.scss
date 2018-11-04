@@ -36,7 +36,7 @@
 		padding: 1.5rem;
 		border-radius: 50%;
 
-		@tabletAndUp() {
+		@include tabletAndUp() {
 			width: 10rem;
 			height: 10rem;
 			padding: 1.5rem;
@@ -44,10 +44,15 @@
 	}
 	&--featured {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 100%;
 		margin-bottom: 1.5rem;
 		padding: 0;
 		background-size: cover;
 		background-position: center;
+		transition: all 0.2s ease;
 		color: $white;
 
 		&:before {
@@ -60,6 +65,7 @@
 			height: 100%;
 			background: rgba($diagnoseBlue, 0.1);
   		background-blend-mode: lighten;
+  		transition: all 0.2s ease;
 		}
 		&:after {
 			content: "";
@@ -70,6 +76,14 @@
 			width: 100%;
 			height: calc(100% - 6rem);
 			@include vertical-gradient(rgba($diagnoseBlue, 0), rgba($dark, 1));
+		}
+
+		&:hover {
+			transform: scale(1.01);
+
+			&:before {
+				background: rgba($diagnoseBlue, 0.25);
+			}
 		}
 
 		.box__content {

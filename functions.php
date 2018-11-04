@@ -170,3 +170,13 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+// remove width & height attributes from images
+//
+function remove_img_attr ($html)
+{
+    return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+ 
+add_filter( 'post_thumbnail_html', 'remove_img_attr' );
