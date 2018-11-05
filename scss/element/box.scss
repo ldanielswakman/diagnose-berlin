@@ -43,10 +43,14 @@
 		padding: 1.5rem;
 		border-radius: 50%;
 
+		img { max-width: 4rem; margin: auto; }
+
 		@include tabletAndUp() {
 			width: 10rem;
 			height: 10rem;
 			padding: 1.5rem;
+
+			img { max-width: 5rem; }
 		}
 	}
 	&--featured {

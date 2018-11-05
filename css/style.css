@@ -1132,11 +1132,16 @@ blockquote p {
     height: 8rem;
     padding: 1.5rem;
     border-radius: 50%; }
+    .box--circle img {
+      max-width: 4rem;
+      margin: auto; }
     @media screen and (min-width: 48em) {
       .box--circle {
         width: 10rem;
         height: 10rem;
-        padding: 1.5rem; } }
+        padding: 1.5rem; }
+        .box--circle img {
+          max-width: 5rem; } }
   .box--featured {
     position: relative;
     display: flex;
@@ -2474,12 +2479,10 @@ table {
       transform: translate(-2rem, 6rem); } }
   .page-template-page-team .partners-grid .box.box--circle {
     position: relative;
-    transition: all 0.2s ease;
-    cursor: pointer; }
-  .page-template-page-team .partners-grid:hover .box--circle {
-    opacity: 0.75; }
-    .page-template-page-team .partners-grid:hover .box--circle:hover, .page-template-page-team .partners-grid:hover .box--circle.isActive {
-      opacity: 1; }
+    transition: all 0.2s ease; }
+    .page-template-page-team .partners-grid .box.box--circle[onclick]:hover, .page-template-page-team .partners-grid .box.box--circle.isActive {
+      box-shadow: 0 0.5rem 2.5rem rgba(28, 46, 53, 0.25);
+      cursor: pointer; }
   .page-template-page-team .partners-grid .box.box--info-tooltip {
     text-align: left;
     display: none;

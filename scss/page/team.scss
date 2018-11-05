@@ -51,18 +51,10 @@
 		.box.box--circle {
 			position: relative;
 			transition: all 0.2s ease;
-			cursor: pointer;
-		}
-		&:hover .box--circle {
-			opacity: 0.75;
-			// transform: scale(0.99);
-
-			&:hover, &.isActive {
-				opacity: 1;
-				// transform: scale(1.01);
-			}
-			&:active {
-				// transform: scale(1.05);
+			
+			&[onclick]:hover, &.isActive {
+				box-shadow: 0 0.5rem 2.5rem rgba($dark, 0.25);
+				cursor: pointer;
 			}
 		}
 		.box.box--info-tooltip {

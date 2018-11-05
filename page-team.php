@@ -68,43 +68,38 @@ get_header(); ?>
 <section id="partners" class="content">
 	<h4 class="content align-center">OUR PARTNERS</h4>
 		<div class="row row--nopadding partners-grid align-center">
-		<?php
-		
-			// check if the repeater field has rows of data
+			<?php
 			if( have_rows('partners') ):
-
-				// loop through the rows of data
 				while ( have_rows('partners') ) : the_row(); ?>
 
-					<!-- // display a sub field value -->
+					<div class="col-xs-6 col-sm-3">
 
-						<div class="col-xs-6 col-sm-3">
+						<? if (strlen(get_sub_field('partner_description')) > 0) : ?>
+
 							<div class="box box--circle" onclick="toggleTooltip($(this))">
 
-								<figure>
-									<img src="<?php the_sub_field('partner_logo'); ?>" />
-								</figure>
+								<figure><img src="<?php the_sub_field('partner_logo'); ?>" /></figure>
 
-								<div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
-									
+								<div class="box box--info-tooltip">
 									<?php the_sub_field('partner_description'); ?>
-
 									<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
 										<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small">Visit site</a>
 									<? endif ?>
 								</div>
 
 							</div>
-						</div>
 
-		<?php endwhile;
+						<? else : ?>
 
-		else :
+							<div class="box box--circle">
+								<figure><img src="<?php the_sub_field('partner_logo'); ?>" /></figure>
+							</div>
 
-			// no rows found
+						<? endif ?>
 
-		endif;
-		?>
+					</div>
+
+			<?php endwhile; endif; ?>
 		</div>
 </section>
 
