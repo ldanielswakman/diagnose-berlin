@@ -79,17 +79,22 @@ get_header(); ?>
 					<!-- // display a sub field value -->
 
 						<div class="col-xs-6 col-sm-3">
-							<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="box box--circle">
+							<div class="box box--circle" onclick="toggleTooltip($(this))">
 
 								<figure>
 									<img src="<?php the_sub_field('partner_logo'); ?>" />
 								</figure>
 
 								<div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+									
 									<?php the_sub_field('partner_description'); ?>
+
+									<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
+										<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small">Visit site</a>
+									<? endif ?>
 								</div>
 
-							</a>
+							</div>
 						</div>
 
 		<?php endwhile;

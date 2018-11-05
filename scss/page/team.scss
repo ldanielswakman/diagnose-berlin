@@ -22,7 +22,7 @@
 		padding-bottom: 5rem;
 
 		& > [class*="col-"] {
-			.box {
+			& > .box {
 				position: relative;
 				margin: 1.5rem 0;
 			}
@@ -48,21 +48,30 @@
 				&:nth-child(8) .box { transform: translate(-2rem,6rem); }
 			}
 		}
-		.box {
-			text-align: left;
+		.box.box--circle {
+			position: relative;
 			transition: all 0.2s ease;
+			cursor: pointer;
 		}
-		&:hover .box {
+		&:hover .box--circle {
 			opacity: 0.75;
 			// transform: scale(0.99);
 
-			&:hover {
+			&:hover, &.isActive {
 				opacity: 1;
 				// transform: scale(1.01);
 			}
 			&:active {
 				// transform: scale(1.05);
 			}
+		}
+		.box.box--info-tooltip {
+			text-align: left;
+			display: none;
+			cursor: default;
+		}
+		.box.box--circle.isActive .box--info-tooltip {
+			display: block;
 		}
 	}
 }

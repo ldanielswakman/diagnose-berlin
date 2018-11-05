@@ -2,10 +2,14 @@ $(document).ready(function() {
 
 	$('body').addClass('isLoaded');
 
+
+
 	// Nav toggle
 	$('.menu-toggle').click(function() {
 		$(this).closest('nav').toggleClass('isActive');
 	});
+
+
 
 	// Contact Form toggle
 	$('a[href="#contact-form"]').click(function() {
@@ -54,9 +58,21 @@ function togglePackages($btn, $target) {
 
 function toggleTooltip($btn) {
 	if($btn.length > 0) {
+
 		$table = $btn.closest('table');
-		$table.find('.title').not($btn.closest('.title')).removeClass('isActive');
-		$btn.closest('.title').toggleClass('isActive');
+
+		if ($table.length > 0) {
+			$table.find('.title').not($btn.closest('.title')).removeClass('isActive');
+			$btn.closest('.title').toggleClass('isActive');
+		} else {
+			$grid = $btn.closest('.partners-grid');
+			if(!$btn.hasClass('isActive')) {
+				$grid.find('.box.box--circle').removeClass('isActive');
+				$btn.addClass('isActive');
+			} else {
+				$grid.find('.box.box--circle').removeClass('isActive');
+			}
+		}
 	} else {
 		console.log('no button found...');
 	}
