@@ -2,44 +2,71 @@
 
 .gform_wrapper {
 	margin: 0;
-}
-.gform_wrapper .gf_page_steps {
-	display: none;
+
+	// Steps
+	.gf_page_steps {
+		width: 100%;
+		display: flex;
+
+		.gf_step {
+			height: 0.25rem;
+	    flex: 1;
+			background: $greylight;
+
+			&_completed { background: $highlight; }
+			&_active { background: $highlight; }
+
+			.gf_step_number {
+				display: none;
+			}
+		}
+	}
+
+	.validation_error, .validation_errors {
+		padding: 0.5rem 1rem;
+		background: rgba($highlight, 0.1);
+		color: $highlight;
+
+		@include bigPhoneAndUp() {
+			padding: 0.75rem 1.5rem;
+		}
+	}
+	.validation_message { color: $highlight; }
+
+	form {
+		max-height: 100vh;
+		max-width: 720px;
+		margin: 0 auto;
+
+		background: $white;
+		box-shadow: 0 0.375rem 2rem rgba($black, 0.1);
+	}
 }
 
 .form,
 .gform_body {
-	max-width: 720px;
-	margin: 0 auto;
-	padding-top: 3rem;
-
 	&-section,
 	.gform_page {
 		// margin: 0 0.75rem;
 		padding: 1rem;
+		padding-top: 2rem;
 		background: $greylightest;
 
 		@include bigPhoneAndUp() {
 			padding: 1.5rem;
+			padding-top: 2.5rem;
 		}
 
-		// Active
-		&.isActive {
-			background: $white;
-			box-shadow: 0 0.375rem 2rem rgba($black, 0.1);
-		}
+		// &.isActive {
+		// 	background: $white;
+		// 	box-shadow: 0 0.375rem 2rem rgba($black, 0.1);
+		// }
+
 		// Not active
 		&:not(.isActive) {
 			.question, .answer {
 				opacity: 0.2;
 			}
-		}
-
-		.question {}
-		.answer {}
-		.actions {
-			display: flex;
-			justify-content: flex-end;
 		}
 	}
 	&-section + &-section {
@@ -68,5 +95,13 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-top: 3rem;
+
+		input + input {
+			margin-left: 0.5rem;
+
+			@include tabletAndUp() {
+				margin-left: 1rem;
+			}
+		}
 	}
 }

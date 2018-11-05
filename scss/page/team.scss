@@ -2,6 +2,20 @@
 
 	#team {
 		padding-bottom: 5rem;
+
+		figure {
+			max-width: 15rem;
+			margin: 0 auto 1.5rem;
+			border-radius: 50%;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
 	}
 
 	.partners-grid {
@@ -35,6 +49,7 @@
 			}
 		}
 		.box {
+			text-align: left;
 			transition: all 0.2s ease;
 		}
 		&:hover .box {

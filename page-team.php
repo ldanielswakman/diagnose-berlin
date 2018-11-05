@@ -20,18 +20,17 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-					<div class="col-xs-12 col-md-4 content">
-						<div class="row row--nopadding">
-							<div class="col-xs-3 col-sm-4 col-md-12">
-								<figure>
-									<img src="<?php the_sub_field('member_headshot'); ?>" />
-								</figure>
-							</div>
-  							<div class="col-xs-8 col-xs-offset-1 col-sm-8 col-md-12">
-								<h2><?php the_sub_field('member_name'); ?></h2>
-								<p class="small"><?php the_sub_field('member_description'); ?></p>
-							</div>
-						</div>
+					<div class="col-xs-12 col-sm-6 col-lg-4 content">
+
+						<figure>
+							<img src="<?php the_sub_field('member_headshot'); ?>" />
+						</figure>
+
+						<h2><?php the_sub_field('member_name'); ?></h2>
+						<br />
+
+						<div class="small"><?php the_sub_field('member_description'); ?></div>
+
 					</div>
 
 		<?php endwhile;
@@ -48,7 +47,7 @@ get_header(); ?>
 <?php while (have_posts()) : the_post(); ?>
 <section id="about" class="load-movein-btm" style="margin-top: -5rem;">
 	<div class="row row--nopadding">
-		<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
 			<div class="box">
 				<div class="row">
 					<div class="col-xs-12 col-sm-4">
@@ -81,10 +80,15 @@ get_header(); ?>
 
 						<div class="col-xs-6 col-sm-3">
 							<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="box box--circle">
+
 								<figure>
 									<img src="<?php the_sub_field('partner_logo'); ?>" />
 								</figure>
-								<p><?php the_sub_field('partner_description'); ?></p>
+
+								<div class="box box--info-tooltip" onclick="toggleTooltip($(this))">
+									<?php the_sub_field('partner_description'); ?>
+								</div>
+
 							</a>
 						</div>
 
