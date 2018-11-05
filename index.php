@@ -12,6 +12,8 @@ get_header(); ?>
         'orderby'    => 'name',
         'exclude'    => array( 239, 241 )
     ) ); ?> 
+    <a href="<?php echo esc_url( home_url( '/knowledge/' ) ); ?>" title="All posts">ALL POSTS</a>
+
 </section>
 
 <section id="featured" class="content load-movein-btm load-delay-03s">
