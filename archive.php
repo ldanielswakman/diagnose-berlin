@@ -12,31 +12,16 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-
-<?php endif; ?>
-
 <? get_template_part('partials/knowledge-categories-bar') ?>
 
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">
-        <?php
-        // Get the ID of a given category
-        $cat_id = get_queried_object_id();
-        ?>
-        <?php
-        $args = [
-            'posts_per_page' => 3,
-            'orderby'        => 'name',
-            'category__in' => array( 239, 241 ),
-            'cat' => $cat_id,
-];
-        $q = new WP_Query( $args );
+        <?php $query = get_featured_or_recent_posts();
+        if ( $query ) {
 
-        if( $q->have_posts() ) {
-            while( $q->have_posts() ) {
-                $q->the_post();
-        ?>
+            while ( $query->have_posts() ) {
+                $query->the_post();?>
+
         <div class="col-xs-12 col-sm-6 col-lg-4" style="padding-bottom: 1.5rem;">
 
             <?php
@@ -51,14 +36,10 @@ get_header(); ?>
             </div>
             </a>
         </div>
-        
-        <?php  
-            }
-        } ?>
-        
-        <?php   
+
+            <?php }
             wp_reset_postdata();
-        ?>
+        } ?>
 
     </div>
 </section>
@@ -68,7 +49,6 @@ if ( have_posts() ) : ?>
     <?php
     /* Start the Loop */
     while ( have_posts() ) : the_post(); ?>
-
 <section id="articles" class="bg-greylightest content load-movein-btm load-delay-05s">
     <div class="row row--nopadding">
         <a href="<?php the_permalink(); ?>" class="col-xs-12 col-sm-6 post-preview">
@@ -85,8 +65,6 @@ if ( have_posts() ) : ?>
 <?php endwhile;
 
 		else :
-
-			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif; ?>
 
