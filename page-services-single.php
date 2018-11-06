@@ -21,10 +21,10 @@ get_header(); ?>
             } elseif ('two' == get_field('package_groups')) { ?>
             <div class="button--toggle-group">
                 <button class="button button--blue button--large isActive" onclick="togglePackages($(this), 'packages1')">
-                    Für&nbsp;<strong><?php the_field('group_1_name'); ?></strong>
+                    <?php the_field('group_1_name'); ?>
                 </button>
                 <button class="button button--outline button--large" onclick="togglePackages($(this), 'packages2')">
-                    Für&nbsp;<strong><?php the_field('group_2_name'); ?></strong>
+                    <?php the_field('group_2_name'); ?>
                 </button>
             </div>
         <?php }	?>

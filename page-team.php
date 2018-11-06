@@ -66,7 +66,7 @@ get_header(); ?>
 <?php endwhile; ?>
 
 <section id="partners" class="content">
-	<h4 class="content align-center">OUR PARTNERS</h4>
+	<h4 class="content align-center"><?php the_field('partner_section_title'); ?></h4>
 		<div class="row row--nopadding partners-grid align-center">
 			<?php
 			if( have_rows('partners') ):
@@ -77,8 +77,10 @@ get_header(); ?>
 						<? if (strlen(get_sub_field('partner_description')) > 0) : ?>
 
 							<div class="box box--circle" onclick="toggleTooltip($(this))">
-
-								<figure><img src="<?php the_sub_field('partner_logo'); ?>" /></figure>
+								
+								<figure>
+									<img src="<?php the_sub_field('partner_logo'); ?>" />
+								</figure>
 
 								<div class="box box--info-tooltip">
 									<?php the_sub_field('partner_description'); ?>
@@ -104,7 +106,7 @@ get_header(); ?>
 </section>
 
 <section id="partners" class="bg-greylightest content">
-	<h4 class="content align-center">FRIENDS & FAMILY</h4>
+	<h4 class="content align-center"><?php the_field('ff_section_title'); ?></h4>
 		<div class="row row--nopadding partners-grid align-center">
 		<?php
 		
