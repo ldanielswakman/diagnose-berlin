@@ -6,15 +6,8 @@
 
 get_header(); ?>
 
-<section id="categories" class="categories content load-fadein">
-    <?php wp_list_categories( array(
-        'title_li'   => '<div class="title">' . __('Categories') . '</div>',
-        'orderby'    => 'name',
-        'exclude'    => array( 239, 241 )
-    ) ); ?> 
-    <a href="<?php echo esc_url( home_url( '/knowledge/' ) ); ?>" title="All posts">ALL POSTS</a>
 
-</section>
+<? get_template_part('partials/knowledge-categories-bar') ?>
 
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">
