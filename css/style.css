@@ -2492,41 +2492,49 @@ table {
 
 .page.knowledge-base .categories,
 .page-template-index-php .categories,
-.archive.category .categories {
+.archive.category .categories,
+.blog .categories {
   overflow: auto;
   font-size: 0.75rem; }
   @media screen and (min-width: 21em) {
     .page.knowledge-base .categories,
     .page-template-index-php .categories,
-    .archive.category .categories {
+    .archive.category .categories,
+    .blog .categories {
       font-size: 0.875rem; } }
   @media screen and (min-width: 48em) {
     .page.knowledge-base .categories,
     .page-template-index-php .categories,
-    .archive.category .categories {
+    .archive.category .categories,
+    .blog .categories {
       font-size: 1rem; } }
   .page.knowledge-base .categories ul,
   .page-template-index-php .categories ul,
-  .archive.category .categories ul {
+  .archive.category .categories ul,
+  .blog .categories ul {
     display: flex; }
   .page.knowledge-base .categories ul li a,
   .page-template-index-php .categories ul li a,
-  .archive.category .categories ul li a {
+  .archive.category .categories ul li a,
+  .blog .categories ul li a {
     padding: 1rem 0.5rem; }
     @media screen and (min-width: 48em) {
       .page.knowledge-base .categories ul li a,
       .page-template-index-php .categories ul li a,
-      .archive.category .categories ul li a {
+      .archive.category .categories ul li a,
+      .blog .categories ul li a {
         padding: 0.5rem 0.75rem; } }
   .page.knowledge-base .categories > li.categories,
   .page-template-index-php .categories > li.categories,
-  .archive.category .categories > li.categories {
+  .archive.category .categories > li.categories,
+  .blog .categories > li.categories {
     list-style: none;
     display: flex;
     align-items: center; }
   .page.knowledge-base .categories .title,
   .page-template-index-php .categories .title,
-  .archive.category .categories .title {
+  .archive.category .categories .title,
+  .blog .categories .title {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     margin-right: 0.5rem;
@@ -2537,19 +2545,22 @@ table {
     @media screen and (min-width: 48em) {
       .page.knowledge-base .categories .title,
       .page-template-index-php .categories .title,
-      .archive.category .categories .title {
+      .archive.category .categories .title,
+      .blog .categories .title {
         margin-right: 1rem;
         padding-right: 1rem;
         font-size: 0.875rem; } }
 
 .page.knowledge-base #featured,
 .page-template-index-php #featured,
-.archive.category #featured {
+.archive.category #featured,
+.blog #featured {
   padding-top: 0; }
 
 .page.knowledge-base #articles,
 .page-template-index-php #articles,
-.archive.category #articles {
+.archive.category #articles,
+.blog #articles {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 

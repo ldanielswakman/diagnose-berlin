@@ -4,14 +4,9 @@
         'title_li'   => '<div class="title">' . __('Categories') . '</div>',
         'orderby'    => 'name',
         'exclude'    => array( 239, 241 ),
-        'show_option_all' => __('Allen'),
+        'show_option_all' => __('All'),
         'echo' => false
     ]);
-
-    $blog_url = esc_url( home_url( '/knowledge/' ) );
-
-    // Set proper href for 'All categories' link
-    $cats = preg_replace('/cat-item-all\'><a href=\'([^"]*)\'>/','cat-item-all\'><a href=\'' . $blog_url . '\'>',$cats);
 
     // Set current category for 'all' item if no filter active
     if (!is_category()) {
@@ -19,5 +14,6 @@
     }
 
     echo $cats;
+
     ?>
 </section>
