@@ -19,9 +19,9 @@ get_header(); ?>
     <?php wp_list_categories( array(
         'title_li'   => '<div class="title">' . __('Categories') . '</div>',
         'orderby'    => 'name',
-        'exclude'    => array( 239, 241 )
+        'exclude'    => array( 239, 241 ),
+        'show_option_all' => __('All'),
     ) ); ?> 
-    <a href="<?php echo esc_url( home_url( '/knowledge/' ) ); ?>" title="All posts">ALL POSTS</a>
 </section>
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">

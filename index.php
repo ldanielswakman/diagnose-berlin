@@ -6,8 +6,14 @@
 
 get_header(); ?>
 
-
-<? get_template_part('partials/knowledge-categories-bar') ?>
+<section id="categories" class="categories content load-fadein">
+    <?php wp_list_categories( array(
+        'title_li'   => '<div class="title">' . __('Categories') . '</div>',
+        'orderby'    => 'name',
+        'exclude'    => array( 239, 241 ),
+        'show_option_all' => __('All')
+    ) ); ?> 
+</section>
 
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">
