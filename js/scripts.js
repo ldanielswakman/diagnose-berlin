@@ -79,6 +79,16 @@ function toggleTooltip($btn) {
 }
 
 
+function toggleMemberDescription($btn) {
+	if($btn.length > 0) {
+		// Change buttons
+		$btn.closest('.member').toggleClass('isActive');
+	} else {
+		console.log('no button found...');
+	}
+}
+
+
 // WP Gravoty Form Interaction addition
 $(document).ready(function() {
 	if($('.gform_wrapper').length > 0) {

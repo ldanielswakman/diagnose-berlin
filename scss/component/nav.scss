@@ -127,8 +127,10 @@ nav {
 
 	background: $white;
 	box-shadow: 0 0.25rem 1rem rgba($dark, 0.05);
+	
 	overflow: hidden;
 	opacity: 0;
+	pointer-events: none;
 
 	@include tabletAndUp() {
 		transition: all 0.7s ease 1s;

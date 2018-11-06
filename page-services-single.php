@@ -61,7 +61,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php if( get_field('group_1_table') ): ?>
-        <div class="col-xs-12" style="text-align: center; margin: 2rem 0;">
+        <div class="col-xs-12" style="text-align: center; margin-bottom: 1rem;">
             <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= __('Compare') ?></button>
             <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= __('Contact us for options') ?></a>
         </div>

@@ -3,8 +3,10 @@
 .archive.category,
 .blog {
 
-	.categories {
+	section.categories {
 		overflow: auto;
+	}
+	.categories {
 		font-size: 0.75rem;
 
 		@include phoneAndUp() {

@@ -8,11 +8,13 @@ get_header(); ?>
 <section id="intro" class="load-fadein">
 	<div class="col-xs-12 col-md-8 col-lg-6 content">
 
-		<!-- <h1><?php the_title(); ?></h1> -->
+		<br />
 
 		<blockquote class="blockquote--big">
 			<?php the_field('opening_headline'); ?>
 		</blockquote>
+
+		<br />
 
 		<p><?php the_field('opening_text'); ?></p>
 
