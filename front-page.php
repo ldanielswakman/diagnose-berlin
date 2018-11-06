@@ -76,7 +76,7 @@ get_header(); ?>
 					<div class="post-preview">
 
 						<figure class="post-preview__figure">
-							<img src="https://picsum.photos/458/352" alt="" />	
+							<?php the_post_thumbnail(); ?>	
 						</figure>
 
 						<div class="post-preview__text">
