@@ -94,6 +94,7 @@
 	.gform_page_footer {
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		margin-top: 3rem;
 
 		input + input {
@@ -101,6 +102,29 @@
 
 			@include tabletAndUp() {
 				margin-left: 1rem;
+			}
+		}
+		.button {
+			// Ref: button--grey in button.scss
+			background: $greylight;
+			border-color: transparent;
+
+			&:hover {
+				background: darken($greylight, 10%);
+				box-shadow: 0 0.25rem 1rem rgba($diagnoseBlue, 0.3);
+			}
+
+			&[type="submit"] {
+				// Ref: button--blue in button.scss
+				height: 2.5rem;
+				background: $diagnoseBlue;
+				color: $white;
+				border-color: transparent;
+
+				&:hover {
+					background: darken($diagnoseBlue, 10%);
+					box-shadow: 0 0.125rem 1rem rgba($diagnoseBlue, 0.3);
+				}
 			}
 		}
 	}

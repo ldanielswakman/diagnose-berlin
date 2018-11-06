@@ -40,6 +40,14 @@ p {
 		font-size: 1rem;
 		line-height: 1.5rem;
 	}
+
+	a {
+		@include underline(rgba($diagnoseBlue, 0.5), 1px);
+
+		&:hover {
+			@include underline($diagnoseBlue, 1px);
+		}
+	}
 }
 .small p {
 	font-size: 1rem;
