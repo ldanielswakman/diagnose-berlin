@@ -43,7 +43,7 @@ get_header(); ?>
         $cta_text = get_sub_field('package_cta_text');
         $cta_link = get_sub_field('package_cta_link');
         ?>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4" style="display: flex;">
             <div class="box box--package">
                 <div class="box__header">
                     <h4><?php echo $letter; ?></h4>
@@ -61,8 +61,9 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php if( get_field('group_1_table') ): ?>
-        <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
-            <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
+        <div class="col-xs-12" style="text-align: center; margin: 2rem 0;">
+            <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= __('Compare') ?></button>
+            <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= __('Contact us for options') ?></a>
         </div>
 
     </div>

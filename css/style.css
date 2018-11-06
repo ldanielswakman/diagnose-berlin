@@ -926,6 +926,10 @@ p {
   p.small {
     font-size: 1rem;
     line-height: 1.5rem; }
+  p a {
+    background-image: linear-gradient(to top, transparent, transparent 0px, rgba(0, 94, 131, 0.5) 0px, rgba(0, 94, 131, 0.5) 1px, transparent 1px); }
+    p a:hover {
+      background-image: linear-gradient(to top, transparent, transparent 0px, #005E83 0px, #005E83 1px, transparent 1px); }
 
 .small p {
   font-size: 1rem;
@@ -1029,6 +1033,8 @@ blockquote p {
     .button--grey:hover {
       background: #b0c4cc;
       box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
+  .button--medium {
+    padding: 0.625rem 1rem; }
   .button--large {
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
@@ -1106,7 +1112,6 @@ blockquote p {
       font-weight: bold;
       font-size: 1.5rem; } }
   .box--package {
-    margin-bottom: 2rem;
     padding: 2rem; }
     .box--package .box__footer {
       display: flex;
@@ -1335,6 +1340,10 @@ blockquote p {
         flex-basis: calc(50% - 0.5rem); } }
     .field .ginput_complex .ginput_left, .field .ginput_complex .name_first, .gfield .ginput_complex .ginput_left, .gfield .ginput_complex .name_first {
       margin-right: 1rem; }
+  .field .ginput_container_date .clear-multi, .gfield .ginput_container_date .clear-multi {
+    display: flex; }
+    .field .ginput_container_date .clear-multi > * + *, .gfield .ginput_container_date .clear-multi > * + * {
+      margin-left: 1rem; }
   .field .ginput_container_select,
   .field .address_country, .gfield .ginput_container_select,
   .gfield .address_country {
@@ -1674,6 +1683,7 @@ footer {
 .gform_body .gform_page_footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-top: 3rem; }
   .form .gform_page_footer input + input,
   .gform_body .gform_page_footer input + input {
@@ -1682,6 +1692,24 @@ footer {
       .form .gform_page_footer input + input,
       .gform_body .gform_page_footer input + input {
         margin-left: 1rem; } }
+  .form .gform_page_footer .button,
+  .gform_body .gform_page_footer .button {
+    background: #CFDBE0;
+    border-color: transparent; }
+    .form .gform_page_footer .button:hover,
+    .gform_body .gform_page_footer .button:hover {
+      background: #b0c4cc;
+      box-shadow: 0 0.25rem 1rem rgba(0, 94, 131, 0.3); }
+    .form .gform_page_footer .button[type="submit"],
+    .gform_body .gform_page_footer .button[type="submit"] {
+      height: 2.5rem;
+      background: #005E83;
+      color: #fff;
+      border-color: transparent; }
+      .form .gform_page_footer .button[type="submit"]:hover,
+      .gform_body .gform_page_footer .button[type="submit"]:hover {
+        background: #003950;
+        box-shadow: 0 0.125rem 1rem rgba(0, 94, 131, 0.3); }
 
 .menu > .lang-item {
   display: none; }
