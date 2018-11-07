@@ -162,162 +162,81 @@ function remove_img_attr ($html)
  
 add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 
-//featured post or most recent article function
+//featured or recent posts
 
-function get_featured_or_recent_posts( $taxonomy_1 = 'post_tag', $taxonomy_2 = 'category', $recent_posts = array(), $total_posts = 3 ) {
-    // First, make sure we are on an archive page, if not, bail
-    if ( !is_category() )
-        return false;
+function get_featured_or_recent_posts( $taxonomy_1, $taxonomy_2, $total_posts ) {
 
     // Sanitize and vaidate our incoming data
-    if ( 'post_tag' !== $taxonomy_1 ) {
+   
         $taxonomy_1 = filter_var( $taxonomy_1, FILTER_SANITIZE_STRING );
-        if ( !taxonomy_exists( $taxonomy_1 ) )
-            return false;
-    }
 
-    if ( 'category' !== $taxonomy_2 ) {
+
         $taxonomy_2 = filter_var( $taxonomy_2, FILTER_SANITIZE_STRING );
-        if ( !taxonomy_exists( $taxonomy_2 ) )
-            return false;
-    }
 
-    if ( 3 !== $total_posts ) {
+  
         $total_posts = filter_var( $total_posts, FILTER_VALIDATE_INT );
-            if ( !$total_posts )
-                return false;
-    }
+ 
 
-    // Everything checks out and is sanitized, lets get the current post
-    $current_post = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
-
-    // Lets get the first taxonomy's terms belonging to the post
-    $terms_1 = get_the_terms( $current_post, $taxonomy_1 );
-
-    // Set a varaible to hold the post count from first query
-    $count = 0;
     // Set a variable to hold the results from query 1
     $q_1   = [];
-    // Set a variable to hold the exclusions
-    $sticky = get_option( 'sticky_posts' );
-    $exclude = array_merge( [$current_post->ID], $sticky );
-    $exclude = array_merge( $exclude, $recent_posts );
-
-    // Make sure we have terms
-    if ( $terms_1 ) {
-        // Lets get the term ID's
-        $term_1_ids = wp_list_pluck( $terms_1, 'term_id' );
-
-        // Lets build the query to get related posts
-        $args_1 = [
-            'post_type'      => $current_post->post_type,
-            'post__not_in'   => $exclude,
-            'posts_per_page' => $total_posts,
+    // Set a variable to hold the exclusion
+     $args_1 = [
+            'posts_per_page' => 3,
             'fields'         => 'ids',
             'tax_query'      => [
+                'relation' => 'AND',
                 [
-                    'taxonomy'         => $taxonomy_1,
-                    'terms'            => $term_1_ids,
+                    'taxonomy'         => 'category',
+                    'field' => 'term_id',
+                    'terms'            => $taxonomy_1,
                     'include_children' => false
-                ]
-            ],
-        ];
-        $q_1 = get_posts( $args_1 );
-
-        // Update our counter
-        $count = count( $q_1 );
-        // Update our counter
-        $exclude = array_merge( $exclude, $q_1 );
-    }
-
-    // We will now run the second query if $count is less than $total_posts
-    if ( $count < $total_posts ) {
-        $terms_2 = get_the_terms( $current_post, $taxonomy_2 );
-        // Make sure we have terms
-        if ( $terms_2 ) {
-            // Lets get the term ID's
-            $term_2_ids = wp_list_pluck( $terms_2, 'term_id' );
-
-            // Calculate the amount of post to get
-            $diff = $total_posts - $count;                        
-
-            $args_2 = [
-                'post_type'      => $current_post->post_type,
-                'post__not_in'   => $exclude,
-                'posts_per_page' => $diff,
-                'fields'         => 'ids',
-                'category__in' => array( 239, 241 ),
-                'tax_query'      => [
-                    [
-                        'taxonomy'         => $taxonomy_2,
-                        'terms'            => $term_2_ids,
-                        'include_children' => false,
-                    ]
                 ],
-            ];
-            $q_2 = get_posts( $args_2 );
-
-            if ( $q_2 ) {
-                // Merge the two results into one array of ID's
-                $q_1 = array_merge( $q_1, $q_2 );
-
-                // Update our post counter
-                $count = count( $q_1 );
-
-                // Update our counter
-                $exclude = array_merge( $exclude, $q_2 );
-            }
-        }
-    }
-
-    // We will now run the third query if $count is less than $total_posts
-    if ( $count < $total_posts ) {
-        // Calculate the amount of post to get
-        $diff = $total_posts - $count;
-
-        $args_3 = [
-            'post_type'      => $current_post->post_type,
-            'post__not_in'   => $exclude,
-            'posts_per_page' => $diff,
-            'fields'         => 'ids',
+                [
+                    'taxonomy'         => 'category',
+                    'field' => 'slug',
+                    'terms'            => $taxonomy_2,
+                    'include_children' => false
+                ],
+            ]
         ];
-        $q_3 = get_posts( $args_3 );
 
-        if ( $q_3 ) {
-            // Merge the two results into one array of ID's
-            $q_1 = array_merge( $q_1, $q_3 );
-        } else {
+    $q_1 = get_posts( $args_1 );
+    $count = count( $q_1 );
+    $diff = $total_posts - $count;   
+    $exclude  = [];
+    $exclude = array_merge( $exclude, $q_1 );
 
-            $args_4 = [
-                'post_type'      => 'any',
-                'post__not_in'   => $exclude,
-                'posts_per_page' => $diff,
-                'fields'         => 'ids',
-            ];
-            $q_4 = get_posts( $args_4 );
-
-            if ( $q_4 ) {
-                // Merge the two results into one array of ID's
-                $q_1 = array_merge( $q_1, $q_4 );
-            }
-        }
+    if($count < $total_posts) {
+     $args_2 = [
+            'posts_per_page' => $diff,
+            'post__not_in'   => $exclude,
+            'fields'         => 'ids',
+            'category_name' => $taxonomy_2,
+        ];
+        $q_2 = get_posts( $args_2 ); 
+        $q_1 = array_merge( $q_1, $q_2 );
     }
+
+
 
     // Make sure we have an array of ID's
-    if ( !$q_1 )
-        return false;
+   /* if ( !$q_1 )
+        return false;*/
+   
 
     // Run our last query, and output the results
     $final_args = [
         'ignore_sticky_posts' => 1,
         'post_type'           => 'any',
-        'posts_per_page'      => count( $q_1 ),
+        'posts_per_page'      => 3,
         'post__in'            => $q_1,
         'order'               => 'ASC',
         'orderby'             => 'post__in',
         'suppress_filters'    => true,
         'no_found_rows'       => true
     ];
+
+
     $final_query = new WP_Query( $final_args );
 
     return $final_query;

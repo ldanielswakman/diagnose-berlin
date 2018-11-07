@@ -11,10 +11,17 @@ get_header(); ?>
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">
         <?php
-            query_posts('showposts=3&cat=239,241');
+            //query_posts('showposts=3&cat=246,248');
+            $the_query = get_featured_or_recent_posts(array (246,248) , '', 3 );
+
             $ids = array();
-            while (have_posts()) : the_post();
-            $ids[] = get_the_ID(); 
+
+        if ( $the_query ) :
+
+            while ( $the_query->have_posts() ) :
+
+        $the_query->the_post();
+        $ids[] = get_the_ID(); 
         ?>
         <div class="col-xs-12 col-sm-6 col-lg-4" style="padding-bottom: 1.5rem;">
 
@@ -30,15 +37,15 @@ get_header(); ?>
             </div>
             </a>
         </div>
-        <?php endwhile; ?>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
 </section>
 
 <section id="articles" class="bg-greylightest content load-movein-btm load-delay-05s">
     <div class="row row--nopadding">
-        <?php
-        query_posts(array('post__not_in' => $ids));
-        while (have_posts()) : the_post(); ?>
+        <?php  
+        $query2 = new WP_Query(array('category_name' => $cat, 'post__not_in' => $ids));
+        while ( $query2->have_posts() ) : $query2->the_post(); ?>
         <a href="<?php the_permalink(); ?>" class="col-xs-12 col-lg-6 post-preview">
         <figure class="post-preview__figure"><?php the_post_thumbnail(); ?></figure>
         <div class="post-preview__text">
@@ -63,8 +70,7 @@ get_header(); ?>
        </a>   
         
     <?php endwhile; ?>
-        
-    <?php  wp_reset_query(); ?>
+    <?php  wp_reset_postdata(); ?>
     </div>
 </section>
 

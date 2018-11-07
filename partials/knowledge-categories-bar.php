@@ -3,7 +3,7 @@
     $cats = wp_list_categories([
         'title_li'   => '<div class="title">' . __('Categories') . '</div>',
         'orderby'    => 'name',
-        'exclude'    => array( 239, 241 ),
+        'exclude'    => array( 246, 248 ),
         'show_option_all' => __('All'),
         'echo' => false
     ]);
