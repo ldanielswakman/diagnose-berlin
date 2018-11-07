@@ -25,7 +25,7 @@
 
 							<br/>
 
-							<a class="button button--outline button--large" href="#contact-form">
+							<a class="button button--primary button--large" href="#contact-form">
 								<?php echo get_field('footer_cta_button_text'); ?>
 							</a>
 							<div class="popup" id="contact-form">

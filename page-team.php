@@ -20,7 +20,7 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-					<div class="col-xs-12 col-sm-6 col-lg-4 content">
+					<div class="col-xs-12 col-sm-6 col-lg-4 content member">
 
 						<figure>
 							<img src="<?php the_sub_field('member_headshot'); ?>" />
@@ -29,7 +29,12 @@ get_header(); ?>
 						<h2><?php the_sub_field('member_name'); ?></h2>
 						<br />
 
-						<div class="small"><?php the_sub_field('member_description'); ?></div>
+						<div class="small more"><?php the_sub_field('member_description'); ?></div>
+
+						<br />
+
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--outline button--more"><?= __('Mehr info') ?></button>
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--outline button--less"><?= __('Weniger info') ?></button>
 
 					</div>
 

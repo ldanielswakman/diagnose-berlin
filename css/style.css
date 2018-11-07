@@ -942,6 +942,19 @@ blockquote p {
   blockquote p p {
     font-size: 1.5rem;
     line-height: 2rem; }
+  blockquote.blockquote--large,
+  blockquote.blockquote--large p,
+  blockquote p.blockquote--large,
+  blockquote p.blockquote--large p {
+    font-size: 1.25rem;
+    line-height: 1.5rem; }
+    @media screen and (min-width: 48em) {
+      blockquote.blockquote--large,
+      blockquote.blockquote--large p,
+      blockquote p.blockquote--large,
+      blockquote p.blockquote--large p {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
   blockquote.blockquote--big,
   blockquote.blockquote--big p,
   blockquote p.blockquote--big,
@@ -1112,6 +1125,7 @@ blockquote p {
       font-weight: bold;
       font-size: 1.5rem; } }
   .box--package {
+    margin-bottom: 1.5rem;
     padding: 2rem; }
     .box--package .box__footer {
       display: flex;
@@ -1565,6 +1579,9 @@ ul.gfield_radio li, .gfield_checkbox li {
     display: block;
     margin-top: 0.5rem; }
 
+#call_to_action p {
+  margin-top: 1rem; }
+
 footer {
   background: #00415a;
   color: #fff;
@@ -1819,7 +1836,8 @@ nav {
   background: #fff;
   box-shadow: 0 0.25rem 1rem rgba(28, 46, 53, 0.05);
   overflow: hidden;
-  opacity: 0; }
+  opacity: 0;
+  pointer-events: none; }
   @media screen and (min-width: 48em) {
     .sub-menu {
       transition: all 0.7s ease 1s; } }
@@ -2429,7 +2447,7 @@ table {
       position: relative;
       z-index: 5;
       max-width: 8rem;
-      margin-left: -1.5rem;
+      margin-left: -2rem;
       margin-top: -0.5rem;
       float: left; }
     @media screen and (min-width: 48em) {
@@ -2444,7 +2462,18 @@ table {
           margin-top: -5rem; }
         .page-template-page-how-we-work #usps .usp img {
           float: none;
-          margin-top: -1.5rem; } }
+          max-width: 10rem;
+          margin-top: -1.5rem; }
+        .page-template-page-how-we-work #usps .usp h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem; } }
+    @media screen and (min-width: 48em) and (min-width: 48em) {
+      .page-template-page-how-we-work #usps .usp h3 {
+        font-size: 1.75rem; } }
+    @media screen and (min-width: 48em) {
+        .page-template-page-how-we-work #usps .usp p {
+          font-size: 1.25rem;
+          opacity: 0.8; } }
     @media screen and (min-width: 72em) {
       .page-template-page-how-we-work #usps .usp {
         padding-right: 6rem; } }
@@ -2470,6 +2499,20 @@ table {
       height: 100%;
       object-fit: cover;
       object-position: center; }
+  .page-template-page-team #team .more {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease; }
+  .page-template-page-team #team .button--less {
+    display: none; }
+  .page-template-page-team #team .member.isActive .more {
+    max-height: 100vh;
+    opacity: 1; }
+  .page-template-page-team #team .member.isActive .button--more {
+    display: none; }
+  .page-template-page-team #team .member.isActive .button--less {
+    display: inherit; }
 
 .page-template-page-team .partners-grid {
   padding-bottom: 5rem; }
@@ -2518,11 +2561,16 @@ table {
   .page-template-page-team .partners-grid .box.box--circle.isActive .box--info-tooltip {
     display: block; }
 
+.page.knowledge-base section.categories,
+.page-template-index-php section.categories,
+.archive.category section.categories,
+.blog section.categories {
+  overflow: auto; }
+
 .page.knowledge-base .categories,
 .page-template-index-php .categories,
 .archive.category .categories,
 .blog .categories {
-  overflow: auto;
   font-size: 0.75rem; }
   @media screen and (min-width: 21em) {
     .page.knowledge-base .categories,
