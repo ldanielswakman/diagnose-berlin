@@ -20,14 +20,14 @@ get_header(); ?>
 				<div class="row row--nopadding">
 					<div class="col-xs-12 col-sm-6 image">
 						<figure>
-							<img src="<?php the_sub_field('service_image'); ?>">
+							<img src="<?php the_sub_field('service_image'); ?>" alt="" />
 						</figure>
 					</div>
 					<div class="col-xs-12 col-sm-6 text">
 
 						<div class="title content">
 							<h2 class="c-highlight">
-								<img src="<?php the_sub_field('service_icon'); ?>">
+								<img src="<?php the_sub_field('service_icon'); ?>" alt="" />
 								<?php the_sub_field('service_name'); ?>
 							</h2>
 						</div>

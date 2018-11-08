@@ -54,6 +54,12 @@
 				@media screen and (min-width: 76em) {
 					transform: rotate(-10.5deg);
 				}
+				@media screen and (min-width: 92em) {
+					transform: rotate(-8deg);
+				}
+				@media screen and (min-width: 100em) {
+					width: calc(40vw - 7rem);
+				}
 			}
 			&:before {
 				left: 2rem;

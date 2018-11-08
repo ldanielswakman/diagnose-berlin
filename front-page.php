@@ -66,14 +66,14 @@ get_header(); ?>
 			</div>
 		</div>
 
-    <a href="<?php the_field('knowledgebase_cta_link'); ?>" class="col-xs-12 col-sm-6 content">
+    <div class="col-xs-12 col-sm-6 content">
 
 			<? $the_query = new WP_Query(['posts_per_page' => 3]); ?>
 
 			<?php if ( $the_query->have_posts() ) : ?>
 			  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				
-					<div class="post-preview">
+					<a href="<?php the_permalink() ?>" class="post-preview">
 
 						<figure class="post-preview__figure">
 							<?php the_post_thumbnail(); ?>	
@@ -83,7 +83,7 @@ get_header(); ?>
 							<h3><?php the_title(); ?></h3>
 						</div>
 
-					</div>
+					</s>
 
 			  <?php endwhile; ?>
 			  <?php wp_reset_postdata(); ?>
@@ -92,7 +92,7 @@ get_header(); ?>
 			  <p><?php __('No Articles'); ?></p>
 			<?php endif; ?>
 
-    </a>
+    </div>
 
 	</div>
 </section>

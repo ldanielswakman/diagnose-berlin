@@ -25,6 +25,13 @@
 		.button--less {
 			display: none;
 		}
+		.member {
+			text-align: center;
+
+			.more {
+				text-align: left;
+			}
+		}
 		.member.isActive {
 			.more {
 				max-height: 100vh;

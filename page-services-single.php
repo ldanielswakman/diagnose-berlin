@@ -43,7 +43,7 @@ get_header(); ?>
         $cta_text = get_sub_field('package_cta_text');
         $cta_link = get_sub_field('package_cta_link');
         ?>
-        <div class="col-xs-12 col-sm-6 col-md-4" style="display: flex;">
+        <div class="col-xs-12 col-sm-6 col-lg-4" style="display: flex;">
             <div class="box box--package">
                 <div class="box__header">
                     <h4><?php echo $letter; ?></h4>
@@ -85,7 +85,7 @@ get_header(); ?>
         $cta_text = get_sub_field('g2_package_cta_text');
         $cta_link = get_sub_field('g2_package_cta_link');
         ?>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-lg-4" style="display: flex;">
             <div class="box box--package">
                 <div class="box__header">
                     <h4><?php echo $letter; ?></h4>

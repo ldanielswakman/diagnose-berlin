@@ -9,6 +9,9 @@
 	}
 
 	&--package {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 		margin-bottom: 1.5rem;
 		padding: 2rem;
 
@@ -16,6 +19,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			margin-top: auto;
 			padding-top: 1rem;
 		}
 

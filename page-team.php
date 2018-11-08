@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <section id="team" class="bg-greylightest load-fadein">
-	<div class="row row--nopadding">
+	<div class="row row--nopadding" style="justify-content: center;">
 		<div class="col-xs-12 content align-center">
 			<h1><?php the_title(); ?></h1>
 		</div>
@@ -33,8 +33,8 @@ get_header(); ?>
 
 						<br />
 
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--outline button--more"><?= __('Mehr info') ?></button>
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--outline button--less"><?= __('Weniger info') ?></button>
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--more"><?= __('Mehr info') ?></button>
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--less"><?= __('Weniger info') ?></button>
 
 					</div>
 

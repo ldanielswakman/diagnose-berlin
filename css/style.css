@@ -1125,12 +1125,16 @@ blockquote p {
       font-weight: bold;
       font-size: 1.5rem; } }
   .box--package {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-bottom: 1.5rem;
     padding: 2rem; }
     .box--package .box__footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: auto;
       padding-top: 1rem; }
     .box--package .box__header {
       margin: 0 -2rem 1rem;
@@ -1590,9 +1594,28 @@ footer {
     color: #fff; }
   footer .subtle {
     opacity: 0.5; }
+  footer .widget-column.footer-widget-2 {
+    margin: 2rem 0; }
+  @media screen and (min-width: 30em) {
+    footer .widget-column {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top; } }
+  @media screen and (min-width: 48em) {
+    footer .widget-column.footer-widget-1 {
+      width: 75%;
+      padding-bottom: 1.5rem; }
+    footer .widget-column.footer-widget-2 {
+      width: calc(20% + 3rem);
+      margin: 0 -3rem 0 0; } }
   footer .menu {
     display: block; }
     @media screen and (min-width: 48em) {
+      footer .menu {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2; } }
+    @media screen and (min-width: 64em) {
       footer .menu {
         -webkit-column-count: 3;
         -moz-column-count: 3;
@@ -2368,6 +2391,7 @@ table {
 
 .page-template-page-services-single .comparison {
   max-height: 100vh;
+  width: 100%;
   margin-top: 3rem;
   opacity: 1;
   transition: all 1s cubic-bezier(0, 0, 0.2, 1); }
@@ -2427,6 +2451,12 @@ table {
       @media screen and (min-width: 76em) {
         .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
           transform: rotate(-10.5deg); } }
+      @media screen and (min-width: 92em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          transform: rotate(-8deg); } }
+      @media screen and (min-width: 100em) {
+        .page-template-page-how-we-work #usps .usp:before, .page-template-page-how-we-work #usps .usp:after {
+          width: calc(40vw - 7rem); } }
     .page-template-page-how-we-work #usps .usp:before {
       left: 2rem; }
     .page-template-page-how-we-work #usps .usp:after {
@@ -2506,6 +2536,10 @@ table {
     transition: all 0.3s ease; }
   .page-template-page-team #team .button--less {
     display: none; }
+  .page-template-page-team #team .member {
+    text-align: center; }
+    .page-template-page-team #team .member .more {
+      text-align: left; }
   .page-template-page-team #team .member.isActive .more {
     max-height: 100vh;
     opacity: 1; }

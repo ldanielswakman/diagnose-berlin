@@ -41,7 +41,7 @@ get_header(); ?>
 <section id="for_athletes" class="section--service">
 	<div class="row row--nopadding">
 		<div class="col-xs-12 col-sm-6 image">
-			<figure><?php the_field('persona_1_image'); ?></figure>
+			<figure><img src="<?php the_field('persona_1_image'); ?>" alt="" /></figure>
 		</div>
         <div class="col-xs-12 col-sm-6 text">
 			<div class="box">
@@ -55,7 +55,7 @@ get_header(); ?>
 <section id="for_runners" class="section--service">
 	<div class="row row--nopadding">
 		<div class="col-xs-12 col-sm-6 image">
-			<figure><?php the_field('persona_2_image'); ?></figure>
+			<figure><img src="<?php the_field('persona_2_image'); ?>" alt="" /></figure>
 		</div>
         <div class="col-xs-12 col-sm-6 text">
 			<div class="box">
@@ -69,7 +69,7 @@ get_header(); ?>
 <section id="weight_watchers" class="section--service">
 	<div class="row row--nopadding">
 		<div class="col-xs-12 col-sm-6 image">
-			<figure><?php the_field('persona_3_image'); ?></figure>
+			<figure><img src="<?php the_field('persona_3_image'); ?>" alt="" /></figure>
 		</div>
         <div class="col-xs-12 col-sm-6 text">
 			<div class="box">
