@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="row">
         <?php
             //query_posts('showposts=3&cat=246,248');
-            $the_query = get_featured_or_recent_posts(array (246,248) , '', 3 );
+            $the_query = get_featured_posts( array (248,246), 3 );
 
             $ids = array();
 

@@ -241,3 +241,69 @@ function get_featured_or_recent_posts( $taxonomy_1, $taxonomy_2, $total_posts ) 
 
     return $final_query;
 }
+
+//index page featured posts
+
+function get_featured_posts($tax_1, $total_posts) {
+
+        $tax_1 = filter_var( $tax_1, FILTER_SANITIZE_STRING );
+  
+        $total_posts = filter_var( $total_posts, FILTER_VALIDATE_INT );
+    
+    $q_1   = [];
+
+     $args_1 = [
+            'posts_per_page' => 3,
+            'fields'         => 'ids',
+            'tax_query'      => [
+                'relation' => 'AND',
+                [
+                    'taxonomy'         => 'category',
+                    'field' => 'slug',
+                    'terms'            => 'featured',
+                    'include_children' => false
+                ],
+                [
+                    'taxonomy'         => 'category',
+                    'field' => 'slug',
+                    'terms'            => 'vorgestellt',
+                    'include_children' => false
+                ]
+            ]
+        ];
+
+    $q_1 = get_posts( $args_1 );
+    $count = count( $q_1 );
+    $diff = $total_posts - $count;   
+    $exclude  = [];
+    $exclude = array_merge( $exclude, $q_1 );
+
+    if($count < $total_posts) {
+     $args_2 = [
+            'posts_per_page' => $diff,
+            'post__not_in'   => $exclude,
+            'fields'  => 'ids'
+        ];
+        $q_2 = get_posts( $args_2 ); 
+        $q_1 = array_merge( $q_1, $q_2 );
+    }
+
+        $final_args = [
+        'ignore_sticky_posts' => 1,
+        'post_type'           => 'any',
+        'posts_per_page'      => 3,
+        'post__in'            => $q_1,
+        'order'               => 'ASC',
+        'orderby'             => 'post__in',
+        'suppress_filters'    => true,
+        'no_found_rows'       => true
+    ];
+
+
+    $final_query = new WP_Query( $final_args );
+
+    return $final_query;
+
+
+
+}
