@@ -95,6 +95,18 @@ function parseTablePressTable($table) {
 }
 
 
+
+
+// Register translatable strings for polylang
+add_action('init', function() {
+  pll_register_string('diagberl', 'Compare', 'true');
+  pll_register_string('diagberl', 'Contact us for options', 'true');
+});
+
+
+
+
+
 add_filter( 'gform_pre_render_1', 'my_populate_checkbox' );
 
 function my_populate_checkbox( $form ) {

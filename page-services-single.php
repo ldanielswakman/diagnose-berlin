@@ -62,14 +62,14 @@ get_header(); ?>
 
     <?php if( get_field('group_1_table') ): ?>
         <div class="col-xs-12" style="text-align: center; margin-bottom: 1rem;">
-            <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= __('Compare') ?></button>
-            <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= __('Contact us for options') ?></a>
+            <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= pll__('Compare', 'diagberl') ?></button>
+            <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= pll__('Contact us for options', 'diagberl') ?></a>
         </div>
 
-    </div>
-
-    <?php $table_no = 1; include(locate_template('partials/service-comparison-table.php')); ?>
+        <?php $table_no = 1; include(locate_template('partials/service-comparison-table.php')); ?>
     <?php endif; ?>
+
+    </div>
 
 </section>
 <section id="packages2" class="section--packages content load-movein-btm load-delay-1s isHidden">
@@ -104,8 +104,9 @@ get_header(); ?>
 
     <?php if( get_field('group_2_table') ): ?>
 
-        <div class="col-xs-12" style="text-align: center; margin: 1rem 0;">
-            <button onclick="toggleComparison($(this))" class="button button--outline button--arrowright">Vergleichen</button>
+        <div class="col-xs-12" style="text-align: center; margin-bottom: 1rem;">
+            <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= pll__('Compare', 'diagberl') ?></button>
+            <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= pll__('Contact us for options', 'diagberl') ?></a>
         </div>
 
     </div>
