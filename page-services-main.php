@@ -40,7 +40,7 @@ get_header(); ?>
 							<p><?php the_sub_field('service_description'); ?></p>
 							<br />
 							<a href="<?php the_sub_field('service_cta_#1_link'); ?>" class="button button--primary button--large"><?php the_sub_field('service_cta_#1_text'); ?></a>
-							<a href="<?php the_sub_field('service_cta_#2_link'); ?>" class="c-highlight"><?php the_sub_field('service_cta_#2_text'); ?></a>
+							<a href="<?php the_sub_field('service_cta_#2_link'); ?>#packages1" class="c-highlight"><?php the_sub_field('service_cta_#2_text'); ?></a>
 						</div>
 					</div>
 				</div>
