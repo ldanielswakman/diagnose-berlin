@@ -1840,7 +1840,8 @@ nav {
         max-height: 6rem;
         opacity: 1;
         pointer-events: all;
-        transition: all 0.2s ease 0.1s; }
+        transition: all 0.2s ease 0.1s;
+        overflow: visible; }
       .menu .menu-item-has-children:hover > a > svg {
         transform: rotate(180deg) translateY(-0.125rem);
         opacity: 1; } }
@@ -1863,11 +1864,17 @@ nav {
   pointer-events: none; }
   @media screen and (min-width: 48em) {
     .sub-menu {
-      transition: all 0.7s ease 1s; } }
-  @media screen and (min-width: 48em) {
-    .sub-menu {
       padding: 0;
-      flex-direction: row; } }
+      flex-direction: row;
+      transition: all 0.7s ease 1s; }
+      .sub-menu:before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -16rem;
+        width: 30rem;
+        height: 3rem; } }
   .sub-menu a {
     display: flex;
     padding: 1.25rem 0.75rem;
@@ -2094,14 +2101,19 @@ table {
       margin-bottom: 0.5rem; }
     table.table--comparison td {
       padding: 0.25rem 0.5rem;
-      flex-basis: 33.33333%; }
+      flex: 1; }
       table.table--comparison td:not(.title) {
-        background: rgba(28, 46, 53, 0.05); }
+        background: rgba(28, 46, 53, 0.05);
+        border-right: 3px solid #fff; }
+      table.table--comparison td:last-child {
+        border-right: none; }
       table.table--comparison td.title {
+        padding-bottom: 0.25rem;
+        background: rgba(28, 46, 53, 0.05);
         flex-basis: 100%;
-        justify-content: center;
+        justify-content: space-between;
         align-items: flex-end;
-        color: rgba(28, 46, 53, 0.25); } }
+        color: rgba(28, 46, 53, 0.5); } }
 
 .error404, .search {
   background-color: #F3F8F9; }
@@ -2389,8 +2401,13 @@ table {
   .page-template-page-services-single .section--packages.isHidden {
     display: none; }
 
+.page-template-page-services-single .package-actions {
+  text-align: center; }
+  .page-template-page-services-single .package-actions .button {
+    margin: 0 0.25rem 1rem; }
+
 .page-template-page-services-single .comparison {
-  max-height: 100vh;
+  max-height: 130vh;
   width: 100%;
   margin-top: 3rem;
   opacity: 1;

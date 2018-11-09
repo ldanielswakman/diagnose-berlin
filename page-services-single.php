@@ -61,7 +61,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php if( get_field('group_1_table') ): ?>
-        <div class="col-xs-12" style="text-align: center; margin-bottom: 1rem;">
+        <div class="col-xs-12 package-actions">
             <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= pll__('Compare', 'diagberl') ?></button>
             <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= pll__('Contact us for options', 'diagberl') ?></a>
         </div>
@@ -104,7 +104,7 @@ get_header(); ?>
 
     <?php if( get_field('group_2_table') ): ?>
 
-        <div class="col-xs-12" style="text-align: center; margin-bottom: 1rem;">
+        <div class="col-xs-12 package-actions">
             <button onclick="toggleComparison($(this))" class="button button--medium button--outline button--arrowright"><?= pll__('Compare', 'diagberl') ?></button>
             <a href="#contact-form" class="button button--medium button--blue" style="margin-left: 0.5rem;"><?= pll__('Contact us for options', 'diagberl') ?></a>
         </div>

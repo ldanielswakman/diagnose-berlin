@@ -80,8 +80,15 @@
 			display: none;
 		}
 	}
+	.package-actions {
+		text-align: center;
+
+		.button {
+			margin: 0 0.25rem 1rem;
+		}
+	}
 	.comparison {
-		max-height: 100vh;
+		max-height: 130vh;
 		width: 100%;
 		margin-top: 3rem;
 		opacity: 1;

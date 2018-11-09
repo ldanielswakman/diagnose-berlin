@@ -39,7 +39,7 @@ function parseTablePressTable($table) {
 
     if($rowkey == 0) { $html .= '<thead>'; }
 
-		$html .= "<tr>";
+		$html .= '<tr key="' . $rowkey . '">';
 		$cells = $row->childNodes;
 		$title = null;
 
@@ -70,14 +70,14 @@ function parseTablePressTable($table) {
   				$html .= '</td>';
         }
 
-			} else {
+			} else if($key < $cells->length - 1) {
 
         // Other cells
 
         if($rowkey == 0) {
 		  	  $html .= "<td><h3>" . $cell->nodeValue . "</h3></td>";
         } else {
-          $html .= "<td>" . $cell->nodeValue . "</td>";
+          $html .= '<td key="' . $key . ' of ' . $cells->length . '">' . $cell->nodeValue . '</td>';
         }
 
 			}

@@ -100,6 +100,7 @@ nav {
 					opacity: 1;
 					pointer-events: all;
 					transition: all 0.2s ease 0.1s;
+					overflow: visible;
 				}
 				& > a > svg {
 					transform: rotate(180deg) translateY(-0.125rem);
@@ -133,12 +134,19 @@ nav {
 	pointer-events: none;
 
 	@include tabletAndUp() {
-		transition: all 0.7s ease 1s;
-	}
-
-	@include tabletAndUp() {
 		padding: 0;
 		flex-direction: row;
+		transition: all 0.7s ease 1s;
+
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -16rem;
+			width: 30rem;
+			height: 3rem;
+		}
 	}
 
 	a {
