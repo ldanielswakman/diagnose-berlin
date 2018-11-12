@@ -13,15 +13,15 @@ var cleanCSS = require('gulp-clean-css');
 gulp.task('sass', function() {
   gulp.src('scss/style.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest('.'));
 });
 
 // Clean & minify CSS (after Sass)
 gulp.task('clean_css', ['sass'], function() {
-  gulp.src('css/style.css')
+  gulp.src('style.css')
     .pipe(cleanCSS({compatibility: 'ie9', debug: true}))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('styles', ['sass', 'clean_css']);

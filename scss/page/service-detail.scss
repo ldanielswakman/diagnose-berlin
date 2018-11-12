@@ -19,7 +19,7 @@
 	 	// Background Service 1
 	 	&#training-planning,
 	 	&#trainingsplanung {
-		 	background-image: url('../images/service-trainplan.jpg');
+		 	background-image: url('images/service-trainplan.jpg');
 		 	background-color: #e9dfd7;
 
 		 	@include tabletAndDown() {
@@ -32,19 +32,19 @@
 	 	&#performance-diagnostics,
 	 	&#leistungsdiagnostik {
 	 		background-color: $white;
-		 	background-image: url('../images/service-perfdiag.jpg');
+		 	background-image: url('images/service-perfdiag.jpg');
 	 	}
 
 	 	// Background Service 3
 	 	&#bikefitting,
 	 	&#bikefit {
-		 	background-image: url('../images/service-bikefit.jpg');
+		 	background-image: url('images/service-bikefit.jpg');
 	 	}
 
 	 	// Background Service 4
 	 	&#nutrition-coaching,
 	 	&#ernaehrungsberatung {
-		 	background-image: url('../images/service-nutrcoach.jpg');
+		 	background-image: url('images/service-nutrcoach.jpg');
 		 	background-position: right bottom;
 	    background-color: white;
 
