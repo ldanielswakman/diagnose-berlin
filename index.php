@@ -33,7 +33,7 @@ get_header(); ?>
             <a href="<?php the_permalink(); ?>" class="box box--featured" style="background-image: url('<?= $featured_img_url ?>');">
             <div class="box__content">
                 <h3><?php the_title(); ?></h3>
-                <p><?php the_excerpt(); ?></p>
+                <p><?php the_excerpt('...'); ?></p>
             </div>
             </a>
         </div>
@@ -50,7 +50,7 @@ get_header(); ?>
         <figure class="post-preview__figure"><?php the_post_thumbnail(); ?></figure>
         <div class="post-preview__text">
             <h3><?php the_title(); ?></h3>
-            <p><?php the_excerpt(); ?></p>
+            <p><?php the_excerpt('...'); ?></p>
             <object class="categories">
                 <?php
                 $categories = get_the_category();
