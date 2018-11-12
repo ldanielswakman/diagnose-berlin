@@ -83,7 +83,7 @@ get_header(); ?>
 							<h3><?php the_title(); ?></h3>
 						</div>
 
-					</s>
+					</a>
 
 			  <?php endwhile; ?>
 			  <?php wp_reset_postdata(); ?>
