@@ -80,7 +80,7 @@ get_header(); ?>
 					<? $extra = (strlen(get_sub_field('partner_description')) == 0 && strlen(get_sub_field('partner_logo')) == 0) ? ' spacer' : '';
 					?>
 
-					<div class="col-xs-6 col-sm-4<?= $extra ?>">
+					<div class="col-xs-6 col-sm-4 partner<?= $extra ?>">
 
 						<? if (strlen(get_sub_field('partner_description')) > 0) : ?>
 							<div class="box box--circle" onclick="toggleTooltip($(this))">
@@ -89,13 +89,13 @@ get_header(); ?>
 									<img src="<?php the_sub_field('partner_logo'); ?>" />
 								</figure>
 
-								<div class="box box--info-tooltip">
-									<?php the_sub_field('partner_description'); ?>
-									<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
-										<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small"><?= pll__('Visit site', 'Team') ?></a>
-									<? endif ?>
-								</div>
+							</div>
 
+							<div class="box box--info-tooltip">
+								<?php the_sub_field('partner_description'); ?>
+								<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
+									<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small"><?= pll__('Visit site', 'Team') ?></a>
+								<? endif ?>
 							</div>
 
 						<? elseif(strlen(get_sub_field('partner_logo')) > 0) : ?>

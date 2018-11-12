@@ -25,9 +25,12 @@
 
 							<br/>
 
+							<?php if(strlen(get_field('footer_cta_button_text')) > 0): ?>
 							<a class="button button--primary button--large" href="#contact-form">
 								<?php echo get_field('footer_cta_button_text'); ?>
 							</a>
+							<?php endif ?>
+
 							<div class="popup" id="contact-form">
 								<div class="form">
 									<?php echo get_field('footer_form'); ?>

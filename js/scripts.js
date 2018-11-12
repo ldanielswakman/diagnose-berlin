@@ -66,11 +66,11 @@ function toggleTooltip($btn) {
 			$btn.closest('.title').toggleClass('isActive');
 		} else {
 			$grid = $btn.closest('.partners-grid');
-			if(!$btn.hasClass('isActive')) {
-				$grid.find('.box.box--circle').removeClass('isActive');
-				$btn.addClass('isActive');
+			if(!$btn.closest('.partner').hasClass('isActive')) {
+				$grid.find('.partner').removeClass('isActive');
+				$btn.closest('.partner').addClass('isActive');
 			} else {
-				$grid.find('.box.box--circle').removeClass('isActive');
+				$grid.find('.partner').removeClass('isActive');
 			}
 		}
 	} else {
