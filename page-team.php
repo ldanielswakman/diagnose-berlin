@@ -125,7 +125,7 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-						<div class="col-xs-6 col-sm-3">
+						<div class="col-xs-6 col-sm-3 partner">
 							<a href="<?php the_sub_field('friends_and_family_link'); ?>" target="_blank" class="box box--circle box--circle-small">
 								<figure>
 									<img src="<?php the_sub_field('friends_and_family_logo'); ?>" />
