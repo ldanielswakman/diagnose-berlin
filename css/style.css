@@ -2238,6 +2238,27 @@ table {
       height: 1.25rem;
       fill: #fff; }
 
+.page-template-default section.content p, .page-template-default section.content ul, .page-template-default section.content ol, .page-template-full-width-page section.content p, .page-template-full-width-page section.content ul, .page-template-full-width-page section.content ol {
+  color: #3C5863; }
+
+.page-template-default section.content p, .page-template-default section.content ul, .page-template-default section.content ol, .page-template-default section.content h1, .page-template-default section.content h2, .page-template-default section.content h3, .page-template-default section.content blockquote, .page-template-full-width-page section.content p, .page-template-full-width-page section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content h1, .page-template-full-width-page section.content h2, .page-template-full-width-page section.content h3, .page-template-full-width-page section.content blockquote {
+  margin-bottom: 2rem; }
+
+.page-template-default section.content ol, .page-template-default section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content ul {
+  margin-left: 1rem;
+  list-style: decimal;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  @media screen and (min-width: 48em) {
+    .page-template-default section.content ol, .page-template-default section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content ul {
+      font-size: 1.125rem;
+      line-height: 1.75rem; } }
+  .page-template-default section.content ol li + li, .page-template-default section.content ul li + li, .page-template-full-width-page section.content ol li + li, .page-template-full-width-page section.content ul li + li {
+    margin-top: 0.5rem; }
+
+.page-template-default section.content ul, .page-template-full-width-page section.content ul {
+  list-style: disc; }
+
 .page.home #hero, .page.home .section--hero {
   background-color: #F5F8F9;
   background-image: url("../images/mockup-home-1.jpg");

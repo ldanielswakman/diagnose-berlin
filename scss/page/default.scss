@@ -1,0 +1,25 @@
+.page-template-default, .page-template-full-width-page {
+	section.content {
+		p, ul, ol {
+			color: $greydark;
+		}
+		p, ul, ol, h1, h2, h3, blockquote {
+			margin-bottom: 2rem;
+		}
+		ol, ul {
+			margin-left: 1rem;
+			list-style: decimal;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			
+			@include tabletAndUp() {
+				font-size: 1.125rem;
+				line-height: 1.75rem;
+			}
+			li + li {
+				margin-top: 0.5rem;
+			}
+		}
+		ul { list-style: disc; }
+	}
+}
