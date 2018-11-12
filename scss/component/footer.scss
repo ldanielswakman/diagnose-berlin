@@ -51,7 +51,7 @@ footer {
 		  -webkit-column-count: 3;
 		  -moz-column-count: 3;
 		  column-count: 3;
-		  margin-right: -5rem;
+		  margin-right: -2rem;
 		}
 
 	  a {
@@ -75,7 +75,7 @@ footer {
 			font-size: inherit;
 		}
 		@include tabletAndUp() {
-			margin-right: -5.5rem;
+			margin-right: -2.5rem;
 		}
 
 		a {

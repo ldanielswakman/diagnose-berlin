@@ -56,6 +56,21 @@
 
 			img { max-width: 5rem; }
 		}
+
+		&-small {
+			width: 6rem;
+			height: 6rem;
+			padding: 1rem;
+
+			img { max-width: 3rem; }
+
+			@include tabletAndUp() {
+				width: 8rem;
+				height: 8rem;
+
+				img { max-width: 4rem; }
+			}
+		}
 	}
 	&--featured {
 		position: relative;

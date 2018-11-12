@@ -20,7 +20,7 @@ get_header(); ?>
 
 					<!-- // display a sub field value -->
 
-					<div class="col-xs-12 col-sm-6 col-lg-4 content member">
+					<div class="col-xs-12 col-sm-6 col-xl-4 content member">
 
 						<figure>
 							<img src="<?php the_sub_field('member_headshot'); ?>" />
@@ -55,12 +55,12 @@ get_header(); ?>
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
 			<div class="box">
 				<div class="row">
-					<div class="col-xs-12 col-sm-4">
+					<div class="col-xs-12 col-xl-4">
 						<blockquote class="blockquote--big">
 							<p><?php the_field('middle_headline'); ?></p>
 						</blockquote>
 					</div>
-					<div class="col-xs-12 col-sm-8">
+					<div class="col-xs-12 col-xl-8">
 						<?php the_field('middle_description'); ?>
 					</div>
 				</div>
@@ -77,10 +77,12 @@ get_header(); ?>
 			if( have_rows('partners') ):
 				while ( have_rows('partners') ) : the_row(); ?>
 
-					<div class="col-xs-6 col-sm-3">
+					<? $extra = (strlen(get_sub_field('partner_description')) == 0 && strlen(get_sub_field('partner_logo')) == 0) ? ' spacer' : '';
+					?>
+
+					<div class="col-xs-6 col-sm-4<?= $extra ?>">
 
 						<? if (strlen(get_sub_field('partner_description')) > 0) : ?>
-
 							<div class="box box--circle" onclick="toggleTooltip($(this))">
 								
 								<figure>
@@ -90,13 +92,13 @@ get_header(); ?>
 								<div class="box box--info-tooltip">
 									<?php the_sub_field('partner_description'); ?>
 									<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
-										<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small">Visit site</a>
+										<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small"><?= pll__('Visit site', 'Team') ?></a>
 									<? endif ?>
 								</div>
 
 							</div>
 
-						<? else : ?>
+						<? elseif(strlen(get_sub_field('partner_logo')) > 0) : ?>
 
 							<div class="box box--circle">
 								<figure><img src="<?php the_sub_field('partner_logo'); ?>" /></figure>
@@ -124,7 +126,7 @@ get_header(); ?>
 					<!-- // display a sub field value -->
 
 						<div class="col-xs-6 col-sm-3">
-							<a href="<?php the_sub_field('friends_and_family_link'); ?>" target="_blank" class="box box--circle">
+							<a href="<?php the_sub_field('friends_and_family_link'); ?>" target="_blank" class="box box--circle box--circle-small">
 								<figure>
 									<img src="<?php the_sub_field('friends_and_family_logo'); ?>" />
 								</figure>
