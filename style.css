@@ -1689,6 +1689,23 @@ footer {
       footer .site-info a:hover {
         color: #fff; }
 
+.form {
+  max-height: calc(100vh - 4rem);
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+  background: #fff; }
+
+.gform_confirmation_wrapper {
+  padding: 1rem;
+  padding-top: 2rem;
+  background: #fff;
+  box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.1); }
+  @media screen and (min-width: 30em) {
+    .gform_confirmation_wrapper {
+      padding: 1.5rem;
+      padding-top: 2.5rem; } }
+
 .gform_wrapper {
   margin: 0; }
   .gform_wrapper .gf_page_steps {
@@ -1713,12 +1730,6 @@ footer {
         padding: 0.75rem 1.5rem; } }
   .gform_wrapper .validation_message {
     color: #F88379; }
-  .gform_wrapper form {
-    max-height: calc(100vh - 4rem);
-    max-width: 45rem;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.1); }
 
 .form-section,
 .form .gform_page,
@@ -1726,7 +1737,8 @@ footer {
 .gform_body .gform_page {
   padding: 1rem;
   padding-top: 2rem;
-  background: #fff; }
+  background: #fff;
+  box-shadow: 0 0.375rem 2rem rgba(0, 0, 0, 0.1); }
   @media screen and (min-width: 30em) {
     .form-section,
     .form .gform_page,
@@ -2288,25 +2300,25 @@ table {
       height: 1.25rem;
       fill: #fff; }
 
-.page-template-default section.content p, .page-template-default section.content ul, .page-template-default section.content ol, .page-template-full-width-page section.content p, .page-template-full-width-page section.content ul, .page-template-full-width-page section.content ol {
+.page-template-default:not(.home) section.content p, .page-template-default:not(.home) section.content ul, .page-template-default:not(.home) section.content ol, .page-template-full-width-page:not(.home) section.content p, .page-template-full-width-page:not(.home) section.content ul, .page-template-full-width-page:not(.home) section.content ol {
   color: #3C5863; }
 
-.page-template-default section.content p, .page-template-default section.content ul, .page-template-default section.content ol, .page-template-default section.content h1, .page-template-default section.content h2, .page-template-default section.content h3, .page-template-default section.content blockquote, .page-template-full-width-page section.content p, .page-template-full-width-page section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content h1, .page-template-full-width-page section.content h2, .page-template-full-width-page section.content h3, .page-template-full-width-page section.content blockquote {
+.page-template-default:not(.home) section.content p, .page-template-default:not(.home) section.content ul, .page-template-default:not(.home) section.content ol, .page-template-default:not(.home) section.content h1, .page-template-default:not(.home) section.content h2, .page-template-default:not(.home) section.content h3, .page-template-default:not(.home) section.content blockquote, .page-template-full-width-page:not(.home) section.content p, .page-template-full-width-page:not(.home) section.content ul, .page-template-full-width-page:not(.home) section.content ol, .page-template-full-width-page:not(.home) section.content h1, .page-template-full-width-page:not(.home) section.content h2, .page-template-full-width-page:not(.home) section.content h3, .page-template-full-width-page:not(.home) section.content blockquote {
   margin-bottom: 2rem; }
 
-.page-template-default section.content ol, .page-template-default section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content ul {
+.page-template-default:not(.home) section.content ol, .page-template-default:not(.home) section.content ul, .page-template-full-width-page:not(.home) section.content ol, .page-template-full-width-page:not(.home) section.content ul {
   margin-left: 1rem;
   list-style: decimal;
   font-size: 1rem;
   line-height: 1.5rem; }
   @media screen and (min-width: 48em) {
-    .page-template-default section.content ol, .page-template-default section.content ul, .page-template-full-width-page section.content ol, .page-template-full-width-page section.content ul {
+    .page-template-default:not(.home) section.content ol, .page-template-default:not(.home) section.content ul, .page-template-full-width-page:not(.home) section.content ol, .page-template-full-width-page:not(.home) section.content ul {
       font-size: 1.125rem;
       line-height: 1.75rem; } }
-  .page-template-default section.content ol li + li, .page-template-default section.content ul li + li, .page-template-full-width-page section.content ol li + li, .page-template-full-width-page section.content ul li + li {
+  .page-template-default:not(.home) section.content ol li + li, .page-template-default:not(.home) section.content ul li + li, .page-template-full-width-page:not(.home) section.content ol li + li, .page-template-full-width-page:not(.home) section.content ul li + li {
     margin-top: 0.5rem; }
 
-.page-template-default section.content ul, .page-template-full-width-page section.content ul {
+.page-template-default:not(.home) section.content ul, .page-template-full-width-page:not(.home) section.content ul {
   list-style: disc; }
 
 .page.home #hero, .page.home .section--hero {

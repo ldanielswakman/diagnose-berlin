@@ -142,7 +142,7 @@ if( have_rows('other_services') ):
 						<p><?php the_sub_field('service_title'); ?></p>
 					</blockquote>
 					<p><?php the_sub_field('service_description'); ?></p>
-                    <?php if( get_field('service_button_link') ): ?>
+                    <?php if(strlen(get_sub_field('service_button_text')) > 0): ?>
     					<a href="<?php the_sub_field('service_button_link'); ?>" class="button button--primary button--large"><?php the_sub_field('service_button_text'); ?></a>
                     <?php endif; ?>
 

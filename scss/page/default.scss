@@ -1,4 +1,4 @@
-.page-template-default, .page-template-full-width-page {
+.page-template-default:not(.home), .page-template-full-width-page:not(.home) {
 	section.content {
 		p, ul, ol {
 			color: $greydark;
