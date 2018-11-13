@@ -22,6 +22,11 @@ $(document).ready(function() {
     // this section only processes if the .nav > li itself is clicked.
     $('#contact-form').removeClass('isActive');
 	});
+	// Contact Form toggle
+	$('.popup .popup__close').click(function(e) {
+		e.preventDefault();
+    $('#contact-form').removeClass('isActive');
+	});
 	
 });
 

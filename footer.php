@@ -32,6 +32,7 @@
 							<?php endif ?>
 
 							<div class="popup" id="contact-form">
+								<a href="#" class="popup__close"><span>&times;</span></a>
 								<div class="form">
 									<?php echo get_field('footer_form'); ?>
 								</div>
