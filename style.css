@@ -901,6 +901,22 @@ a {
   width: 1px;
   word-wrap: normal !important; }
 
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 @font-face {
   font-family: 'F37 Ginger';
   font-style: normal;
@@ -2888,8 +2904,20 @@ table {
 .single-post .section--article blockquote {
   margin-bottom: 2rem; }
 
+.page.knowledge-base .section--article figure,
+.single-post .section--article figure {
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 48em) {
+    .page.knowledge-base .section--article figure,
+    .single-post .section--article figure {
+      margin-top: 3rem;
+      margin-bottom: 3rem; } }
+
 .page.knowledge-base .section--article figcaption,
 .single-post .section--article figcaption {
+  margin-top: 0.25rem;
   opacity: 0.4;
   font-size: 0.875rem;
   line-height: 1.25rem; }
@@ -2917,4 +2945,5 @@ table {
 
 .page.knowledge-base .section--article img,
 .single-post .section--article img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
