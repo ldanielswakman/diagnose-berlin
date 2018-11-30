@@ -2490,25 +2490,28 @@ table {
       padding-bottom: 7rem;
       background-size: cover;
       background-position: bottom center; } }
-  .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung {
+  .page-template-page-services-single .section--intro#performance-diagnostics, .page-template-page-services-single .section--intro#leistungsdiagnostik, .page-template-page-services-single .section--intro#diagnostics {
+    background-color: #fff;
+    background-image: url("images/service-perfdiag.jpg"); }
+  .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung, .page-template-page-services-single .section--intro#training-coaching {
     background-image: url("images/service-trainplan.jpg");
     background-color: #e9dfd7; }
     @media screen and (max-width: 48em) {
-      .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung {
+      .page-template-page-services-single .section--intro#training-planning, .page-template-page-services-single .section--intro#trainingsplanung, .page-template-page-services-single .section--intro#training-coaching {
         background-position: right bottom;
         padding-bottom: 16rem; } }
-  .page-template-page-services-single .section--intro#performance-diagnostics, .page-template-page-services-single .section--intro#leistungsdiagnostik {
-    background-color: #fff;
-    background-image: url("images/service-perfdiag.jpg"); }
   .page-template-page-services-single .section--intro#bikefitting, .page-template-page-services-single .section--intro#bikefit, .page-template-page-services-single .section--intro#bike-fitting-berlin {
     background-image: url("images/service-bikefit.jpg"); }
-  .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#ernaehrungsberatung {
+  .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#nutrition-counseling, .page-template-page-services-single .section--intro#ernaehrungsberatung, .page-template-page-services-single .section--intro#ernahrung {
     background-image: url("images/service-nutrcoach.jpg");
-    background-position: right bottom;
+    background-position: right -10%;
     background-color: white; }
     @media screen and (min-width: 48em) {
-      .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#ernaehrungsberatung {
+      .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#nutrition-counseling, .page-template-page-services-single .section--intro#ernaehrungsberatung, .page-template-page-services-single .section--intro#ernahrung {
         background-position: right top; } }
+    @media screen and (max-width: 48em) {
+      .page-template-page-services-single .section--intro#nutrition-coaching, .page-template-page-services-single .section--intro#nutrition-counseling, .page-template-page-services-single .section--intro#ernaehrungsberatung, .page-template-page-services-single .section--intro#ernahrung {
+        padding: 65vw 0 2rem; } }
   .page-template-page-services-single .section--intro h1 {
     margin-bottom: 2rem; }
     .page-template-page-services-single .section--intro h1 img {

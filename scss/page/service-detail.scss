@@ -17,8 +17,17 @@
 	 	}
 
 	 	// Background Service 1
+	 	&#performance-diagnostics,
+	 	&#leistungsdiagnostik,
+	 	&#diagnostics {
+	 		background-color: $white;
+		 	background-image: url('images/service-perfdiag.jpg');
+	 	}
+
+	 	// Background Service 2
 	 	&#training-planning,
-	 	&#trainingsplanung {
+	 	&#trainingsplanung,
+	 	&#training-coaching {
 		 	background-image: url('images/service-trainplan.jpg');
 		 	background-color: #e9dfd7;
 
@@ -26,13 +35,6 @@
 			 	background-position: right bottom;
 			 	padding-bottom: 16rem;
 			}
-	 	}
-
-	 	// Background Service 2
-	 	&#performance-diagnostics,
-	 	&#leistungsdiagnostik {
-	 		background-color: $white;
-		 	background-image: url('images/service-perfdiag.jpg');
 	 	}
 
 	 	// Background Service 3
@@ -44,13 +46,18 @@
 
 	 	// Background Service 4
 	 	&#nutrition-coaching,
-	 	&#ernaehrungsberatung {
+	 	&#nutrition-counseling,
+	 	&#ernaehrungsberatung,
+	 	&#ernahrung {
 		 	background-image: url('images/service-nutrcoach.jpg');
-		 	background-position: right bottom;
+		 	background-position: right -10%;
 	    background-color: white;
 
 	    @include tabletAndUp() {
 				background-position: right top;
+			}
+			@include tabletAndDown() {
+				padding: 65vw 0 2rem;
 			}
 	 	}
 
