@@ -113,4 +113,9 @@
 			height: auto;
 		}
 	}
+	.wp-video {
+		width: auto !important;
+
+		video { max-width: 100%; }
+	}
 }

@@ -2950,3 +2950,10 @@ table {
 .single-post .section--article img {
   max-width: 100%;
   height: auto; }
+
+.page.knowledge-base .wp-video,
+.single-post .wp-video {
+  width: auto !important; }
+  .page.knowledge-base .wp-video video,
+  .single-post .wp-video video {
+    max-width: 100%; }
