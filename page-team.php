@@ -33,8 +33,8 @@ get_header(); ?>
 
 						<br />
 
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--more"><?= __('Mehr info') ?></button>
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--less"><?= __('Weniger info') ?></button>
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--more"><?= __('Mehr info', 'Team') ?></button>
+						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--less"><?= __('Weniger info', 'Team') ?></button>
 
 					</div>
 

@@ -91,6 +91,8 @@ add_action('init', function() {
   pll_register_string('Compare', 'Compare', 'Service Detail');
   pll_register_string('Contact us', 'Contact us for options', 'Service Detail');
   pll_register_string('Visit site', 'Visit site', 'Team');
+  pll_register_string('Mehr info', 'Mehr info', 'Team');
+  pll_register_string('Weniger info', 'Weniger info', 'Team');
 });
 
 
