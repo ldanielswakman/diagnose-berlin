@@ -54,6 +54,11 @@
 			padding: 3rem 0 1rem;
 		}
 
+		&__title {
+			color: $greylight;
+			margin-bottom: 0.5rem;
+		}
+
 		p {
 			max-width: 48rem;
 		}
@@ -68,6 +73,32 @@
 	// Ordering
 	.woocommerce-ordering {
 		display: none;
+	}
+
+	// Cart widget
+	.cart-customlocation {
+		display: inline-block;
+		float: right;
+		padding: 0.5rem;
+		padding-left: 2rem;
+		background-color: rgba($diagnoseBlue, 0.05);
+		background-image: url('images/icon-cart.svg');
+		background-position: 0.5rem 0.5rem;
+		background-repeat: no-repeat;
+		background-size: 1rem;
+		color: rgba($diagnoseBlue, 0.7);
+		transition: all 0.2s ease;
+
+		&:hover {
+			background-color: white;
+			box-shadow: 0 1rem 2.5rem rgba($dark, 0.2);
+			color: inherit;
+		}
+
+		.amount {
+			position: relative;
+			color: rgba($diagnoseBlue, 0.5);
+		}
 	}
 
 	// Product item
@@ -212,13 +243,15 @@
 		}
 	}
 
-	// Product details
+
+
+	// View: Product details
 	div.product div.images {
 		float: none;
 		width: 100%;
 		margin-bottom: 0;
 
-		@media screen and (min-width: 70em) {
+		@include desktopAndUp() {
 			margin-left: -5rem;
 		}
 
@@ -249,17 +282,29 @@
 		justify-content: flex-end;
 		flex-direction: column;
 	}
+	.col--flex-spbetween {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include tabletAndUp() {
+			margin-bottom: -3rem;
+		}
+		@include desktopAndUp() {
+			padding-right: 5rem;
+		}
+	}
 
 	.link-back {
-		padding: 0.5rem 1.5rem;
+		padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  	color: $greylight;
+
+  	&:hover { color: $highlight; }
 
 	  @include tabletAndUp() {
-	    padding: 1rem 5rem;
-	  }
-
-	  a {
-	  	color: $greylight;
-	  	&:hover { color: $highlight; }
+	    padding: 0.5rem 5rem;
 	  }
 	  svg {
 	  	width: 1rem;
@@ -276,8 +321,9 @@
 		clear: none;
 		margin-bottom: 0;
 
-		@media screen and (min-width: 70em) {
+		@include tabletAndUp() {
 			margin-left: 5rem;
+			margin-top: 3rem;
 			width: calc(100% - 5rem);
 		}
 
@@ -389,4 +435,41 @@
 			color: $greydark;
 		}
 	}
+}
+
+.woocommerce-page {
+
+	// Generic input text styling
+	.input-text {
+		@include clickableElem();
+		border-color: $greylight;
+		padding-right: 0.5rem;
+
+		&::-webkit-input-placeholder {
+		  font-weight: normal;
+		  color: $greylight;
+		}
+		&:-moz-placeholder {
+		  font-weight: normal;
+		  color: $greylight;
+		}
+		&::-moz-placeholder {
+		  font-weight: normal;
+		  color: $greylight;
+		}
+		&:-ms-input-placeholder {
+		  font-weight: normal;
+		  color: $greylight;
+		}
+
+		&:hover {
+			background: $white !important;
+		}
+		&:focus {
+			outline: none;
+			border-color: $highlight;
+			background: $white !important;
+		}
+	}
+
 }

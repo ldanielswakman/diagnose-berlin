@@ -30,6 +30,9 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <header class="woocommerce-products-header">
+
+	<a class="cart-customlocation" href="<?= wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?= sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?= WC()->cart->get_cart_total(); ?></a>
+
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>

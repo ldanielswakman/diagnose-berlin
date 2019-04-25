@@ -43,7 +43,21 @@ if ( has_post_thumbnail() ) {
 
 	<div class="row row--nopadding">
 
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-6 col--flex-spbetween">
+
+			<a class="link-back" href="<?= get_permalink( woocommerce_get_page_id( 'shop' ) ) ?>">
+
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve"><polyline points="9.5,17.8 1.8,10.1 9.7,2.2 "/><path d="M22.2,10H3.7"/></svg>
+
+				<? _e('Back to overview') ?>
+			</a>
+
+			<a class="cart-customlocation" href="<?= wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?= sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?= WC()->cart->get_cart_total(); ?></a>
+
+		</div>
+		<div class="col-xs-12 col-md-6"></div>
+
+		<div class="col-xs-12 col-md-6 last-md">
 			<?php
 				/**
 				 * Hook: woocommerce_before_single_product_summary.
@@ -55,16 +69,7 @@ if ( has_post_thumbnail() ) {
 			?>
 		</div>
 
-		<div class="col-xs-12 col-md-6 first-md col--flex-end">
-
-			<div class="link-back">
-				<a href="<?= get_permalink( woocommerce_get_page_id( 'shop' ) ) ?>">
-
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve"><polyline points="9.5,17.8 1.8,10.1 9.7,2.2 "/><path d="M22.2,10H3.7"/></svg>
-
-					Back to overview
-				</a>
-			</div>
+		<div class="col-xs-12 col-md-6 col--flex-end">
 
 			<div class="summary entry-summary">
 				<?php
