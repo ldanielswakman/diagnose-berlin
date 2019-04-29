@@ -1,5 +1,19 @@
 .woocommerce-checkout {
 
+	// Nav reset
+	nav {
+		background: $greylightest;
+		border-bottom: none;
+
+		.logo {
+			margin: 1rem auto 0;
+			pointer-events: none;
+		}
+		& > *:not(.logo) {
+			display: none;
+		}
+	}
+
 	// Checkout box
 	.woocommerce {
 		@include boxBasicStyle();
@@ -12,7 +26,8 @@
 		.col2-set,
 		#order_review_heading,
 		.woocommerce-checkout-review-order,
-		.payment_box {
+		.payment_box, 
+		.woocommerce-order{
 		  padding: 1rem;
 
 		  @include tabletAndUp() {
