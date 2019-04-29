@@ -102,6 +102,19 @@
 		}
 	}
 
+	.cart-empty, .return-to-shop {
+		padding: 1.5rem;
+		text-align: center;
+	}
+	.cart-empty + .return-to-shop {
+		margin-top: -2rem;
+		padding-top: 0;
+	}
+
+	.cart-collaterals {
+		padding-bottom: 1rem;
+	}
+
 	// Proceed
 	.wc-proceed-to-checkout {
 		margin-top: 1rem;
