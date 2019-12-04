@@ -1,0 +1,182 @@
+.page-template-page-audiences-single {
+
+	.section--intro {
+		display: flex;
+		align-items: center;
+		padding-bottom: 10rem;
+		background-color: #F5F8F9;
+		background-size: 140%;
+		background-position: 100% bottom;
+		background-repeat: no-repeat;
+
+		@include tabletAndUp() {
+			min-height: 40vw;
+			padding-bottom: 7rem;
+			background-size: cover;
+			background-position: bottom center;
+		}
+
+		// Background Service 1
+		&#triathletes {
+			background-color: $white;
+			background-image: url('images/audience-cyclists.jpg');
+		}
+	}
+
+	.section--services {
+		margin-top: -8.25rem;
+
+		.box {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+
+			&__header {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+
+			img { width: 3rem; height: 3rem; float: left; margin-right: 1rem; }
+
+			h2 { color: $dark; }
+
+			.price {
+				margin-top: -0.5rem;
+				font-weight: normal;
+				font-size: 0.875rem;
+				line-height: 1.5rem;
+				color: rgba($diagnoseBlue, 0.5);
+			}
+
+			&__footer {
+				margin-top: -0.5rem;
+				justify-content: center;
+				// border-top: 1px solid rgba($dark, 0.1);
+			}
+		}
+	}
+
+	.section--audience-service {
+
+		.service-description {
+			background: $greylightest;
+			max-width: calc(100% - 1rem);
+			margin-right: 1rem;
+			padding-top: 3.75rem;
+			padding-bottom: calc(3.75rem * 2);
+
+			@include bigPhoneAndUp() {
+				margin-right: 1.5rem;	
+			}
+			@include tabletAndUp() {
+				margin-right: 5rem;
+			}
+
+			@include tabletAndUp() {
+				.service-text {
+					padding-right: 2.75rem;
+				}
+			}
+
+			h2 { margin-bottom: 1rem; }
+		}
+		.service-icon {
+			float: right;
+		}
+		.service-image {
+			position: relative;
+
+			@include tabletAndUp() {
+				margin-right: -10rem;
+			}
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+		.service-packages {
+			margin-top: -3.75rem;
+			margin-bottom: 5rem;
+			padding-top: 0;
+			padding-bottom: 0;
+
+			.box {
+				width: 100%;
+				
+				@include tabletAndUp() {
+					margin-right: 2.75rem;
+				}
+			}
+			.box p { margin-left: 0.5rem; }
+
+			.box .package-description {
+				position: relative;
+				flex: 1;
+				max-height: 9rem;
+				margin: -1rem -2rem 0.75rem;
+				padding: 1rem 2rem;
+				overflow: hidden;
+				transition: all 0.5s ease-in-out;
+
+				&:before, &:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					z-index: 2;
+					width: 100%;
+					height: 2rem;
+					@include vertical-gradient(rgba($white, 0), rgba($white, 1));
+					background: $white;
+					transition: all 0.5s ease-in-out;
+
+				}
+				&:after {
+					height: 3rem;
+					@include vertical-gradient(rgba(#F3F5F7, 0), rgba(#F3F5F7, 1));
+				}
+
+				.package-description__link {
+					position: absolute;
+					bottom: 0.75rem;
+					left: 2.5rem;
+					display: inline-block;
+					margin: -0.5rem;
+					padding: 0.5rem;
+					z-index: 4;
+					color: $highlight;
+					font-size: 0.875rem;
+
+					&:after {
+						content: "";
+						position: relative;
+						top: -0.125rem;
+						display: inline-block;
+						width: 0.5rem;
+						height: 0.5rem;
+						margin-left: 0.5rem;
+						border-right: 1px solid $highlight;
+						border-bottom: 1px solid $highlight;
+						transform: rotate(45deg);
+						transition: all 0.5s ease-in-out;
+					}
+
+					.expanded { display: none; }
+				}
+			}
+			&.isExpanded .box .package-description {
+				max-height: 40rem;
+
+				&:before, &:after { opacity: 0; }
+
+				.package-description__link {
+					&:after { top: 0.125rem; transform: rotate(-135deg); }
+					.collapsed { display: none; }
+					.expanded { display: inline; }
+				}
+			}
+		}
+	}
+}
