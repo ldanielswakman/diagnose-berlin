@@ -142,11 +142,3 @@ function checkFGActive() {
 		});
 	});
 }
-
-
-
-
-// Component expand/collapse box
-function expandBox($clicked) {
-	$clicked.closest('.box').toggleClass('isExpanded');
-}
