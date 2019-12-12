@@ -38,16 +38,30 @@
 			</a>
 
 			<?php if ( has_nav_menu( 'top' ) ) : ?>
+
 				<?php wp_nav_menu( array(
 					'theme_location' => 'top',
-					'menu_id'        => 'top-menu',
+					'menu_id' => 'top',
+					'container' => false
 				) ); ?>
+
+			<?php endif; ?>
 				
+
+			<?php if ( has_nav_menu( 'header_full_menu' ) ) : ?>
+
 				<button class="menu-toggle">
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
+
+				<?php wp_nav_menu( array(
+					'menu_id' => 'header_full_menu',
+					'menu_class' => 'full-menu',
+					'container' => false
+				) ); ?>
+
 			<?php endif; ?>
 			
 		</nav>

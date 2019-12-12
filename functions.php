@@ -10,6 +10,7 @@ add_post_type_support( 'page', 'excerpt' );
 
 register_nav_menus( array(
 	'footer_menu' => 'Footer Menu',
+  'header_full_menu' => 'Header Full Menu',
 ) );
 
 // Custom function: parse Tablepress table
