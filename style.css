@@ -1159,15 +1159,17 @@ blockquote p {
   .box--package {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-bottom: 1.5rem;
-    padding: 2rem; }
+    padding: 2rem 2rem 0; }
     .box--package .box__footer {
+      margin-top: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: auto;
-      padding-top: 1rem; }
+      margin: auto -2rem 0;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(28, 46, 53, 0.1); }
     .box--package .box__header {
       margin: 0 -2rem 1rem;
       padding: 0 2rem 1.5rem;
@@ -1178,7 +1180,8 @@ blockquote p {
     .box--package .price {
       font-size: 2rem;
       font-weight: bold;
-      color: #F88379; }
+      color: #F88379;
+      white-space: nowrap; }
   .box .icon-cross, .box .icon-check {
     position: relative;
     top: 0.125rem;
@@ -2578,31 +2581,32 @@ table {
       background-position: bottom center; } }
   .page-template-page-audiences-single .section--intro#triathletes {
     background-color: #F3F8F9; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-audiences-single .section--intro h1 {
+      font-size: 2.25rem; } }
 
 .page-template-page-audiences-single .section--services {
   margin-top: -8.25rem; }
-  .page-template-page-audiences-single .section--services .box {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem; }
-    .page-template-page-audiences-single .section--services .box__header {
-      border-bottom: none;
-      padding-bottom: 0; }
-    .page-template-page-audiences-single .section--services .box img {
-      width: 3rem;
-      height: 3rem;
-      float: left;
-      margin-right: 1rem; }
-    .page-template-page-audiences-single .section--services .box h2 {
-      color: #1C2E35; }
-    .page-template-page-audiences-single .section--services .box .price {
-      margin-top: -0.5rem;
-      font-weight: normal;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-      color: rgba(0, 94, 131, 0.5); }
-    .page-template-page-audiences-single .section--services .box__footer {
-      margin-top: -0.5rem;
-      justify-content: center; }
+  .page-template-page-audiences-single .section--services .box__header {
+    border-bottom: none;
+    padding-bottom: 0; }
+  .page-template-page-audiences-single .section--services .box img {
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    margin-right: 1rem; }
+  .page-template-page-audiences-single .section--services .box h2 {
+    color: #1C2E35; }
+  .page-template-page-audiences-single .section--services .box .price {
+    margin-top: -0.5rem;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: rgba(0, 94, 131, 0.5); }
+  .page-template-page-audiences-single .section--services .box__footer {
+    justify-content: center;
+    padding-top: 0;
+    border-top: none; }
 
 .page-template-page-audiences-single .section--audience-service .service-description {
   background: #F3F8F9;
@@ -2650,67 +2654,10 @@ table {
     margin-left: 0.5rem; }
   .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description {
     position: relative;
-    flex: 1;
-    max-height: 9rem;
-    margin: -1rem -2rem 0.75rem;
-    padding: 1rem 2rem;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out; }
-    .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description:before, .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-      width: 100%;
-      height: 2rem;
-      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );
-      background: #fff;
-      transition: all 0.5s ease-in-out; }
-    .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description:after {
-      height: 3rem;
-      background: -moz-linear-gradient(top, rgba(243, 245, 247, 0) 0%, #f3f5f7 100%);
-      background: -webkit-linear-gradient(top, rgba(243, 245, 247, 0) 0%, #f3f5f7 100%);
-      background: linear-gradient(to bottom, rgba(243, 245, 247, 0) 0%, #f3f5f7 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 ); }
-    .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description .package-description__link {
-      position: absolute;
-      bottom: 0.75rem;
-      left: 2.5rem;
-      display: inline-block;
-      margin: -0.5rem;
-      padding: 0.5rem;
-      z-index: 4;
-      color: #F88379;
-      font-size: 0.875rem; }
-      .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description .package-description__link:after {
-        content: "";
-        position: relative;
-        top: -0.125rem;
-        display: inline-block;
-        width: 0.5rem;
-        height: 0.5rem;
-        margin-left: 0.5rem;
-        border-right: 1px solid #F88379;
-        border-bottom: 1px solid #F88379;
-        transform: rotate(45deg);
-        transition: all 0.5s ease-in-out; }
-      .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description .package-description__link .expanded {
-        display: none; }
-  .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description {
-    max-height: 40rem; }
-    .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description:before, .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description:after {
-      opacity: 0; }
-    .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description .package-description__link:after {
-      top: 0.125rem;
-      transform: rotate(-135deg); }
-    .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description .package-description__link .collapsed {
-      display: none; }
-    .page-template-page-audiences-single .section--audience-service .service-packages.isExpanded .box .package-description .package-description__link .expanded {
-      display: inline; }
+    flex: 1; }
+  .page-template-page-audiences-single .section--audience-service .service-packages .button--large {
+    padding-left: 1rem;
+    padding-right: 1rem; }
 
 .page-template-page-services-main #intro {
   min-height: 12rem; }

@@ -11,9 +11,9 @@ get_header() ?>
 
 <section id="<?= $post->post_name ?>" class="section--intro load-fadein" style="background-image: url('<?= $cover_url?>');">
 	<div class="col-xs-12 col-sm-6 col-md-6 content">
-		<h1 class="c-highlight"><?php the_title() ?></h1>
+		<h1><?php the_title() ?></h1>
 		<br />
-		<?php the_field('page_headline') ?>
+		<blockquote class="blockquote--large"><?php the_field('page_headline') ?></blockquote>
 		<br />
 		<p><?php the_field('page_intro_blurb') ?></p>
 	</div>
@@ -43,7 +43,7 @@ get_header() ?>
 						}
 					}
 					if($lowest < 1000000) : ?>
-						<div class="price">ab € <?= $lowest ?></div>
+						<div class="price" style="margin-bottom: 1rem;">ab € <?= $lowest ?></div>
 					<?php endif ?>
 					<div class="box__footer">
 						<button class="button button--transparent-reveal button--large button--arrowright">
@@ -93,10 +93,10 @@ get_header() ?>
 							</div>
 							<div class="package-description">
 								<?= wpautop($descr) ?>
-								<a class="package-description__link" href="javascript:void(0)" onclick="javascript:$(this).closest('.service-packages').toggleClass('isExpanded')">
+								<!-- <a class="package-description__link" href="javascript:void(0)" onclick="javascript:$(this).closest('.service-packages').toggleClass('isExpanded')">
 									<span class="expanded"><?= pll__('Less details', 'diagberl') ?></span>
 									<span class="collapsed"><?= pll__('More details', 'diagberl') ?></span>
-								</a>
+								</a> -->
 							</div>
 							<div class="box__footer">
 	              <div class="price">€ <?= $package['package_price'] ?></div>
