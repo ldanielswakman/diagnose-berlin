@@ -18,11 +18,38 @@
 	 	}
 	}
 
-	#hero-post, .section--hero-post .box {
-		margin-top: -4rem;
+	.section--post-hero {
+		height: 16rem;
+		margin-top: -16rem;
 
-		@include tabletAndUp() {
-			margin-top: -12rem;
+		.line2 { margin-left: 1rem; }
+		.line3 { margin-left: 2rem; }
+	}
+
+	#audiences {
+		padding-bottom: 5rem;
+		background: $greylightest;
+
+		.audience-tile {
+			display: block;
+			margin-top: -4rem;
+			text-align: center;
+
+			&__bubble {
+				display: block;
+				max-width: 12rem;
+				margin: 0 auto 0.75rem;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 0.25rem solid $white;
+				box-shadow: 0 0.5rem 2.5rem rgba($diagnoseBlue, 0.15);
+
+				transition: all 0.3s ease;
+			}
+			&:hover {
+				.audience-tile__bubble { transform: translateY(-0.5rem); }
+				h3 { color: $highlight; }
+			}
 		}
 
 		.button--circle {

@@ -1213,6 +1213,8 @@ blockquote p {
       width: 0.625rem;
       margin-left: -3px;
       transform: rotate(-55deg); }
+  .box .grey {
+    opacity: 0.3; }
   .box--circle {
     display: inline-flex;
     flex-direction: column;
@@ -2445,22 +2447,45 @@ table {
       background-position: top left;
       min-height: 42vw; } }
 
-.page.home #hero-post, .page.home .section--hero-post .box {
-  margin-top: -4rem; }
-  @media screen and (min-width: 48em) {
-    .page.home #hero-post, .page.home .section--hero-post .box {
-      margin-top: -12rem; } }
-  .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
+.page.home .section--post-hero {
+  height: 16rem;
+  margin-top: -16rem; }
+  .page.home .section--post-hero .line2 {
+    margin-left: 1rem; }
+  .page.home .section--post-hero .line3 {
+    margin-left: 2rem; }
+
+.page.home #audiences {
+  padding-bottom: 5rem;
+  background: #F3F8F9; }
+  .page.home #audiences .audience-tile {
+    display: block;
+    margin-top: -4rem;
+    text-align: center; }
+    .page.home #audiences .audience-tile__bubble {
+      display: block;
+      max-width: 12rem;
+      margin: 0 auto 0.75rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 0.25rem solid #fff;
+      box-shadow: 0 0.5rem 2.5rem rgba(0, 94, 131, 0.15);
+      transition: all 0.3s ease; }
+    .page.home #audiences .audience-tile:hover .audience-tile__bubble {
+      transform: translateY(-0.5rem); }
+    .page.home #audiences .audience-tile:hover h3 {
+      color: #F88379; }
+  .page.home #audiences .button--circle {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto; }
     @media screen and (min-width: 48em) {
-      .page.home #hero-post .button--circle, .page.home .section--hero-post .box .button--circle {
+      .page.home #audiences .button--circle {
         margin-top: -2.5rem;
         margin-right: -3rem; } }
-    .page.home #hero-post .button--circle img, .page.home .section--hero-post .box .button--circle img {
+    .page.home #audiences .button--circle img {
       max-height: 1.5rem; }
 
 .page.home #intro, .page.home .section--intro {
