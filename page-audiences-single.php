@@ -7,10 +7,14 @@ get_header() ?>
 
 <?php while ( have_posts() ) : the_post() ?>
 
-<section id="<?= $post->post_name ?>" class="section--intro load-fadein">
+<?php $cover_url = (get_field('page_cover_image')) ? get_field('page_cover_image')['url'] : '' ?>
+
+<section id="<?= $post->post_name ?>" class="section--intro load-fadein" style="background-image: url('<?= $cover_url?>');">
 	<div class="col-xs-12 col-sm-6 col-md-6 content">
 		<h1 class="c-highlight"><?php the_title() ?></h1>
+		<br />
 		<?php the_field('page_headline') ?>
+		<br />
 		<p><?php the_field('page_intro_blurb') ?></p>
 	</div>
 </section>

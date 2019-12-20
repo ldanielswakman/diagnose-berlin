@@ -2552,8 +2552,7 @@ table {
       background-size: cover;
       background-position: bottom center; } }
   .page-template-page-audiences-single .section--intro#triathletes {
-    background-color: #fff;
-    background-image: url("images/audience-cyclists.jpg"); }
+    background-color: #F3F8F9; }
 
 .page-template-page-audiences-single .section--services {
   margin-top: -8.25rem; }
