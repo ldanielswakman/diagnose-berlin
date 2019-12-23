@@ -51,8 +51,7 @@ get_header(); ?>
                 </div>
                 <p><?php echo $description; ?></p>
                 <div class="box__footer">
-                    <div class="price"><?php echo $price; ?></div>
-                    <script id="setmore_script" type="text/javascript" src="https://my.setmore.com/webapp/js/src/others/setmore_iframe.js"></script><a id="Setmore_button_iframe" href="<?php echo $cta_link; ?>"><button class="button button--primary button--large"><?php echo $cta_text; ?></button></a>
+                    <div class="price"><?php echo $price; ?></div><a href="<?php echo $cta_link; ?>"><button class="button button--primary button--large"><?php echo $cta_text; ?></button></a>
                 </div>
             </div>
         </div>

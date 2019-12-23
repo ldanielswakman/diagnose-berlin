@@ -66,8 +66,10 @@ get_header() ?>
 			<div class="row">
 
 				<div class="col-xs-12 col-sm-7 col-lg-8 service-text">
-					<img src="<?= $service['service_icon']['url'] ?>" class="service-icon" alt="<?= $service['service_title'] ?>" />
-					<h2><?= $service['service_title'] ?></h2>
+					<div class="service-header">
+						<h2><?= $service['service_title'] ?></h2>
+						<figure><img src="<?= $service['service_icon']['url'] ?>" class="service-icon" alt="<?= $service['service_title'] ?>" /></figure>
+					</div>
 					<p><?= $service['service_description'] ?></p>
 				</div>
 
@@ -100,7 +102,7 @@ get_header() ?>
 							</div>
 							<div class="box__footer">
 	              <div class="price">€ <?= $package['package_price'] ?></div>
-	              <script id="setmore_script" type="text/javascript" src="https://my.setmore.com/webapp/js/src/others/setmore_iframe.js"></script><a id="Setmore_button_iframe" href="<?= $package['package_cta_link'] ?>"><button class="button button--blue button--large"><?= $package['package_cta_text'] ?></button></a>
+	              <a href="<?= $package['package_cta_link'] ?>"><button class="button button--blue button--large"><?= $package['package_cta_text'] ?></button></a>
 							</div>
 						</div>
 					</div>

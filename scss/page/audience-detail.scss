@@ -29,7 +29,11 @@
 	}
 
 	.section--services {
-		margin-top: -8.25rem;
+		margin-top: -3rem;
+
+		@include tabletAndUp {
+			margin-top: -8.25rem;
+		}
 
 		.box {
 
@@ -79,11 +83,16 @@
 					padding-right: 2.75rem;
 				}
 			}
-
-			h2 { margin-bottom: 1rem; }
+		}
+		.service-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 1rem;
 		}
 		.service-icon {
-			float: right;
+			width: 3rem;
+			max-width: 3rem;
 		}
 		.service-image {
 			position: relative;

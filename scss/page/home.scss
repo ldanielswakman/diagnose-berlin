@@ -19,11 +19,13 @@
 	}
 
 	.section--post-hero {
-		height: 16rem;
-		margin-top: -16rem;
-
 		.line2 { margin-left: 1rem; }
 		.line3 { margin-left: 2rem; }
+
+		@include tabletAndUp {
+			height: 16rem;
+			margin-top: -16rem;
+		}
 	}
 
 	#audiences {
@@ -32,19 +34,25 @@
 
 		.audience-tile {
 			display: block;
-			margin-top: -4rem;
 			text-align: center;
+
+			@include tabletAndUp {
+				margin-top: -4rem;
+			}
 
 			&__bubble {
 				display: block;
-				max-width: 12rem;
+				max-width: 8rem;
 				margin: 0 auto 0.75rem;
 				border-radius: 50%;
 				overflow: hidden;
 				border: 0.25rem solid $white;
 				box-shadow: 0 0.5rem 2.5rem rgba($diagnoseBlue, 0.15);
-
 				transition: all 0.3s ease;
+
+				@include tabletAndUp {
+					max-width: 12rem;
+				}
 			}
 			&:hover {
 				.audience-tile__bubble { transform: translateY(-0.5rem); }

@@ -1959,10 +1959,10 @@ nav {
       color: #F88379; }
     @media screen and (min-width: 48em) {
       .menu a {
-        padding: 2.25rem 0.75rem; } }
+        padding: 2.25rem 0.5rem; } }
     @media screen and (min-width: 64em) {
       .menu a {
-        padding: 2.25rem 1rem; } }
+        padding: 2.25rem 0.75rem; } }
     @media screen and (min-width: 70em) {
       .menu a {
         padding: 2.25rem 1.25rem; } }
@@ -2000,7 +2000,10 @@ nav {
     margin-right: auto;
     padding: 0;
     opacity: 0;
-    pointer-events: 0; }
+    pointer-events: none;
+    overflow: hidden; }
+    .menu .separator a {
+      display: none; }
 
 .full-menu {
   position: absolute;
@@ -2450,30 +2453,38 @@ table {
       background-position: top left;
       min-height: 42vw; } }
 
-.page.home .section--post-hero {
-  height: 16rem;
-  margin-top: -16rem; }
-  .page.home .section--post-hero .line2 {
-    margin-left: 1rem; }
-  .page.home .section--post-hero .line3 {
-    margin-left: 2rem; }
+.page.home .section--post-hero .line2 {
+  margin-left: 1rem; }
+
+.page.home .section--post-hero .line3 {
+  margin-left: 2rem; }
+
+@media screen and (min-width: 48em) {
+  .page.home .section--post-hero {
+    height: 16rem;
+    margin-top: -16rem; } }
 
 .page.home #audiences {
   padding-bottom: 5rem;
   background: #F3F8F9; }
   .page.home #audiences .audience-tile {
     display: block;
-    margin-top: -4rem;
     text-align: center; }
+    @media screen and (min-width: 48em) {
+      .page.home #audiences .audience-tile {
+        margin-top: -4rem; } }
     .page.home #audiences .audience-tile__bubble {
       display: block;
-      max-width: 12rem;
+      max-width: 8rem;
       margin: 0 auto 0.75rem;
       border-radius: 50%;
       overflow: hidden;
       border: 0.25rem solid #fff;
       box-shadow: 0 0.5rem 2.5rem rgba(0, 94, 131, 0.15);
       transition: all 0.3s ease; }
+      @media screen and (min-width: 48em) {
+        .page.home #audiences .audience-tile__bubble {
+          max-width: 12rem; } }
     .page.home #audiences .audience-tile:hover .audience-tile__bubble {
       transform: translateY(-0.5rem); }
     .page.home #audiences .audience-tile:hover h3 {
@@ -2586,7 +2597,10 @@ table {
       font-size: 2.25rem; } }
 
 .page-template-page-audiences-single .section--services {
-  margin-top: -8.25rem; }
+  margin-top: -3rem; }
+  @media screen and (min-width: 48em) {
+    .page-template-page-audiences-single .section--services {
+      margin-top: -8.25rem; } }
   .page-template-page-audiences-single .section--services .box__header {
     border-bottom: none;
     padding-bottom: 0; }
@@ -2623,11 +2637,16 @@ table {
   @media screen and (min-width: 48em) {
     .page-template-page-audiences-single .section--audience-service .service-description .service-text {
       padding-right: 2.75rem; } }
-  .page-template-page-audiences-single .section--audience-service .service-description h2 {
-    margin-bottom: 1rem; }
+
+.page-template-page-audiences-single .section--audience-service .service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; }
 
 .page-template-page-audiences-single .section--audience-service .service-icon {
-  float: right; }
+  width: 3rem;
+  max-width: 3rem; }
 
 .page-template-page-audiences-single .section--audience-service .service-image {
   position: relative; }

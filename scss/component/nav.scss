@@ -84,10 +84,10 @@ nav {
 		}
 
 		@include tabletAndUp() {
-			padding: 2.25rem 0.75rem;
+			padding: 2.25rem 0.5rem;
 		}
 		@include desktopAndUp() {
-			padding: 2.25rem 1rem;
+			padding: 2.25rem 0.75rem;
 		}
 		@include wideDesktopAndUp {
 			padding: 2.25rem 1.25rem;
@@ -140,7 +140,9 @@ nav {
 		margin-right: auto;
 		padding: 0;
 		opacity: 0;
-		pointer-events: 0;
+		pointer-events: none;
+		overflow: hidden;
+		a { display: none; }
 	}
 }
 
