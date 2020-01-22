@@ -102,7 +102,7 @@ get_header() ?>
 							</div>
 							<div class="box__footer">
 	              <div class="price">€ <?= $package['package_price'] ?></div>
-	              <a href="<?= $package['package_cta_link'] ?>"><button class="button button--blue button--large"><?= $package['package_cta_text'] ?></button></a>
+	              <a href="<?= $package['package_cta_link'] ?>" class="cituroButton"><button class="button button--blue button--large"><?= $package['package_cta_text'] ?></button></a>
 							</div>
 						</div>
 					</div>

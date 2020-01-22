@@ -21,6 +21,7 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/scripts.js"></script>
 <?php gravity_form_enqueue_scripts( 1, true ); ?>	
+<script id="cituroWidgetLoader" type="text/javascript" src="https://app.cituro.com/bookingwidget/diagnoseberlin?initial=true" defer></script>
 
 <?php wp_head(); ?>
 </head>

@@ -2,14 +2,10 @@ $(document).ready(function() {
 
 	$('body').addClass('isLoaded');
 
-
-
 	// Nav toggle
 	$('.menu-toggle').click(function() {
 		$(this).closest('nav').toggleClass('isActive');
 	});
-
-
 
 	// Contact Form toggle
 	$('a[href="#contact-form"]').click(function() {
@@ -44,6 +40,7 @@ function toggleComparison($btn) {
 
 
 
+
 function togglePackages($btn, $target) {
 	if($btn.length > 0 && $target.length > 0) {
 		// Change buttons
@@ -58,6 +55,7 @@ function togglePackages($btn, $target) {
 		console.log('no button or target found...');
 	}
 }
+
 
 
 
@@ -84,6 +82,8 @@ function toggleTooltip($btn) {
 }
 
 
+
+
 function toggleMemberDescription($btn) {
 	if($btn.length > 0) {
 		// Change buttons
@@ -94,7 +94,9 @@ function toggleMemberDescription($btn) {
 }
 
 
-// WP Gravoty Form Interaction addition
+
+
+// WP Gravity Form Interaction addition
 $(document).ready(function() {
 	if($('.gform_wrapper').length > 0) {
 		checkFGActive();
@@ -142,3 +144,24 @@ function checkFGActive() {
 		});
 	});
 }
+
+
+
+
+// Cituro Widget Interaction
+$(document).ready(function() {
+	$('.cituroButton, [href*="cituro.com"]').click(function(e) {
+
+		e.preventDefault();
+		target = this.href;
+
+		options = {};
+		if(target.includes('https://app.cituro.com/booking/diagnoseberlin?presetService=')) {
+			serviceID = target.replace('https://app.cituro.com/booking/diagnoseberlin?presetService=', '');
+			options = { 'presetService': serviceID };
+		}
+
+		cituroWidget.show(options);
+		
+	});
+});
