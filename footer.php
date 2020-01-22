@@ -61,7 +61,7 @@
 				<p id="footer-info">&copy;<?php echo date('Y'); ?> Diagnose Berlin</p>
 			</div>
 			<div class="col-xs-12 col-sm-5">
-				<p id="footer-credits"><a href="ldaniel.eu" target="_blank">Website by ldaniel.eu</a></p>
+				<p id="footer-credits"><a href="https://ldaniel.eu" target="_blank">Website by ldaniel.eu</a></p>
 			</div>
 		</div>
 	</div><!-- .site-info -->

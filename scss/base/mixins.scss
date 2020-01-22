@@ -26,6 +26,11 @@
     @content;
   }
 }
+@mixin wideDesktopAndUp() {
+  @media screen and (min-width: 70em) {
+    @content;
+  }
+}
 
 // Clickable element basis
 @mixin clickableElem() {
