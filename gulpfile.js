@@ -8,27 +8,18 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 
 
-
-// Concatenate Sass task
-gulp.task('sass', function() {
-  gulp.src('scss/style.scss')
+function style() {
+    return gulp.src('scss/style.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('.'));
-});
-
-// Clean & minify CSS (after Sass)
-gulp.task('clean_css', ['sass'], function() {
-  gulp.src('style.css')
+    .pipe(gulp.dest('.'))
     .pipe(cleanCSS({compatibility: 'ie9', debug: true}))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('.'));
-});
+}
 
-gulp.task('styles', ['sass', 'clean_css']);
+function watch() {
+    gulp.watch('scss/**/*.scss', style);
+}
 
-
-
-// Watch task
-gulp.task('default',function() {
-    gulp.watch('scss/**/*.scss',['styles']);
-});
+exports.style = style;
+exports.default = watch;

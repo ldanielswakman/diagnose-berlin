@@ -21,14 +21,12 @@
 	 	&#leistungsdiagnostik,
 	 	&#diagnostics {
 	 		background-color: $white;
-		 	background-image: url('images/service-perfdiag.jpg');
 	 	}
 
 	 	// Background Service 2
 	 	&#training-planning,
 	 	&#trainingsplanung,
 	 	&#training-coaching {
-		 	background-image: url('images/service-trainplan.jpg');
 		 	background-color: #e9dfd7;
 
 		 	@include tabletAndDown() {
@@ -41,7 +39,6 @@
 	 	&#bikefitting,
 	 	&#bikefit,
 	 	&#bike-fitting-berlin {
-		 	background-image: url('images/service-bikefit.jpg');
 	 	}
 
 	 	// Background Service 4
@@ -49,7 +46,6 @@
 	 	&#nutrition-counseling,
 	 	&#ernaehrungsberatung,
 	 	&#ernahrung {
-		 	background-image: url('images/service-nutrcoach.jpg');
 		 	background-position: right -10%;
 	    background-color: white;
 
