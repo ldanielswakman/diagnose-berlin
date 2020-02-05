@@ -2931,7 +2931,7 @@ table {
 .page-template-page-services-single .section--intro {
   display: flex;
   align-items: center;
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
   background-color: #F5F8F9;
   background-size: 140%;
   background-position: 100% bottom;
@@ -2976,8 +2976,10 @@ table {
   @media screen and (min-width: 48em) {
     .page-template-page-services-single .section--packages {
       margin-top: -9rem; } }
-  .page-template-page-services-single .section--packages.isHidden {
-    display: none; }
+  .page-template-page-services-single .section--packages .col--package {
+    display: flex; }
+    .page-template-page-services-single .section--packages .col--package.isHidden {
+      display: none; }
 
 .page-template-page-services-single .package-actions {
   text-align: center; }

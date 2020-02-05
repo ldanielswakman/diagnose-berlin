@@ -43,14 +43,14 @@ function toggleComparison($btn) {
 
 function togglePackages($btn, $target) {
 	if($btn.length > 0 && $target.length > 0) {
+
 		// Change buttons
 		$btn.addClass('isActive');
 		$btn.closest('.button--toggle-group').find('.button').not($btn).removeClass('isActive');
+
 		// Show/hide package sections
-		$('.section--packages').addClass('isHidden');
-		$('#'+$target).removeClass('isHidden');
-		// Hide comparison tables
-		$('.comparison').addClass('isHidden');
+		$('.col--grouped').addClass('isHidden');
+		$('.col--'+$target).removeClass('isHidden');
 	} else {
 		console.log('no button or target found...');
 	}

@@ -3,7 +3,7 @@
 	.section--intro {
  		display: flex;
  		align-items: center;
-	 	padding-bottom: 10rem;
+	 	padding-bottom: 3rem;
 	 	background-color: #F5F8F9;
 	 	background-size: 140%;
 	 	background-position: 100% bottom;
@@ -79,9 +79,11 @@
 		@include tabletAndUp() {
 			margin-top: -9rem;
 		}
+		
+		.col--package {
+			display: flex;
 
-		&.isHidden {
-			display: none;
+			&.isHidden { display: none; }
 		}
 	}
 	.package-actions {
