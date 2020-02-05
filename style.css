@@ -1327,22 +1327,26 @@ blockquote p {
 
 .button--toggle-group {
   display: flex;
-  flex-direction: column;
   margin-top: 2rem; }
-  @media screen and (min-width: 30em) {
-    .button--toggle-group {
-      flex-direction: row; }
-      .button--toggle-group > .button--outline:last-child {
-        margin-left: -2.5rem;
-        padding-left: 3rem; }
-      .button--toggle-group > .button--outline:first-child {
-        margin-right: -2.5rem;
-        padding-right: 3rem; } }
-  .button--toggle-group .button--outline {
-    background: #F3F8F9; }
-  .button--toggle-group .button--blue {
+  .button--toggle-group > .button--outline {
     position: relative;
-    z-index: 2; }
+    padding: 0.625rem 1rem; }
+    @media screen and (min-width: 48em) {
+      .button--toggle-group > .button--outline {
+        padding: 0.625rem 1.25rem; } }
+    .button--toggle-group > .button--outline:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-left: -0.125rem; }
+    .button--toggle-group > .button--outline:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+    .button--toggle-group > .button--outline:hover {
+      z-index: 3; }
+    .button--toggle-group > .button--outline.isActive {
+      background: #1C2E35;
+      border-color: transparent;
+      color: #fff; }
 
 .box {
   position: relative;
@@ -2782,6 +2786,8 @@ table {
 
 .page-template-page-audiences-single {
   background: transparent; }
+  .page-template-page-audiences-single .section--intro {
+    background-color: red; }
   .page-template-page-audiences-single .section--intro {
     position: relative;
     display: flex;

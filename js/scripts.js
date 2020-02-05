@@ -44,8 +44,8 @@ function toggleComparison($btn) {
 function togglePackages($btn, $target) {
 	if($btn.length > 0 && $target.length > 0) {
 		// Change buttons
-		$btn.addClass('button--blue').removeClass('button--outline');
-		$btn.closest('.button--toggle-group').find('.button').not($btn).addClass('button--outline').removeClass('button--blue');
+		$btn.addClass('isActive');
+		$btn.closest('.button--toggle-group').find('.button').not($btn).removeClass('isActive');
 		// Show/hide package sections
 		$('.section--packages').addClass('isHidden');
 		$('#'+$target).removeClass('isHidden');
