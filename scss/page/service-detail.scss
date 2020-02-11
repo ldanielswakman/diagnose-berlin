@@ -1,13 +1,15 @@
 .page-template-page-services-single {
 
 	.section--intro {
- 		display: flex;
- 		align-items: center;
-	 	padding-bottom: 3rem;
-	 	background-color: #F5F8F9;
-	 	background-size: 140%;
-	 	background-position: 100% bottom;
-	 	background-repeat: no-repeat;
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: calc(40vw + 2rem) 0 3rem;
+		background-color: transparent;
+		background-size: 100%;
+		background-position: 100% 0;
+		background-repeat: no-repeat;
+		overflow: hidden;
 
 	 	@include tabletAndUp() {
 	 		min-height: 40vw;
@@ -28,17 +30,6 @@
 	 	&#trainingsplanung,
 	 	&#training-coaching {
 		 	background-color: #e9dfd7;
-
-		 	@include tabletAndDown() {
-			 	background-position: right bottom;
-			 	padding-bottom: 16rem;
-			}
-	 	}
-
-	 	// Background Service 3
-	 	&#bikefitting,
-	 	&#bikefit,
-	 	&#bike-fitting-berlin {
 	 	}
 
 	 	// Background Service 4
@@ -51,9 +42,6 @@
 
 	    @include tabletAndUp() {
 				background-position: right top;
-			}
-			@include tabletAndDown() {
-				padding: 65vw 0 2rem;
 			}
 	 	}
 
@@ -72,6 +60,19 @@
 		 		}
 	 		}
 	 	}
+
+		&__cover-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			filter: blur(0.5rem);
+			opacity: 0.4;
+		}
 	}
 	.section--packages {
 		margin-top: -3rem;

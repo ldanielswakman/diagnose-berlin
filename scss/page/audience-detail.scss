@@ -16,8 +16,8 @@
 		overflow: hidden;
 
 		@include tabletAndUp() {
-			padding: 0 0 7rem;
 			min-height: 40vw;
+			padding: 0 0 7rem;
 			background-size: cover;
 			background-position: bottom center;
 		}
