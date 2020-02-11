@@ -2942,6 +2942,7 @@ table {
   @media screen and (min-width: 48em) {
     .page-template-page-services-single .section--intro {
       min-height: 40vw;
+      padding-top: 0;
       padding-bottom: 7rem;
       background-size: cover;
       background-position: bottom center; } }
