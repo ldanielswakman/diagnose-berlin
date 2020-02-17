@@ -96,10 +96,10 @@ get_header() ?>
 							</div>
 							<div class="package-description">
 								<?= wpautop($descr) ?>
-								<!-- <a class="package-description__link" href="javascript:void(0)" onclick="javascript:$(this).closest('.service-packages').toggleClass('isExpanded')">
-									<span class="expanded"><?= pll__('Less details', 'diagberl') ?></span>
-									<span class="collapsed"><?= pll__('More details', 'diagberl') ?></span>
-								</a> -->
+
+								<?php if(strlen($package['package_extra']) > 0): ?>
+									<a class="box--package__descr-link" href="javascript:void(0)" onclick="openDialog('<?= sanitize_title($package['package_title']) ?>')"><?= pll__('More details', 'diagberl') ?></a>
+								<?php endif ?>
 							</div>
 							<div class="box__footer">
 	              <div class="price">€ <?= $package['package_price'] ?></div>
@@ -107,6 +107,28 @@ get_header() ?>
 							</div>
 						</div>
 					</div>
+
+					<?php if(strlen($package['package_extra']) > 0): ?>
+						<div class="dialog-wrapper" id="<?= sanitize_title($package['package_title']) ?>">
+							<div onclick="closeDialog()" class="dialog-mask"></div>
+							<div class="dialog box box--package">
+								<div class="box__header">
+									<div>
+										<h4><?= $package['package_letter'] ?></h4>
+										<h2><?= $package['package_title'] ?></h2>
+									</div>
+									<a href="javascript:void(0)" onclick="closeDialog()" class="dialog__close"></a>
+								</div>
+								<div class="package-description">
+									<?= wpautop($package['package_extra']) ?>
+								</div>
+								<div class="box__footer">
+		              <div class="price">€ <?= $package['package_price'] ?></div>
+		              <a href="<?= $package['package_cta_link'] ?>"><button class="button button--blue button--large"><?= $package['package_cta_text'] ?></button></a>
+								</div>
+							</div>
+						</div>
+					<?php endif ?>
 
 			<?php endforeach ?>
 

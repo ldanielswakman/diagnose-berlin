@@ -1066,6 +1066,9 @@ html, body {
   font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+body.dialogIsActive {
+  overflow: hidden; }
+
 /* Selection */
 ::-moz-selection {
   background: #005E83;
@@ -1385,6 +1388,14 @@ blockquote p {
     .box--package p {
       font-size: 1rem;
       line-height: 1.5rem; }
+    .box--package__descr-link {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid transparent;
+      color: #F88379; }
+      .box--package__descr-link:hover {
+        border-bottom-color: #F88379; }
     .box--package .price {
       font-size: 2rem;
       font-weight: bold;
@@ -1396,7 +1407,7 @@ blockquote p {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    margin-left: -1.5rem;
+    margin-left: -0.25rem;
     margin-right: 0.5rem;
     border-radius: 50%;
     background: #CFDBE0; }
@@ -1879,6 +1890,73 @@ ul.gfield_radio li, .gfield_checkbox li {
   .post-preview .categories {
     display: block;
     margin-top: 0.5rem; }
+
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out; }
+  @media screen and (min-width: 48em) {
+    .dialog-wrapper {
+      justify-content: center; } }
+  .dialog-wrapper.isActive {
+    opacity: 1;
+    pointer-events: all; }
+  .dialog-wrapper .dialog {
+    transform: translateY(3rem);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+  .dialog-wrapper.isActive .dialog {
+    transform: translateY(0); }
+  .dialog-wrapper .box__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .dialog-wrapper .dialog__close {
+    position: relative;
+    display: inline-flex;
+    min-height: 3rem;
+    min-width: 3rem;
+    margin-right: -0.5rem;
+    padding: 0.75rem;
+    opacity: 0.3; }
+    .dialog-wrapper .dialog__close:hover {
+      opacity: 1; }
+    .dialog-wrapper .dialog__close:before, .dialog-wrapper .dialog__close:after {
+      content: "";
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      display: inline-block;
+      width: 2rem;
+      height: 1.5px;
+      background: #005E83;
+      transform: rotate(45deg);
+      transform-origin: left center; }
+    .dialog-wrapper .dialog__close:after {
+      top: auto;
+      bottom: 0.75rem;
+      transform: rotate(-45deg); }
+  .dialog-wrapper .dialog-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer; }
+  .dialog-wrapper .box {
+    width: calc(100% - 3rem);
+    max-width: 36rem;
+    margin-bottom: 0; }
 
 #call_to_action p {
   margin-top: 1rem; }
@@ -2889,8 +2967,6 @@ table {
       @media screen and (min-width: 48em) {
         .page-template-page-audiences-single .section--audience-service .service-packages .box {
           margin-right: 2.75rem; } }
-    .page-template-page-audiences-single .section--audience-service .service-packages .box p {
-      margin-left: 0.5rem; }
     .page-template-page-audiences-single .section--audience-service .service-packages .box .package-description {
       position: relative;
       flex: 1; }

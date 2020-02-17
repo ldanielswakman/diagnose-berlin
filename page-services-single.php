@@ -37,6 +37,7 @@ get_header() ?>
         $letter = get_sub_field('package_letter');
         $title = get_sub_field('package_title');
         $description = get_sub_field('package_description');
+        $extra = get_sub_field('package_extra');
         $price = get_sub_field('package_price');
         $cta_text = get_sub_field('package_cta_text');
         $cta_link = get_sub_field('package_cta_link');
@@ -49,15 +50,43 @@ get_header() ?>
             <div class="col-xs-12 col-sm-6 col-lg-4 col--package<?= $classes ?>">
                 <div class="box box--package">
                     <div class="box__header">
-                        <h4><?php echo $letter ?></h4>
-                        <h2><?php echo $title ?></h2>
+                        <h4><?= $letter ?></h4>
+                        <h2><?= $title ?></h2>
                     </div>
-                    <p><?php echo $description ?></p>
+                    <p><?= $description ?></p>
+
+                    <?php if(strlen($extra) > 0): ?>
+                        <a class="box--package__descr-link" href="javascript:void(0)" onclick="openDialog('<?= sanitize_title($title) ?>')"><?= pll__('More details', 'diagberl') ?></a>
+                    <?php endif ?>
                     <div class="box__footer">
-                        <div class="price"><?php echo $price ?></div><a href="<?php echo $cta_link ?>"><button class="button button--primary button--large"><?php echo $cta_text ?></button></a>
+                        <div class="price"><?= $price ?></div><a href="<?= $cta_link ?>"><button class="button button--primary button--large"><?= $cta_text ?></button></a>
                     </div>
                 </div>
             </div>
+
+
+            <?php if(strlen($extra) > 0): ?>
+                <div class="dialog-wrapper" id="<?= sanitize_title($title) ?>">
+                    <div onclick="closeDialog()" class="dialog-mask"></div>
+                    <div class="dialog box box--package">
+                        <div class="box__header">
+                            <div>
+                                <h4><?= $letter ?></h4>
+                                <h2><?= $title ?></h2>
+                            </div>
+                            <a href="javascript:void(0)" onclick="closeDialog()" class="dialog__close"></a>
+                        </div>
+                        <div class="package-description">
+                            <?= wpautop($extra) ?>
+                        </div>
+                        <div class="box__footer">
+                            <div class="price">€ <?= $price ?></div>
+                            <a href="<?= $cta_link ?>"><button class="button button--blue button--large"><?= $cta_text ?></button></a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif ?>
+
         <?php endwhile; endif ?>
 
         <?php if( get_field('group_1_table') ): ?>

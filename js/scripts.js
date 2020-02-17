@@ -95,6 +95,22 @@ function toggleMemberDescription($btn) {
 
 
 
+// Dialog Interactions
+function openDialog(target) {
+	if($('.dialog-wrapper#'+target).length > 0) {
+		$('body').addClass('dialogIsActive');
+		$('.dialog-wrapper#'+target).addClass('isActive');
+	} else {
+		console.log('no target found...');
+	}
+}
+function closeDialog() {
+	$('body').removeClass('dialogIsActive');
+	$('.dialog-wrapper').removeClass('isActive');
+}
+
+
+
 
 // WP Gravity Form Interaction addition
 $(document).ready(function() {
