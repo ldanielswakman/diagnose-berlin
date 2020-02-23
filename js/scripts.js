@@ -8,20 +8,21 @@ $(document).ready(function() {
 	});
 
 	// Contact Form toggle
-	$('a[href="#contact-form"]').click(function() {
-		$('#contact-form').addClass('isActive');
+	$('a[href*="#contact-form"]').click(function() {
+		target = $(this).attr('href');
+		$(target).addClass('isActive');
 	});
 	// Contact Form toggle
 	$('.popup').click(function(e) {
     if(e.target != this) return; // only continue if the target itself has been clicked
 
     // this section only processes if the .nav > li itself is clicked.
-    $('#contact-form').removeClass('isActive');
+    $('.popup').removeClass('isActive');
 	});
 	// Contact Form toggle
 	$('.popup .popup__close').click(function(e) {
 		e.preventDefault();
-    $('#contact-form').removeClass('isActive');
+    $('.popup').removeClass('isActive');
 	});
 	
 });
