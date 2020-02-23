@@ -11,7 +11,7 @@ get_header() ?>
 
 <section id="<?= $post->post_name ?>" class="section--intro load-fadein" style="background-image: url('<?= $cover_url?>');">
 	<div class="section--intro__cover-bg" style="background-image: url('<?= $cover_url?>');"></div>
-	<div class="col-xs-12 col-sm-6 col-md-6 content">
+	<div class="col-xs-12 col-lg-6 content">
 		<h1><?php the_title() ?></h1>
 		<br />
 		<blockquote class="blockquote--large"><?php the_field('page_headline') ?></blockquote>

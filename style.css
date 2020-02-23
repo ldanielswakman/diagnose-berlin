@@ -2877,7 +2877,7 @@ table {
     background-position: 100% 0;
     background-repeat: no-repeat;
     overflow: hidden; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 64em) {
       .page-template-page-audiences-single .section--intro {
         min-height: 40vw;
         padding: 0 0 7rem;

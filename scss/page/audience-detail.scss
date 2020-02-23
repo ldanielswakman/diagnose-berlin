@@ -15,7 +15,7 @@
 		background-repeat: no-repeat;
 		overflow: hidden;
 
-		@include tabletAndUp() {
+		@include desktopAndUp() {
 			min-height: 40vw;
 			padding: 0 0 7rem;
 			background-size: cover;

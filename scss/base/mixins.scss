@@ -21,6 +21,11 @@
     @content;
   }
 }
+@mixin wideTabletAndUp() {
+  @media screen and (min-width: 56em) {
+    @content;
+  }
+}
 @mixin desktopAndUp() {
   @media screen and (min-width: 64em) {
     @content;
