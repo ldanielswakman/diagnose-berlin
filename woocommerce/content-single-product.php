@@ -49,7 +49,7 @@ if ( has_post_thumbnail() ) {
 
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve"><polyline points="9.5,17.8 1.8,10.1 9.7,2.2 "/><path d="M22.2,10H3.7"/></svg>
 
-				<? _e('Back to overview') ?>
+				<?php _e('Back to overview') ?>
 			</a>
 
 			<a class="cart-customlocation" href="<?= wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?= sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?= WC()->cart->get_cart_total(); ?></a>

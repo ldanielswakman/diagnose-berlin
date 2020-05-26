@@ -1,9 +1,75 @@
 <?php
 /**
- *  * Template Name: Team
+ *  * Template Name: About us
  */
-
 get_header(); ?>
+
+<section id="intro" class="load-fadein">
+	<div class="col-xs-12 col-md-8 col-lg-6 content">
+		<br />
+		<blockquote class="blockquote--big">
+			<?php the_field('opening_headline'); ?>
+		</blockquote>
+		<br />
+		<p><?php the_field('opening_text'); ?></p>
+	</div>
+</section>
+
+<section id="usps" class="bg-greylightest content load-fadein load-delay-1s">
+	<div class="row">
+		<?php foreach(get_field('opening_usps') as $key => $usp) : ?>
+			<div class="col-xs-12 col-md-4 usp usp--<?= $key+1 ?>">
+				<img src="<?= $usp['item_image'] ?>" />
+				<h3><?= $usp['item_title'] ?></h3>
+				<?= wpautop($usp['item_text']) ?>
+			</div>
+		<?php endforeach ?>
+	</div>
+</section>
+
+
+
+
+<?php
+// check if the repeater field has rows of data
+if( have_rows('variable_content_section') ):
+
+  // loop through the rows of data
+  while ( have_rows('variable_content_section') ) : the_row() ?>
+
+    <!-- // display a sub field value -->
+    <section class="section--service load-movein-btm load-delay-1s">
+       <div class="row row--nopadding" style="align-items: center;">
+
+        <div class="col-xs-12 col-sm-6 image">
+					<figure>
+						<img src="<?php the_sub_field('section_image') ?>">
+					</figure>
+				</div>
+
+				<div class="col-xs-12 col-sm-6 text">
+      		<div class="box">
+						<blockquote class="blockquote--big">
+							<p><?php the_sub_field('section_title') ?></p>
+						</blockquote>
+						<p><?php the_sub_field('section_description') ?></p>
+            <?php if(strlen(get_sub_field('section_button_text')) > 0): ?>
+    					<a href="<?php the_sub_field('section_button_link') ?>" class="button button--primary button--large"><?php the_sub_field('section_button_text') ?></a>
+    				<?php endif ?>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+<?php endwhile;
+
+else :
+    // no rows found
+endif;
+?>
+
+
 
 <section id="team" class="bg-greylightest load-fadein">
 	<div class="row row--nopadding" style="justify-content: center;">
@@ -77,12 +143,12 @@ get_header(); ?>
 			if( have_rows('partners') ):
 				while ( have_rows('partners') ) : the_row(); ?>
 
-					<? $extra = (strlen(get_sub_field('partner_description')) == 0 && strlen(get_sub_field('partner_logo')) == 0) ? ' spacer' : '';
+					<?php $extra = (strlen(get_sub_field('partner_description')) == 0 && strlen(get_sub_field('partner_logo')) == 0) ? ' spacer' : '';
 					?>
 
 					<div class="col-xs-6 col-sm-4 partner<?= $extra ?>">
 
-						<? if (strlen(get_sub_field('partner_description')) > 0) : ?>
+						<?php if (strlen(get_sub_field('partner_description')) > 0) : ?>
 							<div class="box box--circle" onclick="toggleTooltip($(this))">
 								
 								<figure>
@@ -93,18 +159,18 @@ get_header(); ?>
 
 							<div class="box box--info-tooltip">
 								<?php the_sub_field('partner_description'); ?>
-								<? if (strlen(get_sub_field('partner_link')) > 0) : ?>
+								<?php if (strlen(get_sub_field('partner_link')) > 0) : ?>
 									<a href="<?php the_sub_field('partner_link'); ?>" target="_blank" class="button button--small"><?= pll__('Visit site', 'Team') ?></a>
-								<? endif ?>
+								<?php endif ?>
 							</div>
 
-						<? elseif(strlen(get_sub_field('partner_logo')) > 0) : ?>
+						<?php elseif(strlen(get_sub_field('partner_logo')) > 0) : ?>
 
 							<div class="box box--circle">
 								<figure><img src="<?php the_sub_field('partner_logo'); ?>" /></figure>
 							</div>
 
-						<? endif ?>
+						<?php endif ?>
 
 					</div>
 
@@ -145,5 +211,5 @@ get_header(); ?>
 
 </section>
 
-				
+
 <?php get_footer();

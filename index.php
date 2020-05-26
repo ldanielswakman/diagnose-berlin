@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<? get_template_part('partials/knowledge-categories-bar') ?>
+<?php get_template_part('partials/knowledge-categories-bar') ?>
 
 <section id="featured" class="content load-movein-btm load-delay-03s">
     <div class="row">

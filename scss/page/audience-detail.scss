@@ -87,13 +87,14 @@
 			max-width: calc(100% - 1rem);
 			margin-right: 1rem;
 			padding-top: 3.75rem;
-			padding-bottom: calc(3.75rem * 2);
+			padding-bottom: 0;
 
 			@include bigPhoneAndUp() {
 				margin-right: 1.5rem;	
 			}
 			@include tabletAndUp() {
 				margin-right: 5rem;
+				padding-bottom: calc(3.75rem * 2);
 			}
 
 			@include tabletAndUp() {
@@ -114,16 +115,18 @@
 		}
 		.service-image {
 			position: relative;
+			margin-top: 1rem;
 
 			@include tabletAndUp() {
 				margin-right: -10rem;
-			}
+				margin-top: 0;
 
-			img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+				}
 			}
 		}
 		.service-packages {

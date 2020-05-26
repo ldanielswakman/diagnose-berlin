@@ -23,7 +23,7 @@ get_header() ?>
         <div class="button--toggle-group">
             <?php foreach(get_field('package_groups') as $key => $item): ?>
                 <button class="button button--outline<?= $key == 0 ? ' isActive':'' ?>" onclick="togglePackages($(this), '<?= sanitize_title($item['group_title']) ?>')"><?= $item['group_title'] ?></button>
-            <? endforeach ?>
+            <?php endforeach ?>
         </div>
     </div>
 </section>

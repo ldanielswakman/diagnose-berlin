@@ -1,0 +1,243 @@
+.page-template-page-about-us {
+
+	#intro {
+		padding-bottom: 16rem;
+	 	background-color: $greylightest;
+	 	background-image: url('images/mockup-how-we-work-1.jpg');
+	 	background-size: 140%;
+	 	background-position: 100% bottom;
+	 	background-repeat: no-repeat;
+
+	 	@include bigPhoneAndUp() {
+			padding-bottom: 20rem;
+		}
+	 	@include tabletAndUp() {
+			display: flex;
+			align-items: center;
+	 		min-height: 35vw;
+		 	background-size: cover;
+		 	background-position: bottom center;
+	 	}
+	}
+
+	#usps {
+		padding-bottom: 3rem;
+
+		@include tabletAndUp() {
+			padding-bottom: 6rem;
+		}
+
+		.usp {
+			position: relative;
+			margin-top: 1rem;
+
+			// Stripes
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				top: 2.5rem;
+				z-index: 4;
+				width: calc(40vw - 5rem);
+				border-bottom: 0.25rem solid $highlight;
+				transform: rotate(-18deg);
+				transform-origin: top left;
+
+				@media screen and (min-width: 52em) {
+					transform: rotate(-16deg);
+				}
+				@media screen and (min-width: 60em) {
+					transform: rotate(-14deg);
+				}
+				@media screen and (min-width: 68em) {
+					transform: rotate(-12deg);
+				}
+				@media screen and (min-width: 76em) {
+					transform: rotate(-10.5deg);
+				}
+				@media screen and (min-width: 92em) {
+					transform: rotate(-8deg);
+				}
+				@media screen and (min-width: 100em) {
+					width: calc(40vw - 7rem);
+				}
+			}
+			&:before {
+				left: 2rem;
+			}
+			// Dashed stripes
+			&:after {
+				width: 32vw;
+				right: calc(100% - 2rem);
+				border-bottom-style: dashed;
+				transform-origin: top right;
+			}
+			&--2:after, &--3:before { display: none; }
+			&--3:after { right: auto; left: 2rem; transform-origin: bottom left; }
+			@include tabletAndDown() {
+				&:before, &:after { display: none; }
+			}
+
+			img {
+				position: relative;
+				z-index: 5;
+				max-width: 8rem;
+				margin-left: -2rem;
+				margin-top: -0.5rem;
+				float: left;
+			}
+
+			@include tabletAndUp() {
+				padding-right: 3rem;
+				flex-direction: column;
+
+				&--1 { margin-top: 5rem; }
+				&--2 { margin-top: 0; }
+				&--3 { margin-top: -5rem; }
+
+				img {
+					float: none;
+					max-width: 10rem;
+					margin-top: -1.5rem;
+				}
+				h3 {
+					font-size: 1.5rem;
+					margin-bottom: 0.5rem;
+
+					@include tabletAndUp() {
+						font-size: 1.75rem;
+					}		
+				}
+				p {
+					font-size: 1.25rem;
+					opacity: 0.8;
+				}
+			}
+			@media screen and (min-width: 72em) {
+				padding-right: 6rem;
+			}
+		}
+	}
+
+	.section--service {
+		padding-top: 0;
+
+		@include tabletAndUp() {
+			padding-bottom: 9rem;
+		}
+	}
+
+	#call_to_action {
+		background: $greylightest;
+	}
+
+
+
+	#team {
+		padding-bottom: 5rem;
+
+		figure {
+			max-width: 15rem;
+			margin: 0 auto 1.5rem;
+			border-radius: 50%;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+		.more {
+			max-height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+		.button--less {
+			display: none;
+		}
+		.member {
+			text-align: center;
+
+			.more {
+				text-align: left;
+			}
+		}
+		.member.isActive {
+			.more {
+				max-height: 100vh;
+				opacity: 1;
+			}
+			.button--more { display: none; }
+			.button--less { display: inherit; }
+		}
+	}
+
+	.partners-grid {
+		padding-bottom: 5rem;
+
+		@include tabletAndDown() {
+			.spacer { display: none; }
+		}
+
+		.partner {
+			position: relative;
+
+			& > .box {
+				position: static;
+				z-index: inherit;
+				margin: 1.5rem 0;
+				transition: all 0.2s ease;
+				
+				&[onclick]:hover, &.isActive {
+					box-shadow: 0 0.5rem 2.5rem rgba($dark, 0.25);
+					cursor: pointer;
+				}
+			}
+
+			// Diagnose box
+			&:nth-child(5) > .box:not(.box--circle-small) { background: $diagnoseBlue; box-shadow: 0 0.5rem 2.5rem rgba($dark, 0.25); }
+
+			@include tabletAndUp() {
+				&:nth-child(1) .box { transform: translate(0, 4rem); }
+				&:nth-child(2) .box { transform: translate(0, -2rem); }
+				&:nth-child(3) .box { transform: translate(0, 4rem); }
+				// &:nth-child(4) .box {}
+				// &:nth-child(5) .box {}
+				// &:nth-child(6) .box {}
+				&:nth-child(7) .box { transform: translate(0, -4rem); }
+				&:nth-child(8) .box { transform: translate(0, 2rem); }
+				&:nth-child(9) .box { transform: translate(0, -4rem); }
+			}
+
+			// Alignment tooltip on mobile
+			&:nth-child(2n) .box--info-tooltip {
+				@include tabletAndDown() {
+					left: calc(-50vw + 1.5rem);
+				}
+			}
+
+			// Friends & Family grid
+			&:nth-child(2n) .box.box--circle-small {
+				transform: translate(0, -2rem);
+			}
+			&:nth-child(2n-1) .box.box--circle-small {
+				transform: translate(0, 2rem);
+			}
+		}
+		.box.box--info-tooltip {
+			position: absolute;
+			top: 100%;
+			z-index: 11;
+			text-align: left;
+			display: none;
+			cursor: default;
+			margin-top: -2rem;
+		}
+		.partner.isActive .box--info-tooltip {
+			display: block;
+		}
+	}
+}

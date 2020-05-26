@@ -34,7 +34,7 @@ get_header() ?>
 					</div>
 					<p><?= $service['service_snippet'] ?></p>
 
-					<?
+					<?php
 					// Find lowest price of package and display
 					$lowest = 1000000;
 					foreach ($service['service_packages'] as $package) {
@@ -88,7 +88,7 @@ get_header() ?>
 
 					<?php $descr = str_replace(['✅', '❌'], ['<span class="icon-check"></span>', '<span class="icon-cross"></span>'], $package['package_description']); ?>
 
-					<div class="col-xs-12 col-sm-6 col-lg-5" style="display: flex;">
+					<div class="col-xs-12 col-sm-6 col-xl-5" style="display: flex;">
 						<div class="box box--package">
 							<div class="box__header">
 								<h4><?= $package['package_letter'] ?></h4>
