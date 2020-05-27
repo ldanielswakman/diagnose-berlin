@@ -2946,7 +2946,11 @@ table {
 
 .page.home #audiences {
   padding-bottom: 5rem;
-  background: #F3F8F9; }
+  background: #F3F8F9;
+  overflow: hidden; }
+  @media screen and (min-width: 48em) {
+    .page.home #audiences {
+      overflow: initial; } }
   .page.home #audiences .audience-tile {
     display: block;
     text-align: center; }
