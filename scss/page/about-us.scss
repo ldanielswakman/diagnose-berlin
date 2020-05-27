@@ -161,6 +161,15 @@
 		.member {
 			text-align: center;
 
+			@include tabletAndUp() {
+				padding: 2.5rem;
+			}
+
+			&__title {
+				color: $diagnoseBlue;
+				opacity: 0.5;
+			}
+
 			.more {
 				text-align: left;
 			}

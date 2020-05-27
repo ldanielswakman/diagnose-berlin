@@ -93,14 +93,17 @@ endif;
 						</figure>
 
 						<h2><?php the_sub_field('member_name'); ?></h2>
+
+						<p class="member__title"><?php the_sub_field('member_title'); ?></p>
+
+						<p class="small more"><br /><?php the_sub_field('member_description'); ?></p>
+
 						<br />
 
-						<div class="small more"><?php the_sub_field('member_description'); ?></div>
-
-						<br />
-
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--more"><?= __('Mehr info', 'Team') ?></button>
-						<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--less"><?= __('Weniger info', 'Team') ?></button>
+						<?php if(strlen(get_sub_field('member_description')) > 0): ?>
+							<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--more"><?= __('Mehr info', 'Team') ?></button>
+							<button onclick="toggleMemberDescription($(this))" class="button button--small button--grey button--less"><?= __('Weniger info', 'Team') ?></button>
+						<?php endif ?>
 
 					</div>
 

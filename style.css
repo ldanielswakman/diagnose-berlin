@@ -2837,6 +2837,12 @@ table {
     display: none; }
   .page-template-page-about-us #team .member {
     text-align: center; }
+    @media screen and (min-width: 48em) {
+      .page-template-page-about-us #team .member {
+        padding: 2.5rem; } }
+    .page-template-page-about-us #team .member__title {
+      color: #005E83;
+      opacity: 0.5; }
     .page-template-page-about-us #team .member .more {
       text-align: left; }
   .page-template-page-about-us #team .member.isActive .more {
